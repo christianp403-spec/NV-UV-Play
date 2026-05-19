@@ -37,7 +37,7 @@ It is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV
 
 ## How to install
 
-Download `NV-UV-Play-<version>.exe` from [Releases](https://github.com/christianp403-spec/nv-uv-play/releases), put it anywhere, run it. No installer, no runtime to install. First run shows a one-time license acceptance, then you're in.
+Download `NV-UV-Play-<version>.exe` from [Releases](https://github.com/christianp403-spec/nv-uv-play/releases), put it anywhere, run it. No installer, no runtime to install.
 
 ## Requirements
 
