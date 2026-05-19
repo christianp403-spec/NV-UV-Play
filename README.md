@@ -49,7 +49,7 @@ Download `NV-UV-Play-<version>.exe` from [Releases](https://github.com/christian
 ## Supported hardware
 
 - **RTX 50-series (Blackwell)** — full support, primary test platform, five tiers including MFG.
-- **RTX 40-series (Ada / Lovelace)** — full support, four tiers.
+- **RTX 40-series (Ada / Lovelace)** — four tiers, 🧪 Should work in theory (RTX 40-series, Ada Lovelace) The Ada-specific Gradient Lock path is a direct 1:1 port of the NV⚡UV main product's 
 - **RTX 30 / 20-series (Ampere / Turing)** — experimental, untested by the author. Voltage Lock recommended (Gradient Lock falls back automatically). Feedback welcome.
 - **RTX 10-series (Pascal) and older** — not supported.
 
