@@ -62,10 +62,8 @@ The library lives in [`games/GameDatabase.json`](games/GameDatabase.json) and up
 ## License
 
 NV⚡UV Play is **free for personal and non-commercial use**. Content creators, streamers, reviewers, and journalists are explicitly welcome to use, demonstrate, and feature it. Experts and technically skilled users are explicitly welcome to use Play on their own or other people's machines, help friends and community members, and tune systems for enthusiasts.
-
 Charging money for the tool's output, OEM bundling, and selling tuning services with Play doing the actual work need a separate commercial license. Full terms: [LICENSE](LICENSE)
 
-Commercial-license requests, OEM bundling, press inquiries: **christian.papaioannou@gmx.de**
 
 ## Credits
 
