@@ -1,0 +1,144 @@
+NV-UV Play — License
+Version 1.0 — Mai 2026
+
+Build 1 · Open Alpha
+Copyright (c) 2026 Christian Papaioannou. All rights reserved.
+
+NV-UV Play is free for personal and non-commercial use. This includes
+private use, hobbyist streaming, and any kind of non-commercial
+activity.
+
+Experts and technically skilled users are explicitly welcome to use
+NV-UV Play in any way they like — including hands-on tuning on their
+own or other people's machines, helping friends or community members
+configure their GPUs, fine-tuning systems for enthusiasts, or any
+similar advanced use. The only line that matters is the line between
+"help with the tool" and "charge money for the tool's output".
+
+In short:
+
+* Using NV-UV Play to tune your own GPU, a friend's GPU, a family
+  member's GPU, or someone's machine you're helping out with — fine.
+* Showing someone how to use NV-UV Play in a workshop, on a streaming
+  channel, in a Discord call, or anywhere else — fine.
+* Selling tuning services where NV-UV Play does the actual work, or
+  charging customers specifically for results produced with NV-UV Play
+  — that's commercial use, please get in touch.
+
+
+Media coverage and content creation
+
+Content creators, streamers, reviewers, journalists, and YouTubers —
+both hobbyist and professional — are explicitly welcome to:
+
+* Use NV-UV Play in videos, streams, articles, reviews, comparisons,
+  benchmark tests, and tutorials.
+* Show the user interface, demonstrate features, and discuss results.
+* Take screenshots, record gameplay with NV-UV Play active, and share
+  benchmark data.
+* Embed NV-UV Play in performance comparisons, "best of" lists, or
+  recommendation videos.
+
+This use is free of charge and does not require permission, even when
+the content is monetized through ads, sponsorships, memberships,
+Patreon, Super Chats, channel subscriptions, or similar revenue
+streams. The only requirement: please credit "NV-UV Play" by name and,
+where reasonable, link to the official project page.
+
+If you're a press outlet or larger channel and want early access to
+new builds, release notes, or background information, just reach out
+via the contact address below.
+
+
+What you may not do without my permission
+
+* Sell, sublicense, or charge money for NV-UV Play itself.
+* Bundle NV-UV Play with hardware sales, prebuilt systems, or
+  commercial software offerings (OEM deals require a separate
+  commercial license — see below).
+* Offer NV-UV Play as part of a paid tuning service, or charge
+  customers specifically for results produced with NV-UV Play.
+* Redistribute modified copies, or upload NV-UV Play to other
+  download sites, torrent platforms, warez portals, or alternative
+  mirrors without asking.
+* Reverse engineer, decompile, or extract the protected parts of
+  the software.
+* Distribute cracked, patched, or unlocked versions of NV-UV Play.
+* Remove the copyright notice, the "NV-UV Play" name, or the
+  attribution to aufkrawall's Green Curve project.
+
+
+Trademark
+
+The names "NV-UV" and "NV-UV Play", their stylised forms "NV⚡UV" and
+"NV⚡UV Play" with the lightning bolt symbol between the letters, and
+the associated NV-UV logos are trademarks of the author.
+
+
+Privacy
+
+NV-UV Play does not collect, transmit, or share any personal data,
+telemetry, or usage statistics. All operation is local to your
+computer. Crash dumps and log files stay on your machine unless you
+choose to share them in a bug report.
+
+
+NVIDIA
+
+NV-UV Play talks to NVIDIA graphics drivers through the NVIDIA
+Driver API (NVAPI). NVIDIA, GeForce, RTX, Ada, and Blackwell are
+trademarks of NVIDIA Corporation. NV-UV Play is an independent
+project and not affiliated with NVIDIA.
+
+Modifying GPU voltage and frequency settings may affect your
+hardware warranty — please check with your GPU manufacturer.
+
+
+Third-party components
+
+NV-UV Play includes a native bridge (NvApiNative.dll) based on the
+Green Curve project by aufkrawall, used under the MIT License. The
+full attribution is in THIRD-PARTY-NOTICES.txt.
+
+
+Commercial use
+
+If you'd like to bundle NV-UV Play with hardware, integrate it into
+a commercial product, or offer it as a paid tuning service, please
+get in touch and we'll work out a commercial license:
+
+    christian.papaioannou@gmx.de
+
+
+No warranty / use at your own risk
+
+NV-UV Play is currently in Open Alpha status. Bugs, unexpected
+behavior, and breaking changes between versions are expected.
+
+NV-UV Play modifies GPU voltage and frequency settings. Improper
+settings can cause crashes, system instability, or in rare cases
+hardware damage. NV-UV Play is provided "as is", without any
+warranty. You use it at your own risk, and I can't take
+responsibility for damage to your system, your data, or your
+hardware.
+
+
+Termination
+
+If you violate any of these terms, your right to use NV-UV Play
+ends immediately. You must then delete all copies of the software
+from your systems.
+
+
+If you don't agree
+
+If you don't accept these terms, please don't install or use NV-UV
+Play. By using it, you're agreeing to the points above.
+
+
+Governing law
+
+This license is governed by German law, without prejudice to
+mandatory consumer protection rules in the user's country of
+residence. Jurisdiction for disputes is the place of business of
+the author, to the extent permitted by law.
