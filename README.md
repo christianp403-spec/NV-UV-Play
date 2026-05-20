@@ -16,7 +16,7 @@ It is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV
 - **Per-game profiles** with a global fallback, or a tier-defaults editor to retune what each tier means on your card.
 - **Game watcher** — Auto-Apply on launch, Auto-Reset on quit, hot-swap mid-game. Win32 event-driven. Anti-flap cooldown (8 s) and minimum-runtime gate (30 s) keep alt-tab thrash from spamming the GPU. Silent alias-switch for multi-process games (Unreal Engine, Marvel Rivals).
 - **Two apply algorithms** — *Gradient Lock* (ramp below, plateau above, Afterburner-style shape) and *Voltage Lock* (strict per-voltage, flat-tail above). Optional V-Droop Compensation.
-- **Stabilizer** — TDR detection via Windows Event Log. On crash, the lock steps down 50 MHz (default) or raises voltage by 5 mV, your choice. Floors at 1500 MHz / 1050 mV. Resets after clean runs. Per-game persistent.
+- **Stabilizer** — TDR detection via Windows Event Log. On crash, the lock steps down 50 MHz + raises voltage by 10 mV (per default), your choice. Floors at 1500 MHz / 1050 mV. Resets after clean runs. Per-game persistent.
 - **Tray icon** with tier-specific glyph + dynamic tooltip showing current game/tier/voltage/MHz. Toast notifications on every Apply / Reset / Hot-swap / Crash-recovery.
 - **Expert Overrides** (hidden by default) — Power Limit slider 60-100 %, VRAM offset 0-3000 MHz, globally or per-tier.
 - **Game library** — bundled starter database, auto-updates from this repo on startup. Manual add via Browse for .exe.
