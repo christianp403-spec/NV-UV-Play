@@ -74,7 +74,7 @@ The Gradient Lock curve shape is inspired by the curve behavior popularized by A
 ## Community
 
 - **Discord** — coming with the public release
-- **Forum thread** — [PCGH Extreme](https://extreme.pcgameshardware.de/) (with the public release)
+- **Forum thread** — https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/
 - **Issues & feature requests** — [GitHub Issues](https://github.com/christianp403-spec/nv-uv-play/issues)
 
 ---
