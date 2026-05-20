@@ -59,12 +59,6 @@ The library lives in [`games/GameDatabase.json`](games/GameDatabase.json) and up
 
 ---
 
-## License
-
-NV⚡UV Play is **free for personal and non-commercial use**. Content creators, streamers, reviewers, and journalists are explicitly welcome to use, demonstrate, and feature it. Experts and technically skilled users are explicitly welcome to use Play on their own or other people's machines, help friends and community members, and tune systems for enthusiasts.
-Charging money for the tool's output, OEM bundling, and selling tuning services with Play doing the actual work need a separate commercial license. Full terms: [LICENSE](LICENSE)
-
-
 ## Credits
 
 NV⚡UV Play uses [Green Curve](https://github.com/krautmaster/green-curve) by aufkrawall (MIT License) as the foundation for the native NVAPI bridge and the flat-tail technique that powers the Voltage Lock apply path. Without that prior work, Play wouldn't exist in its current form.
