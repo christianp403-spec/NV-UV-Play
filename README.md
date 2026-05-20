@@ -86,3 +86,6 @@ NV⚡UV Play modifies GPU voltage and frequency settings. Wrong settings can cra
 On experimental families (Ampere / Turing) the tiers are unvalidated starting points — expect to dial back to Eco or Balanced if Max isn't stable.
 
 NV⚡UV Play is currently in Open Alpha. Bugs, unexpected behavior, and breaking changes between versions are expected.
+
+## Support the Project
+NV-UV-Play is free. If you find it useful, you can support development via https://www.paypal.com/paypalme/christianpapaioannou
