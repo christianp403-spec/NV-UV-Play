@@ -2,7 +2,7 @@
 
 **Simple game undervolting for NVIDIA GeForce cards. Fire and forget.**
 
-> Open Alpha — Build 1 · v0.1.5-alpha
+> Open Alpha — Build 1 · v0.1.7-alpha
 
 NV⚡UV Play is a lightweight undervolting tool for NVIDIA GeForce GPUs. Pick a tier, hit start, play. The tool watches for your games, applies your chosen voltage/frequency lock when the game starts, resets to stock when you quit. Pre-tuned community tiers cover the common cases; a custom profile per tier lets you dial things in if you want to go further.
 
