@@ -4,9 +4,23 @@ Version 1.0 — Mai 2026
 Build 1 · Open Alpha
 Copyright (c) 2026 Christian Papaioannou. All rights reserved.
 
-NV-UV Play is free for personal and non-commercial use. This includes
-private use, hobbyist streaming, and any kind of non-commercial
-activity.
+NV-UV Play is free for personal and non-commercial use. 
+Content creators, streamers, reviewers, journalists, and YouTubers —
+both hobbyist and professional — are explicitly welcome to:
+
+* Use NV-UV Play in videos, streams, articles, reviews, comparisons,
+  benchmark tests, and tutorials.
+* Show the user interface, demonstrate features, and discuss results.
+* Take screenshots, record gameplay with NV-UV Play active, and share
+  benchmark data.
+* Embed NV-UV Play in performance comparisons, "best of" lists, or
+  recommendation videos.
+
+This use is free of charge and does not require permission, even when
+the content is monetized through ads, sponsorships, memberships,
+Patreon, Super Chats, channel subscriptions, or similar revenue
+streams. The only requirement: please credit "NV-UV Play" by name and,
+where reasonable, link to the official project page.
 
 Experts and technically skilled users are explicitly welcome to use
 NV-UV Play in any way they like — including hands-on tuning on their
@@ -24,26 +38,6 @@ In short:
 * Selling tuning services where NV-UV Play does the actual work, or
   charging customers specifically for results produced with NV-UV Play
   — that's commercial use, please get in touch.
-
-
-Media coverage and content creation
-
-Content creators, streamers, reviewers, journalists, and YouTubers —
-both hobbyist and professional — are explicitly welcome to:
-
-* Use NV-UV Play in videos, streams, articles, reviews, comparisons,
-  benchmark tests, and tutorials.
-* Show the user interface, demonstrate features, and discuss results.
-* Take screenshots, record gameplay with NV-UV Play active, and share
-  benchmark data.
-* Embed NV-UV Play in performance comparisons, "best of" lists, or
-  recommendation videos.
-
-This use is free of charge and does not require permission, even when
-the content is monetized through ads, sponsorships, memberships,
-Patreon, Super Chats, channel subscriptions, or similar revenue
-streams. The only requirement: please credit "NV-UV Play" by name and,
-where reasonable, link to the official project page.
 
 If you're a press outlet or larger channel and want early access to
 new builds, release notes, or background information, just reach out
