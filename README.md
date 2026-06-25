@@ -51,7 +51,7 @@ Download `NV-UV-Play-<version>.exe` from [Releases](https://github.com/christian
 - **RTX 50-series** (Blackwell) — full support, primary test platform, five tiers including MFG.
 - **RTX 40-series** (Ada / Lovelace) — four tiers, (RTX 40-series, Ada Lovelace) 
 - **RTX 30-series** (Ampere) - partially experimental
-- **For Turing (untested)** Voltage Lock recommended (Gradient Lock falls back automatically). Feedback welcome.
+- **RTX 20-series** Turing (untested) - Voltage Lock recommended (Gradient Lock falls back automatically). Feedback welcome.
 - **Mobile / Laptop GPUs**  Not directly supported and not tested by me. You are welcome to try it at your own risk, but expect issues. Notebook support is on the ToDo.
 
 
