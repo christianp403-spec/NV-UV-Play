@@ -61,7 +61,7 @@ The library lives in [`games/GameDatabase.json`](games/GameDatabase.json) and up
 
 ## Credits
 
-NV⚡UV Play uses [Green Curve](https://github.com/krautmaster/green-curve) by aufkrawall (MIT License) as the foundation for the native NVAPI bridge and the flat-tail technique that powers the Voltage Lock apply path. Without that prior work, Play wouldn't exist in its current form.
+NV⚡UV Play uses https://github.com/aufkrawall/green-curve by aufkrawall (MIT License) as the foundation for the native NVAPI bridge and the flat-tail technique that powers the Voltage Lock apply path. Without that prior work, Play wouldn't exist in its current form.
 
 The Gradient Lock curve shape is inspired by the curve behavior popularized by Afterburner. Constants tuned from Ada / Blackwell reference profile analysis.
 
