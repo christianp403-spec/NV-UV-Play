@@ -14,6 +14,7 @@ Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/
 
 - **Profiles and UV Pilot:** six profile slots, shared global and per-game profiles, automatic game detection and per-game exceptions.
 - **Curve editor:** edit individual voltage/frequency points, use Undo/Redo, and adjust power limits and VRAM offsets.
+- **Experimental voltage settings:** optional XBAR/SYS clock and voltage-demand offsets, with live readings and readback verification. Enable them under **Settings → Experimental features**, then open **UV Curve → Expert voltage settings**. They apply globally to the active GPU, including outside games, only after **Apply globally**. Voltage demand is not a fixed rail voltage; hardware/driver support varies. The feature requires explicit risk acknowledgment and can restore the values Play replaced.
 - **UV scanner:** configurable tests, saved results and history, NVIDIA Auto-UV starting points and UV Try community profiles.
 - **DCC:** Automatic clock regulation with per-game learning, plus an experimental NVIDIA Power Efficiency mode.
 - **Enhanced Overlay in v2.0.1:** one settings window for display, readings, layout, colors and saved overlay profiles, with a live preview. Select and move readings in the preview, or start from the existing defaults.
