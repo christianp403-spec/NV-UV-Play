@@ -4,9 +4,9 @@
 
 NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay.
 
-**Current release: [v2.0.1 Alpha — Enhanced Overlay](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.1).** This is an early development prerelease for testing.
+**Current release: [v2.0.2 Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.2).** This is an early development prerelease for testing.
 
-**Coming in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play. This feature is not included in the v2.0.1 download yet.
+**New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play.
 
 Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
 
@@ -30,7 +30,7 @@ For a new installation:
 2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
 3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
 
-If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. The v2.0.1 release also serves as a test of updating in place from v2.0 while preserving profiles and settings. A manual download of the full portable ZIP remains available.
+If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.0.2 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available.
 
 **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
@@ -39,7 +39,7 @@ If your Play version already includes the updater, use **Updates → Check now �
 - **Windows 11**, with current Windows updates and an up-to-date NVIDIA driver.
 - **NVIDIA desktop GeForce RTX 20-, 30-, 40- or 50-series GPU.** The current Kilby test release has been tested by the developer only on Blackwell / RTX 50-series. Other supported desktop families still need validation; Ampere and Turing remain experimental.
 - **Notebooks are excluded from this test release.**
-- **Multi-GPU in v2.0.2 Alpha:** profiles, readings and DCC Automatic use the selected NVIDIA GPU. Choose the card used by your game; Play does not change the game's or Lossless Scaling's GPU assignment. If the saved card is unavailable, Play requires a new selection instead of silently switching cards. The scanner and NVIDIA Experimental currently require a single NVIDIA GPU. Multi-GPU hardware validation is still pending; the public v2.0.1 build has no GPU selector.
+- **Multi-GPU in v2.0.2 Alpha:** profiles, readings and DCC Automatic use the selected NVIDIA GPU. Choose the card used by your game; Play does not change the game's or Lossless Scaling's GPU assignment. If the saved card is unavailable, Play requires a new selection instead of silently switching cards. The scanner and NVIDIA Experimental currently require a single NVIDIA GPU. Multi-GPU hardware validation is still pending.
 
 ## Using DCC
 
@@ -55,7 +55,7 @@ The regular overlay supports desktop and windowed/borderless game display, with 
 
 An **experimental exclusive-fullscreen renderer** is available for DX11/DX12 and supported Vulkan modes. It is **off by default** and requires explicit warning acknowledgment: it may cause **anti-cheat bans or game crashes**. It currently supports SDR; Vulkan requires preparation and a game restart.
 
-Some antivirus products flag the bundled attach helpers. See the [v2.0 release notes](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.0) for the published scan results and limitations. Those results do not cover the new v2.0.1 main EXE. Play's main functions and regular desktop/windowed/borderless overlay do not require the attach helpers.
+Some antivirus products flag the bundled attach helpers. The [v2.0.2 release notes](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.2) link to VirusTotal reports for the exact main EXE and both attach helpers and explain their limitations. Those three reports do not cover the renderer DLLs. Play's main functions and regular desktop/windowed/borderless overlay do not require the attach helpers.
 
 ## Game library
 
