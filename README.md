@@ -4,8 +4,9 @@
 
 NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay.
 
-**Current release: [v2.0.1 Alpha — Enhanced Overlay](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.1).
-** This is an early development prerelease for testing-
+**Current release: [v2.0.1 Alpha — Enhanced Overlay](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.1).** This is an early development prerelease for testing.
+
+**Coming in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play. This feature is not included in the v2.0.1 download yet.
 
 Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
 
@@ -37,7 +38,7 @@ If your Play version already includes the updater, use **Updates → Check now �
 - **Windows 11**, with current Windows updates and an up-to-date NVIDIA driver.
 - **NVIDIA desktop GeForce RTX 20-, 30-, 40- or 50-series GPU.** The current Kilby test release has been tested by the developer only on Blackwell / RTX 50-series. Other supported desktop families still need validation; Ampere and Turing remain experimental.
 - **Notebooks are excluded from this test release.**
-- **Multiple NVIDIA GPUs are not currently supported.** Play has no GPU selector, and DCC requires exactly one NVIDIA GPU. Do not assume that Play follows the GPU chosen by a game or by Lossless Scaling.
+- **Multi-GPU in v2.0.2 Alpha:** profiles, readings and DCC Automatic use the selected NVIDIA GPU. Choose the card used by your game; Play does not change the game's or Lossless Scaling's GPU assignment. If the saved card is unavailable, Play requires a new selection instead of silently switching cards. The scanner and NVIDIA Experimental currently require a single NVIDIA GPU. Multi-GPU hardware validation is still pending; the public v2.0.1 build has no GPU selector.
 
 ## Using DCC
 
