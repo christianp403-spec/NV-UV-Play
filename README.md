@@ -1,85 +1,88 @@
-# NV⚡UV Play
+# NV⚡UV Play 2
 
-**Simple game undervolting for NVIDIA GeForce cards. Fire and forget.**
+**Kilby DEV Alpha — NVIDIA GPU undervolting, game profiles, DCC and a customizable overlay.**
 
-NV⚡UV Play is a lightweight undervolting tool for NVIDIA GeForce GPUs. Pick a tier, hit start, play. The tool watches for your games, applies your chosen voltage/frequency lock when the game starts, resets to stock when you quit. Pre-tuned community tiers cover the common cases; a custom profile per tier lets you dial things in if you want to go further.
+NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay.
 
-It is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV), the full-featured undervolting and stress-testing toolkit. 
+**Current release: [v2.0.1 Alpha — Enhanced Overlay](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.1).** This is an early development prerelease for testing, not a stable release.
 
----
+Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
 
-## What it does
+## What's in version 2
 
-- **Five tiers on Blackwell** (Eco · MFG · Balanced · Performance · Max), **four on Ada / Ampere / Turing** (no MFG tier). Community-tuned presets, plus one custom profile slot per tier.
-- **Per-game profiles** with a global fallback, or a tier-defaults editor to retune what each tier means on your card.
-- **Game watcher** — Auto-Apply on launch, Auto-Reset on quit, hot-swap mid-game. Win32 event-driven. Anti-flap cooldown (8 s) and minimum-runtime gate (30 s) keep alt-tab thrash from spamming the GPU. Silent alias-switch for multi-process games (Unreal Engine, Marvel Rivals).
-- **Two apply algorithms** — *Gradient Lock* (ramp below, plateau above, Afterburner-style shape) and *Voltage Lock* (strict per-voltage, flat-tail above). Optional V-Droop Compensation.
-- **Stabilizer** — TDR detection via Windows Event Log. On crash, the lock steps down 50 MHz + raises voltage by 10 mV (per default), your choice. Floors at 1500 MHz / 1050 mV. Resets after clean runs. Per-game persistent.
-- **Tray icon** with tier-specific glyph + dynamic tooltip showing current game/tier/voltage/MHz. Toast notifications on every Apply / Reset / Hot-swap / Crash-recovery.
-- **Expert Overrides** (hidden by default) — Power Limit slider 60-100 %, VRAM offset 0-3000 MHz, globally or per-tier.
-- **Game library** — bundled starter database, auto-updates from this repo on startup. Manual add via Browse for .exe.
-- **Direct NVAPI** — no MSI Afterburner installation required. Optional autostart at logon via Task Scheduler.
+- **Profiles and UV Pilot:** six profile slots, shared global and per-game profiles, automatic game detection and per-game exceptions.
+- **Curve editor:** edit individual voltage/frequency points, use Undo/Redo, and adjust power limits and VRAM offsets.
+- **UV scanner:** configurable tests, saved results and history, NVIDIA Auto-UV starting points and UV Try community profiles.
+- **DCC:** Automatic clock regulation with per-game learning, plus an experimental NVIDIA Power Efficiency mode.
+- **Enhanced Overlay in v2.0.1:** one settings window for display, readings, layout, colors and saved overlay profiles, with a live preview. Select and move readings in the preview, or start from the existing defaults.
+- **Performance readings:** FPS, 1% lows, frame times, GPU usage, voltage, power, clocks and temperatures, plus available CPU and RAM readings. Sensor availability depends on the hardware; some readings require optional PawnIO setup.
+- **Stabilizer and Smart Hz:** profile corrections after detected driver crashes and automatic display refresh-rate switching.
+- **Game library, diagnostics and updates:** game database updates, game requests, diagnostic exports and optional report uploads, plus a signed in-app updater.
 
-## What it doesn't do
+## Install or update
 
-- **No telemetry, no analytics, no network calls** except the optional game-library update check against this repo.
-- **No real-time monitoring overlay.** For that, use one of:
-  - [MSI Afterburner + RivaTuner Statistics Server](https://www.guru3d.com/download/msi-afterburner-beta-download/) — full overlay customization
-  - [GPU-Z](https://www.techpowerup.com/download/gpu-z/) — quick sensor view and logging
-  - [HWiNFO](https://www.hwinfo.com/) — deep telemetry, RTSS integration
-  - **NVIDIA App** overlay — built-in to the GeForce driver
-- **No per-point VF curve editor.** Play works at the tier level. For full curve editing, use [Green Curve](https://github.com/krautmaster/green-curve) by aufkrawall or [MSI Afterburner](https://www.guru3d.com/download/msi-afterburner-beta-download/). NV-UV main continues to exist alongside Play with its full scanner and stress-test suite.
-- **No automatic stability scanner.** Play applies what you ask for; it doesn't loop to find your card's limits.
+For a new installation:
 
----
+1. Download the **portable ZIP** from [Releases](https://github.com/christianp403-spec/NV-UV-Play/releases).
+2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
+3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
 
-## How to install
+If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. The v2.0.1 release also serves as a test of updating in place from v2.0 while preserving profiles and settings. A manual download of the full portable ZIP remains available.
 
-Download `NV-UV-Play-<version>.exe` from [Releases](https://github.com/christianp403-spec/nv-uv-play/releases), put it anywhere, run it. No installer, no runtime to install.
+**Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
-## Requirements
+## Requirements and hardware support
 
-- **Windows 11** (latest cumulative update)
-- **.NET 10 Runtime** — bundled
-- **Latest NVIDIA Game Ready driver**
-- **NVIDIA GeForce GPU** — see below
+- **Windows 11**, with current Windows updates and an up-to-date NVIDIA driver.
+- **NVIDIA desktop GeForce RTX 20-, 30-, 40- or 50-series GPU.** The current Kilby test release has been tested by the developer only on Blackwell / RTX 50-series. Other supported desktop families still need validation; Ampere and Turing remain experimental.
+- **Notebooks are excluded from this test release.**
+- **Multiple NVIDIA GPUs are not currently supported.** Play has no GPU selector, and DCC requires exactly one NVIDIA GPU. Do not assume that Play follows the GPU chosen by a game or by Lossless Scaling.
 
-## Supported hardware
+## Using DCC
 
-- **RTX 50-series** (Blackwell) — full support, primary test platform, five tiers including MFG.
-- **RTX 40-series** (Ada / Lovelace) — four tiers, (RTX 40-series, Ada Lovelace) 
-- **RTX 30-series** (Ampere) - partially experimental
-- **RTX 20-series** Turing (untested) - Voltage Lock recommended (Gradient Lock falls back automatically). Feedback welcome.
-- **Mobile / Laptop GPUs**  Not directly supported and not tested by me. You are welcome to try it at your own risk, but expect issues. Notebook support is on the ToDo.
+**DCC Automatic** adjusts GPU clocks for a detected game and saves its learning per game. Its status shows the current learning or regulation stage.
 
+**NVIDIA Experimental** requests the driver's Power Efficiency mode. Its efficiency target is separate from an FPS limiter and is not a guaranteed frame rate. Configure this mode before launching a game; restart the game after changing it.
 
-## Supported games
+The optional **NVIDIA Max Frame Rate** and **Global NVIDIA VSync** controls apply driver settings. If you already manage frame limiting or V-Sync through the game or NVIDIA App, you do not need to enable those controls again in Play.
 
-The library lives in [`games/GameDatabase.json`](games/GameDatabase.json) and updates from this repo automatically on startup. If a game you play is missing, open an Issue or PR with the executable name and a Steam/store link. You can also add games manually inside Play via Add Game → Browse for .exe.
+## Overlay modes
 
----
+The regular overlay supports desktop and windowed/borderless game display, with configurable readings, layout and colors.
+
+An **experimental exclusive-fullscreen renderer** is available for DX11/DX12 and supported Vulkan modes. It is **off by default** and requires explicit warning acknowledgment: it may cause **anti-cheat bans or game crashes**. It currently supports SDR; Vulkan requires preparation and a game restart.
+
+Some antivirus products flag the bundled attach helpers. See the [v2.0 release notes](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.0) for the published scan results and limitations. Those results do not cover the new v2.0.1 main EXE. Play's main functions and regular desktop/windowed/borderless overlay do not require the attach helpers.
+
+## Game library
+
+The public library lives in [`games/GameDatabase.json`](games/GameDatabase.json). Play includes a bundled copy and can check this repository for updates.
+
+Add a missing game inside Play by browsing for its executable, use **Game Library → Request a game**, or open a [GitHub issue](https://github.com/christianp403-spec/NV-UV-Play/issues) with the executable name and a Steam/store link. For games with a launcher, include the actual game executable as well.
+
+## Feedback and diagnostics
+
+Use **Settings → Report a problem** to export diagnostics or submit a report. Include your Play version, GPU, driver version, affected game and steps to reproduce the issue. Review the report before sending it.
+
+For a DCC issue, enable **performance logging before launching the game** and include the generated logs and approximate test time. If no performance log is created, mention that too.
+
+Game-library and application update checks access GitHub. Game requests and diagnostic uploads are separate, user-initiated actions.
 
 ## Credits
 
-NV⚡UV Play uses **Greencurve** https://github.com/aufkrawall by aufkrawall (MIT License) as the foundation for the native NVAPI bridge and the flat-tail technique that powers the Voltage Lock apply path. Without that prior work, Play wouldn't exist in its current form.
-
-The Gradient Lock curve shape is inspired by the curve behavior popularized by Afterburner. Constants tuned from Ada / Blackwell reference profile analysis.
+Play uses **Greencurve by [aufkrawall](https://github.com/aufkrawall)** (MIT License) as the foundation for the native NVAPI bridge and the flat-tail technique used by Voltage Lock. The Gradient Lock curve shape is inspired by the curve behavior popularized by Afterburner. Required third-party notices are included with the portable release.
 
 ## Community
 
-- **Discord** — coming with the public release
-- **Forum thread** — https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/
-- **Issues & feature requests** — [GitHub Issues](https://github.com/christianp403-spec/nv-uv-play/issues)
+- [Forum thread](https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/)
+- [Bug reports and feature requests](https://github.com/christianp403-spec/NV-UV-Play/issues)
 
----
+## Before testing
 
-## A word on safety
+Play changes GPU voltage, frequency and related settings. Unstable settings can crash games or the system. Presets and scanner results are starting points, not a guarantee of stability on every card. Experimental features have additional notices in the application.
 
-NV⚡UV Play modifies GPU voltage and frequency settings. Wrong settings can crash games, freeze your desktop, or in rare cases destabilize the system. Every silicon sample is different — what runs Eco-stable on one card may need Balanced on another. The Stabilizer catches most crashes automatically, but ultimately you're driving. Use at your own risk.
+Kilby is a development alpha. Bugs and changes between versions are expected. Thank you for your feedback, bug reports and diagnostic data!
 
-On experimental families (Ampere / Turing) the tiers are unvalidated starting points — expect to dial back to Eco or Balanced if Max isn't stable.
+## Support the project
 
-NV⚡UV Play is currently in Open Alpha. Bugs, unexpected behavior, and breaking changes between versions are expected.
-
-## Support the Project
-NV-UV-Play is free. If you find it useful, you can support development via https://www.paypal.com/paypalme/christianpapaioannou
+NV-UV Play is free. If you find it useful, you can [support development](https://www.paypal.com/paypalme/christianpapaioannou).
