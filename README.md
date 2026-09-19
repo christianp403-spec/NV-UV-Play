@@ -4,7 +4,8 @@
 
 NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay.
 
-**Current release: [v2.0.1 Alpha — Enhanced Overlay](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.1).** This is an early development prerelease for testing, not a stable release.
+**Current release: [v2.0.1 Alpha — Enhanced Overlay](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.1).
+** This is an early development prerelease for testing-
 
 Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
 
