@@ -1,4 +1,4 @@
-# NV⚡UV Play Version 2
+# NV⚡UV Play V2
 
 **Kilby DEV Alpha — NVIDIA GPU undervolting, game profiles, DCC and a customizable overlay.**
 
