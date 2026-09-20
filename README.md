@@ -4,7 +4,7 @@
 
 NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay.
 
-**Current release: [v2.0.4 Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.4).** This is an Alpha prerelease.
+**Current release: [v2.0.5 Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.5).** This is an Alpha prerelease.
 
 **New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play.
 
@@ -30,7 +30,7 @@ For a new installation:
 2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
 3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
 
-If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.0.4 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available.
+If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.0.5 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available.
 
 **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
