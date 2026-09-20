@@ -1,10 +1,10 @@
 # NV⚡UV Play V2
 
-**Kilby DEV Alpha — NVIDIA GPU undervolting, game profiles, DCC and a customizable overlay.**
+**Kilby Alpha — NVIDIA GPU undervolting, game profiles, DCC and a customizable overlay.**
 
 NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay.
 
-**Current release: [v2.0.3 Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.3).** This is an early development prerelease for testing.
+**Current release: [v2.0.4 Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.4).** This is an Alpha prerelease.
 
 **New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play.
 
@@ -30,15 +30,15 @@ For a new installation:
 2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
 3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
 
-If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.0.3 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available.
+If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.0.4 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available.
 
 **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
 ## Requirements and hardware support
 
 - **Windows 11**, with current Windows updates and an up-to-date NVIDIA driver.
-- **NVIDIA desktop GeForce RTX 20-, 30-, 40- or 50-series GPU.** The current Kilby test release has been tested by the developer only on Blackwell / RTX 50-series. Other supported desktop families still need validation; Ampere and Turing remain experimental.
-- **Notebooks are excluded from this test release.**
+- **NVIDIA desktop GeForce RTX 20-, 30-, 40- or 50-series GPU.** The current Kilby Alpha has been tested by the developer only on Blackwell / RTX 50-series. Other supported desktop families still need validation; Ampere and Turing remain experimental.
+- **Notebooks are not supported.**
 - **Multi-GPU in v2.0.2 Alpha:** profiles, readings and DCC Automatic use the selected NVIDIA GPU. Choose the card used by your game; Play does not change the game's or Lossless Scaling's GPU assignment. If the saved card is unavailable, Play requires a new selection instead of silently switching cards. The scanner and NVIDIA Experimental currently require a single NVIDIA GPU. Multi-GPU hardware validation is still pending.
 
 ## Using DCC
@@ -80,11 +80,11 @@ Play uses **Greencurve by [aufkrawall](https://github.com/aufkrawall)** (MIT Lic
 - [Forum thread](https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/)
 - [Bug reports and feature requests](https://github.com/christianp403-spec/NV-UV-Play/issues)
 
-## Before testing
+## Before use
 
 Play changes GPU voltage, frequency and related settings. Unstable settings can crash games or the system. Presets and scanner results are starting points, not a guarantee of stability on every card. Experimental features have additional notices in the application.
 
-Kilby is a development alpha. Bugs and changes between versions are expected. Thank you for your feedback, bug reports and diagnostic data!
+Kilby is in Alpha. Bugs and changes between versions are expected. Thank you for your feedback, bug reports and diagnostic data!
 
 ## Support the project
 
