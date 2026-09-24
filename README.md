@@ -4,7 +4,7 @@
 
 NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay.
 
-**Current release: [v2.0.6 Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.6).** This is an Alpha prerelease.
+**Current release: [v2.0.7 Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.7).** This is an Alpha prerelease.
 
 **New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play.
 
@@ -14,7 +14,8 @@ Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/
 
 - **Profiles and UV Pilot:** six profile slots, shared global and per-game profiles, automatic game detection and per-game exceptions.
 - **Curve editor:** edit individual voltage/frequency points, use Undo/Redo, and adjust power limits and VRAM offsets.
-- **Experimental voltage settings:** optional XBAR/SYS clock and voltage-demand offsets, with live readings and readback verification. Enable them under **Settings → Experimental features**, then open **UV Curve → Expert voltage settings**. They apply globally to the active GPU, including outside games, only after **Apply globally**. Voltage demand is not a fixed rail voltage; hardware/driver support varies. The feature requires explicit risk acknowledgment and can restore the values Play replaced.
+- **Experimental voltage settings:** XBAR/SYS clock and voltage-demand offsets, video clock, Core/Fabric voltage limits and Voltage Boost, with live telemetry. Compatible GPU/driver support is required; new controls still need hardware validation. Enable them under **Settings → Experimental features**, then open **UV Curve → Expert voltage settings**. They apply globally to the active GPU, including outside games, only after **Apply globally**. Voltage demand is not a fixed rail voltage; hardware/driver support varies. The feature requires explicit risk acknowledgment and can restore the values Play replaced.
+- **Fan control:** GPU automatic mode, fixed speed or custom curves per reported channel, with saved profiles and optional activation at startup. Open **Fan curve** in the main window. Compatible driver support is required; hardware write validation is pending.
 - **UV scanner:** configurable tests, saved results and history, NVIDIA Auto-UV starting points and UV Try community profiles.
 - **DCC:** Automatic clock regulation with per-game learning, plus an experimental NVIDIA Power Efficiency mode.
 - **Enhanced Overlay in v2.0.1:** one settings window for display, readings, layout, colors and saved overlay profiles, with a live preview. Select and move readings in the preview, or start from the existing defaults.
@@ -30,7 +31,7 @@ For a new installation:
 2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
 3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
 
-If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.0.6 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available.
+If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.0.7 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available.
 
 **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
@@ -53,9 +54,7 @@ The optional **NVIDIA Max Frame Rate** and **Global NVIDIA VSync** controls appl
 
 The regular overlay supports desktop and windowed/borderless game display, with configurable readings, layout and colors.
 
-An **experimental exclusive-fullscreen renderer** is available for DX11/DX12 and supported Vulkan modes. It is **off by default** and requires explicit warning acknowledgment: it may cause **anti-cheat bans or game crashes**. It currently supports SDR; Vulkan requires preparation and a game restart.
-
-Some antivirus products flag the bundled attach helpers. The [v2.0.3 release notes](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.3) link to VirusTotal reports for the exact main EXE and both attach helpers and explain their limitations. Those three reports do not cover the renderer DLLs. Play's main functions and regular desktop/windowed/borderless overlay do not require the attach helpers.
+**Exclusive fullscreen is no longer supported as of v2.0.7.** The experimental renderers and attach helpers have been removed.
 
 ## Game library
 
