@@ -58,7 +58,7 @@ The regular overlay supports desktop and windowed/borderless game display, with 
 
 ## Game library
 
-The public library lives in [`games/GameDatabase.json`](games/GameDatabase.json). Play includes a bundled copy and can check this repository for updates.
+The shared game library for NV-UV and Play lives in [`nv-uv-docs/games/GameDatabase.json`](https://github.com/christianp403-spec/nv-uv-docs/blob/main/games/GameDatabase.json). Play includes a bundled copy for offline use and checks that shared source for game-library updates.
 
 Add a missing game inside Play by browsing for its executable, use **Game Library → Request a game**, or open a [GitHub issue](https://github.com/christianp403-spec/NV-UV-Play/issues) with the executable name and a Steam/store link. For games with a launcher, include the actual game executable as well.
 
@@ -81,7 +81,9 @@ Play uses **Greencurve by [aufkrawall](https://github.com/aufkrawall)** (MIT Lic
 
 ## Before use
 
-Play changes GPU voltage, frequency and related settings. Unstable settings can crash games or the system. Presets and scanner results are starting points, not a guarantee of stability on every card. Experimental features have additional notices in the application.
+Play changes GPU voltage, clocks, power limits, fan behavior and related settings. Tuning and scanner workloads can cause crashes, instability, data loss or permanent hardware damage. Presets, community profiles and scanner results do not guarantee safety or stability on a particular system.
+
+**Experimental features are used at your own risk.** This includes **Expert voltage settings** and, separately, DCC's **NVIDIA Experimental (Power Efficiency Mode)**. These features are not validated on every GPU or driver; a successful test or restore option does not guarantee safety or recovery. The [Play license](LICENSE.txt) sets out the risk notices and liability exclusions and limitations, including the mandatory legal exceptions.
 
 Kilby is in Alpha. Bugs and changes between versions are expected. Thank you for your feedback, bug reports and diagnostic data!
 
