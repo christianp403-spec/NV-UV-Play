@@ -83,7 +83,11 @@ Play uses **Greencurve by [aufkrawall](https://github.com/aufkrawall)** (MIT Lic
 
 Play changes GPU voltage, clocks, power limits, fan behavior and related settings. Tuning and scanner workloads can cause crashes, instability, data loss or permanent hardware damage. Presets, community profiles and scanner results do not guarantee safety or stability on a particular system.
 
-**Experimental features are used at your own risk.** This includes **Expert voltage settings** and, separately, DCC's **NVIDIA Experimental (Power Efficiency Mode)**. These features are not validated on every GPU or driver; a successful test or restore option does not guarantee safety or recovery. The [Play license](LICENSE.txt) sets out the risk notices and liability exclusions and limitations, including the mandatory legal exceptions.
+**Expert voltage settings are used at your own risk.** These voltage controls are not validated on every GPU or driver and can cause permanent hardware damage or data loss; a successful test or restore option does not guarantee safety or recovery.
+
+**DCC Automatic** and DCC's **NVIDIA Experimental (Power Efficiency Mode)** are separate from those voltage controls. Depending on GPU, driver and game compatibility, DCC can cause instability, driver resets or unexpected performance and power consumption. A particular frame rate or energy saving is not guaranteed.
+
+The [Play license](LICENSE.txt) sets out the risk notices and liability exclusions and limitations, including the mandatory legal exceptions.
 
 Kilby is in Alpha. Bugs and changes between versions are expected. Thank you for your feedback, bug reports and diagnostic data!
 

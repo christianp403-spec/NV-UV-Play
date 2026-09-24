@@ -168,7 +168,7 @@ energy savings or a particular tuning result is given. Mandatory statutory
 rights, including any applicable rights concerning defects, remain intact.
 
 GPU tuning, voltage/frequency curves, power limits, VRAM offsets, fan control,
-automatic profile application, DCC and scanner workloads can cause driver
+automatic profile application and scanner workloads can cause driver
 resets, black screens, crashes, instability, excessive temperatures, data
 loss or permanent hardware damage. Presets, community profiles, scanner
 results, monitoring values and recovery features do not guarantee safe
@@ -178,26 +178,34 @@ and keeping backups of important data. This does not alter the author's
 liability under the provisions below.
 
 
-Experimental settings — use at your own risk
--------------------------------------------
+DCC
+---
 
-Experimental controls have not been validated on every GPU or driver.
-In particular, "Expert voltage settings" can change XBAR/SYS clocks and
+DCC Automatic adjusts GPU clock targets through NVIDIA's driver controls.
+DCC's "NVIDIA Experimental" mode (Power Efficiency Mode) requests a separate
+driver efficiency mode. These functions are distinct from "Expert voltage
+settings". Their availability and behavior depend on the GPU, driver and game.
+Compatibility problems can cause instability, driver resets, crashes or
+unexpected performance and power consumption. A particular frame rate or
+energy saving is not guaranteed. The general liability provisions below apply.
+
+
+Experimental voltage settings — use at your own risk
+---------------------------------------------------
+
+The "Expert voltage settings" controls have not been validated on every GPU
+or driver. They can change XBAR/SYS clocks and
 voltage-demand offsets, video clock, Core/Fabric voltage limits and Voltage
 Boost where supported. These settings apply globally to the selected GPU,
 including outside games. Voltage demand is not a guarantee of a fixed
 physical voltage. Enabling access alone applies no tuning; applying values
 requires the separate "Apply globally" action.
 
-DCC's "NVIDIA Experimental" mode (Power Efficiency Mode) is a separate
-experimental feature from "Expert voltage settings". Both are covered by
-these risk and liability provisions.
-
-USE EXPERIMENTAL FEATURES AT YOUR OWN RISK. They can cause instability,
+USE EXPERIMENTAL VOLTAGE SETTINGS AT YOUR OWN RISK. They can cause instability,
 data loss and permanent hardware damage. A displayed value, accepted setting,
 successful test or available restore function is not a guarantee of safety
 or recovery. The author provides no voluntary guarantee against damage or
-loss caused by experimental settings. The liability provisions below apply
+loss caused by these voltage settings. The liability provisions below apply
 to these features in full.
 
 
