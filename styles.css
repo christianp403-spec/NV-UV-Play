@@ -46,6 +46,11 @@ dialog{width:min(1240px,calc(100% - 40px));max-height:calc(100dvh - 40px);paddin
 @media(max-width:680px){.header-actions{gap:8px}.language-switch{font-size:11px}.language-switch a,.language-switch span{padding:8px 5px}}
 
 /* Separate pages share navigation and retain the original interactive captures. */
+.site-footer{flex-wrap:wrap}
+.project-contact{flex-basis:100%;min-width:0;border-top:1px solid var(--line);padding-top:16px}
+.site-footer .project-contact p{font-size:12px;line-height:1.7;margin:0;color:var(--muted)}
+.project-contact a{overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
+.project-contact a:hover{color:var(--accent)}
 .site-header nav a{min-height:44px;display:flex;align-items:center;border-bottom:2px solid transparent}
 .site-header nav a[aria-current="page"]{color:var(--accent);border-color:var(--accent)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px 26px;padding-top:26px;font-size:13px}
