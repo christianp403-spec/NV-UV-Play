@@ -407,11 +407,55 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Zero Fan · aktuell nicht verfügbar",
-        "Ein vollständiger Lüfterstillstand wird aktuell noch nicht unterstützt. Die Lüftersteuerung wird weiter verbessert; Zero Fan ist deshalb noch keine verfügbare Funktion."
+        "Ein eigener Zero-Fan-Modus für die manuelle Lüftersteuerung wird noch nicht unterstützt. GPU automatic überlässt das Verhalten der Karte, einschließlich eines von ihr unterstützten Lüfterstopps."
       ],
       [
         "Apply & save",
         "Übernimmt und speichert die gewählten Lüftereinstellungen. Das bloße Bearbeiten einer Kurve oder Laden eines Profils aktiviert diese Einstellungen noch nicht."
+      ],
+      [
+        "Profil auswählen",
+        "Lädt ein gespeichertes Lüfterprofil zum Bearbeiten. Das Laden allein ändert die laufende Lüftersteuerung nicht."
+      ],
+      [
+        "Save",
+        "Speichert Änderungen im gewählten Lüfterprofil. Die laufende Steuerung bleibt unverändert."
+      ],
+      [
+        "Save as new…",
+        "Speichert die aktuellen Einstellungen als eigenes benanntes Lüfterprofil."
+      ],
+      [
+        "More…",
+        "Öffnet die Aktionen zum Umbenennen oder Löschen des gewählten Lüfterprofils."
+      ],
+      [
+        "Activate at Play start",
+        "Aktiviert beim nächsten Play-Start das ausgewählte gespeicherte Lüfterprofil. Offene Änderungen vorher speichern."
+      ],
+      [
+        "Hysteresis",
+        "Legt fest, um wie viele Grad die Temperatur seit der letzten Drehzahländerung fallen muss, bevor die Lüfter langsamer werden. Das vermeidet häufiges Hin- und Herschalten. Höhere Drehzahlen werden sofort angefordert."
+      ],
+      [
+        "Minimum hold",
+        "Mindestzeit vor dem Absenken der Lüfterdrehzahl. Bei einer Kurve müssen sowohl diese Zeit als auch die eingestellte Temperaturhysterese erfüllt sein."
+      ],
+      [
+        "Kurvenpunkte",
+        "Ordnet Temperaturen Lüfterwerte zu. Klicke einen Punkt an, passe °C und Prozent an oder verschiebe ihn. Plus und Minus ergänzen beziehungsweise entfernen Punkte im Entwurf."
+      ],
+      [
+        "GPU automatic · all",
+        "Gibt alle erkannten Lüfterkanäle an die automatische GPU-Regelung zurück. Gespeicherte Profile bleiben erhalten."
+      ],
+      [
+        "Discard edits",
+        "Verwirft die ungespeicherten Änderungen und lädt das gespeicherte Profil erneut. Die laufende Lüftersteuerung bleibt unverändert."
+      ],
+      [
+        "RPM und Running",
+        "Zeigt die gemessene Drehzahl und den laufenden Modus. Die darunter ausgewählten Modi können noch ein nicht angewendeter Entwurf sein."
       ]
     ]
   },
@@ -474,9 +518,9 @@ window.PLAY_GUIDE_DE = {
     "scenario": "Undervolting bedeutet oft: ausprobieren, spielen, nachjustieren. Erkennt Play einen Treiberabsturz, kann Stabilizer den Takt schrittweise senken, die Spannung anheben oder beides kombinieren. Das hilft dir beim Weg zu einem stabilen Profil, für einzelne Spiele und für das globale Profil. Welche Strategie und Grenzen gelten, bestimmst du."
   },
   "expert": {
-    "purpose": "Expert voltage settings bietet zusätzliche experimentelle Takt- und Spannungsparameter für unterstützte GPUs.",
+    "purpose": "Expert voltage settings ergänzt dein UV-Profil um experimentelle Takt- und Spannungsparameter. Seit Play v2.0.9 gehören diese Werte zum jeweiligen Profil.",
     "benefit": "Erfahrene Nutzer erhalten feinere Eingriffsmöglichkeiten über die normale UV-Kurve hinaus. Für den schnellen Einstieg mit Community-Profilen ist dieser Bereich nicht erforderlich.",
-    "how": "Zuerst Settings → Experimental features öffnen und den Hinweis lesen. Danach über UV Curve → Expert voltage settings aufrufen.",
+    "how": "Nach der Freigabe unter Settings → Experimental features öffnest du UV Curve → Expert voltage settings. Save profile speichert den Entwurf. Apply & save profile aktiviert und speichert das gesamte Profil einschließlich Kurve, Power limit, VRAM und Expert-Werten.",
     "limit": "Kann Instabilität, Datenverlust und dauerhafte Hardware-Schäden verursachen. Hardware- und Treiberunterstützung sind nicht überall validiert. Ein Restore ist keine Wiederherstellungsgarantie.",
     "controls": [
       [
@@ -488,16 +532,64 @@ window.PLAY_GUIDE_DE = {
         "Weitere hardwareabhängige Expertenparameter. Verfügbarkeit und Wirkung unterscheiden sich je nach GPU und Treiber."
       ],
       [
-        "Apply globally",
-        "Wendet die Werte auf die aktive GPU an, auch außerhalb eines Spiels. Das unterscheidet sich von einer nur auf ein Spiel beschränkten Wirkung."
+        "Apply & save profile",
+        "Wendet das gesamte ausgewählte Profil mit Kurve, Power limit, VRAM und Expert-Werten an und speichert es. Die Werte gelten, solange dieses Profil aktiv ist, unabhängig davon, ob es global oder durch UV Pilot gewählt wurde."
       ],
       [
-        "Readback / Restore",
-        "Rücklesen hilft, den gemeldeten Zustand zu prüfen. Restore versucht die von Play ersetzten Werte wiederherzustellen. Beides ersetzt keine Hardwarevalidierung."
+        "Live readings / Remove from profile",
+        "Live readings zeigt aktuelle Messwerte, ohne deine Eingabefelder zu überschreiben. Remove from profile entfernt Expert-Werte zunächst aus dem Entwurf; erst das Anwenden des Profils gibt die bisherigen Anpassungen frei."
       ],
       [
         "Abgrenzung zu DCC",
         "DCC NVIDIA Experimental ist der Power Efficiency Mode. Er ist nicht dieser experimentelle Spannungsbereich."
+      ],
+      [
+        "Save profile",
+        "Speichert das Profil mit den Expert-Werten, ohne die GPU-Einstellungen sofort zu ändern."
+      ],
+      [
+        "Profilwechsel",
+        "Beim Wechsel gelten die Expert-Werte des neuen Profils. Ein Profil ohne Expert-Werte gibt die vorherigen Anpassungen auf die von Play zuvor erfassten Werte zurück. Ein Offset von null ist kein Werksreset."
+      ],
+      [
+        "More…",
+        "Bietet unter anderem das erneute Laden des Entwurfs und die Übernahme früherer globaler Werte in dieses Profil. Das Kopieren allein wendet nichts an."
+      ],
+      [
+        "Clock offset · XBAR / SYS / Video",
+        "Verschiebt den Takt des jeweiligen GPU-Bereichs gegenüber dessen Ausgangswert. Die grüne Anzeige zeigt den aktuell gemessenen Takt, nicht den eingetragenen Offset."
+      ],
+      [
+        "Voltage demand · XBAR / SYS",
+        "Verändert die Spannungsanforderung des jeweiligen Bereichs als Offset. Das ist keine Zusage einer festen gemessenen Spannung."
+      ],
+      [
+        "Minimum offset · Core / Fabric",
+        "Verschiebt das gemeldete untere Spannungslimit des jeweiligen Bereichs. Die verfügbaren Grenzen stammen von GPU und Treiber."
+      ],
+      [
+        "Reliability offset · Core / Fabric",
+        "Verschiebt das vom Treiber gemeldete Reliability-Spannungslimit. Die Bezeichnung ist keine Stabilitätsgarantie für deine Einstellung."
+      ],
+      [
+        "Operating offset · Core / Fabric",
+        "Verschiebt das gemeldete Betriebsspannungslimit. Nicht verfügbare Felder bleiben gesperrt; Grenzen können sich mit GPU, Treiber und Betriebszustand unterscheiden."
+      ],
+      [
+        "Voltage Boost",
+        "Zusätzlicher treiberabhängiger Boost-Parameter in Prozent. In dieser Aufnahme meldet Play ihn als nicht verfügbar."
+      ],
+      [
+        "Remove from profile",
+        "Entfernt Expert-Werte aus dem Profilentwurf. Erst Apply & save profile aktiviert den geänderten Entwurf und gibt die bisherigen Expert-Anpassungen frei."
+      ],
+      [
+        "Live readings",
+        "Grüne Werte zeigen aktuelle Messungen. Sie ändern sich mit der Last und überschreiben deine Eingabewerte nicht. Die gemeldete GPU-Spannung und einzelne Railsensoren können unterschiedliche Werte zeigen."
+      ],
+      [
+        "Feld aktivieren",
+        "Das Kontrollkästchen bestimmt, ob dieses Profil den jeweiligen Expert-Wert verwalten soll. Die Auswahl gehört zunächst zum Entwurf; erst Anwenden ändert die GPU."
       ]
     ]
   },
@@ -670,6 +762,42 @@ window.PLAY_GUIDE_DE = {
       [
         "Danach testen",
         "Prüfe dein Profil in deinen tatsächlichen Spielen. Für gezielte Tests einzelner Spannungspunkte kannst du den Voltage Step Scanner nutzen."
+      ]
+    ]
+  },
+  "advanced": {
+    "purpose": "Advanced options steuert, wie Play einfache UV-Presets anwendet: Gradient Lock, Voltage Lock, optional Hard Lock und V-Step Compensation.",
+    "benefit": "Du kannst das Verhalten einfacher Presets genauer verstehen und anpassen. Gespeicherte V-Kurven verwenden dagegen ihre eigenen Punkte und dynamische Taktskalierung.",
+    "how": "Öffne Settings → Advanced options. Lies die Erklärung zum gewünschten Verfahren. Save speichert die Auswahl; Cancel verwirft Änderungen im Fenster.",
+    "limit": "Diese Verfahren und V-Step Compensation gelten für einfache Presets. Hard Lock verhindert normales Heruntertakten im Leerlauf und kann den Idle-Verbrauch erhöhen. Verfügbarkeit und Wirkung hängen von GPU und Treiber ab.",
+    "controls": [
+      [
+        "Autostart without minimizing",
+        "Zeigt das Hauptfenster beim Windows-Autostart. Ohne diese Option startet Play im Tray. Manuelle Starts zeigen das Fenster weiterhin."
+      ],
+      [
+        "Gradient Lock",
+        "Formt die Kurve unterhalb der gewählten Spannung und flacht die Punkte darüber ab. Der gemessene Takt hängt weiterhin von Last und Treibergrenzen ab."
+      ],
+      [
+        "Voltage Lock",
+        "Flacht die Kurve oberhalb der gewählten Spannung ab. Niedrigere Punkte bleiben zum Heruntertakten erhalten. Der Name bedeutet nicht, dass die gemessene Spannung festgehalten wird."
+      ],
+      [
+        "Hard Lock · experimental",
+        "Fordert denselben minimalen und maximalen GPU-Takt am Preset-Ziel an. Verhindert normales Idle-Heruntertakten und kann den Verbrauch erhöhen. Benötigt passende GPU- und Treiberunterstützung sowie ausgeschaltetes DCC."
+      ],
+      [
+        "V-Step Compensation",
+        "Verschiebt den Spannungsanker um die gewählte Anzahl VF-Schritte nach oben. Kann einen Spannungsabfall unter Last berücksichtigen, kostet aber Effizienz und garantiert keinen konstanten Takt."
+      ],
+      [
+        "Gradient Lock on Ampere",
+        "Optionale experimentelle Freigabe von Gradient Lock für RTX 30. Ohne sie verwendet Ampere Voltage Lock. Andere GPU-Familien werden dadurch nicht umgestellt."
+      ],
+      [
+        "Save / Cancel",
+        "Save speichert die Auswahl. Preset-Änderungen können ein aktives Preset direkt neu anwenden. Cancel schließt das Fenster ohne die Änderungen zu speichern."
       ]
     ]
   }

@@ -144,20 +144,82 @@ window.PLAY_GUIDE_EN = {
       ['Reset defaults', 'Resets overlay settings to their defaults. This affects the display, not the GPU’s UV profile. Play saves overlay changes automatically.']
     ]
   },
-  fan: {
-    purpose: 'Fan control offers GPU automatic control, a fixed fan setting or a custom temperature curve for each supported channel.',
-    benefit: 'Adjust cooling and noise to your needs. The feature is still being improved; Zero Fan does not work yet.',
-    how: 'Open Fan curve in the Play v2.0.9 main window. Choose GPU automatic control, a fixed fan setting or a custom temperature curve. Apply & save applies and saves the settings.',
-    limit: 'Fan control is still being improved. Zero Fan, meaning a complete fan stop, does not work yet. The driver and hardware must support control; hardware-write validation is still pending.',
-    scenarioTitle: 'Adjust cooling and noise to your needs.',
-    scenario: 'Want to adapt fan behavior to how you use your GPU? Fan curve offers GPU automatic control, fixed fan settings and custom temperature curves. This area is still being developed. Zero Fan is not available yet.',
-    controls: [
-      ['GPU automatic', 'Leaves fan control to the GPU. You do not need a custom curve.'],
-      ['Fixed speed', 'Holds a selected fan setting. Useful for comparisons, but it does not automatically adapt to temperature.'],
-      ['Custom curve', 'Assigns fan values to temperatures so the fan can provide more cooling at higher temperatures.'],
-      ['Channels and profiles', 'Configure supported fan channels separately. Saved profiles and optional activation at startup make recurring settings easier.'],
-      ['Zero Fan · not available yet', 'A complete fan stop is not currently supported. Fan control is still being improved; Zero Fan is not an available feature yet.'],
-      ['Apply & save', 'Applies and saves the selected fan settings. Editing a curve or loading a profile alone does not activate those settings.']
+  "fan": {
+    "purpose": "Fan control offers GPU automatic control, a fixed fan setting or a custom temperature curve for each supported channel.",
+    "benefit": "Adjust cooling and noise to your needs. The feature is still being improved; Zero Fan does not work yet.",
+    "how": "Open Fan curve in the Play v2.0.9 main window. Choose GPU automatic control, a fixed fan setting or a custom temperature curve. Apply & save applies and saves the settings.",
+    "limit": "Fan control is still being improved. Zero Fan, meaning a complete fan stop, does not work yet. The driver and hardware must support control; hardware-write validation is still pending.",
+    "scenarioTitle": "Adjust cooling and noise to your needs.",
+    "scenario": "Want to adapt fan behavior to how you use your GPU? Fan curve offers GPU automatic control, fixed fan settings and custom temperature curves. This area is still being developed. Zero Fan is not available yet.",
+    "controls": [
+      [
+        "GPU automatic",
+        "Leaves fan control to the GPU. You do not need a custom curve."
+      ],
+      [
+        "Fixed speed",
+        "Holds a selected fan setting. Useful for comparisons, but it does not automatically adapt to temperature."
+      ],
+      [
+        "Custom curve",
+        "Assigns fan values to temperatures so the fan can provide more cooling at higher temperatures."
+      ],
+      [
+        "Channels and profiles",
+        "Configure supported fan channels separately. Saved profiles and optional activation at startup make recurring settings easier."
+      ],
+      [
+        "Zero Fan · not available yet",
+        "A dedicated Zero Fan mode for manual fan control is not supported yet. GPU automatic leaves behavior to the card, including any fan stop it supports."
+      ],
+      [
+        "Apply & save",
+        "Applies and saves the selected fan settings. Editing a curve or loading a profile alone does not activate those settings."
+      ],
+      [
+        "Select a profile",
+        "Loads a saved fan profile for editing. Loading alone does not change running fan control."
+      ],
+      [
+        "Save",
+        "Saves changes to the selected fan profile. Running fan control stays unchanged."
+      ],
+      [
+        "Save as new…",
+        "Saves these settings as a separate named fan profile."
+      ],
+      [
+        "More…",
+        "Opens actions to rename or delete the selected fan profile."
+      ],
+      [
+        "Activate at Play start",
+        "Activates the selected saved fan profile when Play next starts. Save pending edits first."
+      ],
+      [
+        "Hysteresis",
+        "Sets the temperature drop required since the last speed change before fans slow down. This reduces frequent speed changes. Higher speeds are requested immediately."
+      ],
+      [
+        "Minimum hold",
+        "Minimum time before reducing fan speed. A curve must meet both this time and the configured temperature hysteresis."
+      ],
+      [
+        "Curve points",
+        "Assigns fan settings to temperatures. Select a point, edit °C and percent, or drag it. Plus and minus add or remove points in the draft."
+      ],
+      [
+        "GPU automatic · all",
+        "Returns all detected fan channels to the GPU’s automatic control. Saved profiles are retained."
+      ],
+      [
+        "Discard edits",
+        "Discards unsaved changes and reloads the saved profile. Running fan control stays unchanged."
+      ],
+      [
+        "RPM and Running",
+        "Shows measured fan speed and the running mode. Modes selected below can still belong to an unapplied draft."
+      ]
     ]
   },
   hz: {
@@ -188,17 +250,80 @@ window.PLAY_GUIDE_EN = {
     scenarioTitle: 'Less manual adjustment after a crash.',
     scenario: 'Undervolting often means trying settings, playing and adjusting again. When Play detects a driver crash, Stabilizer can gradually lower the clock, raise voltage or combine both. It helps you work towards a stable profile for individual games and the global profile. You choose the strategy and limits.'
   },
-  expert: {
-    purpose: 'Expert voltage settings provides additional experimental clock and voltage parameters for supported GPUs.',
-    benefit: 'Experienced users gain finer control beyond the normal UV curve. This area is not needed for a quick start with community profiles.',
-    how: 'First open Settings → Experimental features and read the notice. Then access UV Curve → Expert voltage settings.',
-    limit: 'Can cause instability, data loss and permanent hardware damage. Hardware and driver support have not been validated everywhere. Restore does not guarantee recovery.',
-    controls: [
-      ['XBAR / SYS', 'Additional clock and voltage requests for specific GPU domains. A voltage request is not a fixed rail voltage.'],
-      ['Video clock / Core / Fabric / Voltage Boost', 'Further hardware-dependent expert parameters. Availability and effects vary by GPU and driver.'],
-      ['Apply globally', 'Applies values to the active GPU, including outside games. This differs from an effect limited to one game.'],
-      ['Readback / Restore', 'Readback helps check the reported state. Restore attempts to restore values replaced by Play. Neither replaces hardware validation.'],
-      ['Difference from DCC', 'DCC NVIDIA Experimental is the Power Efficiency Mode. It is not this experimental voltage-settings area.']
+  "expert": {
+    "purpose": "Expert voltage settings adds experimental clock and voltage parameters to your UV profile. Since Play v2.0.9, these values belong to the individual profile.",
+    "benefit": "Experienced users gain finer control beyond the normal UV curve. This area is not needed for a quick start with community profiles.",
+    "how": "After enabling access under Settings → Experimental features, open UV Curve → Expert voltage settings. Save profile stores the draft. Apply & save profile activates and saves the entire profile, including its curve, power limit, VRAM and Expert values.",
+    "limit": "Can cause instability, data loss and permanent hardware damage. Hardware and driver support have not been validated everywhere. Restore does not guarantee recovery.",
+    "controls": [
+      [
+        "XBAR / SYS",
+        "Additional clock and voltage requests for specific GPU domains. A voltage request is not a fixed rail voltage."
+      ],
+      [
+        "Video clock / Core / Fabric / Voltage Boost",
+        "Further hardware-dependent expert parameters. Availability and effects vary by GPU and driver."
+      ],
+      [
+        "Apply & save profile",
+        "Applies and saves the entire selected profile with its curve, power limit, VRAM and Expert values. These values stay in effect while that profile is active, whether selected globally or through UV Pilot."
+      ],
+      [
+        "Live readings / Remove from profile",
+        "Live readings shows current measurements without overwriting your inputs. Remove from profile first removes Expert values from the draft; applying the profile releases the previous adjustments."
+      ],
+      [
+        "Difference from DCC",
+        "DCC NVIDIA Experimental is the Power Efficiency Mode. It is not this experimental voltage-settings area."
+      ],
+      [
+        "Save profile",
+        "Saves the profile with its Expert values without immediately changing GPU settings."
+      ],
+      [
+        "Profile switching",
+        "The newly active profile uses its own Expert values. A profile without Expert values releases the preceding adjustments to the values Play captured earlier. A zero offset is not a factory reset."
+      ],
+      [
+        "More…",
+        "Includes reloading the draft and copying previous global values into this profile. Copying alone does not apply anything."
+      ],
+      [
+        "Clock offset · XBAR / SYS / Video",
+        "Offsets the clock of that GPU domain relative to its baseline. The green reading shows the currently measured clock, not the offset you entered."
+      ],
+      [
+        "Voltage demand · XBAR / SYS",
+        "Offsets the voltage demand for that domain. It does not promise a fixed measured voltage."
+      ],
+      [
+        "Minimum offset · Core / Fabric",
+        "Offsets the reported minimum voltage limit for that domain. Available limits come from the GPU and driver."
+      ],
+      [
+        "Reliability offset · Core / Fabric",
+        "Offsets the reliability voltage limit reported by the driver. The name does not guarantee stability for your setting."
+      ],
+      [
+        "Operating offset · Core / Fabric",
+        "Offsets the reported operating voltage limit. Unavailable fields stay disabled; limits may vary with GPU, driver and operating state."
+      ],
+      [
+        "Voltage Boost",
+        "An additional driver-dependent Boost parameter in percent. Play reports it as unavailable in this capture."
+      ],
+      [
+        "Remove from profile",
+        "Removes Expert values from the profile draft. Apply & save profile activates the changed draft and releases the previous Expert adjustments."
+      ],
+      [
+        "Live readings",
+        "Green values show current measurements. They change with load without overwriting your inputs. Reported GPU voltage and individual rail sensors can show different readings."
+      ],
+      [
+        "Enable a field",
+        "The checkbox determines whether this profile should manage that Expert value. The selection first belongs to the draft; only applying it changes the GPU."
+      ]
     ]
   },
   settings: {
@@ -275,6 +400,42 @@ window.PLAY_GUIDE_EN = {
       ['Save & activate', 'Saves the suggestion as a profile and activates it. Play asks before replacing an occupied slot.'],
       ['Power limit and VRAM', 'Auto-UV uses a 100 percent power limit within your GPU’s limits and a VRAM offset of 0 MHz. Memory overclocking is not part of this starting profile.'],
       ['Test afterwards', 'Check the profile in the games you actually play. Use the Voltage Step Scanner for targeted tests of individual voltage points.']
+    ]
+  },
+  "advanced": {
+    "purpose": "Advanced options controls how Play applies simple UV presets: Gradient Lock, Voltage Lock, optional Hard Lock and V-Step Compensation.",
+    "benefit": "Understand and adjust how simple presets behave. Saved V-curves instead use their own points and dynamic clock scaling.",
+    "how": "Open Settings → Advanced options. Read the explanation for the method you want to use. Save stores the selection; Cancel discards changes in the window.",
+    "limit": "These methods and V-Step Compensation apply to simple presets. Hard Lock prevents normal idle downclocking and may increase idle power. Availability and effects depend on the GPU and driver.",
+    "controls": [
+      [
+        "Autostart without minimizing",
+        "Shows the main window when Play starts with Windows. Otherwise, Play starts in the tray. Manual launches still show the window."
+      ],
+      [
+        "Gradient Lock",
+        "Shapes the curve below the selected voltage and flattens points above it. Measured clocks still depend on load and driver limits."
+      ],
+      [
+        "Voltage Lock",
+        "Flattens the curve above the selected voltage. Lower points remain available for downclocking. The name does not mean the measured voltage is pinned."
+      ],
+      [
+        "Hard Lock · experimental",
+        "Requests the same minimum and maximum GPU clock at the preset target. Prevents normal idle downclocking and may increase consumption. Requires GPU and driver support and DCC to be off."
+      ],
+      [
+        "V-Step Compensation",
+        "Raises the voltage anchor by the selected number of VF steps. It can account for voltage droop under load, at the expense of efficiency, and does not guarantee a constant clock."
+      ],
+      [
+        "Gradient Lock on Ampere",
+        "Optional experimental access to Gradient Lock for RTX 30. Without it, Ampere uses Voltage Lock. It does not change other GPU families."
+      ],
+      [
+        "Save / Cancel",
+        "Save stores the selection. Preset changes can immediately reapply an active preset. Cancel closes the window without saving changes."
+      ]
     ]
   }
 };

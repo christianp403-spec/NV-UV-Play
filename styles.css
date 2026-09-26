@@ -38,8 +38,6 @@ dialog{width:min(1240px,calc(100% - 40px));max-height:calc(100dvh - 40px);paddin
 .scenario-answer .community-note{font-size:12px;color:#8fa180;line-height:1.7}
 @media(max-width:900px){.scenario-group .scenario-card{grid-template-columns:minmax(0,1fr);gap:10px}.scenario-question h4{font-size:24px;margin-bottom:10px}}
 @media(max-width:680px){.scenario-group+.scenario-group{margin-top:28px}.scenario-group-title{font-size:18px}.scenario-question h4{font-size:23px}}
-/* Match the neighboring disabled rows in this original main-window capture. */
-.image-hotspot[data-screen="main"][data-feature="hz"]{backdrop-filter:brightness(.5)}
 .header-actions{display:flex;align-items:center;gap:22px}
 .language-switch{display:flex;align-items:center;gap:4px;font-size:12px;line-height:1;white-space:nowrap}
 .language-switch a,.language-switch span{padding:9px 8px;border:1px solid transparent;border-radius:4px}
