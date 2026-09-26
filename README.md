@@ -1,27 +1,23 @@
 # NV⚡UV Play V2
 
-**Kilby Alpha — NVIDIA GPU undervolting, game profiles, DCC and a customizable overlay.**
+**Kilby Alpha: NVIDIA GPU undervolting, game profiles, DCC and a customizable overlay.**
 
-NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay.
+NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.0.9 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.9).** This is an Alpha prerelease.
 
-**Current release: [v2.0.8 Hotfix · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.8).** This is an Alpha prerelease.
-
-**New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play.
-
-Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
+**New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play. Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
 
 ## What's in version 2
 
-- **Profiles and UV Pilot:** six profile slots, shared global and per-game profiles, automatic game detection and per-game exceptions.
+- **Profiles and UV Pilot:** six existing profile slots, shared global and per-game profiles, automatic game detection and per-game exceptions. My profiles keeps saved and downloaded profiles, history and right-click actions together.
 - **Curve editor:** edit individual voltage/frequency points, use Undo/Redo, and adjust power limits and VRAM offsets.
-- **Experimental voltage settings:** XBAR/SYS clock and voltage-demand offsets, video clock, Core/Fabric voltage limits and Voltage Boost, with live telemetry. Compatible GPU/driver support is required; new controls still need hardware validation. Enable them under **Settings → Experimental features**, then open **UV Curve → Expert voltage settings**. They apply globally to the active GPU, including outside games, only after **Apply globally**. Voltage demand is not a fixed rail voltage; hardware/driver support varies. The feature requires explicit risk acknowledgment and can restore the values Play replaced.
-- **Fan control:** GPU automatic mode, fixed speed or custom curves per reported channel, with saved profiles and optional activation at startup. Open **Fan curve** in the main window. Compatible driver support is required; hardware write validation is pending.
+- **Experimental voltage settings:** XBAR/SYS clock and voltage-demand offsets, video clock, Core/Fabric voltage limits and Voltage Boost, with live telemetry. Enable them under **Settings → Experimental features**, then open **UV Curve → Expert voltage settings**. Values are saved with the profile and affect the selected GPU while that profile is active. A profile without Expert settings restores the values Play replaced. Previous global values are kept for explicit copying into a profile; they are not applied as a global fallback. Compatible GPU/driver support and explicit risk acknowledgment are required. Voltage demand is not a fixed rail voltage; new controls still need hardware validation.
+- **Fan control:** GPU automatic mode, fixed speed or custom curves with hysteresis per reported channel, with saved profiles and optional activation at startup. Open **Fan curve** in the main window. Compatible driver support is required; hardware write validation is pending.
 - **UV scanner:** configurable tests, saved results and history, NVIDIA Auto-UV starting points and UV Try community profiles.
 - **DCC:** Automatic clock regulation with per-game learning, plus an experimental NVIDIA Power Efficiency mode.
 - **Enhanced Overlay in v2.0.1:** one settings window for display, readings, layout, colors and saved overlay profiles, with a live preview. Select and move readings in the preview, or start from the existing defaults.
 - **Performance readings:** FPS, 1% lows, frame times, GPU usage, voltage, power, clocks and temperatures, plus available CPU and RAM readings. Sensor availability depends on the hardware; some readings require optional PawnIO setup.
-- **Stabilizer and Smart Hz:** profile corrections after detected driver crashes and automatic display refresh-rate switching.
-- **Game library, diagnostics and updates:** game database updates, game requests, diagnostic exports and optional report uploads, plus a signed in-app updater.
+- **Stabilizer and Smart Hz:** profile corrections after detected driver crashes and automatic display refresh-rate switching. **Enhanced Stabilizer** is a separate option under Experimental features: it can adjust selected Expert settings using your own per-profile steps and stop values. These corrections are not sufficiently validated and can improve or worsen stability; no recommended values are supplied. It is separate from DCC NVIDIA Experimental (Power Efficiency Mode).
+- **Game library, diagnostics and updates:** game database updates, game requests, diagnostic exports and optional report uploads, plus a signed in-app updater. Play can restart after a repeatedly confirmed NVIDIA driver version change, waiting for open editors and running operations. A driver crash, brief reset or same-version reinstall does not trigger this restart.
 
 ## Install or update
 
@@ -31,9 +27,7 @@ For a new installation:
 2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
 3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
 
-If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.0.8 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available.
-
-**Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
+If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.0.9 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
 ## Requirements and hardware support
 
@@ -44,17 +38,13 @@ If your Play version already includes the updater, use **Updates → Check now �
 
 ## Using DCC
 
-**DCC Automatic** adjusts GPU clocks for a detected game and saves its learning per game. Its status shows the current learning or regulation stage.
-
-**NVIDIA Experimental** requests the driver's Power Efficiency mode. Its efficiency target is separate from an FPS limiter and is not a guaranteed frame rate. Configure this mode before launching a game; restart the game after changing it.
+**DCC Automatic** adjusts GPU clocks for a detected game and saves its learning per game. Its status shows the current learning or regulation stage. **NVIDIA Experimental** requests the driver's Power Efficiency mode. Its efficiency target is separate from an FPS limiter and is not a guaranteed frame rate. Configure this mode before launching a game; restart the game after changing it.
 
 The optional **NVIDIA Max Frame Rate** and **Global NVIDIA VSync** controls apply driver settings. If you already manage frame limiting or V-Sync through the game or NVIDIA App, you do not need to enable those controls again in Play.
 
 ## Overlay modes
 
-The regular overlay supports desktop and windowed/borderless game display, with configurable readings, layout and colors.
-
-**Exclusive fullscreen is no longer supported as of v2.0.8.** The experimental renderers and attach helpers have been removed.
+The regular overlay supports desktop and windowed/borderless game display, with configurable readings, layout and colors. **Exclusive fullscreen is no longer supported as of v2.0.8.** The experimental renderers and attach helpers have been removed.
 
 ## Game library
 
@@ -64,15 +54,19 @@ Add a missing game inside Play by browsing for its executable, use **Game Librar
 
 ## Feedback and diagnostics
 
-Use **Settings → Report a problem** to export diagnostics or submit a report. Include your Play version, GPU, driver version, affected game and steps to reproduce the issue. Review the report before sending it.
-
-For a DCC issue, enable **performance logging before launching the game** and include the generated logs and approximate test time. If no performance log is created, mention that too.
+Use **Settings → Report a problem** to export diagnostics or submit a report. Include your Play version, GPU, driver version, affected game and steps to reproduce the issue. Review the report before sending it. For a DCC issue, enable **performance logging before launching the game** and include the generated logs and approximate test time. If no performance log is created, mention that too.
 
 Game-library and application update checks access GitHub. Game requests and diagnostic uploads are separate, user-initiated actions.
 
 ## Credits
 
-Play uses **Greencurve by [aufkrawall](https://github.com/aufkrawall)** (MIT License) as the foundation for the native NVAPI bridge and the flat-tail technique used by Voltage Lock. The Gradient Lock curve shape is inspired by the curve behavior popularized by Afterburner. Required third-party notices are included with the portable release.
+Thank you to the projects and developers whose work helps make Play possible:
+
+- **Greencurve by [aufkrawall](https://github.com/aufkrawall)** (MIT License), the foundation for the native NVAPI bridge and the flat-tail technique used by Voltage Lock.
+- **[PawnIO](https://github.com/namazso/PawnIO) by namazso and the PawnIO.Modules contributors**, for the hardware access used by Play's sensor readings.
+- **[LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) and its contributors**, for CPU temperature monitoring.
+
+Special thanks to Unwinder for his longstanding work on MSI Afterburner and GPU tuning tools. Required third-party notices are included with the portable release.
 
 ## Community
 
@@ -81,15 +75,11 @@ Play uses **Greencurve by [aufkrawall](https://github.com/aufkrawall)** (MIT Lic
 
 ## Before use
 
-Play changes GPU voltage, clocks, power limits, fan behavior and related settings. Tuning and scanner workloads can cause crashes, instability, data loss or permanent hardware damage. Presets, community profiles and scanner results do not guarantee safety or stability on a particular system.
+Play lets you adjust GPU settings to suit your system. Stability varies between GPUs, so test your own settings, presets and scanner results on your hardware. Unstable settings may cause application or driver crashes.
 
-**Expert voltage settings are used at your own risk.** These voltage controls are not validated on every GPU or driver and can cause permanent hardware damage or data loss; a successful test or restore option does not guarantee safety or recovery.
+**Experimental Expert voltage settings require extra care.** These advanced controls are not fully validated across GPU and driver combinations. Incorrect settings may cause instability, data loss or hardware damage. Use them only if you understand the settings and associated risks.
 
-**DCC Automatic** and DCC's **NVIDIA Experimental (Power Efficiency Mode)** are separate from those voltage controls. Depending on GPU, driver and game compatibility, DCC can cause instability, driver resets or unexpected performance and power consumption. A particular frame rate or energy saving is not guaranteed.
-
-The [Play license](LICENSE.txt) sets out the risk notices and liability exclusions and limitations, including the mandatory legal exceptions.
-
-Kilby is in Alpha. Bugs and changes between versions are expected. Thank you for your feedback, bug reports and diagnostic data!
+The [Play license](LICENSE.txt) sets out the risk notices and liability exclusions and limitations, including the mandatory legal exceptions. Kilby is in Alpha. Bugs and changes between versions are expected. Thank you for your feedback, bug reports and diagnostic data!
 
 ## Support the project
 
