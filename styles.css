@@ -87,3 +87,48 @@ body[data-page="features"] .guide-section,body[data-page="start"] .start-section
   .header-actions{gap:4px}.header-actions .button{padding:9px;gap:7px}
   .language-switch a,.language-switch span{padding-left:4px;padding-right:4px}
 }
+
+/* The introduction spans the page; download and the original window follow. */
+body[data-page="home"] .hero{grid-template-columns:minmax(0,1fr);gap:48px;align-items:start}
+body[data-page="home"] .hero-copy{max-width:none}
+body[data-page="home"] .hero h1{font-size:clamp(2.6rem,5.3vw,4.75rem);max-width:none;text-wrap:balance}
+body[data-page="home"] .hero h1 span{display:inline-block}
+body[data-page="home"] .intro{max-width:920px;font-size:18px}
+body[data-page="home"] .hero-actions{flex-direction:row;align-items:center;flex-wrap:wrap;gap:18px 28px}
+body[data-page="home"] .hero-note{max-width:900px;margin-top:22px}
+body[data-page="home"] .hero-meta{margin-top:18px}
+.windows-download{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 48px;align-items:center;padding:32px 36px;border:1px solid #54752c;border-radius:8px;background:#1c2e13}
+.windows-download .eyebrow{color:#acd279;margin-bottom:12px}
+.windows-download h2{font-size:28px;letter-spacing:-.025em;font-weight:550;margin-bottom:14px;color:#eff9e5}
+.windows-download p:not(.eyebrow){max-width:790px;margin:0;color:#c4d8b3;font-size:15px;line-height:1.75}
+.windows-download-action{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.windows-download-action>.button{min-height:50px;font-size:15px;white-space:nowrap}
+.windows-download-action>span{font-size:11px;color:#a3bc8c}
+.windows-download-action>.text-link{font-size:13px;min-height:32px}
+body[data-page="home"] .stage-body{grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:clamp(28px,5vw,80px);padding:36px}
+body[data-page="home"] .original-main{max-width:420px;width:100%;margin:0}
+body[data-page="home"] .coach{display:block;border:0;padding:0;max-width:520px}
+body[data-page="home"] .coach h2{font-size:32px}
+body[data-page="home"] .coach p:not(.eyebrow){font-size:16px}
+body[data-page="home"] .coach-tip{display:block;font-size:14px}
+body[data-page="home"] .coach .text-link{font-size:14px}
+@media(max-width:800px){
+  .windows-download{grid-template-columns:minmax(0,1fr);gap:24px;padding:26px}
+  body[data-page="home"] .stage-body{grid-template-columns:minmax(0,355px) minmax(0,1fr);gap:25px;padding:24px}
+  body[data-page="home"] .coach h2{font-size:25px}
+  body[data-page="home"] .coach p:not(.eyebrow){font-size:14px}
+}
+@media(max-width:680px){
+  body[data-page="home"] .hero{gap:32px}
+  body[data-page="home"] .hero h1{font-size:clamp(2.45rem,10.8vw,3.25rem)}
+  body[data-page="home"] .intro{font-size:15px}
+  .windows-download{padding:23px 20px}
+  .windows-download h2{font-size:25px}
+  .windows-download p:not(.eyebrow){font-size:14px}
+  .windows-download-action{align-items:stretch}
+  .windows-download-action>.button{white-space:normal;text-align:center;padding:14px 12px;gap:12px}
+  .windows-download-action>.text-link{min-height:44px;display:flex;align-items:center}
+  body[data-page="home"] .stage-body{grid-template-columns:minmax(0,1fr);padding:12px;gap:22px}
+  body[data-page="home"] .original-main{max-width:355px;margin:auto}
+  body[data-page="home"] .coach{padding:20px 6px 8px;border-top:1px solid var(--line)}
+}
