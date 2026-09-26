@@ -119,6 +119,8 @@ body[data-page="home"] .coach .text-link{font-size:14px}
 }
 
 .hero-description{max-width:920px;font-size:18px;line-height:1.7;color:#c2ceba;margin:0 0 22px}
+body[data-page="home"] .hero h1 .hero-product-name{color:var(--text);white-space:nowrap}
+.brand-bolt{display:inline-block;width:.43em;height:.85em;vertical-align:-.06em;fill:var(--accent)}
 @media(max-width:680px){.hero-description{font-size:15px}}
 
 /* Give the space beside the original window useful, directly selectable topics. */
