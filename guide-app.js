@@ -90,7 +90,7 @@
   }
   function screenMarkup(key, highlighted) {
     const screen = screens[key];
-    return `<img src="assets/${screen.file}" alt="${esc(screen.alt)}" width="${screen.width}" height="${screen.height}">${screen.spots.map((spot,index)=>hotspotMarkup(spot,index,key,highlighted)).join('')}`;
+    return `<img src="assets/${screen.file}${key === 'main' ? '?v=2.0.9' : ''}" alt="${esc(screen.alt)}" width="${screen.width}" height="${screen.height}">${screen.spots.map((spot,index)=>hotspotMarkup(spot,index,key,highlighted)).join('')}`;
   }
   function setCategory(key, focus=false) {
     if (!Object.hasOwn(categories,key)) return false;
