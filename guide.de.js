@@ -3,41 +3,41 @@
 window.PLAY_GUIDE_DE = {
   "profiles": {
     "purpose": "Ein UV-Profil bündelt Spannung, GPU-Takt und Power-Limit. Über die sechs Plätze im Hauptfenster aktivierst du die gespeicherten Einstellungen mit einem Klick.",
-    "benefit": "Du musst nicht jede Einstellung einzeln erarbeiten. Community-erprobte, vorausgewählte Profile erleichtern den Einstieg; eigene Profile ermöglichen spätere Anpassungen.",
+    "benefit": "Du entscheidest: Nutze die vorbereiteten Profile oder deine eigenen. Jeden der sechs Profilplätze kannst du anpassen und mit einem anderen Profil belegen. Auch der Weg zurück ist möglich.",
     "how": "Eco stellt Sparsamkeit in den Vordergrund, Balanced verbindet Leistung und Verbrauch für den Alltag. Performance und Max setzen höhere Taktziele. MFG ist für Multi Frame Generation auf RTX 50 gedacht; unter Custom nutzt du eigene Einstellungen. Klicke auf die einzelnen Profile im Bild, um ihren Einsatz kennenzulernen.",
     "limit": "Die Beschreibungen beziehen sich auf die mitgelieferten Profile. Ihre Werte unterscheiden sich je nach GPU-Modell; selbst bearbeitete Profilplätze können andere Einstellungen enthalten. Vergleiche FPS und Verbrauch im selben Spiel und teste die Stabilität auf deiner Karte.",
     "controls": [
       [
         "Profilplätze",
-        "Schnellzugriff auf bis zu sechs Profile. Ein Klick aktiviert das gespeicherte Profil global. Die Namen lassen sich anpassen."
+        "Die sechs Profilplätze sind frei belegbare Schnellzugriffe. Du kannst jeden Platz anpassen, seine Belegung durch ein eigenes Profil ersetzen und ihn später wieder zurücksetzen oder leeren. Ein Klick aktiviert das dort gespeicherte Profil global. Du entscheidest, ob du mit vorbereiteten oder eigenen Einstellungen spielst."
       ],
       [
         "Eco",
-        "Du möchtest Strom sparen und weniger Abwärme erzeugen? Eco setzt auf einen niedrigeren GPU-Zieltakt als Balanced und eine sparsame Spannung. Das passt etwa zu älteren Spielen oder wenn dein gewünschtes FPS-Limit schon mit weniger GPU-Leistung erreicht wird. Unter voller Last können die FPS niedriger ausfallen als mit den leistungsorientierten Profilen."
+        "Du möchtest Strom sparen und weniger Abwärme erzeugen? Eco setzt auf einen niedrigeren GPU-Zieltakt als Balanced und eine sparsame Spannung. Das passt etwa zu älteren Spielen oder wenn dein gewünschtes FPS-Limit schon mit weniger GPU-Leistung erreicht wird. Unter voller Last können die FPS niedriger ausfallen als mit den leistungsorientierten Profilen. Auch diesen Profilplatz kannst du anpassen und mit einem eigenen Profil belegen."
       ],
       [
         "Balanced",
-        "Du suchst ein Profil für den Spielealltag? Balanced ist der Mittelweg: mehr Taktspielraum als Eco, mit stärkerem Blick auf den Verbrauch als Performance oder Max. Ein passender Einstieg, wenn du flüssig spielen und zugleich effizienter unterwegs sein möchtest. Vergleiche im Spiel, ob es deine gewünschte Bildrate erreicht."
+        "Du suchst ein Profil für den Spielealltag? Balanced ist der Mittelweg: mehr Taktspielraum als Eco, mit stärkerem Blick auf den Verbrauch als Performance oder Max. Ein passender Einstieg, wenn du flüssig spielen und zugleich effizienter unterwegs sein möchtest. Vergleiche im Spiel, ob es deine gewünschte Bildrate erreicht. Auch diesen Profilplatz kannst du anpassen und mit einem eigenen Profil belegen."
       ],
       [
         "Performance",
-        "Dein Spiel fordert die GPU stärker und du möchtest mehr Spielraum für FPS? Performance setzt einen höheren Zieltakt als Balanced und verwendet dafür je nach Modell eine höhere Spannung. Der Schwerpunkt liegt auf Leistung mit Undervolting. Dafür kann der Verbrauch höher ausfallen als mit Eco oder Balanced. Sinnvoll, wenn dir dort bei gleicher Grafikqualität noch Bildrate fehlt."
+        "Dein Spiel fordert die GPU stärker und du möchtest mehr Spielraum für FPS? Performance setzt einen höheren Zieltakt als Balanced und verwendet dafür je nach Modell eine höhere Spannung. Der Schwerpunkt liegt auf Leistung mit Undervolting. Dafür kann der Verbrauch höher ausfallen als mit Eco oder Balanced. Sinnvoll, wenn dir dort bei gleicher Grafikqualität noch Bildrate fehlt. Auch diesen Profilplatz kannst du anpassen und mit einem eigenen Profil belegen."
       ],
       [
         "Max",
-        "Du möchtest den größten Taktspielraum der vorausgewählten Profile nutzen? Max ist die leistungsorientierteste Stufe und setzt für dein GPU-Modell den höchsten Zieltakt dieser Auswahl. Der Fokus liegt stärker auf FPS als auf maximaler Ersparnis. Prüfe, ob dir der zusätzliche Takt im Spiel tatsächlich mehr Leistung bringt und auf deiner Karte stabil läuft."
+        "Du möchtest den größten Taktspielraum der vorausgewählten Profile nutzen? Max ist die leistungsorientierteste Stufe und setzt für dein GPU-Modell den höchsten Zieltakt dieser Auswahl. Der Fokus liegt stärker auf FPS als auf maximaler Ersparnis. Prüfe, ob dir der zusätzliche Takt im Spiel tatsächlich mehr Leistung bringt und auf deiner Karte stabil läuft. Auch diesen Profilplatz kannst du anpassen und mit einem eigenen Profil belegen."
       ],
       [
         "MFG · Multi Frame Generation",
-        "Du spielst auf einer RTX-50-GPU mit Multi Frame Generation? MFG kombiniert eine niedrige Spannung mit dem normalen Power-Limit deiner Karte. Gegenüber Eco bleibt dadurch mehr Leistungsspielraum für diese Spielelast. Es ist das dafür vorbereitete UV-Profil; Multi Frame Generation aktivierst du weiterhin im Spiel. Vergleiche Verbrauch und Bildrate mit deinen tatsächlichen Spieleinstellungen."
+        "Du spielst auf einer RTX-50-GPU mit Multi Frame Generation? MFG kombiniert eine niedrige Spannung mit dem normalen Power-Limit deiner Karte. Gegenüber Eco bleibt dadurch mehr Leistungsspielraum für diese Spielelast. Es ist das dafür vorbereitete UV-Profil; Multi Frame Generation aktivierst du weiterhin im Spiel. Vergleiche Verbrauch und Bildrate mit deinen tatsächlichen Spieleinstellungen. Auch diesen Profilplatz kannst du anpassen und mit einem eigenen Profil belegen."
       ],
       [
         "Custom",
-        "Du hast eigene Werte gefunden oder möchtest deine GPU selbst abstimmen? Custom ist für dein eigenes Profil. Passe in UV Curve Spannung, Takt und bei Bedarf Power-Limit oder VRAM-Takt an und speichere die Einstellungen. So kannst du etwa ein eigenes Profil für dein Lieblingsspiel anlegen und später mit einem Klick aufrufen. Die Werte und den Namen bestimmst du."
+        "Eigene Profile kannst du auf jedem der sechs Plätze verwenden. Passe in UV Curve Spannung, Takt und bei Bedarf Power-Limit oder VRAM-Takt an und speichere die Einstellungen. So kannst du etwa ein Profil für dein Lieblingsspiel erstellen und später mit einem Klick aufrufen. Den Namen und die Werte bestimmst du; Custom im Bild ist ein Beispiel für eine eigene Belegung."
       ],
       [
         "Default",
-        "Stellt das Standardprofil wieder her. Deine gespeicherten Profile und Spielzuordnungen werden dadurch nicht gelöscht."
+        "Stellt das Standardprofil deiner GPU wieder her. Deine gespeicherten Profile und Spielzuordnungen werden dadurch nicht gelöscht."
       ],
       [
         "Manage profiles",
@@ -54,6 +54,10 @@ window.PLAY_GUIDE_DE = {
       [
         "Community-Profile über UV Try",
         "Unter UV Curve → UV Try findest du weitere Einträge für dein GPU-Modell. Du kannst sie in einen Profilplatz übernehmen, testen und bewerten. So profitierst du von den Erfahrungen anderer und hilfst selbst mit."
+      ],
+      [
+        "Profilplatz zurücksetzen oder leeren",
+        "Wähle den Platz im Kurveneditor. Für Platz 1 bis 4 stellt Restore wieder Eco, Balanced, Performance beziehungsweise Max als Belegung her. Bei Platz 5 und 6 leert Clear slot den Platz, sodass du ihn neu belegen kannst. Gespeicherte Profile und Spielzuordnungen bleiben erhalten; ein ungespeicherter Entwurf dieses Platzes wird verworfen."
       ]
     ]
   },
@@ -167,7 +171,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Restore Balanced",
-        "Setzt den Entwurf auf die Vorgaben des gewählten Basisprofils zurück. Im abgebildeten Editor ist das Balanced. Das gibt dir einen Ausgangspunkt für weitere Änderungen."
+        "Belegt den ausgewählten Profilplatz wieder mit seinem vorbereiteten Profil. Im Bild ist das Platz 2 mit Balanced. Gespeicherte Profile und Spielzuordnungen bleiben erhalten; der ungespeicherte Entwurf dieses Platzes wird verworfen. Das Profil wird dadurch nicht automatisch auf der GPU aktiviert."
       ],
       [
         "Assign to game",

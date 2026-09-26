@@ -3,41 +3,41 @@
 window.PLAY_GUIDE_EN = {
   "profiles": {
     "purpose": "A UV profile combines voltage, GPU clock and power limit. The six slots in the main window let you activate saved settings with one click.",
-    "benefit": "You do not have to work out every setting yourself. Preselected, community-tested profiles make it easy to start; your own profiles let you fine-tune later.",
+    "benefit": "You choose: use the prepared profiles or your own. You can edit any of the six profile slots and replace its assignment with another profile. You can also go back later.",
     "how": "Eco prioritizes saving power; Balanced combines performance and efficiency for everyday gaming. Performance and Max aim for higher clocks. MFG is intended for Multi Frame Generation on RTX 50, while Custom uses your own settings. Click each profile in the image to learn when to use it.",
     "limit": "These descriptions refer to the bundled profiles. Values vary by GPU model, and edited slots may contain different settings. Compare FPS and power draw in the same game and test stability on your own card.",
     "controls": [
       [
         "Profile slots",
-        "Quick access to up to six profiles. Clicking a slot activates its saved profile globally. You can customize the names."
+        "The six profile slots are shortcuts you can freely assign. Edit any slot, replace its assignment with your own profile, then restore or clear it later. Clicking a slot activates its saved profile globally. You decide whether to play with prepared settings or your own."
       ],
       [
         "Eco",
-        "Want to save power and produce less heat? Eco uses a lower GPU clock target than Balanced and a power-saving voltage. It suits older games, for example, or situations where less GPU performance is enough to reach your FPS cap. Under full load, frame rates can be lower than with the performance-focused profiles."
+        "Want to save power and produce less heat? Eco uses a lower GPU clock target than Balanced and a power-saving voltage. It suits older games, for example, or situations where less GPU performance is enough to reach your FPS cap. Under full load, frame rates can be lower than with the performance-focused profiles. You can also edit this slot and assign your own profile to it."
       ],
       [
         "Balanced",
-        "Looking for a profile for everyday gaming? Balanced takes the middle ground: more clock headroom than Eco, with a stronger focus on power consumption than Performance or Max. It is a useful starting point for smooth, more efficient gaming. Check in your game whether it reaches the frame rate you want."
+        "Looking for a profile for everyday gaming? Balanced takes the middle ground: more clock headroom than Eco, with a stronger focus on power consumption than Performance or Max. It is a useful starting point for smooth, more efficient gaming. Check in your game whether it reaches the frame rate you want. You can also edit this slot and assign your own profile to it."
       ],
       [
         "Performance",
-        "Your game pushes the GPU harder and you want more headroom for FPS? Performance targets a higher clock than Balanced, with a higher voltage depending on the model. It prioritizes performance with undervolting. Power draw can therefore be higher than with Eco or Balanced. Try it when those profiles fall short of your desired frame rate at the same graphics settings."
+        "Your game pushes the GPU harder and you want more headroom for FPS? Performance targets a higher clock than Balanced, with a higher voltage depending on the model. It prioritizes performance with undervolting. Power draw can therefore be higher than with Eco or Balanced. Try it when those profiles fall short of your desired frame rate at the same graphics settings. You can also edit this slot and assign your own profile to it."
       ],
       [
         "Max",
-        "Want the most clock headroom among the preselected profiles? Max is the most performance-focused tier, with the highest clock target in this selection for your GPU model. It puts more emphasis on FPS than on maximum power savings. Check whether the extra clock actually improves performance in your game and remains stable on your card."
+        "Want the most clock headroom among the preselected profiles? Max is the most performance-focused tier, with the highest clock target in this selection for your GPU model. It puts more emphasis on FPS than on maximum power savings. Check whether the extra clock actually improves performance in your game and remains stable on your card. You can also edit this slot and assign your own profile to it."
       ],
       [
         "MFG · Multi Frame Generation",
-        "Playing with Multi Frame Generation on an RTX 50 GPU? MFG combines a low voltage with the normal power limit of your card, leaving more power headroom for this workload than Eco. It is the UV profile prepared for this use; you still enable Multi Frame Generation in the game. Compare power draw and frame rate with your actual game settings."
+        "Playing with Multi Frame Generation on an RTX 50 GPU? MFG combines a low voltage with the normal power limit of your card, leaving more power headroom for this workload than Eco. It is the UV profile prepared for this use; you still enable Multi Frame Generation in the game. Compare power draw and frame rate with your actual game settings. You can also edit this slot and assign your own profile to it."
       ],
       [
         "Custom",
-        "Found your own settings or want to tune the GPU yourself? Custom is for your own profile. Use UV Curve to adjust voltage, clock and, if needed, power limit or VRAM clock, then save the settings. You could create a profile for your favorite game and recall it later with one click. You choose its values and name."
+        "You can use your own profiles in any of the six slots. Use UV Curve to adjust voltage, clock and, if needed, power limit or VRAM clock, then save the settings. For example, create a profile for your favorite game and recall it later with one click. You choose its name and values; Custom in the image is an example of a personal assignment."
       ],
       [
         "Default",
-        "Restores the default profile. This does not delete your saved profiles or game assignments."
+        "Restores the default profile for your GPU. Your saved profiles and game assignments are not deleted."
       ],
       [
         "Manage profiles",
@@ -54,6 +54,10 @@ window.PLAY_GUIDE_EN = {
       [
         "Community profiles through UV Try",
         "UV Curve → UV Try offers more entries for your GPU model. Import one into a slot, test it and rate your experience. Learn from other users and contribute your own findings."
+      ],
+      [
+        "Restore or clear a profile slot",
+        "Select the slot in the curve editor. For slots 1 to 4, Restore reassigns Eco, Balanced, Performance or Max respectively. For slots 5 and 6, Clear slot empties the slot so you can assign it again. Saved profiles and game assignments are kept; an unsaved draft for that slot is discarded."
       ]
     ]
   },
@@ -102,7 +106,7 @@ window.PLAY_GUIDE_EN = {
       ['Undo / Redo', 'Reverts or restores an edit so you can compare drafts and correct mistakes.'],
       ['UV Try, Auto-UV and Scanner', 'UV Try provides community profiles. Auto-UV provides a NVIDIA starting point. The scanner checks candidates under test load. None of these methods guarantees stability on every GPU.'],
       ['Expert voltage settings', 'Opens experimental voltage and clock parameters that require separate confirmation. This area is intended for experienced users and carries additional risks.'],
-      ['Restore Balanced', 'Resets the draft to the selected base profile. In this screenshot, that is Balanced. This gives you a starting point for further changes.'],
+      ['Restore Balanced', 'Reassigns the prepared profile to the selected slot. The image shows slot 2 with Balanced. Saved profiles and game assignments are kept; the unsaved draft for that slot is discarded. This does not automatically activate the profile on the GPU.'],
       ['Assign to game', 'Assigns the profile to a game. UV Pilot can then use it automatically when the game launch is detected.'],
       ['Enable UV Pilot', 'Enables automatic use of game assignments. Assignments and the global profile are explained in the UV Pilot section.'],
       ['Voltage', 'Selects the voltage point you want to edit. The frequency shown beside it belongs to that point.'],
