@@ -9,7 +9,7 @@
   <link rel="alternate" hreflang="de" href="index.html">
   <link rel="alternate" hreflang="en" href="en.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <link rel="stylesheet" href="styles.css?v=20260926-hero-2">
+  <link rel="stylesheet" href="styles.css?v=20260926-explore-1">
   <script src="guide.en.js?v=20260926-pages-1" defer></script>
   <script src="guide.ui.en.js?v=20260926-pages-1" defer></script>
   <script src="guide-app.js?v=20260926-pages-1" defer></script>
@@ -19,7 +19,7 @@
 <a class="skip-link" href="#top">Skip to content</a>
 <header class="site-header wrap">
   <a class="brand" href="en.html" aria-label="NV-UV Play home"><img src="assets/wordmark.png" width="188" height="56" alt="NV-UV Play"></a>
-  <nav aria-label="Main navigation"><a href="en.html" aria-current="page">Explore Play</a><a href="features.html">Features</a><a href="get-started.html">Get started</a></nav>
+  <nav aria-label="Main navigation"><a href="en.html" aria-current="page">Explore Play</a><a href="get-started.html">Get started</a><a href="features.html">Features</a></nav>
   <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="index.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div><a class="button small" href="https://github.com/christianp403-spec/NV-UV-Play/releases" target="_blank" rel="noopener noreferrer">Download <span aria-hidden="true">↗</span></a></div>
 </header>
 <main id="top">
@@ -39,12 +39,19 @@
       <p class="interaction-hint" id="interaction-hint"><span aria-hidden="true">↖</span> <strong>Get to know Play right away.</strong> Click or tap the features in the Play window to see what they do and how you can use them.</p>
       <div class="stage-body">
         <figure class="original-main"><div id="main-screen" class="hotspot-image" aria-describedby="interaction-hint"></div><figcaption>Original capture · Play v2.0.9 · RTX 5090</figcaption></figure>
-        <aside class="coach">
-          <p class="eyebrow">CLICK &amp; UNDERSTAND</p>
-          <h2>Your first step.<br> One click.</h2>
-          <p>Choose a profile slot in the Play window. Find out what it does and how it helps.</p>
-          <div class="coach-tip">The other options are clickable too. Their explanations appear right where you need them.</div>
-          <button class="text-link" data-open="profiles">Explore profiles <span aria-hidden="true">↗</span></button>
+        <aside class="coach" aria-labelledby="explore-title">
+          <p class="eyebrow">YOUR FIRST STEP. ONE CLICK.</p>
+          <h2 id="explore-title">A quick start with UV profiles.</h2>
+          <p class="explore-intro">Choose a prepared UV profile in Play, such as Eco or Balanced. One click applies the settings for you, without having to build your own curve.</p>
+          <div class="explore-grid">
+            <button class="explore-card" data-open="profiles"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">▤</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>Profiles &amp; Slots</strong><span class="explore-description">Start with prepared profiles and save your own settings.</span></button>
+            <button class="explore-card" data-open="pilot"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">▷</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>UV Pilot</strong><span class="explore-description">Automatically use the right profile for each game.</span></button>
+            <button class="explore-card" data-open="dcc"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">◇</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>DCC</strong><span class="explore-description">Match clocks to the workload and reduce unnecessary power draw.</span></button>
+            <button class="explore-card" data-open="stabilizer"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">♢</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>Stabilizer</strong><span class="explore-description">Automatically adjust settings after detected driver crashes.</span></button>
+            <button class="explore-card" data-open="curve"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">⌁</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>UV Curve</strong><span class="explore-description">Fine-tune voltage and clock speed with your own UV curve.</span></button>
+            <button class="explore-card" data-open="overlay"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">▥</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>Telemetry &amp; Overlay</strong><span class="explore-description">Keep an eye on power, voltage, temperatures and FPS.</span></button>
+          </div>
+          <a class="text-link explore-all" href="features.html">Explore all features <span aria-hidden="true">↗</span></a>
         </aside>
       </div>
       <div class="stage-foot"><span>Original window with clickable explanations</span><span>No changes to your GPU</span></div>
@@ -55,7 +62,7 @@
     <div><p>For years, GPU tuning mostly meant higher clocks, more voltage and a few extra FPS. Higher power consumption, more heat and louder fans were often accepted as the price.</p><p><strong>But does more always make sense?</strong> Undervolting focuses on efficiency: finding the right voltage for the performance you want. Using less energy can also mean less heat and lower temperatures.</p><p class="care-copy"><strong>Your graphics card was expensive. Treat it well.</strong><br>Get the best out of it with lower power consumption in mind. Play helps you find the balance between performance, temperature and power draw.</p><p class="why-note">Savings and performance depend on your card, game and settings. Test your profile on your own system.</p></div>
   </section>
 </main>
-<footer class="site-footer wrap"><div><strong>NV-UV <span>Play</span></strong><p>Efficiency wins.</p></div><div class="footer-links"><a href="https://github.com/christianp403-spec/NV-UV-Play" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/issues" target="_blank" rel="noopener noreferrer">Feedback ↗</a><a href="https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/" target="_blank" rel="noopener noreferrer">Community ↗</a></div><p class="footer-note">Get to know Play<br>Original captures · English version</p></footer>
+<footer class="site-footer wrap"><div><strong>NV-UV <span>Play</span></strong><p>Efficiency wins.</p></div><div class="footer-links"><a href="https://github.com/christianp403-spec/NV-UV-Play" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/issues" target="_blank" rel="noopener noreferrer">Feedback ↗</a><a href="https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/" target="_blank" rel="noopener noreferrer">Community ↗</a></div></footer>
 <dialog id="feature-dialog" aria-labelledby="dialog-title"><div class="dialog-chrome"><button id="back-dialog" class="quiet" aria-label="Back to the previous feature" hidden>← Back</button><h2 id="dialog-title"></h2><button id="close-dialog" aria-label="Close window" autofocus>×</button></div><div id="dialog-body"></div></dialog>
 <div id="control-tooltip" popover="manual" role="dialog" aria-labelledby="tooltip-title" aria-describedby="tooltip-copy"><button id="close-tooltip" aria-label="Close explanation">×</button><p class="eyebrow">QUICK EXPLANATION</p><h3 id="tooltip-title"></h3><p id="tooltip-copy"></p><button class="text-link" id="tooltip-more" hidden>More about this feature ↗</button></div>
 <noscript><p class="noscript">Enable JavaScript for clickable original windows and feature categories. Text, language selection and download links work without JavaScript.</p></noscript>

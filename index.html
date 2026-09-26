@@ -9,7 +9,7 @@
   <link rel="alternate" hreflang="de" href="index.html">
   <link rel="alternate" hreflang="en" href="en.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <link rel="stylesheet" href="styles.css?v=20260926-hero-2">
+  <link rel="stylesheet" href="styles.css?v=20260926-explore-1">
   <script src="guide.de.js?v=20260926-pages-1" defer></script>
   <script src="guide-app.js?v=20260926-pages-1" defer></script>
   <script src="site-navigation.js?v=20260926-pages-1" defer></script>
@@ -18,7 +18,7 @@
 <a class="skip-link" href="#top">Zum Inhalt</a>
 <header class="site-header wrap">
   <a class="brand" href="index.html" aria-label="NV-UV Play Startseite"><img src="assets/wordmark.png" width="188" height="56" alt="NV-UV Play"></a>
-  <nav aria-label="Hauptnavigation"><a href="index.html" aria-current="page">Play entdecken</a><a href="funktionen.html">Funktionen</a><a href="loslegen.html">Loslegen</a></nav>
+  <nav aria-label="Hauptnavigation"><a href="index.html" aria-current="page">Play entdecken</a><a href="loslegen.html">Loslegen</a><a href="funktionen.html">Funktionen</a></nav>
   <div class="header-actions"><div class="language-switch" aria-label="Sprache"><span lang="de" aria-current="page">DE</span><a href="en.html" lang="en" hreflang="en" aria-label="Switch to English" data-language-switch>EN</a></div><a class="button small" href="https://github.com/christianp403-spec/NV-UV-Play/releases" target="_blank" rel="noopener noreferrer">Download <span aria-hidden="true">↗</span></a></div>
 </header>
 <main id="top">
@@ -38,12 +38,19 @@
       <p class="interaction-hint" id="interaction-hint"><span aria-hidden="true">↖</span> <strong>Lerne Play direkt kennen.</strong> Klicke oder tippe auf die Funktionen im Play-Fenster und erfahre, was sie machen und wofür du sie nutzen kannst.</p>
       <div class="stage-body">
         <figure class="original-main"><div id="main-screen" class="hotspot-image" aria-describedby="interaction-hint"></div><figcaption>Originalaufnahme · Play v2.0.9 · RTX 5090</figcaption></figure>
-        <aside class="coach">
-          <p class="eyebrow">ANKLICKEN &amp; VERSTEHEN</p>
-          <h2>Dein Einstieg.<br> Ein Klick.</h2>
-          <p>Wähle einen Profilplatz im Play-Fenster. Du erfährst direkt, wofür er da ist und was er dir bringt.</p>
-          <div class="coach-tip">Auch die anderen Optionen sind anklickbar. Ihre Erklärung erscheint genau dort, wo du sie brauchst.</div>
-          <button class="text-link" data-open="profiles">Profile kennenlernen <span aria-hidden="true">↗</span></button>
+        <aside class="coach" aria-labelledby="explore-title">
+          <p class="eyebrow">DEIN EINSTIEG. EIN KLICK.</p>
+          <h2 id="explore-title">Schnellstart mit UV-Profilen.</h2>
+          <p class="explore-intro">Wähle in Play ein vorbereitetes UV-Profil, etwa Eco oder Balanced. Ein Klick übernimmt die Einstellungen für dich, ohne dass du eine eigene Kurve erstellen musst.</p>
+          <div class="explore-grid">
+            <button class="explore-card" data-open="profiles"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">▤</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>Profile &amp; Slots</strong><span class="explore-description">Mit vorbereiteten Profilen einsteigen und eigene Einstellungen speichern.</span></button>
+            <button class="explore-card" data-open="pilot"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">▷</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>UV Pilot</strong><span class="explore-description">Für jedes Spiel automatisch das passende Profil verwenden.</span></button>
+            <button class="explore-card" data-open="dcc"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">◇</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>DCC</strong><span class="explore-description">Den Takt an die Last anpassen und unnötigen Verbrauch reduzieren.</span></button>
+            <button class="explore-card" data-open="stabilizer"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">♢</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>Stabilizer</strong><span class="explore-description">Nach erkannten Treiberabstürzen automatisch nachjustieren.</span></button>
+            <button class="explore-card" data-open="curve"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">⌁</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>UV Curve</strong><span class="explore-description">Spannung und Takt selbst abstimmen und die eigene UV-Kurve anpassen.</span></button>
+            <button class="explore-card" data-open="overlay"><span class="explore-card-top"><span class="explore-icon" aria-hidden="true">▥</span><span class="explore-arrow" aria-hidden="true">↗</span></span><strong>Telemetry &amp; Overlay</strong><span class="explore-description">Verbrauch, Spannung, Temperaturen und FPS im Blick behalten.</span></button>
+          </div>
+          <a class="text-link explore-all" href="funktionen.html">Alle Funktionen entdecken <span aria-hidden="true">↗</span></a>
         </aside>
       </div>
       <div class="stage-foot"><span>Originalfenster mit klickbaren Erklärungen</span><span>Keine Änderung an deiner GPU</span></div>
@@ -54,7 +61,7 @@
     <div><p>Lange hieß GPU-Tuning vor allem: mehr Takt, mehr Spannung, noch ein paar FPS. Hoher Stromverbrauch, zusätzliche Abwärme und lautere Lüfter wurden dafür oft in Kauf genommen.</p><p><strong>Aber muss es immer mehr sein?</strong> Undervolting setzt bei der Effizienz an: die passende Spannung für die gewünschte Leistung finden. Weniger Energieverbrauch kann auch weniger Hitze und niedrigere Temperaturen bedeuten.</p><p class="care-copy"><strong>Deine Grafikkarte war teuer. Behandle sie gut.</strong><br>Hol das Beste aus ihr heraus, mit weniger Verbrauch im Blick. Play hilft dir dabei, das passende Verhältnis zwischen Leistung, Temperatur und Energiebedarf zu finden.</p><p class="why-note">Wie viel deine GPU spart und welche Leistung sie hält, hängt von Karte, Spiel und Einstellungen ab. Prüfe dein Profil auf deinem eigenen System.</p></div>
   </section>
 </main>
-<footer class="site-footer wrap"><div><strong>NV-UV <span>Play</span></strong><p>Effizienz siegt.</p></div><div class="footer-links"><a href="https://github.com/christianp403-spec/NV-UV-Play" target="_blank" rel="noopener noreferrer">Projekt ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/issues" target="_blank" rel="noopener noreferrer">Feedback ↗</a><a href="https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/" target="_blank" rel="noopener noreferrer">Community ↗</a></div><p class="footer-note">Play kennenlernen<br>Originalaufnahmen · Deutsche Fassung</p></footer>
+<footer class="site-footer wrap"><div><strong>NV-UV <span>Play</span></strong><p>Effizienz siegt.</p></div><div class="footer-links"><a href="https://github.com/christianp403-spec/NV-UV-Play" target="_blank" rel="noopener noreferrer">Projekt ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/issues" target="_blank" rel="noopener noreferrer">Feedback ↗</a><a href="https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/" target="_blank" rel="noopener noreferrer">Community ↗</a></div></footer>
 <dialog id="feature-dialog" aria-labelledby="dialog-title"><div class="dialog-chrome"><button id="back-dialog" class="quiet" aria-label="Zur vorherigen Funktion" hidden>← Zurück</button><h2 id="dialog-title"></h2><button id="close-dialog" aria-label="Fenster schließen" autofocus>×</button></div><div id="dialog-body"></div></dialog>
 <div id="control-tooltip" popover="manual" role="dialog" aria-labelledby="tooltip-title" aria-describedby="tooltip-copy"><button id="close-tooltip" aria-label="Erklärung schließen">×</button><p class="eyebrow">KURZ ERKLÄRT</p><h3 id="tooltip-title"></h3><p id="tooltip-copy"></p><button class="text-link" id="tooltip-more" hidden>Mehr zu dieser Funktion ↗</button></div>
 <noscript><p class="noscript">Aktiviere JavaScript für die klickbaren Originalfenster und Funktionskategorien. Texte und Download-Links funktionieren auch ohne JavaScript.</p></noscript>
