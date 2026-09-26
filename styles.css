@@ -90,6 +90,8 @@ body[data-page="features"] .guide-section,body[data-page="start"] .start-section
 
 /* Full-width introduction with Windows download and the original window below. */
 body[data-page="home"] .hero{grid-template-columns:minmax(0,1fr);gap:48px;align-items:start}
+.home-playground{padding-bottom:72px}
+@media(max-width:680px){.home-playground{padding-bottom:45px}}
 body[data-page="home"] .hero-copy{max-width:none}
 body[data-page="home"] .hero h1{font-size:clamp(2.6rem,5.3vw,4.75rem);max-width:none;text-wrap:balance}
 body[data-page="home"] .hero h1 span{display:inline-block}
