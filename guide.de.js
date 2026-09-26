@@ -2,18 +2,38 @@
 // German copy uses the same feature and control order as guide.en.js.
 window.PLAY_GUIDE_DE = {
   "profiles": {
-    "purpose": "Profile fassen deine GPU-Einstellungen zusammen. Die sechs Plätze machen sie im Hauptfenster direkt erreichbar.",
+    "purpose": "Ein UV-Profil bündelt Spannung, GPU-Takt und Power-Limit. Über die sechs Plätze im Hauptfenster aktivierst du die gespeicherten Einstellungen mit einem Klick.",
     "benefit": "Du musst nicht jede Einstellung einzeln erarbeiten. Community-erprobte, vorausgewählte Profile erleichtern den Einstieg; eigene Profile ermöglichen spätere Anpassungen.",
-    "how": "Wähle im Hauptfenster einen der vorausgewählten Profilplätze. Ein Klick aktiviert das Profil. Zu den Profilen gehören Eco, Balanced, Performance und Max sowie MFG auf Blackwell/RTX 50. Du kannst später eigene Profile speichern und die Plätze passend belegen.",
-    "limit": "Community-erprobt bedeutet nicht auf jeder Grafikkarte stabil. Ein Profil auf dem eigenen System prüfen.",
+    "how": "Eco stellt Sparsamkeit in den Vordergrund, Balanced verbindet Leistung und Verbrauch für den Alltag. Performance und Max setzen höhere Taktziele. MFG ist für Multi Frame Generation auf RTX 50 gedacht; unter Custom nutzt du eigene Einstellungen. Klicke auf die einzelnen Profile im Bild, um ihren Einsatz kennenzulernen.",
+    "limit": "Die Beschreibungen beziehen sich auf die mitgelieferten Profile. Ihre Werte unterscheiden sich je nach GPU-Modell; selbst bearbeitete Profilplätze können andere Einstellungen enthalten. Vergleiche FPS und Verbrauch im selben Spiel und teste die Stabilität auf deiner Karte.",
     "controls": [
       [
         "Profilplätze",
         "Schnellzugriff auf bis zu sechs Profile. Ein Klick aktiviert das gespeicherte Profil global. Die Namen lassen sich anpassen."
       ],
       [
-        "Eco / MFG / Balanced / Performance / Max",
-        "Vorausgewählte Profile mit unterschiedlichen Schwerpunkten. Eco legt den Fokus auf Sparsamkeit, Balanced auf einen Mittelweg zwischen Leistung und Verbrauch. MFG ist zusätzlich auf Blackwell-GPUs der RTX-50-Serie verfügbar und für Spiele mit Multi Frame Generation vorgesehen. Die tatsächlichen Werte hängen von GPU und Profil ab."
+        "Eco",
+        "Du möchtest Strom sparen und weniger Abwärme erzeugen? Eco setzt auf einen niedrigeren GPU-Zieltakt als Balanced und eine sparsame Spannung. Das passt etwa zu älteren Spielen oder wenn dein gewünschtes FPS-Limit schon mit weniger GPU-Leistung erreicht wird. Unter voller Last können die FPS niedriger ausfallen als mit den leistungsorientierten Profilen."
+      ],
+      [
+        "Balanced",
+        "Du suchst ein Profil für den Spielealltag? Balanced ist der Mittelweg: mehr Taktspielraum als Eco, mit stärkerem Blick auf den Verbrauch als Performance oder Max. Ein passender Einstieg, wenn du flüssig spielen und zugleich effizienter unterwegs sein möchtest. Vergleiche im Spiel, ob es deine gewünschte Bildrate erreicht."
+      ],
+      [
+        "Performance",
+        "Dein Spiel fordert die GPU stärker und du möchtest mehr Spielraum für FPS? Performance setzt einen höheren Zieltakt als Balanced und verwendet dafür je nach Modell eine höhere Spannung. Der Schwerpunkt liegt auf Leistung mit Undervolting. Dafür kann der Verbrauch höher ausfallen als mit Eco oder Balanced. Sinnvoll, wenn dir dort bei gleicher Grafikqualität noch Bildrate fehlt."
+      ],
+      [
+        "Max",
+        "Du möchtest den größten Taktspielraum der vorausgewählten Profile nutzen? Max ist die leistungsorientierteste Stufe und setzt für dein GPU-Modell den höchsten Zieltakt dieser Auswahl. Der Fokus liegt stärker auf FPS als auf maximaler Ersparnis. Prüfe, ob dir der zusätzliche Takt im Spiel tatsächlich mehr Leistung bringt und auf deiner Karte stabil läuft."
+      ],
+      [
+        "MFG · Multi Frame Generation",
+        "Du spielst auf einer RTX-50-GPU mit Multi Frame Generation? MFG kombiniert eine niedrige Spannung mit dem normalen Power-Limit deiner Karte. Gegenüber Eco bleibt dadurch mehr Leistungsspielraum für diese Spielelast. Es ist das dafür vorbereitete UV-Profil; Multi Frame Generation aktivierst du weiterhin im Spiel. Vergleiche Verbrauch und Bildrate mit deinen tatsächlichen Spieleinstellungen."
+      ],
+      [
+        "Custom",
+        "Du hast eigene Werte gefunden oder möchtest deine GPU selbst abstimmen? Custom ist für dein eigenes Profil. Passe in UV Curve Spannung, Takt und bei Bedarf Power-Limit oder VRAM-Takt an und speichere die Einstellungen. So kannst du etwa ein eigenes Profil für dein Lieblingsspiel anlegen und später mit einem Klick aufrufen. Die Werte und den Namen bestimmst du."
       ],
       [
         "Default",
@@ -32,16 +52,8 @@ window.PLAY_GUIDE_DE = {
         "Speichert einen Entwurf beziehungsweise eine neue Kopie. Das ist sinnvoll, wenn du Einstellungen vorbereiten möchtest, ohne das aktive Profil sofort zu wechseln."
       ],
       [
-        "Balanced",
-        "Balanced setzt auf einen Mittelweg zwischen Leistung und Verbrauch. Eigene Profilplätze können andere Namen tragen."
-      ],
-      [
         "Community-Profile über UV Try",
         "Unter UV Curve → UV Try findest du weitere Einträge für dein GPU-Modell. Du kannst sie in einen Profilplatz übernehmen, testen und bewerten. So profitierst du von den Erfahrungen anderer und hilfst selbst mit."
-      ],
-      [
-        "MFG · Multi Frame Generation",
-        "Ein eigenes Profil für Spiele mit Multi Frame Generation auf Blackwell-GPUs der RTX-50-Serie. Es liegt zwischen Eco und Balanced und ist auf diese Spielelast abgestimmt. Die Frame-Generation-Einstellung wählst du weiterhin im Spiel. Prüfe Leistung, Verbrauch und Stabilität mit deinen tatsächlichen Spieleinstellungen."
       ]
     ]
   },

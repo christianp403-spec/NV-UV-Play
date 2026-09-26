@@ -1,21 +1,60 @@
 'use strict';
 // English copy follows the same feature and control order as guide.de.js.
 window.PLAY_GUIDE_EN = {
-  profiles: {
-    purpose: 'Profiles bring your GPU settings together. Six slots make them directly accessible in the main window.',
-    benefit: 'You do not have to work out every setting yourself. Preselected, community-tested profiles make it easy to start; your own profiles let you fine-tune later.',
-    how: 'Choose a preselected profile slot in the main window. One click activates it. Profiles include Eco, Balanced, Performance and Max, plus MFG on Blackwell/RTX 50. You can save your own profiles and assign them to the slots later.',
-    limit: 'Community-tested does not mean stable on every graphics card. Test a profile on your own system.',
-    controls: [
-      ['Profile slots', 'Quick access to up to six profiles. Clicking a slot activates its saved profile globally. You can customize the names.'],
-      ['Eco / MFG / Balanced / Performance / Max', 'Preselected profiles with different priorities. Eco focuses on saving power; Balanced strikes a balance between performance and consumption. MFG is also available on Blackwell GPUs in the RTX 50 series for games using Multi Frame Generation. Actual values depend on the GPU and profile.'],
-      ['Default', 'Restores the default profile. This does not delete your saved profiles or game assignments.'],
-      ['Manage profiles', 'Create and edit your own profiles and assign them to multiple games. Changes to a shared profile apply to its assignments.'],
-      ['Rename', 'Gives a profile a meaningful name. This changes its label, not its tuning values.'],
-      ['Save only / Save as new', 'Saves a draft or a new copy. Useful when preparing settings without immediately changing the active profile.'],
-      ['Balanced', 'Balanced strikes a balance between performance and power consumption. Custom profile slots can have other names.'],
-      ['Community profiles through UV Try', 'UV Curve → UV Try offers more entries for your GPU model. Import one into a slot, test it and rate your experience. Learn from other users and contribute your own findings.'],
-      ['MFG · Multi Frame Generation', 'A dedicated profile for games with Multi Frame Generation on Blackwell GPUs in the RTX 50 series. It sits between Eco and Balanced and is tuned for this workload. You still select the frame-generation setting in the game. Check performance, power consumption and stability with your actual game settings.']
+  "profiles": {
+    "purpose": "A UV profile combines voltage, GPU clock and power limit. The six slots in the main window let you activate saved settings with one click.",
+    "benefit": "You do not have to work out every setting yourself. Preselected, community-tested profiles make it easy to start; your own profiles let you fine-tune later.",
+    "how": "Eco prioritizes saving power; Balanced combines performance and efficiency for everyday gaming. Performance and Max aim for higher clocks. MFG is intended for Multi Frame Generation on RTX 50, while Custom uses your own settings. Click each profile in the image to learn when to use it.",
+    "limit": "These descriptions refer to the bundled profiles. Values vary by GPU model, and edited slots may contain different settings. Compare FPS and power draw in the same game and test stability on your own card.",
+    "controls": [
+      [
+        "Profile slots",
+        "Quick access to up to six profiles. Clicking a slot activates its saved profile globally. You can customize the names."
+      ],
+      [
+        "Eco",
+        "Want to save power and produce less heat? Eco uses a lower GPU clock target than Balanced and a power-saving voltage. It suits older games, for example, or situations where less GPU performance is enough to reach your FPS cap. Under full load, frame rates can be lower than with the performance-focused profiles."
+      ],
+      [
+        "Balanced",
+        "Looking for a profile for everyday gaming? Balanced takes the middle ground: more clock headroom than Eco, with a stronger focus on power consumption than Performance or Max. It is a useful starting point for smooth, more efficient gaming. Check in your game whether it reaches the frame rate you want."
+      ],
+      [
+        "Performance",
+        "Your game pushes the GPU harder and you want more headroom for FPS? Performance targets a higher clock than Balanced, with a higher voltage depending on the model. It prioritizes performance with undervolting. Power draw can therefore be higher than with Eco or Balanced. Try it when those profiles fall short of your desired frame rate at the same graphics settings."
+      ],
+      [
+        "Max",
+        "Want the most clock headroom among the preselected profiles? Max is the most performance-focused tier, with the highest clock target in this selection for your GPU model. It puts more emphasis on FPS than on maximum power savings. Check whether the extra clock actually improves performance in your game and remains stable on your card."
+      ],
+      [
+        "MFG · Multi Frame Generation",
+        "Playing with Multi Frame Generation on an RTX 50 GPU? MFG combines a low voltage with the normal power limit of your card, leaving more power headroom for this workload than Eco. It is the UV profile prepared for this use; you still enable Multi Frame Generation in the game. Compare power draw and frame rate with your actual game settings."
+      ],
+      [
+        "Custom",
+        "Found your own settings or want to tune the GPU yourself? Custom is for your own profile. Use UV Curve to adjust voltage, clock and, if needed, power limit or VRAM clock, then save the settings. You could create a profile for your favorite game and recall it later with one click. You choose its values and name."
+      ],
+      [
+        "Default",
+        "Restores the default profile. This does not delete your saved profiles or game assignments."
+      ],
+      [
+        "Manage profiles",
+        "Create and edit your own profiles and assign them to multiple games. Changes to a shared profile apply to its assignments."
+      ],
+      [
+        "Rename",
+        "Gives a profile a meaningful name. This changes its label, not its tuning values."
+      ],
+      [
+        "Save only / Save as new",
+        "Saves a draft or a new copy. Useful when preparing settings without immediately changing the active profile."
+      ],
+      [
+        "Community profiles through UV Try",
+        "UV Curve → UV Try offers more entries for your GPU model. Import one into a slot, test it and rate your experience. Learn from other users and contribute your own findings."
+      ]
     ]
   },
   pilot: {
