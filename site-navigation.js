@@ -13,3 +13,25 @@
   routeLegacyAnchor();
   window.addEventListener('hashchange', routeLegacyAnchor);
 })();
+
+(() => {
+  const dialog = document.querySelector('#contact-dialog');
+  const trigger = document.querySelector('#open-contact');
+  if (!dialog || !trigger) return;
+
+  trigger.addEventListener('click', () => {
+    dialog.showModal();
+    document.body.classList.add('contact-open');
+  });
+  dialog.querySelector('#close-contact').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right ||
+        event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    document.body.classList.remove('contact-open');
+    trigger.focus({preventScroll: true});
+  });
+})();

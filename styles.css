@@ -47,8 +47,18 @@ dialog{width:min(1240px,calc(100% - 40px));max-height:calc(100dvh - 40px);paddin
 
 /* Separate pages share navigation and retain the original interactive captures. */
 .site-footer{flex-wrap:wrap}
-.project-support{flex-basis:100%;min-width:0;border-top:1px solid var(--line);padding-top:16px}
-.project-support h2{font-size:14px;font-weight:550;line-height:1.5;margin:0}
+.footer-links{align-items:center}
+.footer-links button{border:0;background:transparent;padding:0;min-height:44px;font:inherit;color:inherit}
+.footer-links button:hover{color:var(--accent)}
+body.contact-open{overflow:hidden}
+#contact-dialog{width:min(520px,calc(100% - 32px));max-height:calc(100dvh - 32px)}
+#contact-dialog .dialog-chrome>button{width:44px;height:44px}
+.contact-body{padding:24px}
+.contact-body p{font-size:14px;line-height:1.7;margin:0 0 16px}
+.contact-body a{overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
+.contact-body a:hover{color:var(--accent)}
+.project-support{border-top:1px solid var(--line);padding-top:20px;margin-top:24px}
+.project-support h3{font-size:16px;font-weight:550;line-height:1.5;margin:0 0 4px}
 .support-links{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px}
 .support-links a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:3px}
 .support-links a:hover{color:var(--accent)}
