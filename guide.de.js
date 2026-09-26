@@ -13,7 +13,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Eco / MFG / Balanced (Daily) / Performance / Max",
-        "Vorausgewählte Profile mit unterschiedlichen Schwerpunkten. Eco legt den Fokus auf Sparsamkeit, Balanced auf einen Mittelweg zwischen Leistung und Verbrauch. Balanced heißt im abgebildeten Hauptfenster Daily. MFG ist zusätzlich auf Blackwell-GPUs der RTX-50-Serie verfügbar und für Spiele mit Multi Frame Generation vorgesehen. Die tatsächlichen Werte hängen von GPU und Profil ab."
+        "Vorausgewählte Profile mit unterschiedlichen Schwerpunkten. Eco legt den Fokus auf Sparsamkeit, Balanced auf einen Mittelweg zwischen Leistung und Verbrauch. Balanced wurde in älteren Hauptfenstern auch Daily genannt. MFG ist zusätzlich auf Blackwell-GPUs der RTX-50-Serie verfügbar und für Spiele mit Multi Frame Generation vorgesehen. Die tatsächlichen Werte hängen von GPU und Profil ab."
       ],
       [
         "Default",
@@ -33,7 +33,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Daily / Balanced",
-        "Daily ist das Balanced-Profil. Es setzt auf einen Mittelweg zwischen Leistung und Verbrauch. Im abgebildeten Hauptfenster heißt es Daily, im Kurveneditor Balanced."
+        "Daily ist das Balanced-Profil. Es setzt auf einen Mittelweg zwischen Leistung und Verbrauch. In älteren Hauptfenstern heißt es Daily, im abgebildeten Kurveneditor Balanced. Eigene Profilplätze können andere Namen tragen."
       ],
       [
         "Community-Profile über UV Try",
@@ -233,7 +233,7 @@ window.PLAY_GUIDE_DE = {
     "purpose": "DCC passt das Taktverhalten während erkannter Spiele an. Dafür stehen Automatic und der separate NVIDIA Power Efficiency Mode zur Verfügung.",
     "benefit": "Wenn zusätzlicher Takt im aktuellen Spiel wenig bringt, kann DCC helfen, unnötigen Energiebedarf zu reduzieren. Der tatsächliche Nutzen hängt vom Spiel und der Hardware ab.",
     "how": "Wähle in den DCC-Einstellungen einen Algorithmus. Schalte Stabilizer aus, bevor du DCC aktivierst. Konfiguriere NVIDIA Experimental vor dem Spielstart.",
-    "limit": "DCC ist keine FPS- oder Spargarantie. NVIDIA Experimental ist der Power Efficiency Mode, nicht Expert voltage settings. Dieser Modus benötigt derzeit eine einzelne NVIDIA-GPU.",
+    "limit": "DCC Automatic verwendet auch in einem Multi-GPU-System die in Play ausgewählte Karte. Der separate Modus NVIDIA Experimental (Power Efficiency Mode) benötigt derzeit eine einzelne NVIDIA-GPU. Er ist nicht mit Expert voltage settings zu verwechseln. DCC ist keine FPS- oder Spargarantie; die vollständige Multi-GPU-Hardwareprüfung steht noch aus.",
     "controls": [
       [
         "DCC Automatic",
@@ -383,9 +383,11 @@ window.PLAY_GUIDE_DE = {
   },
   "fan": {
     "purpose": "Die Lüftersteuerung nutzt GPU-Automatik, einen festen Lüfterwert oder eine eigene Temperaturkurve pro unterstütztem Kanal.",
-    "benefit": "Du kannst das Verhältnis zwischen Kühlung und Lautstärke an deine Bedürfnisse anpassen. Auto ist sinnvoll, wenn die GPU ihre Lüfter weiterhin selbst regeln soll.",
-    "how": "Öffne Fan curve und wähle den Modus. Für eine eigene Kurve ordnest du Temperaturen passende Lüfterwerte zu.",
-    "limit": "Treiber und Hardware müssen die Steuerung unterstützen. Hardware-Schreibvalidierung steht noch aus. Zu geringe Lüfterwerte können die Kühlung verschlechtern.",
+    "benefit": "Du kannst Kühlung und Lautstärke an deine Bedürfnisse anpassen. Die Funktion wird weiter verbessert; Zero Fan funktioniert aktuell noch nicht.",
+    "how": "Öffne Fan curve im Hauptfenster von Play v2.0.9. Wähle GPU-Automatik, einen festen Lüfterwert oder eine eigene Temperaturkurve. Apply & save übernimmt und speichert die Einstellungen.",
+    "limit": "Die Lüftersteuerung wird weiter verbessert. Zero Fan, also ein vollständiger Lüfterstillstand, funktioniert aktuell noch nicht. Treiber und Hardware müssen die Steuerung unterstützen; Hardware-Schreibvalidierung steht noch aus.",
+    "scenarioTitle": "Kühlung und Lautstärke selbst abstimmen.",
+    "scenario": "Du möchtest das Lüfterverhalten an deine Nutzung anpassen? Fan curve bietet GPU-Automatik, feste Lüfterwerte und eigene Temperaturkurven. Der Bereich wird noch weiterentwickelt. Zero Fan ist derzeit nicht verfügbar.",
     "controls": [
       [
         "GPU automatic",
@@ -402,6 +404,14 @@ window.PLAY_GUIDE_DE = {
       [
         "Kanäle und Profile",
         "Unterstützte Lüfterkanäle lassen sich getrennt konfigurieren. Gespeicherte Profile und eine optionale Aktivierung beim Start erleichtern wiederkehrende Einstellungen."
+      ],
+      [
+        "Zero Fan · aktuell nicht verfügbar",
+        "Ein vollständiger Lüfterstillstand wird aktuell noch nicht unterstützt. Die Lüftersteuerung wird weiter verbessert; Zero Fan ist deshalb noch keine verfügbare Funktion."
+      ],
+      [
+        "Apply & save",
+        "Übernimmt und speichert die gewählten Lüftereinstellungen. Das bloße Bearbeiten einer Kurve oder Laden eines Profils aktiviert diese Einstellungen noch nicht."
       ]
     ]
   },

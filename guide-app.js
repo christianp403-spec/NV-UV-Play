@@ -17,7 +17,7 @@
     curve:['UV Curve','⌁','Spannung und Takt gezielt abstimmen. Den eigenen Weg zwischen Leistung und Verbrauch finden.'],
     scanner:['Voltage Step Scanner','⌕','Spannungspunkte und Takt unter Testlast prüfen. Ergebnisse für die eigene Optimierung nutzen.'],
     autouv:['NVIDIA Auto-UV','↘','Einen Ausgangspunkt aus der Werkskurve deiner GPU ermitteln und als Profil übernehmen.'],
-    fan:['Fan curve','✣','GPU-Automatik, feste Drehzahl oder eigene Lüfterkurve: Kühlung und Lautstärke abstimmen.'],
+    fan:['Fan curve','✣','Kühlung und Lautstärke abstimmen. Wird weiter verbessert; Zero Fan funktioniert aktuell noch nicht.'],
     expert:['Expert voltage settings','±','Zusätzliche experimentelle Takt- und Spannungsparameter für erfahrene Nutzer.'],
     overlay:['Telemetry & Overlay','▥','Bildrate, Verbrauch und Temperaturen im Blick behalten. Veränderungen beim Spielen sehen.'],
     settings:['Settings & GPU','⚙','Die gewünschte GPU wählen und allgemeine Einstellungen zentral finden.'],
@@ -33,11 +33,11 @@
   // Hotspots use percentages of the unchanged product capture, never reconstructed UI.
   const s = (feature, control, rect, label) => ({feature,control,rect,label});
   const screens = {
-    main:{file:'play-main-original.png',width:525,height:887,shape:'main',alt:'Originales NV-UV Play Hauptfenster mit Profilplätzen und Funktionsschaltern',caption:'Originalaufnahme · Play v2.0.3. Sichtbare Profile und Werte gehören zur Aufnahme.',spots:[
-      s('profiles',1,[5,24,14,7],'Eco'),s('profiles',6,[20,24,14,7],'Daily'),s('profiles',1,[35,24,14,7],'Performance'),s('profiles',1,[50,24,14,7],'Max'),s('profiles',3,[65,24,14,7],'Eigener Profilplatz 5'),s('profiles',3,[80,24,15,7],'Eigener Profilplatz 6'),
-      s('curve',null,[52,31,25,6],'UV Curve'),s('profiles',2,[79,31,16,6],'Default'),s('pilot',null,[5,41,90,5],'UV Pilot'),s('library',null,[63,46,33,5],'Game Library'),
-      s('dcc',null,[5,55,90,5],'DCC'),s('stabilizer',null,[5,61,90,5],'Stabilizer'),s('hz',null,[5,67,90,5],'Smart Hz'),s('overlay',null,[5,73,90,5],'Overlay'),
-      s('settings',null,[5,81,38,5],'Settings'),s('updates',null,[54,81,17,5],'Updates'),s('diagnostics',null,[73,81,22,5],'Diagnostics'),s('settings',1,[5,87,90,5],'Autostart'),s('settings',2,[5,94,38,5],'UI scaling')
+    main:{file:'play-main-original.png',width:525,height:941,shape:'main',alt:'Originales NV-UV Play v2.0.9 Hauptfenster mit Profilplätzen, Fan curve und Funktionsschaltern',caption:'Originalaufnahme · Play v2.0.9. Testansicht ohne erkannte GPU; die gezeigten Profilnamen gehören zur Aufnahme.',spots:[
+      s('profiles',0,[5,23,14,6],'Profilplatz 1'),s('profiles',3,[20,23,14,6],'Freier Profilplatz 2'),s('profiles',3,[35,23,14,6],'Freier Profilplatz 3'),s('profiles',3,[50,23,14,6],'Freier Profilplatz 4'),s('profiles',0,[65,23,14,6],'Profilplatz 5'),s('profiles',0,[80,23,15,6],'Profilplatz 6'),
+      s('profiles',2,[74,30,21,5],'Default'),s('fan',null,[5,35.5,44,5],'Fan curve'),s('curve',null,[51,35.5,44,5],'UV Curve'),s('pilot',null,[5,44,90,5],'UV Pilot'),s('library',null,[63,49,33,5],'Game Library'),
+      s('dcc',null,[5,57,90,5],'DCC'),s('stabilizer',null,[5,63,90,5],'Stabilizer'),s('hz',null,[5,68.5,90,5],'Smart Hz'),s('overlay',null,[5,74,90,5],'Overlay'),
+      s('settings',null,[5,82,38,5],'Settings'),s('updates',null,[54,82,17,5],'Updates'),s('diagnostics',null,[73,82,22,5],'Diagnostics'),s('settings',1,[5,87.3,90,5],'Autostart'),s('settings',2,[5,95,38,4],'UI scaling')
     ]},
     curve:{file:'play-curve-original.png',width:1650,height:1218,shape:'wide',alt:'Originaler Play Kurveneditor mit Spannungskurve, Profilplätzen und Bearbeitungsoptionen',caption:'Originalaufnahme · Play v2.0.3. Die gezeigte Kurve dient hier nur zur Erklärung der Bedienung.',spots:[
       s('curve',0,[8,6,45,7],'Profilplätze'),s('community',null,[56,7,8,6],'UV Try'),s('autouv',null,[65,7,8,6],'Auto-UV'),s('scanner',null,[74,7,8,6],'Voltage Step Scanner'),
@@ -72,7 +72,7 @@
   }
   syncLanguageLink();
   window.addEventListener('hashchange',syncLanguageLink);
-  const featureScreens = {profiles:'main',community:'curve',pilot:'main',library:'main',dcc:'dcc',stabilizer:'stabilizer',hz:'main',curve:'curve',autouv:'curve',scanner:'curve',overlay:'overlay',settings:'settings',updates:'settings',diagnostics:'settings',expert:'settings'};
+  const featureScreens = {profiles:'main',community:'curve',pilot:'main',library:'main',dcc:'dcc',stabilizer:'stabilizer',hz:'main',curve:'curve',autouv:'curve',scanner:'curve',fan:'main',overlay:'overlay',settings:'settings',updates:'settings',diagnostics:'settings',expert:'settings'};
   const related = {profiles:['community','curve','pilot'],community:['profiles','curve','scanner'],pilot:['library','profiles'],library:['pilot','stabilizer'],dcc:['stabilizer','overlay'],stabilizer:['dcc','library'],hz:['settings'],curve:['profiles','community','autouv','scanner','expert'],autouv:['profiles','curve','scanner'],scanner:['autouv','community','curve'],fan:['settings'],expert:['curve','stabilizer'],overlay:['settings'],settings:['updates','diagnostics'],updates:['diagnostics'],diagnostics:['settings']};
   const dialog = $('#feature-dialog');
   const tooltip = $('#control-tooltip');
@@ -163,7 +163,7 @@
     const screen = key ? screens[key] : null;
     const ownWindow = key === id || id === 'overlay';
     const contextLabel = ownWindow ? t('Im Originalfenster') : key === 'main' ? t('Im Hauptfenster') : key === 'curve' ? t('Im Kurveneditor') : t('In den Einstellungen');
-    const visual = screen ? `<div><div class="image-instruction"><span>${contextLabel}: ${t("Optionen anklicken")}</span><button class="quiet" data-areas aria-pressed="${showAreas}">${t(showAreas?'Klickbereiche ausblenden':'Klickbereiche zeigen')}</button></div><figure class="original-screen ${screen.shape}">${['wide','dcc'].includes(screen.shape)?`<p class="scroll-hint">${t("Fenster seitlich wischen oder mit den Pfeiltasten bewegen →")}</p>`:''}<div class="image-scroll"${['wide','dcc'].includes(screen.shape)?` tabindex="0" role="region" aria-label="${t("Originalfenster, auf kleinen Bildschirmen horizontal scrollbar")}"`:''}><div class="hotspot-image ${screen.shape}">${screenMarkup(key,ownWindow?null:id)}</div></div><figcaption>${esc(screen.caption)}</figcaption></figure>${!ownWindow && key !== 'main' ? `<p class="screen-note">${t("Die Aufnahme zeigt den Zugang zu")} ${esc(features[id][0])}. ${t("Die Optionen der Funktion findest du unten erklärt.")}</p>`:''}</div>` : `<div class="screen-note"><strong>${t("Fan curve in Play öffnen")}</strong>${t("In neueren Play-Versionen findest du die Lüftersteuerung direkt im Hauptfenster. Für diesen Dialog liegt in der Vorschau noch keine passende Originalaufnahme vor. Die verfügbaren Optionen sind unten erklärt.")}</div>`;
+    const visual = screen ? `<div><div class="image-instruction"><span>${contextLabel}: ${t("Optionen anklicken")}</span><button class="quiet" data-areas aria-pressed="${showAreas}">${t(showAreas?'Klickbereiche ausblenden':'Klickbereiche zeigen')}</button></div><figure class="original-screen ${screen.shape}">${['wide','dcc'].includes(screen.shape)?`<p class="scroll-hint">${t("Fenster seitlich wischen oder mit den Pfeiltasten bewegen →")}</p>`:''}<div class="image-scroll"${['wide','dcc'].includes(screen.shape)?` tabindex="0" role="region" aria-label="${t("Originalfenster, auf kleinen Bildschirmen horizontal scrollbar")}"`:''}><div class="hotspot-image ${screen.shape}">${screenMarkup(key,ownWindow?null:id)}</div></div><figcaption>${esc(screen.caption)}</figcaption></figure>${!ownWindow && (key !== 'main' || id === 'fan') ? `<p class="screen-note">${t("Die Aufnahme zeigt den Zugang zu")} ${esc(features[id][0])}. ${t("Die Optionen der Funktion findest du unten erklärt.")}</p>`:''}</div>` : `<div class="screen-note"><strong>${t("Fan curve in Play öffnen")}</strong>${t("In neueren Play-Versionen findest du die Lüftersteuerung direkt im Hauptfenster. Für diesen Dialog liegt in der Vorschau noch keine passende Originalaufnahme vor. Die verfügbaren Optionen sind unten erklärt.")}</div>`;
     $('#dialog-title').textContent = features[id][0];
     dialog.dataset.feature = id;
     $('#back-dialog').hidden = trail.length === 0;

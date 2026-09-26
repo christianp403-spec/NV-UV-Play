@@ -8,12 +8,12 @@ window.PLAY_GUIDE_EN = {
     limit: 'Community-tested does not mean stable on every graphics card. Test a profile on your own system.',
     controls: [
       ['Profile slots', 'Quick access to up to six profiles. Clicking a slot activates its saved profile globally. You can customize the names.'],
-      ['Eco / MFG / Balanced (Daily) / Performance / Max', 'Preselected profiles with different priorities. Eco focuses on saving power; Balanced strikes a balance between performance and consumption. Balanced is called Daily in the main-window screenshot. MFG is also available on Blackwell GPUs in the RTX 50 series for games using Multi Frame Generation. Actual values depend on the GPU and profile.'],
+      ['Eco / MFG / Balanced (Daily) / Performance / Max', 'Preselected profiles with different priorities. Eco focuses on saving power; Balanced strikes a balance between performance and consumption. Older main windows also called Balanced Daily. MFG is also available on Blackwell GPUs in the RTX 50 series for games using Multi Frame Generation. Actual values depend on the GPU and profile.'],
       ['Default', 'Restores the default profile. This does not delete your saved profiles or game assignments.'],
       ['Manage profiles', 'Create and edit your own profiles and assign them to multiple games. Changes to a shared profile apply to its assignments.'],
       ['Rename', 'Gives a profile a meaningful name. This changes its label, not its tuning values.'],
       ['Save only / Save as new', 'Saves a draft or a new copy. Useful when preparing settings without immediately changing the active profile.'],
-      ['Daily / Balanced', 'Daily is the Balanced profile. It balances performance and power consumption. The pictured main window calls it Daily, while the curve editor calls it Balanced.'],
+      ['Daily / Balanced', 'Daily is the Balanced profile. It balances performance and power consumption. Older main windows call it Daily, while the pictured curve editor calls it Balanced. Custom profile slots can have other names.'],
       ['Community profiles through UV Try', 'UV Curve → UV Try offers more entries for your GPU model. Import one into a slot, test it and rate your experience. Learn from other users and contribute your own findings.'],
       ['MFG · Multi Frame Generation', 'A dedicated profile for games with Multi Frame Generation on Blackwell GPUs in the RTX 50 series. It sits between Eco and Balanced and is tuned for this workload. You still select the frame-generation setting in the game. Check performance, power consumption and stability with your actual game settings.']
     ]
@@ -95,7 +95,7 @@ window.PLAY_GUIDE_EN = {
     purpose: 'DCC adjusts clock behavior during detected games. It offers Automatic and the separate NVIDIA Power Efficiency Mode.',
     benefit: 'When extra clock speed offers little benefit in a game, DCC can help reduce unnecessary power consumption. The actual benefit depends on the game and hardware.',
     how: 'Choose an algorithm in DCC settings. Turn Stabilizer off before enabling DCC. Configure NVIDIA Experimental before launching a game.',
-    limit: 'DCC does not guarantee FPS or power savings. NVIDIA Experimental means Power Efficiency Mode, not Expert voltage settings. This mode currently requires a single NVIDIA GPU.',
+    limit: 'DCC Automatic uses the GPU selected in Play, including on multi-GPU systems. The separate NVIDIA Experimental mode (Power Efficiency Mode) currently requires a single NVIDIA GPU. It is different from Expert voltage settings. DCC does not guarantee FPS or power savings; full multi-GPU hardware validation is still pending.',
     controls: [
       ['DCC Automatic', 'Gradually searches for a suitable GPU clock while the game is running, checking performance and utilization. Learning data is saved per game.'],
       ['NVIDIA Power Efficiency Mode', 'Requests an efficiency mode from the NVIDIA driver. Its target is separate from an FPS limiter. Restart the game after making changes.'],
@@ -146,14 +146,18 @@ window.PLAY_GUIDE_EN = {
   },
   fan: {
     purpose: 'Fan control offers GPU automatic control, a fixed fan setting or a custom temperature curve for each supported channel.',
-    benefit: 'Adjust the balance between cooling and noise to your needs. Auto lets the GPU keep managing its own fans.',
-    how: 'Open Fan curve and choose a mode. For a custom curve, assign fan values to temperatures.',
-    limit: 'The driver and hardware must support control. Hardware-write validation is still pending. Fan settings that are too low can reduce cooling.',
+    benefit: 'Adjust cooling and noise to your needs. The feature is still being improved; Zero Fan does not work yet.',
+    how: 'Open Fan curve in the Play v2.0.9 main window. Choose GPU automatic control, a fixed fan setting or a custom temperature curve. Apply & save applies and saves the settings.',
+    limit: 'Fan control is still being improved. Zero Fan, meaning a complete fan stop, does not work yet. The driver and hardware must support control; hardware-write validation is still pending.',
+    scenarioTitle: 'Adjust cooling and noise to your needs.',
+    scenario: 'Want to adapt fan behavior to how you use your GPU? Fan curve offers GPU automatic control, fixed fan settings and custom temperature curves. This area is still being developed. Zero Fan is not available yet.',
     controls: [
       ['GPU automatic', 'Leaves fan control to the GPU. You do not need a custom curve.'],
       ['Fixed speed', 'Holds a selected fan setting. Useful for comparisons, but it does not automatically adapt to temperature.'],
       ['Custom curve', 'Assigns fan values to temperatures so the fan can provide more cooling at higher temperatures.'],
-      ['Channels and profiles', 'Configure supported fan channels separately. Saved profiles and optional activation at startup make recurring settings easier.']
+      ['Channels and profiles', 'Configure supported fan channels separately. Saved profiles and optional activation at startup make recurring settings easier.'],
+      ['Zero Fan · not available yet', 'A complete fan stop is not currently supported. Fan control is still being improved; Zero Fan is not an available feature yet.'],
+      ['Apply & save', 'Applies and saves the selected fan settings. Editing a curve or loading a profile alone does not activate those settings.']
     ]
   },
   hz: {
