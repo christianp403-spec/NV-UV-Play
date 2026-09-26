@@ -47,11 +47,11 @@ dialog{width:min(1240px,calc(100% - 40px));max-height:calc(100dvh - 40px);paddin
 
 /* Separate pages share navigation and retain the original interactive captures. */
 .site-footer{flex-wrap:wrap}
-.project-contact{flex-basis:100%;min-width:0;border-top:1px solid var(--line);padding-top:16px}
-.project-contact h2{font-size:16px;font-weight:550;margin:0 0 8px}
-.site-footer .project-contact p{font-size:12px;line-height:1.7;margin:0;color:var(--muted)}
-.project-contact a{overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
-.project-contact a:hover{color:var(--accent)}
+.project-support{flex-basis:100%;min-width:0;border-top:1px solid var(--line);padding-top:16px}
+.project-support h2{font-size:14px;font-weight:550;line-height:1.5;margin:0}
+.support-links{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px}
+.support-links a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:3px}
+.support-links a:hover{color:var(--accent)}
 .site-header nav a{min-height:44px;display:flex;align-items:center;border-bottom:2px solid transparent}
 .site-header nav a[aria-current="page"]{color:var(--accent);border-color:var(--accent)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px 26px;padding-top:26px;font-size:13px}
