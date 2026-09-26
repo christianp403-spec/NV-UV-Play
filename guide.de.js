@@ -4,7 +4,7 @@ window.PLAY_GUIDE_DE = {
   "profiles": {
     "purpose": "Profile fassen deine GPU-Einstellungen zusammen. Die sechs Plätze machen sie im Hauptfenster direkt erreichbar.",
     "benefit": "Du musst nicht jede Einstellung einzeln erarbeiten. Community-erprobte, vorausgewählte Profile erleichtern den Einstieg; eigene Profile ermöglichen spätere Anpassungen.",
-    "how": "Wähle im Hauptfenster einen der vorausgewählten Profilplätze. Ein Klick aktiviert das Profil. Zu den Profilen gehören Eco, Balanced (Daily), Performance und Max sowie MFG auf Blackwell/RTX 50. Du kannst später eigene Profile speichern und die Plätze passend belegen.",
+    "how": "Wähle im Hauptfenster einen der vorausgewählten Profilplätze. Ein Klick aktiviert das Profil. Zu den Profilen gehören Eco, Balanced, Performance und Max sowie MFG auf Blackwell/RTX 50. Du kannst später eigene Profile speichern und die Plätze passend belegen.",
     "limit": "Community-erprobt bedeutet nicht auf jeder Grafikkarte stabil. Ein Profil auf dem eigenen System prüfen.",
     "controls": [
       [
@@ -12,8 +12,8 @@ window.PLAY_GUIDE_DE = {
         "Schnellzugriff auf bis zu sechs Profile. Ein Klick aktiviert das gespeicherte Profil global. Die Namen lassen sich anpassen."
       ],
       [
-        "Eco / MFG / Balanced (Daily) / Performance / Max",
-        "Vorausgewählte Profile mit unterschiedlichen Schwerpunkten. Eco legt den Fokus auf Sparsamkeit, Balanced auf einen Mittelweg zwischen Leistung und Verbrauch. Balanced wurde in älteren Hauptfenstern auch Daily genannt. MFG ist zusätzlich auf Blackwell-GPUs der RTX-50-Serie verfügbar und für Spiele mit Multi Frame Generation vorgesehen. Die tatsächlichen Werte hängen von GPU und Profil ab."
+        "Eco / MFG / Balanced / Performance / Max",
+        "Vorausgewählte Profile mit unterschiedlichen Schwerpunkten. Eco legt den Fokus auf Sparsamkeit, Balanced auf einen Mittelweg zwischen Leistung und Verbrauch. MFG ist zusätzlich auf Blackwell-GPUs der RTX-50-Serie verfügbar und für Spiele mit Multi Frame Generation vorgesehen. Die tatsächlichen Werte hängen von GPU und Profil ab."
       ],
       [
         "Default",
@@ -32,8 +32,8 @@ window.PLAY_GUIDE_DE = {
         "Speichert einen Entwurf beziehungsweise eine neue Kopie. Das ist sinnvoll, wenn du Einstellungen vorbereiten möchtest, ohne das aktive Profil sofort zu wechseln."
       ],
       [
-        "Daily / Balanced",
-        "Daily ist das Balanced-Profil. Es setzt auf einen Mittelweg zwischen Leistung und Verbrauch. In älteren Hauptfenstern heißt es Daily, im abgebildeten Kurveneditor Balanced. Eigene Profilplätze können andere Namen tragen."
+        "Balanced",
+        "Balanced setzt auf einen Mittelweg zwischen Leistung und Verbrauch. Eigene Profilplätze können andere Namen tragen."
       ],
       [
         "Community-Profile über UV Try",

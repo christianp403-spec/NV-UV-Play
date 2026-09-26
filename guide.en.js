@@ -4,16 +4,16 @@ window.PLAY_GUIDE_EN = {
   profiles: {
     purpose: 'Profiles bring your GPU settings together. Six slots make them directly accessible in the main window.',
     benefit: 'You do not have to work out every setting yourself. Preselected, community-tested profiles make it easy to start; your own profiles let you fine-tune later.',
-    how: 'Choose a preselected profile slot in the main window. One click activates it. Profiles include Eco, Balanced (Daily), Performance and Max, plus MFG on Blackwell/RTX 50. You can save your own profiles and assign them to the slots later.',
+    how: 'Choose a preselected profile slot in the main window. One click activates it. Profiles include Eco, Balanced, Performance and Max, plus MFG on Blackwell/RTX 50. You can save your own profiles and assign them to the slots later.',
     limit: 'Community-tested does not mean stable on every graphics card. Test a profile on your own system.',
     controls: [
       ['Profile slots', 'Quick access to up to six profiles. Clicking a slot activates its saved profile globally. You can customize the names.'],
-      ['Eco / MFG / Balanced (Daily) / Performance / Max', 'Preselected profiles with different priorities. Eco focuses on saving power; Balanced strikes a balance between performance and consumption. Older main windows also called Balanced Daily. MFG is also available on Blackwell GPUs in the RTX 50 series for games using Multi Frame Generation. Actual values depend on the GPU and profile.'],
+      ['Eco / MFG / Balanced / Performance / Max', 'Preselected profiles with different priorities. Eco focuses on saving power; Balanced strikes a balance between performance and consumption. MFG is also available on Blackwell GPUs in the RTX 50 series for games using Multi Frame Generation. Actual values depend on the GPU and profile.'],
       ['Default', 'Restores the default profile. This does not delete your saved profiles or game assignments.'],
       ['Manage profiles', 'Create and edit your own profiles and assign them to multiple games. Changes to a shared profile apply to its assignments.'],
       ['Rename', 'Gives a profile a meaningful name. This changes its label, not its tuning values.'],
       ['Save only / Save as new', 'Saves a draft or a new copy. Useful when preparing settings without immediately changing the active profile.'],
-      ['Daily / Balanced', 'Daily is the Balanced profile. It balances performance and power consumption. Older main windows call it Daily, while the pictured curve editor calls it Balanced. Custom profile slots can have other names.'],
+      ['Balanced', 'Balanced strikes a balance between performance and power consumption. Custom profile slots can have other names.'],
       ['Community profiles through UV Try', 'UV Curve → UV Try offers more entries for your GPU model. Import one into a slot, test it and rate your experience. Learn from other users and contribute your own findings.'],
       ['MFG · Multi Frame Generation', 'A dedicated profile for games with Multi Frame Generation on Blackwell GPUs in the RTX 50 series. It sits between Eco and Balanced and is tuned for this workload. You still select the frame-generation setting in the game. Check performance, power consumption and stability with your actual game settings.']
     ]
