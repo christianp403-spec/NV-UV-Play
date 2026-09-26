@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Get started with NV-UV Play: download, installation, supported GPUs and frequently asked questions.">
+  <meta name="theme-color" content="#0a0c0b">
+  <title>Get started | NV-UV Play</title>
+  <link rel="alternate" hreflang="de" href="loslegen.html">
+  <link rel="alternate" hreflang="en" href="get-started.html">
+  <link rel="icon" type="image/png" href="assets/wordmark.png">
+  <link rel="stylesheet" href="styles.css?v=20260926-pages-1">
+  <script src="guide.en.js?v=20260926-pages-1" defer></script>
+  <script src="guide.ui.en.js?v=20260926-pages-1" defer></script>
+  <script src="guide-app.js?v=20260926-pages-1" defer></script>
+  <script src="site-navigation.js?v=20260926-pages-1" defer></script>
+</head>
+<body data-page="start">
+<a class="skip-link" href="#top">Skip to content</a>
+<header class="site-header wrap">
+  <a class="brand" href="en.html" aria-label="NV-UV Play home"><img src="assets/wordmark.png" width="188" height="56" alt="NV-UV Play"></a>
+  <nav aria-label="Main navigation"><a href="en.html">Explore Play</a><a href="features.html">Features</a><a href="get-started.html" aria-current="page">Get started</a></nav>
+  <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="loslegen.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div><a class="button small" href="https://github.com/christianp403-spec/NV-UV-Play/releases" target="_blank" rel="noopener noreferrer">Download <span aria-hidden="true">↗</span></a></div>
+</header>
+<main id="top">
+  <section class="start-section wrap" id="start" aria-labelledby="start-title">
+    <div class="section-heading"><div><p class="eyebrow">READY FOR PLAY?</p><h1 id="start-title">From your browser to your desktop.</h1></div><a class="button primary" href="https://github.com/christianp403-spec/NV-UV-Play/releases" target="_blank" rel="noopener noreferrer">Get the download ↗</a></div>
+    <div class="install-steps"><article><span>01</span><h3>Download</h3><p>Open Releases and choose the portable ZIP for your desired Play version. Play V2 is an alpha.</p></article><article><span>02</span><h3>Extract everything</h3><p>Extract the entire ZIP into its own folder. Keep all included files together.</p></article><article><span>03</span><h3>Launch Play</h3><p>Start <code>NV-UV-Play.exe</code>. The .NET runtime is included. Play runs on its own and does not need MSI Afterburner.</p></article></div>
+    <section class="requirements" id="faq" aria-labelledby="faq-title">
+      <h3 id="faq-title">Questions before you start?</h3>
+      <details open><summary>Which graphics cards does Play support?</summary><p>GeForce RTX desktop models in the RTX 20, RTX 30, RTX 40 and RTX 50 series on Windows 11. Individual features depend on the GPU and driver.</p></details>
+      <details><summary>Are notebooks supported?</summary><p>Not yet. Play is currently intended for desktop graphics cards.</p></details>
+      <details><summary>Does Play work with a multi-GPU setup?</summary><p>Do you have more than one GeForce graphics card in your PC? Yes, Play lets you select a target GPU. Under Settings → NVIDIA GPU for Play, choose the card you want Play to control. Save the selection and restart Play.</p><p><strong>Profiles, readings and DCC Automatic use the selected card.</strong> The limitation applies to the separate <strong>DCC NVIDIA Experimental mode (Power Efficiency Mode)</strong>, which currently requires a single NVIDIA GPU. The Voltage Step Scanner has the same restriction.</p><p>Selecting a GPU in Play does not change the GPU used by a game or Lossless Scaling. Full multi-GPU hardware validation is still pending.</p></details>
+      <details><summary>Do I need MSI Afterburner for Play?</summary><p>No. NV-UV is the companion app for MSI Afterburner. NV-UV Play is a standalone application and does not require Afterburner. Use Play separately from MSI Afterburner for GPU tuning.</p></details>
+      <details><summary>Does Play cost anything?</summary><p>No. NV-UV Play is free of charge.</p></details>
+      <details><summary>Is Play open source?</summary><p>NV-UV Play is currently not open source. Please refer to the included license notices for terms of use and further licensing questions.</p></details>
+      <details><summary>What should I know about the alpha?</summary><p>The developer has tested the alpha on RTX 50. Other GPU families need further validation; RTX 20 and RTX 30 are experimental. Multi-GPU hardware tests are still pending. New hardware writes, such as experimental voltage settings and fan control, have not been comprehensively validated.</p><p>The overlay supports desktop, windowed and borderless modes. Exclusive fullscreen has not been supported since v2.0.8.</p></details>
+      <details><summary>Do I need to test profiles on my card?</summary><p>Yes. Community-tested profiles and Auto-UV provide a starting point. Every GPU and game can behave differently. Test settings on your system and follow the notices in Play. A passed test and Stabilizer do not guarantee lasting stability.</p></details>
+    </section>
+  </section>
+</main>
+<footer class="site-footer wrap"><div><strong>NV-UV <span>Play</span></strong><p>Efficiency wins.</p></div><div class="footer-links"><a href="https://github.com/christianp403-spec/NV-UV-Play" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/issues" target="_blank" rel="noopener noreferrer">Feedback ↗</a><a href="https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/" target="_blank" rel="noopener noreferrer">Community ↗</a></div><p class="footer-note">Get to know Play<br>Original captures · English version</p></footer>
+<dialog id="feature-dialog" aria-labelledby="dialog-title"><div class="dialog-chrome"><button id="back-dialog" class="quiet" aria-label="Back to the previous feature" hidden>← Back</button><h2 id="dialog-title"></h2><button id="close-dialog" aria-label="Close window" autofocus>×</button></div><div id="dialog-body"></div></dialog>
+<div id="control-tooltip" popover="manual" role="dialog" aria-labelledby="tooltip-title" aria-describedby="tooltip-copy"><button id="close-tooltip" aria-label="Close explanation">×</button><p class="eyebrow">QUICK EXPLANATION</p><h3 id="tooltip-title"></h3><p id="tooltip-copy"></p><button class="text-link" id="tooltip-more" hidden>More about this feature ↗</button></div>
+<noscript><p class="noscript">Enable JavaScript for clickable original windows and feature categories. Text, language selection and download links work without JavaScript.</p></noscript>
+</body>
+</html>

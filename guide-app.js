@@ -83,8 +83,9 @@
   Object.values(categories).forEach(category=>{category.name=t(category.name);category.description=t(category.description);});
   Object.values(screens).forEach(screen=>{screen.alt=t(screen.alt);screen.caption=t(screen.caption);screen.spots.forEach(spot=>spot.label=t(spot.label));});
   const languageLink = document.querySelector('[data-language-switch]');
+  const languagePage = languageLink?.getAttribute('href').split('#')[0];
   function syncLanguageLink() {
-    if (languageLink) languageLink.href = (english ? 'index.html' : 'en.html') + location.hash;
+    if (languageLink) languageLink.href = languagePage + location.hash;
   }
   syncLanguageLink();
   window.addEventListener('hashchange',syncLanguageLink);
@@ -209,9 +210,11 @@
       button.textContent = t(showAreas ? 'Klickbereiche ausblenden' : 'Klickbereiche zeigen');
     });
   }
-  $('#main-screen').innerHTML = screenMarkup('main');
-  $('#category-tabs').innerHTML = Object.entries(categories).map(([key,category])=>`<button id="category-${key}" role="tab" data-category="${key}" aria-controls="feature-panel" aria-selected="false" tabindex="-1">${category.name}</button>`).join('');
-  setCategory('entry');
+  if ($('#main-screen')) $('#main-screen').innerHTML = screenMarkup('main');
+  if ($('#category-tabs')) {
+    $('#category-tabs').innerHTML = Object.entries(categories).map(([key,category])=>`<button id="category-${key}" role="tab" data-category="${key}" aria-controls="feature-panel" aria-selected="false" tabindex="-1">${category.name}</button>`).join('');
+    setCategory('entry');
+  }
 
   document.addEventListener('click',event=>{
     const button = event.target.closest('button');
@@ -229,7 +232,7 @@
       if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
     }
   });
-  $('#category-tabs').addEventListener('keydown',event=>{
+  $('#category-tabs')?.addEventListener('keydown',event=>{
     if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
     const keys = Object.keys(categories);
     const index = keys.indexOf(event.target.dataset.category);
@@ -265,7 +268,7 @@
     register({name:'explain_play_control',title:t('Option im Play-Originalfenster erklären'),description:t('Öffnet die anklickbare Erklärung einer sichtbaren Option im Originalfenster. Zuerst eine Funktion mit open_play_guide öffnen. Keine Hardwarewirkung.'),inputSchema:{type:'object',properties:{label:{type:'string',description:t('Exakte sichtbare Beschriftung der Option, z. B. Correction strategy oder NVIDIA Max Frame Rate.')}},required:['label'],additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:false},execute(input){
       if (!input || Object.keys(input).length !== 1 || typeof input.label !== 'string' || input.label.length > 120) throw new Error(t('Eine gültige Beschriftung ist erforderlich.'));
       const scope = dialog.open ? dialog : $('#main-screen');
-      const button = Array.from(scope.querySelectorAll('[data-spot]')).find(element=>element.getAttribute('aria-label') === explainLabel(input.label));
+      const button = Array.from(scope?.querySelectorAll('[data-spot]') || []).find(element=>element.getAttribute('aria-label') === explainLabel(input.label));
       if (!button) throw new Error(t('Diese Option ist im aktuellen Fenster nicht vorhanden.'));
       showTooltip(button,false);return {title:$('#tooltip-title').textContent,explanation:$('#tooltip-copy').textContent,hardwareAccess:false};
     }});

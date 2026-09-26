@@ -44,3 +44,46 @@ dialog{width:min(1240px,calc(100% - 40px));max-height:calc(100dvh - 40px);paddin
 .language-switch [aria-current="page"]{color:#d4edbd;background:#233018;border-color:#485c35}
 .language-switch a:hover{color:var(--accent)}
 @media(max-width:680px){.header-actions{gap:8px}.language-switch{font-size:11px}.language-switch a,.language-switch span{padding:8px 5px}}
+
+/* Separate pages share navigation and retain the original interactive captures. */
+.site-header nav a{min-height:44px;display:flex;align-items:center;border-bottom:2px solid transparent}
+.site-header nav a[aria-current="page"]{color:var(--accent);border-color:var(--accent)}
+.section-nav{display:flex;flex-wrap:wrap;gap:8px 26px;padding-top:26px;font-size:13px}
+.section-nav a{min-height:44px;display:flex;align-items:center;color:var(--muted)}
+.section-nav a:hover{color:var(--accent)}
+body[data-page="features"] .guide-section,body[data-page="start"] .start-section{border-top:0}
+.section-heading h1{font-size:clamp(2rem,4vw,3.4rem);font-weight:550;letter-spacing:-.035em;line-height:1.12;margin:0;max-width:800px}
+.interaction-hint{font-size:12px;line-height:1.6;color:#a9b89d;margin:0 0 15px;padding:10px 14px;border-left:2px solid var(--accent);background:#15200e}
+.interaction-hint>span{color:var(--accent);font-size:17px;margin-right:5px}
+.interaction-hint strong{color:#d8edc8}
+@media(max-width:680px){
+  .site-header{height:auto;display:flex;flex-wrap:wrap;padding-top:15px;padding-bottom:0;gap:10px}
+  .site-header .brand img{width:128px}
+  .header-actions{margin-left:auto;gap:8px}
+  .site-header nav{order:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));flex-basis:100%;gap:0;font-size:13px}
+  .site-header nav a{justify-content:center;text-align:center;min-height:48px}
+  .language-switch a,.language-switch span{display:flex;align-items:center;min-height:44px}
+  .header-actions .button{min-height:44px}
+  .hero h1{font-size:clamp(2.55rem,11.5vw,3.25rem)}
+  .stage-caption{align-items:flex-start;flex-direction:column;gap:4px;padding-bottom:7px}
+  .stage-caption .quiet{min-height:44px;font-size:12px}
+  .interaction-hint{font-size:13px;margin-bottom:16px}
+  .interaction-hint strong{display:inline}
+  .stage-body{padding:12px}
+  .stage-foot{font-size:11px}
+  .section-nav{gap:4px 20px;padding-top:18px}
+  .section-heading h1{font-size:32px}
+  .category-tabs button{min-height:48px}
+  .scenario-links .text-link,.coach .text-link{min-height:44px;display:inline-flex;align-items:center}
+  #close-tooltip,.dialog-chrome>button:last-child{width:44px;height:44px}
+  #control-tooltip .eyebrow,#tooltip-title{padding-right:16px}
+  .requirements summary{min-height:44px;padding-bottom:8px}
+  .why-section h2{font-size:30px}
+  .community-steps{gap:12px}
+}
+@media(max-width:360px){
+  .wrap{padding-left:16px;padding-right:16px}
+  .site-header .brand img{width:105px}
+  .header-actions{gap:4px}.header-actions .button{padding:9px;gap:7px}
+  .language-switch a,.language-switch span{padding-left:4px;padding-right:4px}
+}
