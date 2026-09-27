@@ -91,7 +91,7 @@ window.PLAY_GUIDE_EN = {
   },
   curve: {
     purpose: 'The UV curve editor defines the GPU frequency at each voltage point. You can also change the power limit and VRAM offset.',
-    benefit: 'Fine-tune a community profile for your card and games. The aim is to find a suitable balance between performance and power consumption.',
+    benefit: 'Tailor your profile to your graphics card and games: edit individual curve points by hand or manually flatten the curve for classic undervolting. You can also enter recommended voltage and clock settings from forums or videos directly, or try community profiles through UV Try.',
     how: 'Select a profile slot and voltage point, then enter the clock, for example from a forum or video. One click on Apply curve applies and saves the UV curve. Use Save only if you want to save a draft first.',
     limit: 'The values shown belong to the original screenshot. They are not tuning recommendations for your card. Test changes in your games.',
     controls: [

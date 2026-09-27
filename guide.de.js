@@ -121,7 +121,7 @@ window.PLAY_GUIDE_DE = {
   },
   "curve": {
     "purpose": "Der UV-Kurveneditor legt fest, welche GPU-Frequenz zu einem Spannungspunkt gehört. Zusätzlich lassen sich Power limit und VRAM-Offset bearbeiten.",
-    "benefit": "Du kannst ein Community-Profil gezielt auf deine Karte und deine Spiele abstimmen. Ziel ist ein passendes Verhältnis zwischen Leistung und Energiebedarf.",
+    "benefit": "Du kannst dein Profil gezielt auf deine Grafikkarte und deine Spiele abstimmen: Setze einzelne Kurvenpunkte von Hand oder flache die Kurve manuell ab, wie beim klassischen Undervolting. Du kannst auch empfohlene Spannungs- und Taktwerte aus Foren oder Videos direkt eintragen oder Community-Profile über UV Try ausprobieren.",
     "how": "Wähle einen Profilplatz und einen Spannungspunkt. Trage den Takt ein, zum Beispiel aus einem Forum oder Video. Ein Klick auf Apply curve setzt und speichert die UV-Kurve. Mit Save only kannst du stattdessen zunächst einen Entwurf speichern.",
     "limit": "Die abgebildeten Werte gehören zur Originalaufnahme. Sie sind keine Tuning-Empfehlung für deine Karte. Prüfe Änderungen in deinen Spielen.",
     "controls": [
