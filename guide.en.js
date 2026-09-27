@@ -138,10 +138,10 @@ window.PLAY_GUIDE_EN = {
     purpose: 'DCC adjusts clock behavior during detected games. It offers Automatic and the separate NVIDIA Power Efficiency Mode.',
     benefit: 'When extra clock speed offers little benefit in a game, DCC can help reduce unnecessary power consumption. The actual benefit depends on the game and hardware.',
     how: 'Choose an algorithm in DCC settings. Turn Stabilizer off before enabling DCC. Configure NVIDIA Experimental before launching a game.',
-    limit: 'DCC Automatic uses the GPU selected in Play, including on multi-GPU systems. The separate NVIDIA Experimental mode (Power Efficiency Mode) currently requires a single NVIDIA GPU. It is different from Expert voltage settings. DCC does not guarantee FPS or power savings; full multi-GPU hardware validation is still pending.',
+    limit: 'DCC can substantially reduce power consumption when your GPU is not fully utilized, for example with an FPS cap. Actual savings depend on the game and your GPU.',
     controls: [
-      ['DCC Automatic', 'Gradually searches for a suitable GPU clock while the game is running, checking performance and utilization. Learning data is saved per game.'],
-      ['NVIDIA Power Efficiency Mode', 'Requests an efficiency mode from the NVIDIA driver. Its target is separate from an FPS limiter. Restart the game after making changes.'],
+      ['DCC Automatic', 'Gradually searches for a suitable GPU clock while the game is running, checking performance and utilization. Learning data is saved per game. Uses the GPU selected in Play, including on multi-GPU systems.'],
+      ['NVIDIA Power Efficiency Mode', 'Requests an efficiency mode from the NVIDIA driver. Its target is separate from an FPS limiter. This separate DCC mode currently requires a single NVIDIA GPU and is independent of Expert voltage settings. Restart the game after making changes.'],
       ['Set efficiency target manually', 'Replaces the automatic efficiency target with a value of your own. Useful for particular monitor or game setups. It is not a guaranteed frame rate.'],
       ['FPS limit and VSync', 'NVIDIA Max Frame Rate caps FPS. Global NVIDIA VSync controls driver VSync. These are additional settings; avoid unnecessarily duplicating existing game or driver settings.'],
       ['Diagnostics and learning data', 'Performance logging records performance data for troubleshooting. Learned games shows saved DCC learning data for each game.'],

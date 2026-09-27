@@ -249,15 +249,15 @@ window.PLAY_GUIDE_DE = {
     "purpose": "DCC passt das Taktverhalten während erkannter Spiele an. Dafür stehen Automatic und der separate NVIDIA Power Efficiency Mode zur Verfügung.",
     "benefit": "Wenn zusätzlicher Takt im aktuellen Spiel wenig bringt, kann DCC helfen, unnötigen Energiebedarf zu reduzieren. Der tatsächliche Nutzen hängt vom Spiel und der Hardware ab.",
     "how": "Wähle in den DCC-Einstellungen einen Algorithmus. Schalte Stabilizer aus, bevor du DCC aktivierst. Konfiguriere NVIDIA Experimental vor dem Spielstart.",
-    "limit": "DCC Automatic verwendet auch in einem Multi-GPU-System die in Play ausgewählte Karte. Der separate Modus NVIDIA Experimental (Power Efficiency Mode) benötigt derzeit eine einzelne NVIDIA-GPU. Er ist nicht mit Expert voltage settings zu verwechseln. DCC ist keine FPS- oder Spargarantie; die vollständige Multi-GPU-Hardwareprüfung steht noch aus.",
+    "limit": "DCC kann den Stromverbrauch deutlich senken, wenn deine GPU nicht vollständig ausgelastet ist, zum Beispiel bei einem FPS-Limit. Wie viel du sparst, hängt vom Spiel und deiner GPU ab.",
     "controls": [
       [
         "DCC Automatic",
-        "Sucht im laufenden Spiel schrittweise einen sinnvollen GPU-Takt und prüft dabei Leistung und Auslastung. Der Lernstand wird pro Spiel gespeichert."
+        "Sucht im laufenden Spiel schrittweise einen sinnvollen GPU-Takt und prüft dabei Leistung und Auslastung. Der Lernstand wird pro Spiel gespeichert. Verwendet auch in Multi-GPU-Systemen die in Play ausgewählte Karte."
       ],
       [
         "NVIDIA Power Efficiency Mode",
-        "Fordert einen Effizienzmodus des NVIDIA-Treibers an. Das Ziel ist von einem FPS-Limiter getrennt. Nach Änderungen das Spiel neu starten."
+        "Fordert einen Effizienzmodus des NVIDIA-Treibers an. Das Ziel ist von einem FPS-Limiter getrennt. Dieser separate DCC-Modus benötigt derzeit eine einzelne NVIDIA-GPU und ist unabhängig von den Expert-Spannungseinstellungen. Nach Änderungen das Spiel neu starten."
       ],
       [
         "Set efficiency target manually",
