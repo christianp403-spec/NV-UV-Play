@@ -170,8 +170,8 @@ window.PLAY_GUIDE_DE = {
         "Öffnet separat freizugebende experimentelle Spannungs- und Taktparameter. Dieser Bereich richtet sich an erfahrene Nutzer und hat zusätzliche Risiken."
       ],
       [
-        "Restore Balanced",
-        "Belegt den ausgewählten Profilplatz wieder mit seinem vorbereiteten Profil. Im Bild ist das Platz 2 mit Balanced. Gespeicherte Profile und Spielzuordnungen bleiben erhalten; der ungespeicherte Entwurf dieses Platzes wird verworfen. Das Profil wird dadurch nicht automatisch auf der GPU aktiviert."
+        "Restore Eco",
+        "Belegt den ausgewählten Profilplatz wieder mit seinem vorbereiteten Profil. Im Bild ist das Platz 1 mit Eco. Gespeicherte Profile und Spielzuordnungen bleiben erhalten; der ungespeicherte Entwurf dieses Platzes wird verworfen. Das Profil wird dadurch nicht automatisch auf der GPU aktiviert."
       ],
       [
         "Assign to game",

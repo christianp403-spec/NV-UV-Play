@@ -106,7 +106,7 @@ window.PLAY_GUIDE_EN = {
       ['Undo / Redo', 'Reverts or restores an edit so you can compare drafts and correct mistakes.'],
       ['UV Try, Auto-UV and Scanner', 'UV Try provides community profiles. Auto-UV provides a NVIDIA starting point. The scanner checks candidates under test load. None of these methods guarantees stability on every GPU.'],
       ['Expert voltage settings', 'Opens experimental voltage and clock parameters that require separate confirmation. This area is intended for experienced users and carries additional risks.'],
-      ['Restore Balanced', 'Reassigns the prepared profile to the selected slot. The image shows slot 2 with Balanced. Saved profiles and game assignments are kept; the unsaved draft for that slot is discarded. This does not automatically activate the profile on the GPU.'],
+      ['Restore Eco', 'Reassigns the prepared profile to the selected slot. The image shows slot 1 with Eco. Saved profiles and game assignments are kept; the unsaved draft for that slot is discarded. This does not automatically activate the profile on the GPU.'],
       ['Assign to game', 'Assigns the profile to a game. UV Pilot can then use it automatically when the game launch is detected.'],
       ['Enable UV Pilot', 'Enables automatic use of game assignments. Assignments and the global profile are explained in the UV Pilot section.'],
       ['Voltage', 'Selects the voltage point you want to edit. The frequency shown beside it belongs to that point.'],
