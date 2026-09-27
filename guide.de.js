@@ -300,8 +300,8 @@ window.PLAY_GUIDE_DE = {
         "Zeigt, für welche Spiele DCC bereits einen Lernstand gespeichert hat. Beim nächsten Einsatz kann Play daran anknüpfen. Die leere Tabelle in der Aufnahme bedeutet, dass dort noch keine Lernstände vorlagen."
       ]
     ],
-    "scenarioTitle": "Meine Beobachtung mit der RTX 5090",
-    "scenario": "Bei meinen Tests mit einem FPS-Limit habe ich beobachtet: Wenn Takt und Spannung sinken, kann die angezeigte GPU-Auslastung steigen, während der Verbrauch fällt. Bildlich gesprochen ist der breite Chip der RTX 5090 wie ein kräftiger Diesel, der nicht hoch drehen muss: weniger Takt, mehr Auslastung, weniger Verbrauch, solange die gewünschte Bildrate gehalten wird. DCC Automatic sucht im Spiel nach einem passenden Takt und kann diesen Spielraum nutzen."
+    "scenarioTitle": "2.700 MHz, aber nur 50 % Auslastung?",
+    "scenario": "Stell dir vor, du hast ein FPS-Limit gesetzt: Deine GPU läuft mit 2.700 MHz, ist aber nur zu 50 % ausgelastet. Hier kommt DCC (Dynamic Clock Clapping) ins Spiel. DCC Automatic senkt den Takt schrittweise und prüft dabei die Leistung. Die angezeigte Auslastung kann steigen, während Takt, Spannung und Verbrauch sinken. Je nach vorhandenem Spielraum sind massive Einsparungen möglich, solange deine gewünschte Bildrate gehalten wird. Bildlich gesprochen: wie ein kräftiger Diesel, der nicht hoch drehen muss."
   },
   "overlay": {
     "purpose": "Das Overlay zeigt ausgewählte Leistungs- und Sensorwerte auf dem Desktop oder über erkannten Spielen.",

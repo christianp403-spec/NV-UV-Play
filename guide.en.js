@@ -153,8 +153,8 @@ window.PLAY_GUIDE_EN = {
       ['Enable performance logging', 'Records frame rate, GPU clock and power draw locally. This helps explain DCC behavior or prepare a bug report.'],
       ['Learned games', 'Shows games for which DCC has saved learning data. Play can reuse it next time. The empty table in the screenshot means no learning data was present there.']
     ],
-    scenarioTitle: 'My observation with the RTX 5090',
-    scenario: 'In my tests with an FPS cap, I noticed that lowering clock speed and voltage can increase reported GPU utilization while reducing power draw. Think of the RTX 5090’s wide chip as a powerful diesel engine that does not need high revs: lower clocks, higher utilization and less power, as long as the target frame rate is maintained. DCC Automatic looks for a suitable clock in-game and can make use of this headroom.'
+    scenarioTitle: '2,700 MHz, but only 50% utilization?',
+    scenario: 'Imagine you have set an FPS cap: your GPU runs at 2,700 MHz but is only 50% utilized. This is where DCC (Dynamic Clock Clapping) comes in. DCC Automatic gradually lowers the clock while checking performance. Reported utilization can rise while clock speed, voltage and power draw fall. Depending on the available headroom, substantial savings are possible as long as your target frame rate is maintained. Think of it as a powerful diesel engine that does not need high revs.'
   },
   overlay: {
     purpose: 'The overlay shows selected performance and sensor readings on the desktop or over detected games.',
