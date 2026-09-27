@@ -300,8 +300,8 @@ window.PLAY_GUIDE_DE = {
         "Zeigt, für welche Spiele DCC bereits einen Lernstand gespeichert hat. Beim nächsten Einsatz kann Play daran anknüpfen. Die leere Tabelle in der Aufnahme bedeutet, dass dort noch keine Lernstände vorlagen."
       ]
     ],
-    "scenarioTitle": "Du hast ein FPS-Limit. Die Karte taktet trotzdem hoch.",
-    "scenario": "Ein Framelimit begrenzt die Bilder pro Sekunde, erzwingt aber nicht automatisch den sparsamsten GPU-Takt. DCC Automatic prüft im Spiel, welcher Takt zur tatsächlichen Last passt. So kann Spielraum für weniger Verbrauch und Abwärme entstehen, wenn zusätzlicher Takt deiner Bildrate kaum hilft."
+    "scenarioTitle": "Meine Beobachtung mit der RTX 5090",
+    "scenario": "Bei meinen Tests mit einem FPS-Limit habe ich beobachtet: Wenn Takt und Spannung sinken, kann die angezeigte GPU-Auslastung steigen, während der Verbrauch fällt. Bildlich gesprochen ist der breite Chip der RTX 5090 wie ein kräftiger Diesel, der nicht hoch drehen muss: weniger Takt, mehr Auslastung, weniger Verbrauch, solange die gewünschte Bildrate gehalten wird. DCC Automatic sucht im Spiel nach einem passenden Takt und kann diesen Spielraum nutzen."
   },
   "overlay": {
     "purpose": "Das Overlay zeigt ausgewählte Leistungs- und Sensorwerte auf dem Desktop oder über erkannten Spielen.",
