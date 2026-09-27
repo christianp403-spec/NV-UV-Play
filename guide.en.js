@@ -114,7 +114,7 @@ window.PLAY_GUIDE_EN = {
       ['Power limit (%)', 'Caps permitted power draw relative to the card’s power budget. A lower limit can reduce consumption, but also performance.'],
       ['VRAM (MHz)', 'Changes the graphics-memory clock offset. This is separate from the GPU curve. Check memory changes for errors and stability.']
     ],
-    scenarioTitle: 'Already familiar with undervolting and want to fine-tune?',
+    scenarioTitle: 'Want more fine-tuning?',
     scenario: 'Tailor your UV curve to your card. Edit voltage points and clocks, adjust the power limit and VRAM offset, and save your own profiles. Use the Voltage Step Scanner for further tests and Expert voltage settings for additional experimental parameters.'
   },
   scanner: {

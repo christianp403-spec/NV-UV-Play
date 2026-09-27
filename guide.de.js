@@ -198,7 +198,7 @@ window.PLAY_GUIDE_DE = {
         "Ändert den Takt-Offset des Grafikspeichers. Das ist eine separate Einstellung zur GPU-Kurve. Prüfe Speicheränderungen auf Fehler und Stabilität."
       ]
     ],
-    "scenarioTitle": "Du kennst dich aus und möchtest selbst abstimmen?",
+    "scenarioTitle": "Du möchtest mehr Feinabstimmung?",
     "scenario": "Passe deine UV-Kurve gezielt an deine Karte an. Du kannst Spannungspunkte und Takt bearbeiten, Power limit und VRAM-Offset abstimmen und eigene Profile speichern. Für weitere Tests steht der Voltage Step Scanner bereit; zusätzliche experimentelle Spannungswerte findest du in den Expert voltage settings."
   },
   "scanner": {
