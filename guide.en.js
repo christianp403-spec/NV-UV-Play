@@ -153,8 +153,8 @@ window.PLAY_GUIDE_EN = {
       ['Enable performance logging', 'Records frame rate, GPU clock and power draw locally. This helps explain DCC behavior or prepare a bug report.'],
       ['Learned games', 'Shows games for which DCC has saved learning data. Play can reuse it next time. The empty table in the screenshot means no learning data was present there.']
     ],
-    scenarioTitle: '2,700 MHz, but only 50% utilization?',
-    scenario: 'Imagine you have set an FPS cap: your GPU runs at 2,700 MHz but is only 50% utilized. This is where DCC (Dynamic Clock Clapping) comes in. DCC Automatic gradually lowers the clock while checking performance. Reported utilization can rise while clock speed, voltage and power draw fall. Depending on the available headroom, substantial savings are possible as long as your target frame rate is maintained.'
+    scenarioTitle: '2,700+ MHz, but only 30 to 50% utilization?',
+    scenario: 'Imagine you are playing with V-Sync or an FPS cap, perhaps together with G-SYNC. Your graphics card is only 30 to 50% utilized, yet it still runs at 2,700 MHz or more. This is where DCC comes in: lower clocks, better utilization and, depending on the available headroom, significantly lower power draw while maintaining your target frame rate.'
   },
   overlay: {
     purpose: 'The overlay shows selected performance and sensor readings on the desktop or over detected games.',

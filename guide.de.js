@@ -300,8 +300,8 @@ window.PLAY_GUIDE_DE = {
         "Zeigt, für welche Spiele DCC bereits einen Lernstand gespeichert hat. Beim nächsten Einsatz kann Play daran anknüpfen. Die leere Tabelle in der Aufnahme bedeutet, dass dort noch keine Lernstände vorlagen."
       ]
     ],
-    "scenarioTitle": "2.700 MHz, aber nur 50 % Auslastung?",
-    "scenario": "Stell dir vor, du hast ein FPS-Limit gesetzt: Deine GPU läuft mit 2.700 MHz, ist aber nur zu 50 % ausgelastet. Hier kommt DCC (Dynamic Clock Clapping) ins Spiel. DCC Automatic senkt den Takt schrittweise und prüft dabei die Leistung. Die angezeigte Auslastung kann steigen, während Takt, Spannung und Verbrauch sinken. Je nach vorhandenem Spielraum sind massive Einsparungen möglich, solange deine gewünschte Bildrate gehalten wird."
+    "scenarioTitle": "2.700+ MHz, aber nur 30 bis 50 % Auslastung?",
+    "scenario": "Stell dir vor, du spielst mit V-Sync oder einem FPS-Limit, vielleicht zusammen mit G-SYNC. Deine Grafikkarte ist nur zu 30 bis 50 % ausgelastet, taktet aber trotzdem mit 2.700 MHz oder mehr. Genau hier kommt DCC ins Spiel: weniger Takt, bessere Auslastung und je nach Spielraum deutlich weniger Verbrauch, während deine gewünschte Bildrate erhalten bleibt."
   },
   "overlay": {
     "purpose": "Das Overlay zeigt ausgewählte Leistungs- und Sensorwerte auf dem Desktop oder über erkannten Spielen.",
