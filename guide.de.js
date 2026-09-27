@@ -246,7 +246,7 @@ window.PLAY_GUIDE_DE = {
     ]
   },
   "dcc": {
-    "purpose": "DCC passt das Taktverhalten während erkannter Spiele an. Dafür stehen Automatic und der separate NVIDIA Power Efficiency Mode zur Verfügung.",
+    "purpose": "DCC regelt den Takt deiner Grafikkarte beim Spielen automatisch. Wird nicht die volle Leistung benötigt, kann das Strom sparen und die Abwärme reduzieren.",
     "benefit": "Wenn zusätzlicher Takt im aktuellen Spiel wenig bringt, kann DCC helfen, unnötigen Energiebedarf zu reduzieren. Der tatsächliche Nutzen hängt vom Spiel und der Hardware ab.",
     "how": "Wähle in den DCC-Einstellungen einen Algorithmus. Schalte Stabilizer aus, bevor du DCC aktivierst. Konfiguriere NVIDIA Experimental vor dem Spielstart.",
     "limit": "DCC kann den Stromverbrauch deutlich senken, wenn deine GPU nicht vollständig ausgelastet ist, zum Beispiel bei einem FPS-Limit. Wie viel du sparst, hängt vom Spiel und deiner GPU ab.",
@@ -301,7 +301,7 @@ window.PLAY_GUIDE_DE = {
       ]
     ],
     "scenarioTitle": "2.700 MHz, aber nur 50 % Auslastung?",
-    "scenario": "Stell dir vor, du hast ein FPS-Limit gesetzt: Deine GPU läuft mit 2.700 MHz, ist aber nur zu 50 % ausgelastet. Hier kommt DCC (Dynamic Clock Clapping) ins Spiel. DCC Automatic senkt den Takt schrittweise und prüft dabei die Leistung. Die angezeigte Auslastung kann steigen, während Takt, Spannung und Verbrauch sinken. Je nach vorhandenem Spielraum sind massive Einsparungen möglich, solange deine gewünschte Bildrate gehalten wird. Bildlich gesprochen: wie ein kräftiger Diesel, der nicht hoch drehen muss."
+    "scenario": "Stell dir vor, du hast ein FPS-Limit gesetzt: Deine GPU läuft mit 2.700 MHz, ist aber nur zu 50 % ausgelastet. Hier kommt DCC (Dynamic Clock Clapping) ins Spiel. DCC Automatic senkt den Takt schrittweise und prüft dabei die Leistung. Die angezeigte Auslastung kann steigen, während Takt, Spannung und Verbrauch sinken. Je nach vorhandenem Spielraum sind massive Einsparungen möglich, solange deine gewünschte Bildrate gehalten wird."
   },
   "overlay": {
     "purpose": "Das Overlay zeigt ausgewählte Leistungs- und Sensorwerte auf dem Desktop oder über erkannten Spielen.",

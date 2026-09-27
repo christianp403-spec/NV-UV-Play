@@ -135,7 +135,7 @@ window.PLAY_GUIDE_EN = {
     ]
   },
   dcc: {
-    purpose: 'DCC adjusts clock behavior during detected games. It offers Automatic and the separate NVIDIA Power Efficiency Mode.',
+    purpose: 'DCC automatically adjusts your GPU clock while you play. When full GPU performance is not needed, it can reduce power consumption and heat.',
     benefit: 'When extra clock speed offers little benefit in a game, DCC can help reduce unnecessary power consumption. The actual benefit depends on the game and hardware.',
     how: 'Choose an algorithm in DCC settings. Turn Stabilizer off before enabling DCC. Configure NVIDIA Experimental before launching a game.',
     limit: 'DCC can substantially reduce power consumption when your GPU is not fully utilized, for example with an FPS cap. Actual savings depend on the game and your GPU.',
@@ -154,7 +154,7 @@ window.PLAY_GUIDE_EN = {
       ['Learned games', 'Shows games for which DCC has saved learning data. Play can reuse it next time. The empty table in the screenshot means no learning data was present there.']
     ],
     scenarioTitle: '2,700 MHz, but only 50% utilization?',
-    scenario: 'Imagine you have set an FPS cap: your GPU runs at 2,700 MHz but is only 50% utilized. This is where DCC (Dynamic Clock Clapping) comes in. DCC Automatic gradually lowers the clock while checking performance. Reported utilization can rise while clock speed, voltage and power draw fall. Depending on the available headroom, substantial savings are possible as long as your target frame rate is maintained. Think of it as a powerful diesel engine that does not need high revs.'
+    scenario: 'Imagine you have set an FPS cap: your GPU runs at 2,700 MHz but is only 50% utilized. This is where DCC (Dynamic Clock Clapping) comes in. DCC Automatic gradually lowers the clock while checking performance. Reported utilization can rise while clock speed, voltage and power draw fall. Depending on the available headroom, substantial savings are possible as long as your target frame rate is maintained.'
   },
   overlay: {
     purpose: 'The overlay shows selected performance and sensor readings on the desktop or over detected games.',
