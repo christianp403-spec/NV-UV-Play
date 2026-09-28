@@ -2,6 +2,8 @@
 
 **Kilby Alpha: NVIDIA GPU undervolting, game profiles, DCC and a customizable overlay.**
 
+**Explore Play:** [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html) · [Webseite (Deutsch)](https://christianp403-spec.github.io/NV-UV-Play/)
+
 NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.0.9 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.9).** This is an Alpha prerelease.
 
 **New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play. Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
