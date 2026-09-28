@@ -35,13 +35,29 @@
   // Hotspots use percentages of the unchanged product capture, never reconstructed UI.
   const s = (feature, control, rect, label) => ({feature,control,rect,label});
   const screens = {
-    main:{file:'play-main-v2.0.9-balanced.png',width:523,height:982,shape:'main',alt:'Originales NV-UV Play v2.0.9 Hauptfenster mit Profilplätzen, Fan curve und Funktionsschaltern',caption:'Originalaufnahme · Play v2.0.9 mit erkannter RTX 5090. Die gezeigten Einstellungen sind keine Empfehlung für deine GPU.',spots:[
-      s('profiles',1,[4.2,21.3,14,5.2],'Eco'),s('profiles',2,[19.9,21.3,14,5.2],'Balanced'),s('profiles',3,[35.5,21.3,14,5.2],'Performance'),s('profiles',4,[51.1,21.3,14,5.2],'Max'),s('profiles',5,[66.5,21.3,14,5.2],'MFG'),s('profiles',6,[82.2,21.3,14,5.2],'Custom'),
-      s('profiles',7,[75.7,28,20.5,4.1],'Default'),s('fan',null,[4.2,33.3,44.8,4.3],'Fan curve'),s('curve',null,[51.3,33.3,44.8,4.3],'Curve editor'),s('pilot',null,[4.2,41.6,92,4.2],'UV Pilot'),s('library',null,[65.5,46.3,30.5,4.2],'Game Library'),
-      s('dcc',null,[4.2,54.2,92,4.2],'DCC'),s('stabilizer',null,[4.2,59.6,92,4.2],'Stabilizer'),s('hz',null,[4.2,65,92,4.2],'Smart Hz'),s('overlay',null,[4.2,70.2,92,4.2],'Overlay'),
-      s('settings',null,[4.2,77.4,43,4.2],'Settings'),s('updates',null,[54.9,77.4,17.4,4.2],'Updates'),s('diagnostics',null,[74,77.4,22,4.2],'Diagnostics'),s('settings',1,[4.2,82.7,92,4.2],'Autostart'),s('settings',2,[4.2,95.5,35.5,3.3],'UI scaling')
+    main:{file:'play-main-v2.0.10.png',width:533,height:980,shape:'main',alt:"NV-UV Play v2.0.10 Hauptfenster mit Curve editor und Profilplätzen",caption:"Play v2.0.10 · Echte Oberfläche mit Beispielprofil und simuliertem GPU-Zustand.",spots:[
+      s('profiles',1,[5.253,22.143,13.696,5.204],'Eco'),
+      s('profiles',2,[20.45,22.143,13.696,5.204],'Balanced'),
+      s('profiles',3,[35.647,22.143,13.696,5.204],'Performance'),
+      s('profiles',4,[50.844,22.143,13.696,5.204],'Max'),
+      s('profiles',5,[66.041,22.143,13.696,5.204],'MFG'),
+      s('profiles',6,[81.238,22.143,13.696,5.204],'Custom'),
+      s('profiles',7,[75.047,28.878,19.887,4.184],'Default'),
+      s('fan',null,[5.253,34.286,43.715,4.184],'Fan curve'),
+      s('curve',null,[51.22,34.286,43.715,4.184],'Curve editor'),
+      s('pilot',null,[5.253,42.041,89.681,5.204],'UV Pilot'),
+      s('library',null,[65.103,47.245,29.831,4.184],'Game Library'),
+      s('dcc',null,[5.253,54.388,89.681,5.816],'DCC'),
+      s('stabilizer',null,[5.253,60.204,89.681,5.204],'Stabilizer'),
+      s('hz',null,[5.253,65.408,89.681,5.204],'Smart Hz'),
+      s('overlay',null,[5.253,70.612,89.681,5.204],'Overlay'),
+      s('settings',null,[5.253,78.469,17.073,4.184],'Settings'),
+      s('updates',null,[54.597,78.469,17.073,4.184],'Updates'),
+      s('diagnostics',null,[73.358,78.469,21.576,4.184],'Diagnostics'),
+      s('settings',1,[5.253,83.163,89.681,5.204],'Autostart'),
+      s('settings',2,[19.137,95.408,21.013,3.367],'UI scaling')
     ]},
-    curve:{file:'play-curve-editor-preview.png',width:1650,height:1218,shape:'wide',alt:"Neuer Curve editor mit getrennten Aktionen Apply curve und Flatline curve",caption:"Vorschau des nächsten Play-Stands · Echte Editor-Oberfläche mit gespeicherter RTX-5090-Stock-Kurve und beispielhaften Punktänderungen. Keine neue GPU-Anwendung oder Stabilitätsprüfung.",spots:[
+    curve:{file:'play-curve-editor-preview.png',width:1650,height:1218,shape:'wide',alt:"Neuer Curve editor mit getrennten Aktionen Apply curve und Flatline curve",caption:"Testaufnahme für Play v2.0.10 · Echte Editor-Oberfläche mit gespeicherter RTX-5090-Stock-Kurve und beispielhaften Punktänderungen. Keine neue GPU-Anwendung oder Stabilitätsprüfung.",spots:[
       s("curve",0,[8.4,6.6,48,5.4],"Profilplätze"),
       s("profiles",7,[56.8,6.6,7.6,5.4],"Default"),
       s("community",null,[67.64,7.31,7.82,3.94],"UV Try"),
@@ -99,7 +115,7 @@
   };
   Object.values(features).forEach(feature=>{feature[0]=t(feature[0]);feature[2]=t(feature[2]);});
   Object.values(categories).forEach(category=>{category.name=t(category.name);category.description=t(category.description);});
-  screens.curveflat = {...screens.curve,file:'play-curve-flatline-preview.png',alt:'Curve editor mit abgeflachter Kurve',caption:'Flatline-Beispiel: 900 mV / 2800 MHz mit gespeicherter RTX-5090-Stock-Kurve. Echte Editor-Oberfläche, Vorschau des nächsten Play-Stands. Keine neue GPU-Anwendung oder Stabilitätsprüfung.'};
+  screens.curveflat = {...screens.curve,file:'play-curve-flatline-preview.png',alt:'Curve editor mit abgeflachter Kurve',caption:'Flatline-Beispiel: 900 mV / 2800 MHz mit gespeicherter RTX-5090-Stock-Kurve. Echte Editor-Oberfläche, Testaufnahme für Play v2.0.10. Keine neue GPU-Anwendung oder Stabilitätsprüfung.'};
   Object.values(screens).forEach(screen=>{screen.alt=t(screen.alt);screen.caption=t(screen.caption);screen.spots.forEach(spot=>spot.label=t(spot.label));});
   const languageLink = document.querySelector('[data-language-switch]');
   const languagePage = languageLink?.getAttribute('href').split('#')[0];

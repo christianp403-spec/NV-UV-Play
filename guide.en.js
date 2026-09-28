@@ -130,7 +130,7 @@ window.PLAY_GUIDE_EN = {
     "purpose": "The UV curve editor defines the GPU frequency at each voltage point. You can also change the power limit and VRAM offset.",
     "benefit": "Tailor your profile to your graphics card and games: edit individual curve points by hand or manually flatten the curve for classic undervolting. You can also enter recommended voltage and clock settings from forums or videos directly, or try community profiles through UV Try.",
     "how": "Choose a profile slot and edit individual curve points. Apply curve applies and saves the entire curve exactly as shown. Flatline curve holds the selected point’s frequency at higher voltages, then applies and saves that curve. Tooltips explain both actions; hovering or focusing Flatline previews the plateau.",
-    "limit": "Preview of the next Play build. Actual editor UI based on a saved RTX 5090 stock curve. The example values are not recommendations for your GPU.",
+    "limit": "Test capture for Play v2.0.10. Actual editor UI based on a saved RTX 5090 stock curve. The example values are not recommendations for your GPU.",
     "controls": [
       [
         "Profile slots",
@@ -872,7 +872,7 @@ window.PLAY_GUIDE_EN = {
     "purpose": "Apply your saved GPU profile at Windows sign-in without keeping Play open afterwards.",
     "benefit": "Choose it once and use it again after a restart. Normal Play Autostart can stay off.",
     "how": "Save your edits first. Then right-click the desired profile slot → Use as startup profile. After Windows sign-in, the short startup process waits 15 seconds, applies and verifies the profile, then exits.",
-    "limit": "New in the upcoming update. DCC, Stabilizer, UV Pilot, the overlay, Smart Hz and custom ongoing fan control still need Play running. Use a profile you have already tested.",
+    "limit": "New in v2.0.10. DCC, Stabilizer, UV Pilot, the overlay, Smart Hz and custom ongoing fan control still need Play running. Use a profile you have already tested.",
     "scenarioTitle": "Your profile at sign-in. Play stays closed afterwards.",
     "scenario": "Want a fixed UV setup without keeping Play running? The startup profile applies your saved GPU settings for you. Start Play when you also want its automatic in-game features.",
     "controls": [

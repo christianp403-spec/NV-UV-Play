@@ -209,3 +209,6 @@ body.story-image-open{overflow:hidden}#story-image-dialog{padding:0;width:min(15
 .story-image-view{padding:14px;overflow:auto;max-height:calc(94vh - 82px)}.story-image-view img{display:block;width:100%;height:auto}.story-image-view p{font-size:12px;margin:12px 0 0;color:var(--muted)}
 @media(max-width:960px){.story-collage{grid-template-columns:repeat(2,minmax(0,1fr))}.story-card,.story-cyberpunk,.story-dcc{grid-column:auto}.story-standalone{grid-column:span 2}.story-standalone .story-image-crop{aspect-ratio:4}}
 @media(max-width:680px){.story-collage{grid-template-columns:minmax(0,1fr);gap:16px;margin-top:28px}.story-card,.story-standalone{grid-column:auto;padding:20px}.stories-intro{font-size:16px}.story-card h2{font-size:24px}.story-metric{font-size:39px}.story-standalone .story-image-crop{aspect-ratio:2.5}}
+
+/* Keep the combined license link usable at intermediate viewport widths. */
+.footer-links{flex-wrap:wrap}

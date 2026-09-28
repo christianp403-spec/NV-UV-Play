@@ -1,5 +1,7 @@
 'use strict';
 window.PLAY_UI_EN = {
+  "NV-UV Play v2.0.10 Hauptfenster mit Curve editor und Profilplätzen": "NV-UV Play v2.0.10 main window with Curve editor and profile slots",
+  "Play v2.0.10 · Echte Oberfläche mit Beispielprofil und simuliertem GPU-Zustand.": "Play v2.0.10 · Actual interface with an example profile and simulated GPU state.",
   "Originale Advanced options aus Play v2.0.9 mit Preset-Verfahren und V-Step Compensation": "Original Advanced options from Play v2.0.9 with preset methods and V-Step Compensation",
   "Originalaufnahme · Play v2.0.9 · Advanced options, oberer Bereich.": "Original capture · Play v2.0.9 · Advanced options, upper section.",
   "Das Verhalten einfacher Presets verstehen: Gradient Lock, Voltage Lock und weitere Optionen.": "Understand simple preset behavior: Gradient Lock, Voltage Lock and additional options.",
@@ -84,12 +86,12 @@ window.PLAY_UI_EN = {
   "Eine gültige Beschriftung ist erforderlich.": "A valid label is required.",
   "Diese Option ist im aktuellen Fenster nicht vorhanden.": "This option is not present in the current window.",
   "Neuer Curve editor mit getrennten Aktionen Apply curve und Flatline curve": "New Curve editor with separate Apply curve and Flatline curve actions",
-  "Vorschau des nächsten Play-Stands · Echte Editor-Oberfläche mit gespeicherter RTX-5090-Stock-Kurve und beispielhaften Punktänderungen. Keine neue GPU-Anwendung oder Stabilitätsprüfung.": "Preview of the next Play build · Actual editor UI with a saved RTX 5090 stock curve and example point edits. No new GPU application or stability test.",
+  "Testaufnahme für Play v2.0.10 · Echte Editor-Oberfläche mit gespeicherter RTX-5090-Stock-Kurve und beispielhaften Punktänderungen. Keine neue GPU-Anwendung oder Stabilitätsprüfung.": "Test capture for Play v2.0.10 · Actual editor UI with a saved RTX 5090 stock curve and example point edits. No new GPU application or stability test.",
   "Curve editor": "Curve editor",
   "Zwei Wege im Curve editor": "Two ways to use the Curve editor",
   "Individuelle Kurve": "Custom curve",
   "Curve editor mit abgeflachter Kurve": "Curve editor showing a flattened curve",
-  "Flatline-Beispiel: 900 mV / 2800 MHz mit gespeicherter RTX-5090-Stock-Kurve. Echte Editor-Oberfläche, Vorschau des nächsten Play-Stands. Keine neue GPU-Anwendung oder Stabilitätsprüfung.": "Flatline example: 900 mV / 2800 MHz with a saved RTX 5090 stock curve. Actual editor UI, preview of the next Play build. No new GPU application or stability test.",
+  "Flatline-Beispiel: 900 mV / 2800 MHz mit gespeicherter RTX-5090-Stock-Kurve. Echte Editor-Oberfläche, Testaufnahme für Play v2.0.10. Keine neue GPU-Anwendung oder Stabilitätsprüfung.": "Flatline example: 900 mV / 2800 MHz with a saved RTX 5090 stock curve. Actual editor UI, test capture for Play v2.0.10. No new GPU application or stability test.",
   "Lüfterkurven abstimmen. Bei 0% die automatische Kühlung der GPU nutzen.": "Adjust fan curves. Use the GPU’s automatic cooling at 0%.",
   "Startprofil": "Startup profile",
   "Gespeicherte GPU-Einstellungen bei der Windows-Anmeldung anwenden. Danach beendet sich der Startprozess.": "Apply saved GPU settings at Windows sign-in. The startup process exits afterwards.",

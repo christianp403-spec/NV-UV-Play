@@ -130,7 +130,7 @@ window.PLAY_GUIDE_DE = {
     "purpose": "Der UV-Kurveneditor legt fest, welche GPU-Frequenz zu einem Spannungspunkt gehört. Zusätzlich lassen sich Power limit und VRAM-Offset bearbeiten.",
     "benefit": "Du kannst dein Profil gezielt auf deine Grafikkarte und deine Spiele abstimmen: Setze einzelne Kurvenpunkte von Hand oder flache die Kurve manuell ab, wie beim klassischen Undervolting. Du kannst auch empfohlene Spannungs- und Taktwerte aus Foren oder Videos direkt eintragen oder Community-Profile über UV Try ausprobieren.",
     "how": "Wähle einen Profilplatz und bearbeite einzelne Kurvenpunkte. Apply curve wendet die gesamte Kurve genau wie im Editor an und speichert sie. Flatline curve hält den Takt des ausgewählten Punkts nach rechts konstant und wendet diese Kurve an. Tooltips erklären beide Aktionen; Flatline zeigt beim Darüberfahren oder Fokussieren eine Vorschau.",
-    "limit": "Vorschau des nächsten Play-Stands. Echte Editor-Oberfläche auf Basis einer gespeicherten RTX-5090-Stock-Kurve. Die Beispielwerte sind keine Empfehlung für deine Karte.",
+    "limit": "Testaufnahme für Play v2.0.10. Echte Editor-Oberfläche auf Basis einer gespeicherten RTX-5090-Stock-Kurve. Die Beispielwerte sind keine Empfehlung für deine Karte.",
     "controls": [
       [
         "Profilplätze",
@@ -872,7 +872,7 @@ window.PLAY_GUIDE_DE = {
     "purpose": "Dein gespeichertes GPU-Profil wird bei der Windows-Anmeldung angewendet, ohne dass Play anschließend geöffnet bleiben muss.",
     "benefit": "Einmal auswählen und nach dem nächsten Neustart wieder nutzen. Der normale Play-Autostart darf ausgeschaltet bleiben.",
     "how": "Änderungen zuerst speichern. Dann Rechtsklick auf den gewünschten Profilplatz → Use as startup profile. Nach der Windows-Anmeldung wartet der kurze Startprozess 15 Sekunden, wendet das Profil an, prüft es und beendet sich.",
-    "limit": "Neu im kommenden Update. DCC, Stabilizer, UV Pilot, Overlay, Smart Hz und eigene laufende Lüfterregelung benötigen weiterhin Play. Nutze ein zuvor getestetes Profil.",
+    "limit": "Neu in v2.0.10. DCC, Stabilizer, UV Pilot, Overlay, Smart Hz und eigene laufende Lüfterregelung benötigen weiterhin Play. Nutze ein zuvor getestetes Profil.",
     "scenarioTitle": "Dein Profil beim Anmelden. Danach bleibt Play geschlossen.",
     "scenario": "Du möchtest einen festen UV-Zustand nutzen, ohne Play dauerhaft laufen zu lassen? Das Startprofil übernimmt die gespeicherten GPU-Einstellungen für dich. Die automatischen Funktionen während des Spielens schaltest du bei Bedarf durch das Starten von Play hinzu.",
     "controls": [

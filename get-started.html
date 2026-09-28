@@ -9,11 +9,11 @@
   <link rel="alternate" hreflang="de" href="loslegen.html">
   <link rel="alternate" hreflang="en" href="get-started.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <link rel="stylesheet" href="styles.css?v=20260929-update-1">
-  <script src="guide.en.js?v=20260929-update-1" defer></script>
-  <script src="guide.ui.en.js?v=20260929-update-1" defer></script>
-  <script src="guide-app.js?v=20260929-update-1" defer></script>
-  <script src="site-navigation.js?v=20260929-update-1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260929-v2.0.10">
+  <script src="guide.en.js?v=20260929-v2.0.10" defer></script>
+  <script src="guide.ui.en.js?v=20260929-v2.0.10" defer></script>
+  <script src="guide-app.js?v=20260929-v2.0.10" defer></script>
+  <script src="site-navigation.js?v=20260929-v2.0.10" defer></script>
 </head>
 <body data-page="start">
 <a class="skip-link" href="#top">Skip to content</a>
@@ -36,13 +36,13 @@
       <details><summary>Is Play open source?</summary><p>NV-UV Play is currently not open source. Please refer to the included license notices for terms of use and further licensing questions.</p></details>
       <details><summary>What should I know about the alpha?</summary><p>So far, I have personally verified Play on Blackwell (RTX 50). The community has also confirmed compatibility with Ada (RTX 40) and Ampere (RTX 30).</p><p>RTX 20 remains experimental. Multi-GPU hardware tests are still pending. New hardware writes, such as experimental voltage settings and fan control, have not been comprehensively validated.</p><p>The overlay supports desktop, windowed and borderless modes. Exclusive fullscreen has not been supported since v2.0.8.</p></details>
       <details><summary>Do I need to test profiles on my card?</summary><p>Yes. Community-tested profiles and Auto-UV provide a starting point. Every GPU and game can behave differently. Test settings on your system and follow the notices in Play. A passed test and Stabilizer do not guarantee lasting stability.</p></details>
-      <details><summary>Can Play apply my profile and stay closed afterwards?</summary><p>In the upcoming update: save a profile, right-click <strong>Use as startup profile</strong> and leave normal Play Autostart off if desired. At Windows sign-in, the short startup process waits 15 seconds, applies the profile and exits. DCC and other ongoing automatic features still need Play running.</p></details>
+      <details><summary>Can Play apply my profile and stay closed afterwards?</summary><p>In v2.0.10: save a profile, right-click <strong>Use as startup profile</strong> and leave normal Play Autostart off if desired. At Windows sign-in, the short startup process waits 15 seconds, applies the profile and exits. DCC and other ongoing automatic features still need Play running.</p></details>
       <details><summary>How do I skip an unstable startup profile?</summary><p>Hold <strong>Shift while signing in to Windows</strong>. Automatic Play startup is skipped for that sign-in. You can then open Play manually and change the startup profile. This does not reset a curve that has already been applied.</p></details>
       <details><summary>Why can’t I save an old DCC entry as a UV profile?</summary><p>The new export feature needs the curve and settings recorded during learning. Older entries may lack them. Select only the affected entry, reset it, click Apply and play again with DCC. Existing learned clocks remain usable without export.</p></details>
     </section>
   </section>
 </main>
-<footer class="site-footer wrap"><div><strong>NV-UV <span>Play</span></strong><p>Efficiency wins.</p></div><div class="footer-links"><a href="https://github.com/christianp403-spec/NV-UV-Play" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/issues" target="_blank" rel="noopener noreferrer">Feedback ↗</a><a href="https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/" target="_blank" rel="noopener noreferrer">Community ↗</a><button type="button" id="open-contact" aria-haspopup="dialog" aria-controls="contact-dialog">Contact</button></div></footer>
+<footer class="site-footer wrap"><div><strong>NV-UV <span>Play</span></strong><p>Efficiency wins.</p></div><div class="footer-links"><a href="https://github.com/christianp403-spec/NV-UV-Play" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">License and liability disclaimer ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/issues" target="_blank" rel="noopener noreferrer">Feedback ↗</a><a href="https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/" target="_blank" rel="noopener noreferrer">Community ↗</a><button type="button" id="open-contact" aria-haspopup="dialog" aria-controls="contact-dialog">Contact</button></div></footer>
 <dialog id="contact-dialog" aria-labelledby="contact-title"><div class="dialog-chrome"><h2 id="contact-title">Contact</h2><button type="button" id="close-contact" aria-label="Close contact window" autofocus>×</button></div><div class="contact-body"><p>NV-UV Play is currently a personal project.</p><p>by Christian Papaioannou</p><p>You can reach me at this email address:<br><a href="mailto:christian.papaioannou@protonmail.com">christian.papaioannou@protonmail.com</a></p><div class="project-support"><h3>Would you like to support the project?</h3><div class="support-links"><a href="https://paypal.me/christianpapaioannou" target="_blank" rel="noopener noreferrer">PayPal ↗</a><a href="https://ko-fi.com/chrispapa" target="_blank" rel="noopener noreferrer">Ko-fi ↗</a></div></div></div></dialog>
 <dialog id="feature-dialog" aria-labelledby="dialog-title"><div class="dialog-chrome"><button id="back-dialog" class="quiet" aria-label="Back to the previous feature" hidden>← Back</button><h2 id="dialog-title"></h2><button id="close-dialog" aria-label="Close window" autofocus>×</button></div><div id="dialog-body"></div></dialog>
 <div id="control-tooltip" popover="manual" role="dialog" aria-labelledby="tooltip-title" aria-describedby="tooltip-copy"><button id="close-tooltip" aria-label="Close explanation">×</button><p class="eyebrow">QUICK EXPLANATION</p><h3 id="tooltip-title"></h3><p id="tooltip-copy"></p><button class="text-link" id="tooltip-more" hidden>More about this feature ↗</button></div>
