@@ -1,10 +1,9 @@
 'use strict';
-// German copy uses the same feature and control order as guide.en.js.
 window.PLAY_GUIDE_DE = {
   "profiles": {
     "purpose": "Ein UV-Profil bündelt Spannung, GPU-Takt und Power-Limit. Über die sechs Plätze im Hauptfenster aktivierst du die gespeicherten Einstellungen mit einem Klick.",
     "benefit": "Du entscheidest: Nutze die vorbereiteten Profile oder deine eigenen. Jeden der sechs Profilplätze kannst du anpassen und mit einem anderen Profil belegen. Auch der Weg zurück ist möglich.",
-    "how": "Eco stellt Sparsamkeit in den Vordergrund, Balanced verbindet Leistung und Verbrauch für den Alltag. Performance und Max setzen höhere Taktziele. MFG ist für Multi Frame Generation auf RTX 50 gedacht; unter Custom nutzt du eigene Einstellungen. Klicke auf die einzelnen Profile im Bild, um ihren Einsatz kennenzulernen.",
+    "how": "Wähle einen der sechs Profilplätze als Ausgangspunkt. Per Rechtsklick → Edit profile passt du die Werte an. Manage profiles öffnet deine gespeicherten Profile; im Tab Stabilizer findest du die gelernten Korrekturen. Ein Startprofil lässt sich unabhängig vom normalen Play-Autostart festlegen.",
     "limit": "Die Beschreibungen beziehen sich auf die mitgelieferten Profile. Ihre Werte unterscheiden sich je nach GPU-Modell; selbst bearbeitete Profilplätze können andere Einstellungen enthalten. Vergleiche FPS und Verbrauch im selben Spiel und teste die Stabilität auf deiner Karte.",
     "controls": [
       [
@@ -33,7 +32,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Custom",
-        "Eigene Profile kannst du auf jedem der sechs Plätze verwenden. Passe in UV Curve Spannung, Takt und bei Bedarf Power-Limit oder VRAM-Takt an und speichere die Einstellungen. So kannst du etwa ein Profil für dein Lieblingsspiel erstellen und später mit einem Klick aufrufen. Den Namen und die Werte bestimmst du; Custom im Bild ist ein Beispiel für eine eigene Belegung."
+        "Eigene Profile kannst du auf jedem der sechs Plätze verwenden. Passe in Curve editor Spannung, Takt und bei Bedarf Power-Limit oder VRAM-Takt an und speichere die Einstellungen. So kannst du etwa ein Profil für dein Lieblingsspiel erstellen und später mit einem Klick aufrufen. Den Namen und die Werte bestimmst du; Custom im Bild ist ein Beispiel für eine eigene Belegung."
       ],
       [
         "Default",
@@ -41,7 +40,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Manage profiles",
-        "Eigene Profile erstellen, bearbeiten und mehreren Spielen zuweisen. Änderungen an einem gemeinsamen Profil gelten für seine Zuordnungen."
+        "Gespeicherte Profile bearbeiten, zuweisen oder in einen Slot übernehmen. Der Tab Stabilizer zeigt gelernte Korrekturen und kann daraus eigene Profilkopien speichern."
       ],
       [
         "Rename",
@@ -53,11 +52,19 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Community-Profile über UV Try",
-        "Unter UV Curve → UV Try findest du weitere Einträge für dein GPU-Modell. Du kannst sie in einen Profilplatz übernehmen, testen und bewerten. So profitierst du von den Erfahrungen anderer und hilfst selbst mit."
+        "Unter Curve editor → UV Try findest du weitere Einträge für dein GPU-Modell. Du kannst sie in einen Profilplatz übernehmen, testen und bewerten. So profitierst du von den Erfahrungen anderer und hilfst selbst mit."
       ],
       [
         "Profilplatz zurücksetzen oder leeren",
         "Wähle den Platz im Kurveneditor. Für Platz 1 bis 4 stellt Restore wieder Eco, Balanced, Performance beziehungsweise Max als Belegung her. Bei Platz 5 und 6 leert Clear slot den Platz, sodass du ihn neu belegen kannst. Gespeicherte Profile und Spielzuordnungen bleiben erhalten; ein ungespeicherter Entwurf dieses Platzes wird verworfen."
+      ],
+      [
+        "Edit profile",
+        "Rechtsklick auf einen Profilplatz → Edit profile. Der Editor öffnet die vorhandenen Werte zur Bearbeitung."
+      ],
+      [
+        "Use as startup profile",
+        "Wendet das gespeicherte Profil bei der Windows-Anmeldung an und beendet den Startprozess. Play-Autostart darf aus bleiben. Shift beim Anmelden überspringt diesen Start."
       ]
     ]
   },
@@ -122,8 +129,8 @@ window.PLAY_GUIDE_DE = {
   "curve": {
     "purpose": "Der UV-Kurveneditor legt fest, welche GPU-Frequenz zu einem Spannungspunkt gehört. Zusätzlich lassen sich Power limit und VRAM-Offset bearbeiten.",
     "benefit": "Du kannst dein Profil gezielt auf deine Grafikkarte und deine Spiele abstimmen: Setze einzelne Kurvenpunkte von Hand oder flache die Kurve manuell ab, wie beim klassischen Undervolting. Du kannst auch empfohlene Spannungs- und Taktwerte aus Foren oder Videos direkt eintragen oder Community-Profile über UV Try ausprobieren.",
-    "how": "Wähle einen Profilplatz und einen Spannungspunkt. Trage den Takt ein, zum Beispiel aus einem Forum oder Video. Ein Klick auf Apply curve setzt und speichert die UV-Kurve. Mit Save only kannst du stattdessen zunächst einen Entwurf speichern.",
-    "limit": "Die abgebildeten Werte gehören zur Originalaufnahme. Sie sind keine Tuning-Empfehlung für deine Karte. Prüfe Änderungen in deinen Spielen.",
+    "how": "Wähle einen Profilplatz und bearbeite einzelne Kurvenpunkte. Apply curve wendet die gesamte Kurve genau wie im Editor an und speichert sie. Flatline curve hält den Takt des ausgewählten Punkts nach rechts konstant und wendet diese Kurve an. Tooltips erklären beide Aktionen; Flatline zeigt beim Darüberfahren oder Fokussieren eine Vorschau.",
+    "limit": "Vorschau des nächsten Play-Stands. Echte Editor-Oberfläche auf Basis einer gespeicherten RTX-5090-Stock-Kurve. Die Beispielwerte sind keine Empfehlung für deine Karte.",
     "controls": [
       [
         "Profilplätze",
@@ -135,7 +142,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Apply curve",
-        "Wendet den Kurvenentwurf auf die GPU an und speichert ihn. Prüfe die geänderte Einstellung anschließend in deinen Spielen."
+        "Übernimmt die gesamte Kurve genau wie dargestellt, einschließlich deiner einzeln bearbeiteten Punkte. Wendet das Profil global an und speichert es. Die Kurve wird dabei nicht automatisch abgeflacht."
       ],
       [
         "Save only",
@@ -170,8 +177,8 @@ window.PLAY_GUIDE_DE = {
         "Öffnet separat freizugebende experimentelle Spannungs- und Taktparameter. Dieser Bereich richtet sich an erfahrene Nutzer und hat zusätzliche Risiken."
       ],
       [
-        "Restore Eco",
-        "Belegt den ausgewählten Profilplatz wieder mit seinem vorbereiteten Profil. Im Bild ist das Platz 1 mit Eco. Gespeicherte Profile und Spielzuordnungen bleiben erhalten; der ungespeicherte Entwurf dieses Platzes wird verworfen. Das Profil wird dadurch nicht automatisch auf der GPU aktiviert."
+        "Clear slot / Restore preset",
+        "Clear slot entfernt die Zuordnung dieses Platzes. Gespeicherte Profile und Spielzuordnungen bleiben erhalten. Bei vorbereiteten Plätzen stellt Restore das jeweilige Preset wieder her. Beides aktiviert die GPU nicht automatisch."
       ],
       [
         "Assign to game",
@@ -196,6 +203,14 @@ window.PLAY_GUIDE_DE = {
       [
         "VRAM (MHz)",
         "Ändert den Takt-Offset des Grafikspeichers. Das ist eine separate Einstellung zur GPU-Kurve. Prüfe Speicheränderungen auf Fehler und Stabilität."
+      ],
+      [
+        "Flatline curve",
+        "Hält den Takt des ausgewählten Punkts ab dieser Spannung nach rechts konstant. Punkte links davon bleiben erhalten. Anschließend wird die Kurve global angewendet und gespeichert. Mauszeiger oder Tastaturfokus auf der Schaltfläche zeigen die Vorschau."
+      ],
+      [
+        "Offsetbereich und Warnung",
+        "Pro Punkt gilt -1000 bis +1050 MHz. Über +1000 MHz erscheint eine Warnung. Ob der Treiber den Wert akzeptiert, hängt von Karte und Treiber ab."
       ]
     ],
     "scenarioTitle": "Du möchtest mehr Feinabstimmung?",
@@ -204,7 +219,7 @@ window.PLAY_GUIDE_DE = {
   "scanner": {
     "purpose": "Der Voltage Step Scanner prüft Spannungspunkte und Takt mit konfigurierbarer GPU-Testlast. Ergebnisse und Testverlauf helfen dir, deine eigenen Einstellungen weiter abzustimmen.",
     "benefit": "Du kannst einen gewählten Spannungspunkt prüfen, passende Taktraten suchen oder den Grafikspeicher gesondert testen. So erhältst du Anhaltspunkte für ein Profil, das zu deiner Karte passt.",
-    "how": "Öffne UV Curve → Scanner. Wähle ein Ausgangsprofil, die Zielspannung und einen Testmodus. Lege Testdauer und Schrittgröße fest, starte den Test und prüfe das Ergebnis anschließend auch in deinen Spielen.",
+    "how": "Öffne Curve editor → Scanner. Wähle ein Ausgangsprofil, die Zielspannung und einen Testmodus. Lege Testdauer und Schrittgröße fest, starte den Test und prüfe das Ergebnis anschließend auch in deinen Spielen.",
     "limit": "Aktuell wird eine einzelne NVIDIA-GPU benötigt. Ein bestandener Lauf ist kein Stabilitätsnachweis für alle Spiele. Testlasten können einen instabilen Kandidaten zum Absturz bringen.",
     "controls": [
       [
@@ -248,8 +263,8 @@ window.PLAY_GUIDE_DE = {
   "dcc": {
     "purpose": "DCC regelt den Takt deiner Grafikkarte beim Spielen automatisch. Wird nicht die volle Leistung benötigt, kann das Strom sparen und die Abwärme reduzieren.",
     "benefit": "Wenn zusätzlicher Takt im aktuellen Spiel wenig bringt, kann DCC helfen, unnötigen Energiebedarf zu reduzieren. Der tatsächliche Nutzen hängt vom Spiel und der Hardware ab.",
-    "how": "Wähle in den DCC-Einstellungen einen Algorithmus. Schalte Stabilizer aus, bevor du DCC aktivierst. Konfiguriere NVIDIA Experimental vor dem Spielstart.",
-    "limit": "DCC kann den Stromverbrauch deutlich senken, wenn deine GPU nicht vollständig ausgelastet ist, zum Beispiel bei einem FPS-Limit. Wie viel du sparst, hängt vom Spiel und deiner GPU ab.",
+    "how": "Wähle den Algorithmus in DCC settings. DCC und Stabilizer werden alternativ genutzt. Unter History wechselst du zwischen Learned profiles und Blocked profiles. NVIDIA Experimental konfigurierst du vor dem Spielstart.",
+    "limit": "Die neue History mit UV-Profilübernahme und Blockliste kommt mit dem nächsten Update. Eine UV-Kopie braucht vollständig erfasste Kurvendaten. Sie enthält den festen Zustand, keine dynamische DCC-Regelung.",
     "controls": [
       [
         "DCC Automatic",
@@ -269,7 +284,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Diagnose und Lernstände",
-        "Performance-Logging zeichnet Leistungsdaten für die Fehlersuche auf. Learned games zeigt gespeicherte DCC-Lernstände pro Spiel."
+        "Performance Logging zeichnet den Verlauf für die Fehlersuche auf. Die grundlegende Diagnose fehlender GPU-Messwerte ist auch ohne diese Aufzeichnung verfügbar."
       ],
       [
         "Reset selected learned profile",
@@ -277,7 +292,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Änderungen anwenden",
-        "Apply übernimmt den Einstellungsentwurf. Cancel verwirft Änderungen am Dialog."
+        "Apply übernimmt den Einstellungsentwurf einschließlich der EXE-Blacklist. Cancel verwirft diese Änderungen. Eine zuvor über Save as UV profile gespeicherte Profilkopie bleibt erhalten."
       ],
       [
         "DCC und Stabilizer",
@@ -296,8 +311,24 @@ window.PLAY_GUIDE_DE = {
         "Zeichnet Bildrate, GPU-Takt und Leistungsaufnahme lokal auf. Das hilft, das Verhalten von DCC nachzuvollziehen oder einen Fehlerbericht vorzubereiten."
       ],
       [
-        "Learned games",
-        "Zeigt, für welche Spiele DCC bereits einen Lernstand gespeichert hat. Beim nächsten Einsatz kann Play daran anknüpfen. Die leere Tabelle in der Aufnahme bedeutet, dass dort noch keine Lernstände vorlagen."
+        "History → Learned profiles",
+        "Gespeicherte Lernstände pro Spiel. Per Rechtsklick als UV-Profil übernehmen oder Automatic DCC für dieses Spiel blockieren. Blockieren erhält den Lernstand."
+      ],
+      [
+        "Save as UV profile",
+        "Rechtsklick auf einen Lernstand → Save as UV profile → Slot 1–6. Speichert eine feste Kurve mit dem niedrigsten gespeicherten Lerntakt und den zugehörigen Einstellungen. Aktiviert sie nicht."
+      ],
+      [
+        "History → Blocked profiles",
+        "Add öffnet die EXE-Auswahl. Alternativ ein gelerntes Spiel per Rechtsklick blockieren. Apply übernimmt die Liste; Unblock selected erlaubt die EXE wieder. Gilt nur für Automatic DCC."
+      ],
+      [
+        "Warum ist Save as UV profile ausgegraut?",
+        "Alten Einträgen kann die gespeicherte UV-Kurve fehlen. Für den Export: Eintrag zurücksetzen, Apply klicken und mit DCC erneut spielen. Der bisherige Lerntakt funktioniert auch ohne Export weiter."
+      ],
+      [
+        "Was wird blockiert?",
+        "Der EXE-Dateiname gilt in allen Ordnern. Apply beendet auch eine laufende DCC-Sitzung dieses Spiels. NVIDIA Experimental und globale FPS-/V-Sync-Einstellungen bleiben aktiv."
       ]
     ],
     "scenarioTitle": "2.700+ MHz, aber nur 30 bis 50 % Auslastung?",
@@ -385,7 +416,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Frame-time trend",
-        "Blendet den Verlauf der Bildzeiten ein. Gleichmäßige Zeiten stehen für eine gleichmäßige Bildausgabe; deutliche Spitzen können Ruckler sichtbar machen."
+        "Zeigt den Frametime-Verlauf mit fließender Bewegung. Einzelne Messwerte und kurze Spitzen bleiben erhalten; die Werte werden nicht geglättet."
       ],
       [
         "GPU usage",
@@ -399,11 +430,11 @@ window.PLAY_GUIDE_DE = {
   },
   "fan": {
     "purpose": "Die Lüftersteuerung nutzt GPU-Automatik, einen festen Lüfterwert oder eine eigene Temperaturkurve pro unterstütztem Kanal.",
-    "benefit": "Du kannst Kühlung und Lautstärke an deine Bedürfnisse anpassen. Die Funktion wird weiter verbessert; Zero Fan funktioniert aktuell noch nicht.",
-    "how": "Öffne Fan curve im Hauptfenster von Play v2.0.9. Wähle GPU-Automatik, einen festen Lüfterwert oder eine eigene Temperaturkurve. Apply & save übernimmt und speichert die Einstellungen.",
-    "limit": "Die Lüftersteuerung wird weiter verbessert. Zero Fan, also ein vollständiger Lüfterstillstand, funktioniert aktuell noch nicht. Treiber und Hardware müssen die Steuerung unterstützen; Hardware-Schreibvalidierung steht noch aus.",
+    "benefit": "Kühlung und Lautstärke an deinen Alltag anpassen. Mit Zero Fan kannst du im kühlen Bereich 0%-Kurvenpunkte verwenden.",
+    "how": "Öffne Fan curve und wähle GPU-Automatik, eine feste Drehzahl oder eine Temperaturkurve. Für Zero Fan den Schalter aktivieren und niedrige Temperaturpunkte auf 0% setzen. Apply & save übernimmt die Einstellungen.",
+    "limit": "Zero Fan kommt mit dem nächsten Update. Bei 0% übernimmt die automatische Kühlung der GPU. Ob die Lüfter tatsächlich stoppen, entscheidet die Karte. Eigene laufende Lüfterkurven brauchen Play.",
     "scenarioTitle": "Kühlung und Lautstärke selbst abstimmen.",
-    "scenario": "Du möchtest das Lüfterverhalten an deine Nutzung anpassen? Fan curve bietet GPU-Automatik, feste Lüfterwerte und eigene Temperaturkurven. Der Bereich wird noch weiterentwickelt. Zero Fan ist derzeit nicht verfügbar.",
+    "scenario": "GPU-Automatik, feste Drehzahl oder eigene Temperaturkurve: Du entscheidest, wie du die Kühlung steuern möchtest. Zero Fan überlässt den 0%-Bereich der GPU; oberhalb davon regelt wieder deine Kurve.",
     "controls": [
       [
         "GPU automatic",
@@ -422,8 +453,8 @@ window.PLAY_GUIDE_DE = {
         "Unterstützte Lüfterkanäle lassen sich getrennt konfigurieren. Gespeicherte Profile und eine optionale Aktivierung beim Start erleichtern wiederkehrende Einstellungen."
       ],
       [
-        "Zero Fan · aktuell nicht verfügbar",
-        "Ein eigener Zero-Fan-Modus für die manuelle Lüftersteuerung wird noch nicht unterstützt. GPU automatic überlässt das Verhalten der Karte, einschließlich eines von ihr unterstützten Lüfterstopps."
+        "Zero Fan · GPU auto at 0%",
+        "Erlaubt 0%-Kurvenpunkte. Die GPU entscheidet über den Lüfterstopp. Oberhalb von 0% gilt deine Kurve im Treiberbereich. Änderungen mit Apply bestätigen."
       ],
       [
         "Apply & save",
@@ -447,7 +478,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Activate at Play start",
-        "Aktiviert beim nächsten Play-Start das ausgewählte gespeicherte Lüfterprofil. Offene Änderungen vorher speichern."
+        "Startet das gespeicherte Lüfterprofil beim Öffnen von Play. Das ist unabhängig vom GPU-Startprofil; die eigene Lüfterregelung benötigt laufendes Play."
       ],
       [
         "Hysteresis",
@@ -494,7 +525,7 @@ window.PLAY_GUIDE_DE = {
   "stabilizer": {
     "purpose": "Stabilizer reagiert auf erkannte Treiberabstürze und korrigiert GPU-Kurve beziehungsweise Takt- und Spannungsziel.",
     "benefit": "Du musst nach einem erkannten Treiberabsturz nicht jede Korrektur selbst vornehmen. Play berücksichtigt sowohl Spielprofile als auch das globale Profil und speichert die Anpassungen im passenden Kontext.",
-    "how": "Stabilizer aktivieren, sofern DCC aus ist. Wähle Strategie, Schrittgrößen und Grenzen. Gespeicherte Korrekturen kannst du in der Game Library unter Stabilizer Adjustments nachvollziehen.",
+    "how": "Aktiviere Stabilizer bei ausgeschaltetem DCC und wähle Strategie, Schrittweiten und Grenzen. Korrekturen findest du in My profiles → Stabilizer sowie unter Stabilizer Adjustments in der Game Library.",
     "limit": "Nicht jeder Absturz wird erkannt. Stabilizer verhindert nicht alle Instabilitäten und ist kein Schutzversprechen gegen Schäden oder Datenverlust.",
     "controls": [
       [
@@ -514,8 +545,8 @@ window.PLAY_GUIDE_DE = {
         "Frequency floor und Voltage ceiling begrenzen die Korrekturen. Sie sind keine Garantie für einen sicheren oder stabilen Betriebsbereich."
       ],
       [
-        "Gespeicherte Anpassungen",
-        "Korrekturen werden für das jeweilige Spiel und Profil oder für das globale Profil gespeichert. In der Game Library lassen sie sich nachvollziehen. Clear all setzt die gespeicherten Anpassungen nach Bestätigung zurück."
+        "Gespeicherte Korrekturen",
+        "My profiles → Stabilizer zeigt Ausgangswerte, Korrekturen und erkannte Abstürze. Derselbe Bestand ist auch über die Game Library erreichbar."
       ],
       [
         "Save / Cancel",
@@ -528,6 +559,14 @@ window.PLAY_GUIDE_DE = {
       [
         "Voltage ceiling",
         "Legt die Obergrenze für automatische Spannungskorrekturen fest. Diese Grenze ist deine Vorgabe, keine von Play garantierte sichere Spannung."
+      ],
+      [
+        "Als UV-Profil speichern",
+        "Speichert die Korrektur als unabhängige Profilkopie, ohne sie zu aktivieren. Powerlimit und VRAM stammen aus dem aktuellen Quellprofil. Fehlende oder geänderte Quellen können den Export verhindern."
+      ],
+      [
+        "Einzelne Korrektur zurücksetzen",
+        "Entfernt nur die ausgewählte Korrektur. Andere Spiel- und Profilkorrekturen bleiben erhalten."
       ]
     ],
     "scenarioTitle": "Weniger Nachjustieren nach einem Absturz.",
@@ -536,7 +575,7 @@ window.PLAY_GUIDE_DE = {
   "expert": {
     "purpose": "Expert voltage settings ergänzt dein UV-Profil um experimentelle Takt- und Spannungsparameter. Seit Play v2.0.9 gehören diese Werte zum jeweiligen Profil.",
     "benefit": "Erfahrene Nutzer erhalten feinere Eingriffsmöglichkeiten über die normale UV-Kurve hinaus. Für den schnellen Einstieg mit Community-Profilen ist dieser Bereich nicht erforderlich.",
-    "how": "Nach der Freigabe unter Settings → Experimental features öffnest du UV Curve → Expert voltage settings. Save profile speichert den Entwurf. Apply & save profile aktiviert und speichert das gesamte Profil einschließlich Kurve, Power limit, VRAM und Expert-Werten.",
+    "how": "Nach der Freigabe unter Settings → Experimental features öffnest du Curve editor → Expert voltage settings. Save profile speichert den Entwurf. Apply & save profile aktiviert und speichert das gesamte Profil einschließlich Kurve, Power limit, VRAM und Expert-Werten.",
     "limit": "Kann Instabilität, Datenverlust und dauerhafte Hardware-Schäden verursachen. Hardware- und Treiberunterstützung sind nicht überall validiert. Ein Restore ist keine Wiederherstellungsgarantie.",
     "controls": [
       [
@@ -621,7 +660,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Autostart",
-        "Startet Play bei der Windows-Anmeldung, normalerweise im Tray. Die Option ohne Minimierung ist über das Kontextmenü beziehungsweise Advanced options erreichbar."
+        "Startet die vollständige App bei der Windows-Anmeldung. Das separate Startprofil kann GPU-Werte auch bei ausgeschaltetem Play-Autostart anwenden."
       ],
       [
         "UI scaling",
@@ -642,6 +681,14 @@ window.PLAY_GUIDE_DE = {
       [
         "Patch notes / About",
         "Patch notes erklärt Änderungen einer Version. About zeigt Produkt- und Versionsinformationen, die auch bei Fehlerberichten hilfreich sind."
+      ],
+      [
+        "Fenster und Skalierung",
+        "My profiles, Expert voltage settings und Game Library merken sich Größe und Position. Curve editor und UV Try lassen die anderen Fenster bedienbar."
+      ],
+      [
+        "Minimieren und Speicher",
+        "Minimieren oder Verbergen im Tray löst den Speicher-Trim aus. Beim erneuten Öffnen kann Windows benötigte Speicherseiten wieder laden."
       ]
     ]
   },
@@ -690,13 +737,17 @@ window.PLAY_GUIDE_DE = {
       [
         "Fehlendes Spiel",
         "Für eine Bibliotheksmeldung die eigentliche EXE und einen Store-Link angeben. Das ist ein anderer Fall als ein Absturzbericht."
+      ],
+      [
+        "GPU und andere Tuning-Programme",
+        "Die Diagnose erfasst GPU-Erkennung, Messwertfehler, Startprofil-Status und Hinweise auf Afterburner. Gefundene Start-Einstellungen belegen keinen tatsächlichen GPU-Schreibzugriff."
       ]
     ]
   },
   "community": {
     "purpose": "UV Try macht Community-Profile aus der NV-UV-Gemeinde direkt in Play zugänglich. Dein erkanntes GPU-Modell wird vorausgewählt.",
     "benefit": "Du kannst Erfahrungen anderer als Ausgangspunkt nutzen, statt Werte aus Foren oder Social Media einzeln zu übertragen. Suche dir ein Profil aus, teste es und bewerte deine Erfahrung. Eine eigene Kurve musst du dafür nicht von Hand erstellen.",
-    "how": "Öffne UV Curve → UV Try. Prüfe das vorausgewählte GPU-Modell und vergleiche die Einträge. Über Rechtsklick auf ein Profil → Slot 1 bis 6 kannst du es in einen Profilplatz übernehmen und aktivieren. Teste es danach in deinen Spielen und gib eine Bewertung ab.",
+    "how": "Öffne Curve editor → UV Try. Prüfe das vorausgewählte GPU-Modell und vergleiche die Einträge. Über Rechtsklick auf ein Profil → Slot 1 bis 6 kannst du es in einen Profilplatz übernehmen und aktivieren. Teste es danach in deinen Spielen und gib eine Bewertung ab.",
     "limit": "Auch zwei Karten desselben GPU-Modells können unterschiedlich reagieren. Bewertungen sind Erfahrungen aus der Community, keine Stabilitätsgarantie. Wenn dein Modell nicht erkannt wird, prüfe die GPU-Auswahl besonders sorgfältig.",
     "scenarioTitle": "Werte gefunden. Und jetzt einem Tutorial folgen?",
     "scenario": "Du bekommst Werte in einem Forum oder auf Social Media. Jetzt ein Tutorial durcharbeiten und alles von Hand einstellen? Und für welche Kartenvariante gelten die Angaben überhaupt? UV Try bündelt die verfügbaren Angaben, Profile und Bewertungen. Du kannst ein Profil übernehmen, auf deiner GPU testen und deine Erfahrung bewerten, ohne selbst eine Kurve zeichnen zu müssen.",
@@ -735,7 +786,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Share values",
-        "Teilt auf Wunsch deine getesteten Zielwerte mit der Community. Kartenvariante und Hinweise zu deinen Tests machen den Eintrag hilfreicher. Beiträge erscheinen nach Prüfung; die vollständige Kurve wird dabei nicht geteilt."
+        "Erst Send überträgt Takt, Spannung, Powerlimit, VRAM-Offset, GPU-Modell, optionale Kartenangaben/Notiz und eine zufällige Community-ID. Die vollständige Kurve wird nicht geteilt."
       ],
       [
         "Refresh",
@@ -746,7 +797,7 @@ window.PLAY_GUIDE_DE = {
   "autouv": {
     "purpose": "NVIDIA Auto-UV ermittelt nach der NVIDIA-Methode einen Ausgangspunkt aus der Werkskurve deiner eigenen GPU.",
     "benefit": "Wenn du mit einem konservativen Profil für deine Karte beginnen möchtest, gibt dir Auto-UV einen Ausgangspunkt für deine anschließenden Tests. Du musst dafür keine Kurve von Hand erstellen.",
-    "how": "Öffne UV Curve → Auto-UV. Lies den Ausgangspunkt mit Read GPU ein, prüfe die angezeigten Werte und wähle unter Save to einen Profilplatz. Save & activate speichert und aktiviert das Profil.",
+    "how": "Öffne Curve editor → Auto-UV. Lies den Ausgangspunkt mit Read GPU ein, prüfe die angezeigten Werte und wähle unter Save to einen Profilplatz. Save & activate speichert und aktiviert das Profil.",
     "limit": "Auto-UV führt keinen Stabilitätstest durch. Prüfe das Ergebnis mit deinen Spielen oder dem Voltage Step Scanner. Ein berechneter Ausgangspunkt garantiert keine stabile Einstellung.",
     "scenarioTitle": "Ein Ausgangspunkt aus deiner eigenen GPU.",
     "scenario": "Du kennst Undervolting, möchtest aber mit einem konservativen Profil beginnen. Auto-UV nutzt die Werkskurve deiner GPU als Grundlage. Übernimm den Vorschlag in einen Profilplatz, teste ihn und passe ihn bei Bedarf weiter an.",
@@ -814,6 +865,36 @@ window.PLAY_GUIDE_DE = {
       [
         "Save / Cancel",
         "Save speichert die Auswahl. Preset-Änderungen können ein aktives Preset direkt neu anwenden. Cancel schließt das Fenster ohne die Änderungen zu speichern."
+      ]
+    ]
+  },
+  "startup": {
+    "purpose": "Dein gespeichertes GPU-Profil wird bei der Windows-Anmeldung angewendet, ohne dass Play anschließend geöffnet bleiben muss.",
+    "benefit": "Einmal auswählen und nach dem nächsten Neustart wieder nutzen. Der normale Play-Autostart darf ausgeschaltet bleiben.",
+    "how": "Änderungen zuerst speichern. Dann Rechtsklick auf den gewünschten Profilplatz → Use as startup profile. Nach der Windows-Anmeldung wartet der kurze Startprozess 15 Sekunden, wendet das Profil an, prüft es und beendet sich.",
+    "limit": "Neu im kommenden Update. DCC, Stabilizer, UV Pilot, Overlay, Smart Hz und eigene laufende Lüfterregelung benötigen weiterhin Play. Nutze ein zuvor getestetes Profil.",
+    "scenarioTitle": "Dein Profil beim Anmelden. Danach bleibt Play geschlossen.",
+    "scenario": "Du möchtest einen festen UV-Zustand nutzen, ohne Play dauerhaft laufen zu lassen? Das Startprofil übernimmt die gespeicherten GPU-Einstellungen für dich. Die automatischen Funktionen während des Spielens schaltest du bei Bedarf durch das Starten von Play hinzu.",
+    "controls": [
+      [
+        "Use as startup profile",
+        "Rechtsklick auf einen Profilplatz. Verwendet die gespeicherten Werte; offene Änderungen vorher speichern."
+      ],
+      [
+        "15 Sekunden nach der Anmeldung",
+        "Der kurze Startprozess wartet, wendet das Profil an und beendet sich. Es bleibt kein Play-Fenster geöffnet."
+      ],
+      [
+        "Shift: diesen Start überspringen",
+        "Halte Shift beim Windows-Anmelden gedrückt. Play überspringt die automatische Anwendung für diese Anmeldung."
+      ],
+      [
+        "Profil nach einem Fehlversuch ändern",
+        "Mit gehaltenem Shift anmelden, danach Play manuell öffnen und ein anderes getestetes Startprofil auswählen. Shift setzt eine bereits angewendete Kurve nicht zurück."
+      ],
+      [
+        "Autostart und Startprofil",
+        "Autostart startet die vollständige App. Das Startprofil wendet nur die gespeicherten GPU-Einstellungen an. Beide Optionen sind unabhängig."
       ]
     ]
   }

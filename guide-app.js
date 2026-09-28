@@ -13,11 +13,12 @@
     library:['Game Library','⊞','Spiele und Profile zuordnen. Für jedes Spiel die passende Einstellung finden.'],
     dcc:['DCC','◇','Den GPU-Takt an die tatsächliche Last im Spiel anpassen und unnötigen Verbrauch reduzieren.'],
     stabilizer:['Stabilizer','♢','Nach erkannten Treiberabstürzen automatisch nachjustieren. Für Spielprofile und globale Profile.'],
+    startup:['Startprofil','↥','Gespeicherte GPU-Einstellungen bei der Windows-Anmeldung anwenden. Danach beendet sich der Startprozess.'],
     hz:['Smart Hz','↻','Auf dem Desktop eine niedrigere Bildwiederholrate, beim Spielen wieder die native Rate.'],
-    curve:['UV Curve','⌁','Spannung und Takt gezielt abstimmen. Den eigenen Weg zwischen Leistung und Verbrauch finden.'],
+    curve:['Curve editor','⌁','Spannung und Takt gezielt abstimmen. Den eigenen Weg zwischen Leistung und Verbrauch finden.'],
     scanner:['Voltage Step Scanner','⌕','Spannungspunkte und Takt unter Testlast prüfen. Ergebnisse für die eigene Optimierung nutzen.'],
     autouv:['NVIDIA Auto-UV','↘','Einen Ausgangspunkt aus der Werkskurve deiner GPU ermitteln und als Profil übernehmen.'],
-    fan:['Fan curve','✣','Kühlung und Lautstärke abstimmen. Wird weiter verbessert; Zero Fan funktioniert aktuell noch nicht.'],
+    fan:['Fan curve','✣','Lüfterkurven abstimmen. Bei 0% die automatische Kühlung der GPU nutzen.'],
     advanced:['Advanced options','⚒','Das Verhalten einfacher Presets verstehen: Gradient Lock, Voltage Lock und weitere Optionen.'],
     expert:['Expert voltage settings','±','Zusätzliche experimentelle Takt- und Spannungsparameter für erfahrene Nutzer.'],
     overlay:['Telemetry & Overlay','▥','Bildrate, Verbrauch und Temperaturen im Blick behalten. Veränderungen beim Spielen sehen.'],
@@ -27,7 +28,7 @@
   };
   const categories = {
     entry:{name:'Einstieg',description:'Mit Profilen anfangen, Erfahrungen aus der Community nutzen und Spiele zuordnen.',items:['profiles','community','pilot','library']},
-    automatic:{name:'Automatik & Effizienz',description:'Weniger manuell nachregeln: Takt, Stabilität und Bildwiederholrate passend zum Einsatz.',items:['dcc','stabilizer','hz']},
+    automatic:{name:'Automatik & Effizienz',description:'Weniger manuell nachregeln: Takt, Stabilität und Bildwiederholrate passend zum Einsatz.',items:['startup','dcc','stabilizer','hz']},
     tuning:{name:'Feintuning',description:'Eigene Kurven und Tests oder ein Ausgangspunkt mit Auto-UV. Dazu Lüfter und Expertenoptionen.',items:['curve','autouv','scanner','fan','expert','advanced']},
     overview:{name:'Übersicht & Hilfe',description:'Messwerte sehen, Play einrichten, aktuell halten und bei Problemen weiterkommen.',items:['overlay','settings','updates','diagnostics']}
   };
@@ -36,17 +37,34 @@
   const screens = {
     main:{file:'play-main-v2.0.9-balanced.png',width:523,height:982,shape:'main',alt:'Originales NV-UV Play v2.0.9 Hauptfenster mit Profilplätzen, Fan curve und Funktionsschaltern',caption:'Originalaufnahme · Play v2.0.9 mit erkannter RTX 5090. Die gezeigten Einstellungen sind keine Empfehlung für deine GPU.',spots:[
       s('profiles',1,[4.2,21.3,14,5.2],'Eco'),s('profiles',2,[19.9,21.3,14,5.2],'Balanced'),s('profiles',3,[35.5,21.3,14,5.2],'Performance'),s('profiles',4,[51.1,21.3,14,5.2],'Max'),s('profiles',5,[66.5,21.3,14,5.2],'MFG'),s('profiles',6,[82.2,21.3,14,5.2],'Custom'),
-      s('profiles',7,[75.7,28,20.5,4.1],'Default'),s('fan',null,[4.2,33.3,44.8,4.3],'Fan curve'),s('curve',null,[51.3,33.3,44.8,4.3],'UV Curve'),s('pilot',null,[4.2,41.6,92,4.2],'UV Pilot'),s('library',null,[65.5,46.3,30.5,4.2],'Game Library'),
+      s('profiles',7,[75.7,28,20.5,4.1],'Default'),s('fan',null,[4.2,33.3,44.8,4.3],'Fan curve'),s('curve',null,[51.3,33.3,44.8,4.3],'Curve editor'),s('pilot',null,[4.2,41.6,92,4.2],'UV Pilot'),s('library',null,[65.5,46.3,30.5,4.2],'Game Library'),
       s('dcc',null,[4.2,54.2,92,4.2],'DCC'),s('stabilizer',null,[4.2,59.6,92,4.2],'Stabilizer'),s('hz',null,[4.2,65,92,4.2],'Smart Hz'),s('overlay',null,[4.2,70.2,92,4.2],'Overlay'),
       s('settings',null,[4.2,77.4,43,4.2],'Settings'),s('updates',null,[54.9,77.4,17.4,4.2],'Updates'),s('diagnostics',null,[74,77.4,22,4.2],'Diagnostics'),s('settings',1,[4.2,82.7,92,4.2],'Autostart'),s('settings',2,[4.2,95.5,35.5,3.3],'UI scaling')
     ]},
-    curve:{file:'play-curve-v2.0.9-eco.png',width:1651,height:1221,shape:'wide',alt:'Originaler Play v2.0.9 Kurveneditor mit erkannter RTX 5090 und Expert-Zugang',caption:'Originalaufnahme · Play v2.0.9. Die gezeigte UV-Kurve gehört zu dieser RTX 5090 und ist keine Empfehlung für andere Karten.',spots:[
-      s('curve',0,[8.54,6.63,44.76,5.41],'Profilplätze'),s('profiles',7,[53.97,6.63,7.39,5.41],'Default'),s('community',null,[64.63,7.37,7.81,4.01],'UV Try'),s('autouv',null,[73.17,7.37,7.63,4.01],'Auto-UV'),s('scanner',null,[81.59,7.37,7.39,4.01],'Voltage Step Scanner'),
-      s('profiles',9,[12.3,13.6,6.66,3.77],'Rename'),s('curve',11,[19.56,13.6,7.69,3.77],'Restore Eco'),s('profiles',8,[1.64,18.59,10.66,3.77],'Manage profiles'),s('curve',12,[12.84,18.59,10.78,3.77],'Assign to games'),s('pilot',0,[24.23,18.59,9.33,3.77],'Enable UV Pilot'),s('expert',null,[34.16,18.59,13.75,3.77],'Expert voltage settings'),
-      s('curve',1,[2.18,30.71,72.26,51.68],'Spannungs-Frequenz-Kurve'),s('curve',14,[77.35,36.12,19.5,8.03],'Voltage'),s('curve',15,[77.35,45.54,19.5,11.47],'Frequency (MHz)'),s('curve',2,[77.35,57.66,19.5,4.34],'Apply curve'),
-      s('curve',16,[77.35,68.8,19.5,6.47],'Power limit (%)'),s('curve',17,[77.35,76.33,19.5,6.39],'VRAM (MHz)'),s('curve',6,[1.64,87.55,6.78,3.77],'Read GPU'),s('curve',7,[9.02,87.55,7.27,3.77],'Stock curve'),s('curve',8,[16.96,87.55,4.54,3.77],'Undo'),s('curve',8,[22.11,87.55,4.78,3.77],'Redo')
+    curve:{file:'play-curve-editor-preview.png',width:1650,height:1218,shape:'wide',alt:"Neuer Curve editor mit getrennten Aktionen Apply curve und Flatline curve",caption:"Vorschau des nächsten Play-Stands · Echte Editor-Oberfläche mit gespeicherter RTX-5090-Stock-Kurve und beispielhaften Punktänderungen. Keine neue GPU-Anwendung oder Stabilitätsprüfung.",spots:[
+      s("curve",0,[8.4,6.6,48,5.4],"Profilplätze"),
+      s("profiles",7,[56.8,6.6,7.6,5.4],"Default"),
+      s("community",null,[67.64,7.31,7.82,3.94],"UV Try"),
+      s("autouv",null,[76.18,7.31,7.7,3.94],"Auto-UV"),
+      s("scanner",null,[84.61,7.31,7.33,3.94],"Voltage Step Scanner"),
+      s("profiles",9,[15.27,13.46,6.73,3.78],"Rename"),
+      s("curve",11,[22.2,13.4,7.1,3.8],"Clear slot"),
+      s("profiles",8,[1.58,18.47,10.67,3.78],"Manage profiles"),
+      s("curve",12,[12.7,18.4,10.9,3.9],"Assign to games"),
+      s("pilot",0,[24,18.4,9.6,3.9],"Enable UV Pilot"),
+      s("curve",1,[2.06,30.62,72.42,51.97],"Spannungs-Frequenz-Kurve"),
+      s("curve",14,[77.33,41.71,19.52,2.46],"Voltage"),
+      s("curve",15,[77.33,47.45,19.52,3.69],"Frequency (MHz)"),
+      s("curve",2,[87.39,57.72,9.52,4.27],"Apply curve"),
+      s("curve",18,[77.33,57.72,9.52,4.27],"Flatline curve"),
+      s("curve",16,[77.3,68.8,19.6,6.6],"Power limit (%)"),
+      s("curve",17,[77.3,76.3,19.6,6.5],"VRAM (MHz)"),
+      s("curve",6,[1.58,87.68,6.85,3.78],"Read GPU"),
+      s("curve",7,[8.97,87.68,7.58,3.78],"Stock curve"),
+      s("curve",8,[17.09,87.68,4.73,3.78],"Undo"),
+      s("curve",8,[22.36,87.68,4.55,3.78],"Redo")
     ]},
-    dcc:{file:'play-dcc-original.png',width:1350,height:1650,shape:'dcc',alt:'Originale DCC Einstellungen mit Automatic, NVIDIA Power Efficiency Mode, Framelimit und Lernständen',caption:'Originalaufnahme · DCC-Einstellungen aus dem lokalen Play-v2.0.9-Teststand.',spots:[
+    dcc:{file:'play-dcc-original.png',width:1350,height:1650,shape:'dcc',alt:'Originale DCC Einstellungen mit Automatic, NVIDIA Power Efficiency Mode, Framelimit und Lernständen',caption:'Aufnahme aus Play v2.0.9. Die neue History mit Learned profiles und Blocked profiles ist unten erklärt.',spots:[
       s('dcc',0,[3,10,93,6],'DCC algorithm (automatic)'),s('dcc',1,[3,16,93,8],'NVIDIA Power Efficiency Mode'),s('dcc',2,[6,25,88,9],'Set efficiency target manually'),
       s('dcc',8,[5,39,91,8],'NVIDIA Max Frame Rate'),s('dcc',9,[5,48,91,7],'Global NVIDIA VSync'),s('dcc',10,[5,60,91,7],'Enable performance logging'),s('dcc',11,[4,67,92,18],'Learned games'),
       s('dcc',5,[75,85,21,5],'Reset selected learned profile'),s('dcc',6,[78,94,9.5,5],'Cancel'),s('dcc',6,[88,94,10,5],'Apply')
@@ -60,7 +78,7 @@
       s('overlay',9,[2,59,28,7],'Show / hide shortcut'),s('overlay',10,[2,68,29,9],'Sensor support'),s('overlay',4,[33,17,64,13],'Live preview'),
       s('overlay',5,[50,46,15.5,3.5],'FPS'),s('overlay',6,[65.5,46,15.5,3.5],'Power'),s('overlay',6,[50,49.5,15.5,3],'Voltage'),s('overlay',6,[65.5,49.5,15.5,3],'GPU clock'),s('overlay',19,[50,52.5,15.5,3],'GPU usage'),s('overlay',8,[65.5,52.5,15.5,3],'VRAM'),s('overlay',7,[50,55.5,15.5,3],'Temp'),s('overlay',7,[65.5,55.5,15.5,3],'Hotspot'),s('fan',null,[50,58.5,15.5,3],'Fan'),s('overlay',20,[79,94,11,5],'Reset defaults')
     ]},
-    fan:{file:'play-fan-v2.0.9.jpg',width:1100,height:700,shape:'wide',alt:'Originale Lüftersteuerung aus Play v2.0.9 mit drei Lüfterkanälen, Fixed, Curve und GPU-Automatik',caption:'Originalaufnahme · Play v2.0.9. Die drei Kanäle zeigen verschiedene Bearbeitungsmodi. Running zeigt die tatsächlich aktive Regelung.',spots:[
+    fan:{file:'play-fan-v2.0.9.jpg',width:1100,height:700,shape:'wide',alt:'Originale Lüftersteuerung aus Play v2.0.9 mit drei Lüfterkanälen, Fixed, Curve und GPU-Automatik',caption:'Aufnahme aus Play v2.0.9. Der neue Zero-Fan-Schalter ist hier noch nicht abgebildet; seine Funktion ist unten erklärt.',spots:[
       s('fan',6,[1.5,16.4,17.5,4.8],'Fan profile'),s('fan',7,[19.5,16.4,5,4.8],'Save'),s('fan',8,[25,16.4,9.5,4.8],'Save as new…'),s('fan',9,[35.3,16.4,6,4.8],'More…'),s('fan',10,[42,16.4,13,4.8],'Activate at Play start'),s('fan',11,[1.5,22.2,12,4.4],'Hysteresis'),s('fan',12,[14.8,22.2,14,4.4],'Minimum hold'),
       s('fan',16,[2.5,29,29.5,10],'Fan 1 · RPM / Running'),s('fan',16,[35.2,29,29.5,10],'Fan 2 · RPM / Running'),s('fan',16,[67.5,29,29.5,10],'Fan 3 · RPM / Running'),
       s('fan',0,[2.7,40.4,9.5,4.8],'Fan 1 · Auto'),s('fan',1,[12.5,40.4,9.5,4.8],'Fan 1 · Fixed'),s('fan',2,[22.3,40.4,9.9,4.8],'Fan 1 · Curve'),s('fan',0,[35.2,40.4,9.5,4.8],'Fan 2 · Auto'),s('fan',1,[45,40.4,9.5,4.8],'Fan 2 · Fixed'),s('fan',2,[54.8,40.4,9.9,4.8],'Fan 2 · Curve'),s('fan',0,[67.6,40.4,9.5,4.8],'Fan 3 · Auto'),s('fan',1,[77.4,40.4,9.5,4.8],'Fan 3 · Fixed'),s('fan',2,[87.2,40.4,10,4.8],'Fan 3 · Curve'),
@@ -81,6 +99,7 @@
   };
   Object.values(features).forEach(feature=>{feature[0]=t(feature[0]);feature[2]=t(feature[2]);});
   Object.values(categories).forEach(category=>{category.name=t(category.name);category.description=t(category.description);});
+  screens.curveflat = {...screens.curve,file:'play-curve-flatline-preview.png',alt:'Curve editor mit abgeflachter Kurve',caption:'Flatline-Beispiel: 900 mV / 2800 MHz mit gespeicherter RTX-5090-Stock-Kurve. Echte Editor-Oberfläche, Vorschau des nächsten Play-Stands. Keine neue GPU-Anwendung oder Stabilitätsprüfung.'};
   Object.values(screens).forEach(screen=>{screen.alt=t(screen.alt);screen.caption=t(screen.caption);screen.spots.forEach(spot=>spot.label=t(spot.label));});
   const languageLink = document.querySelector('[data-language-switch]');
   const languagePage = languageLink?.getAttribute('href').split('#')[0];
@@ -89,8 +108,8 @@
   }
   syncLanguageLink();
   window.addEventListener('hashchange',syncLanguageLink);
-  const featureScreens = {profiles:'main',community:'curve',pilot:'main',library:'main',dcc:'dcc',stabilizer:'stabilizer',hz:'main',curve:'curve',autouv:'curve',scanner:'curve',fan:'fan',overlay:'overlay',settings:'settings',updates:'settings',diagnostics:'settings',expert:'expert',advanced:'advanced'};
-  const related = {profiles:['community','curve','pilot'],community:['profiles','curve','scanner'],pilot:['library','profiles'],library:['pilot','stabilizer'],dcc:['stabilizer','overlay'],stabilizer:['dcc','library'],hz:['settings'],curve:['profiles','community','autouv','scanner','expert','advanced'],autouv:['profiles','curve','scanner'],advanced:['curve','expert','settings'],scanner:['autouv','community','curve'],fan:['settings'],expert:['curve','stabilizer'],overlay:['settings'],settings:['updates','diagnostics'],updates:['diagnostics'],diagnostics:['settings']};
+  const featureScreens = {startup:'main',profiles:'main',community:'curve',pilot:'main',library:'main',dcc:'dcc',stabilizer:'stabilizer',hz:'main',curve:'curve',autouv:'curve',scanner:'curve',fan:'fan',overlay:'overlay',settings:'settings',updates:'settings',diagnostics:'settings',expert:'expert',advanced:'advanced'};
+  const related = {startup:['profiles','settings','dcc'],profiles:['community','curve','pilot','startup'],community:['profiles','curve','scanner'],pilot:['library','profiles'],library:['pilot','stabilizer'],dcc:['stabilizer','overlay'],stabilizer:['dcc','library'],hz:['settings'],curve:['profiles','community','autouv','scanner','expert','advanced'],autouv:['profiles','curve','scanner'],advanced:['curve','expert','settings'],scanner:['autouv','community','curve'],fan:['settings'],expert:['curve','stabilizer'],overlay:['settings'],settings:['startup','updates','diagnostics'],updates:['diagnostics'],diagnostics:['settings']};
   const dialog = $('#feature-dialog');
   const tooltip = $('#control-tooltip');
   let currentFeature = null;
@@ -99,6 +118,12 @@
   let tooltipAnchor = null;
   let tooltipFeature = null;
   let showAreas = false;
+  let curveView = 'edit';
+  function curveExamplesMarkup() {
+    return '<div class="curve-examples" role="group" aria-label="'+esc(t('Zwei Wege im Curve editor'))+'">'+
+      [['edit','Individuelle Kurve'],['flatline','Flatline curve']].map(([view,label])=>
+        '<button class="quiet" type="button" data-curve-view="'+view+'" aria-pressed="'+(curveView===view)+'">'+esc(t(label))+'</button>').join('')+'</div>';
+  }
 
   function hotspotMarkup(spot, index, screenKey, highlighted) {
     const [x,y,w,h] = spot.rect;
@@ -107,7 +132,7 @@
   }
   function screenMarkup(key, highlighted) {
     const screen = screens[key];
-    return `<img src="assets/${screen.file}${key === 'main' ? '?v=2.0.9-balanced' : ''}" alt="${esc(screen.alt)}" width="${screen.width}" height="${screen.height}">${screen.spots.map((spot,index)=>hotspotMarkup(spot,index,key,highlighted)).join('')}`;
+    return `<img src="assets/${screen.file}?v=20260929-update-1" alt="${esc(screen.alt)}" width="${screen.width}" height="${screen.height}">${screen.spots.map((spot,index)=>hotspotMarkup(spot,index,key,highlighted)).join('')}`;
   }
   function setCategory(key, focus=false) {
     if (!Object.hasOwn(categories,key)) return false;
@@ -176,11 +201,11 @@
   }
   function renderFeature(id) {
     const topic = copy[id];
-    const key = featureScreens[id];
+    const key = id === 'curve' && curveView === 'flatline' ? 'curveflat' : featureScreens[id];
     const screen = key ? screens[key] : null;
-    const ownWindow = key === id || id === 'overlay';
+    const ownWindow = key === id || id === 'overlay' || id === 'curve';
     const contextLabel = ownWindow ? t('Im Originalfenster') : key === 'main' ? t('Im Hauptfenster') : key === 'curve' ? t('Im Kurveneditor') : t('In den Einstellungen');
-    const visual = screen ? `<div><div class="image-instruction"><span>${contextLabel}: ${t("Optionen anklicken")}</span><button class="quiet" data-areas aria-pressed="${showAreas}">${t(showAreas?'Klickbereiche ausblenden':'Klickbereiche zeigen')}</button></div><figure class="original-screen ${screen.shape}">${['wide','dcc'].includes(screen.shape)?`<p class="scroll-hint">${t("Fenster seitlich wischen oder mit den Pfeiltasten bewegen →")}</p>`:''}<div class="image-scroll"${['wide','dcc'].includes(screen.shape)?` tabindex="0" role="region" aria-label="${t("Originalfenster, auf kleinen Bildschirmen horizontal scrollbar")}"`:''}><div class="hotspot-image ${screen.shape}">${screenMarkup(key,ownWindow?null:id)}</div></div><figcaption>${esc(screen.caption)}</figcaption></figure>${!ownWindow && (key !== 'main' || id === 'fan') ? `<p class="screen-note">${t("Die Aufnahme zeigt den Zugang zu")} ${esc(features[id][0])}. ${t("Die Optionen der Funktion findest du unten erklärt.")}</p>`:''}</div>` : `<div class="screen-note"><strong>${t("Fan curve in Play öffnen")}</strong>${t("In neueren Play-Versionen findest du die Lüftersteuerung direkt im Hauptfenster. Für diesen Dialog liegt in der Vorschau noch keine passende Originalaufnahme vor. Die verfügbaren Optionen sind unten erklärt.")}</div>`;
+    const visual = screen ? `<div>${id === 'curve' ? curveExamplesMarkup() : ''}<div class="image-instruction"><span>${contextLabel}: ${t("Optionen anklicken")}</span><button class="quiet" data-areas aria-pressed="${showAreas}">${t(showAreas?'Klickbereiche ausblenden':'Klickbereiche zeigen')}</button></div><figure class="original-screen ${screen.shape}">${['wide','dcc'].includes(screen.shape)?`<p class="scroll-hint">${t("Fenster seitlich wischen oder mit den Pfeiltasten bewegen →")}</p>`:''}<div class="image-scroll"${['wide','dcc'].includes(screen.shape)?` tabindex="0" role="region" aria-label="${t("Originalfenster, auf kleinen Bildschirmen horizontal scrollbar")}"`:''}><div class="hotspot-image ${screen.shape}">${screenMarkup(key,ownWindow?null:id)}</div></div><figcaption>${esc(screen.caption)}</figcaption></figure>${!ownWindow && (key !== 'main' || id === 'fan') ? `<p class="screen-note">${t("Die Aufnahme zeigt den Zugang zu")} ${esc(features[id][0])}. ${t("Die Optionen der Funktion findest du unten erklärt.")}</p>`:''}</div>` : `<div class="screen-note"><strong>${t("Fan curve in Play öffnen")}</strong>${t("In neueren Play-Versionen findest du die Lüftersteuerung direkt im Hauptfenster. Für diesen Dialog liegt in der Vorschau noch keine passende Originalaufnahme vor. Die verfügbaren Optionen sind unten erklärt.")}</div>`;
     $('#dialog-title').textContent = features[id][0];
     dialog.dataset.feature = id;
     $('#back-dialog').hidden = trail.length === 0;
@@ -218,6 +243,10 @@
 
   document.addEventListener('click',event=>{
     const button = event.target.closest('button');
+    if (button?.dataset.curveView && ['edit','flatline'].includes(button.dataset.curveView)) {
+      closeTooltip(); curveView=button.dataset.curveView; renderFeature('curve');
+      document.querySelector('[data-curve-view="'+curveView+'"]').focus({preventScroll:true}); return;
+    }
     if (button?.hasAttribute('data-spot')) {showTooltip(button);return;}
     if (button?.dataset.open) {openFeature(button.dataset.open);return;}
     if (button?.dataset.category) {closeTooltip();setCategory(button.dataset.category);return;}

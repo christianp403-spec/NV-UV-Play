@@ -9,17 +9,17 @@
   <link rel="alternate" hreflang="de" href="loslegen.html">
   <link rel="alternate" hreflang="en" href="get-started.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <link rel="stylesheet" href="styles.css?v=20260926-contact-dialog-1">
-  <script src="guide.en.js?v=20260927-curve-image-1" defer></script>
-  <script src="guide.ui.en.js?v=20260926-pages-1" defer></script>
-  <script src="guide-app.js?v=20260927-curve-image-1" defer></script>
-  <script src="site-navigation.js?v=20260926-contact-dialog-1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260929-update-1">
+  <script src="guide.en.js?v=20260929-update-1" defer></script>
+  <script src="guide.ui.en.js?v=20260929-update-1" defer></script>
+  <script src="guide-app.js?v=20260929-update-1" defer></script>
+  <script src="site-navigation.js?v=20260929-update-1" defer></script>
 </head>
 <body data-page="start">
 <a class="skip-link" href="#top">Skip to content</a>
 <header class="site-header wrap">
   <a class="brand" href="en.html" aria-label="NV-UV Play home"><img src="assets/wordmark.png" width="188" height="56" alt="NV-UV Play"></a>
-  <nav aria-label="Main navigation"><a href="en.html">Explore Play</a><a href="get-started.html" aria-current="page">Get started</a><a href="features.html">Get to know Play</a></nav>
+  <nav aria-label="Main navigation"><a href="en.html">Explore Play</a><a href="get-started.html" aria-current="page">Get started</a><a href="features.html">Get to know Play</a><a href="success-stories.html">Success stories</a></nav>
   <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="loslegen.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div></div>
 </header>
 <main id="top">
@@ -36,6 +36,9 @@
       <details><summary>Is Play open source?</summary><p>NV-UV Play is currently not open source. Please refer to the included license notices for terms of use and further licensing questions.</p></details>
       <details><summary>What should I know about the alpha?</summary><p>So far, I have personally verified Play on Blackwell (RTX 50). The community has also confirmed compatibility with Ada (RTX 40) and Ampere (RTX 30).</p><p>RTX 20 remains experimental. Multi-GPU hardware tests are still pending. New hardware writes, such as experimental voltage settings and fan control, have not been comprehensively validated.</p><p>The overlay supports desktop, windowed and borderless modes. Exclusive fullscreen has not been supported since v2.0.8.</p></details>
       <details><summary>Do I need to test profiles on my card?</summary><p>Yes. Community-tested profiles and Auto-UV provide a starting point. Every GPU and game can behave differently. Test settings on your system and follow the notices in Play. A passed test and Stabilizer do not guarantee lasting stability.</p></details>
+      <details><summary>Can Play apply my profile and stay closed afterwards?</summary><p>In the upcoming update: save a profile, right-click <strong>Use as startup profile</strong> and leave normal Play Autostart off if desired. At Windows sign-in, the short startup process waits 15 seconds, applies the profile and exits. DCC and other ongoing automatic features still need Play running.</p></details>
+      <details><summary>How do I skip an unstable startup profile?</summary><p>Hold <strong>Shift while signing in to Windows</strong>. Automatic Play startup is skipped for that sign-in. You can then open Play manually and change the startup profile. This does not reset a curve that has already been applied.</p></details>
+      <details><summary>Why can’t I save an old DCC entry as a UV profile?</summary><p>The new export feature needs the curve and settings recorded during learning. Older entries may lack them. Select only the affected entry, reset it, click Apply and play again with DCC. Existing learned clocks remain usable without export.</p></details>
     </section>
   </section>
 </main>
