@@ -155,7 +155,7 @@ If you'd like to bundle NV-UV Play with hardware, integrate it into
 a commercial product, or offer it as a paid tuning service, please
 get in touch and we'll work out a commercial license:
 
-    christian.papaioannou@gmx.de
+    christian.papaioannou@protonmail.com
 
 
 Alpha software and hardware risks
