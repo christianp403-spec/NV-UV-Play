@@ -28,7 +28,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "MFG · Multi Frame Generation",
-        "Du spielst auf einer RTX-50-GPU mit Multi Frame Generation? MFG kombiniert eine niedrige Spannung mit dem normalen Power-Limit deiner Karte. Gegenüber Eco bleibt dadurch mehr Leistungsspielraum für diese Spielelast. Es ist das dafür vorbereitete UV-Profil; Multi Frame Generation aktivierst du weiterhin im Spiel. Vergleiche Verbrauch und Bildrate mit deinen tatsächlichen Spieleinstellungen. Auch diesen Profilplatz kannst du anpassen und mit einem eigenen Profil belegen."
+        "Du spielst auf einer RTX-50-GPU mit Multi Frame Generation? MFG kombiniert eine niedrige Spannung mit 80 Prozent Powerlimit und steht in der Standardbelegung direkt nach Eco. Eigene Profilwerte und globale Powerlimit-Überschreibungen behalten Vorrang. Multi Frame Generation aktivierst du weiterhin im Spiel. Vergleiche Verbrauch und Bildrate mit deinen tatsächlichen Spieleinstellungen. Auch diesen Profilplatz kannst du anpassen und mit einem eigenen Profil belegen."
       ],
       [
         "Custom",

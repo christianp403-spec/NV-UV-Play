@@ -1,5 +1,7 @@
 'use strict';
 window.PLAY_UI_EN = {
+  "NV-UV Play v2.0.11 Hauptfenster mit MFG direkt nach Eco": "NV-UV Play v2.0.11 main window with MFG directly after Eco",
+  "Play v2.0.11 · Echte Oberfläche mit MFG-Beispielprofil und simuliertem GPU-Zustand.": "Play v2.0.11 · Actual interface with an MFG example profile and simulated GPU state.",
   "NV-UV Play v2.0.10 Hauptfenster mit Curve editor und Profilplätzen": "NV-UV Play v2.0.10 main window with Curve editor and profile slots",
   "Play v2.0.10 · Echte Oberfläche mit Beispielprofil und simuliertem GPU-Zustand.": "Play v2.0.10 · Actual interface with an example profile and simulated GPU state.",
   "Originale Advanced options aus Play v2.0.9 mit Preset-Verfahren und V-Step Compensation": "Original Advanced options from Play v2.0.9 with preset methods and V-Step Compensation",

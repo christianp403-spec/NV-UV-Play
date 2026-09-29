@@ -35,12 +35,12 @@
   // Hotspots use percentages of the unchanged product capture, never reconstructed UI.
   const s = (feature, control, rect, label) => ({feature,control,rect,label});
   const screens = {
-    main:{file:'play-main-v2.0.10.png',width:533,height:980,shape:'main',alt:"NV-UV Play v2.0.10 Hauptfenster mit Curve editor und Profilplätzen",caption:"Play v2.0.10 · Echte Oberfläche mit Beispielprofil und simuliertem GPU-Zustand.",spots:[
+    main:{file:'play-main-v2.0.11.png',width:533,height:980,shape:'main',alt:"NV-UV Play v2.0.11 Hauptfenster mit MFG direkt nach Eco",caption:"Play v2.0.11 · Echte Oberfläche mit MFG-Beispielprofil und simuliertem GPU-Zustand.",spots:[
       s('profiles',1,[5.253,22.143,13.696,5.204],'Eco'),
-      s('profiles',2,[20.45,22.143,13.696,5.204],'Balanced'),
-      s('profiles',3,[35.647,22.143,13.696,5.204],'Performance'),
-      s('profiles',4,[50.844,22.143,13.696,5.204],'Max'),
-      s('profiles',5,[66.041,22.143,13.696,5.204],'MFG'),
+      s('profiles',5,[20.45,22.143,13.696,5.204],'MFG'),
+      s('profiles',2,[35.647,22.143,13.696,5.204],'Balanced'),
+      s('profiles',3,[50.844,22.143,13.696,5.204],'Performance'),
+      s('profiles',4,[66.041,22.143,13.696,5.204],'Max'),
       s('profiles',6,[81.238,22.143,13.696,5.204],'Custom'),
       s('profiles',7,[75.047,28.878,19.887,4.184],'Default'),
       s('fan',null,[5.253,34.286,43.715,4.184],'Fan curve'),

@@ -28,7 +28,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "MFG · Multi Frame Generation",
-        "Playing with Multi Frame Generation on an RTX 50 GPU? MFG combines a low voltage with the normal power limit of your card, leaving more power headroom for this workload than Eco. It is the UV profile prepared for this use; you still enable Multi Frame Generation in the game. Compare power draw and frame rate with your actual game settings. You can also edit this slot and assign your own profile to it."
+        "Playing with Multi Frame Generation on an RTX 50 GPU? MFG combines a low voltage with an 80% power limit and follows Eco in the default profile row. Edited profile values and global power-limit overrides retain priority. You still enable Multi Frame Generation in the game. Compare power draw and frame rate with your actual game settings. You can also edit this slot and assign your own profile to it."
       ],
       [
         "Custom",
