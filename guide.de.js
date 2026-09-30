@@ -8,7 +8,7 @@ window.PLAY_GUIDE_DE = {
     "controls": [
       [
         "Profilplätze",
-        "Die sechs Profilplätze sind frei belegbare Schnellzugriffe. Du kannst jeden Platz anpassen, seine Belegung durch ein eigenes Profil ersetzen und ihn später wieder zurücksetzen oder leeren. Ein Klick aktiviert das dort gespeicherte Profil global. Du entscheidest, ob du mit vorbereiteten oder eigenen Einstellungen spielst."
+        "Die sechs Profilplätze sind frei belegbare Schnellzugriffe. Du kannst jeden Platz anpassen, seine Belegung durch ein eigenes Profil ersetzen und ihn später wieder zurücksetzen oder leeren. Ein Klick aktiviert das dort gespeicherte Profil global. Du entscheidest, ob du mit vorbereiteten oder eigenen Einstellungen spielst. Ein Klick im Hauptfenster wählt denselben Slot auch im bereits offenen Curve editor. Ungespeicherte Entwürfe anderer Slots bleiben beim Zurückwechseln erhalten."
       ],
       [
         "Eco",
@@ -392,7 +392,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Readings",
-        "Wählt die angezeigten Messwerte. Zum Prüfen deines UV-Profils helfen GPU-Takt, Spannung, Leistungsaufnahme und FPS. Temperatur und GPU-Auslastung ergänzen den Vergleich."
+        "Wählt die angezeigten Messwerte. Zum Prüfen deines UV-Profils helfen GPU-Takt, Spannung, Leistungsaufnahme und FPS. Temperatur und GPU-Auslastung ergänzen den Vergleich. Seit v2.0.12 kannst du auch Uhrzeit und Datum wählen: Clock European zeigt HH:mm:ss, Clock US hh:mm:ss mit AM/PM, Date European DD.MM.YYYY und Date US MM/DD/YYYY. Grundlage ist die lokale Windows-Zeit. Alle vier lassen sich einzeln aktivieren, mischen, platzieren, einfärben und in Overlay-Profilen speichern."
       ],
       [
         "Layout",
@@ -651,7 +651,7 @@ window.PLAY_GUIDE_DE = {
   "settings": {
     "purpose": "Settings bündelt GPU-Auswahl, Funktionsdialoge, Anzeigeoptionen und Hilfe.",
     "benefit": "Du findest allgemeine Einstellungen zentral und kannst sicherstellen, dass Play die gewünschte GPU steuert.",
-    "how": "Im Hauptfenster Settings öffnen und den passenden Bereich wählen. Eine geänderte GPU-Auswahl speichern und Play anschließend neu starten.",
+    "how": "Im Hauptfenster Settings öffnen und den passenden Bereich wählen. Eine geänderte GPU-Auswahl speichern und Play anschließend neu starten. Help öffnet die englische NV-UV-Play-Webseite.",
     "limit": "Die Auswahl ändert nicht, welche GPU ein Spiel oder Lossless Scaling benutzt. Multi-GPU-Hardwarevalidierung steht noch aus.",
     "controls": [
       [
@@ -668,7 +668,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Advanced options",
-        "Bündelt zusätzliche Einstellungen, die für den normalen Einstieg nicht ständig benötigt werden, beispielsweise das Startverhalten."
+        "Bündelt zusätzliche Einstellungen, die für den normalen Einstieg nicht ständig benötigt werden, beispielsweise das Startverhalten. Der Inhalt lässt sich scrollen und nutzt die verfügbare Fensterhöhe; Save und Cancel bleiben darunter erreichbar."
       ],
       [
         "Experimental features",

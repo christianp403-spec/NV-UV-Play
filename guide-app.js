@@ -35,7 +35,7 @@
   // Hotspots use percentages of the unchanged product capture, never reconstructed UI.
   const s = (feature, control, rect, label) => ({feature,control,rect,label});
   const screens = {
-    main:{file:'play-main-v2.0.11.png',width:533,height:980,shape:'main',alt:"NV-UV Play v2.0.11 Hauptfenster mit MFG direkt nach Eco",caption:"Play v2.0.11 · Echte Oberfläche mit MFG-Beispielprofil und simuliertem GPU-Zustand.",spots:[
+    main:{file:'play-main-v2.0.12.png',width:533,height:980,shape:'main',alt:"NV-UV Play v2.0.12 Hauptfenster mit MFG direkt nach Eco",caption:"Play v2.0.12 · Echte Oberfläche mit MFG-Beispielprofil und simuliertem GPU-Zustand.",spots:[
       s('profiles',1,[5.253,22.143,13.696,5.204],'Eco'),
       s('profiles',5,[20.45,22.143,13.696,5.204],'MFG'),
       s('profiles',2,[35.647,22.143,13.696,5.204],'Balanced'),

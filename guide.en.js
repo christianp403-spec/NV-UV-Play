@@ -8,7 +8,7 @@ window.PLAY_GUIDE_EN = {
     "controls": [
       [
         "Profile slots",
-        "The six profile slots are shortcuts you can freely assign. Edit any slot, replace its assignment with your own profile, then restore or clear it later. Clicking a slot activates its saved profile globally. You decide whether to play with prepared settings or your own."
+        "The six profile slots are shortcuts you can freely assign. Edit any slot, replace its assignment with your own profile, then restore or clear it later. Clicking a slot activates its saved profile globally. You decide whether to play with prepared settings or your own. Clicking a profile in the main window also selects its slot in an already open Curve editor. Unsaved drafts in other slots are preserved when switching back."
       ],
       [
         "Eco",
@@ -392,7 +392,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Readings",
-        "Selects the displayed values. GPU clock, voltage, power draw and FPS help check your UV profile. Temperature and GPU utilization add context."
+        "Selects the displayed values. GPU clock, voltage, power draw and FPS help check your UV profile. Temperature and GPU utilization add context. Since v2.0.12, you can also select time and date: Clock European shows HH:mm:ss, Clock US hh:mm:ss with AM/PM, Date European DD.MM.YYYY and Date US MM/DD/YYYY. These use local Windows time. Enable, mix, position and color all four independently and save them in overlay profiles."
       ],
       [
         "Layout",
@@ -651,7 +651,7 @@ window.PLAY_GUIDE_EN = {
   "settings": {
     "purpose": "Settings brings together GPU selection, feature dialogs, display options and help.",
     "benefit": "Find general settings in one place and make sure Play controls the GPU you intended.",
-    "how": "Open Settings in the main window and choose a section. Save a changed GPU selection and restart Play afterwards.",
+    "how": "Open Settings in the main window and choose a section. Save a changed GPU selection and restart Play afterwards. Help opens the English NV-UV Play website.",
     "limit": "Selection does not change the GPU used by a game or Lossless Scaling. Multi-GPU hardware validation is still pending.",
     "controls": [
       [
@@ -668,7 +668,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Advanced options",
-        "Groups extra settings that are not constantly needed when getting started, such as startup behavior."
+        "Groups extra settings that are not constantly needed when getting started, such as startup behavior. The scrollable content uses the available window height; Save and Cancel remain reachable below it."
       ],
       [
         "Experimental features",
