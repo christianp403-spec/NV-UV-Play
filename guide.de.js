@@ -4,7 +4,7 @@ window.PLAY_GUIDE_DE = {
     "purpose": "Ein UV-Profil bündelt Spannung, GPU-Takt und Power-Limit. Über die sechs Plätze im Hauptfenster aktivierst du die gespeicherten Einstellungen mit einem Klick.",
     "benefit": "Du entscheidest: Nutze die vorbereiteten Profile oder deine eigenen. Jeden der sechs Profilplätze kannst du anpassen und mit einem anderen Profil belegen. Auch der Weg zurück ist möglich.",
     "how": "Wähle einen der sechs Profilplätze als Ausgangspunkt. Per Rechtsklick → Edit profile passt du die Werte an. Manage profiles öffnet deine gespeicherten Profile; im Tab Stabilizer findest du die gelernten Korrekturen. Ein Startprofil lässt sich unabhängig vom normalen Play-Autostart festlegen.",
-    "limit": "Die Beschreibungen beziehen sich auf die mitgelieferten Profile. Ihre Werte unterscheiden sich je nach GPU-Modell; selbst bearbeitete Profilplätze können andere Einstellungen enthalten. Vergleiche FPS und Verbrauch im selben Spiel und teste die Stabilität auf deiner Karte.",
+    "limit": "Die mitgelieferten Presets basieren auf eher konservativ gewählten Community-Profilen. Trotzdem kann es besonders bei Performance und Max zu Instabilitäten oder Abstürzen kommen. Jeder GPU-Chip ist unterschiedlich, und die Anforderungen variieren von Spiel zu Spiel. Die Werte unterscheiden sich je nach GPU-Modell; selbst bearbeitete Profilplätze können andere Einstellungen enthalten. Teste die Stabilität auf deiner Karte.",
     "controls": [
       [
         "Profilplätze",
@@ -337,7 +337,7 @@ window.PLAY_GUIDE_DE = {
   "overlay": {
     "purpose": "Das Overlay zeigt ausgewählte Leistungs- und Sensorwerte auf dem Desktop oder über erkannten Spielen.",
     "benefit": "Du kannst während des Spielens sehen, wie sich ein Profil auf Bildrate, Verbrauch und Temperatur auswirkt, ohne ständig zu einem anderen Fenster zu wechseln.",
-    "how": "Overlay einschalten, unter Display on den Einsatzort wählen und in Readings die gewünschten Werte aktivieren. Layout und Colors passen die Darstellung an.",
+    "how": "Overlay einschalten und unter Display on zwischen Desktop, Game und Desktop + Game wählen. Seit v2.0.13 kann es automatisch zwischen Desktop und erkanntem Spiel wechseln. In Readings aktivierst du die gewünschten Werte; Layout und Colors passen die Darstellung an.",
     "limit": "Unterstützt werden Desktop, Fenster und randlose Fenster. Exklusives Vollbild wird seit v2.0.8 nicht unterstützt. Einige Werte brauchen kompatible Sensoren oder optionales PawnIO-Setup.",
     "scenarioTitle": "Woran erkenne ich, dass mein UV-Profil wirkt?",
     "scenario": "Beobachte GPU-Takt, Spannung und Leistungsaufnahme zusammen mit deinen FPS. Vergleiche dieselbe Spielszene mit gleichen Einstellungen und gleichem FPS-Limit, einmal mit Standardeinstellungen und einmal mit UV-Profil. Weniger Spannung bei vergleichbarem Takt zeigt die Wirkung des Undervoltings. Weniger Watt bei ähnlicher Bildrate zeigt den Effizienzgewinn. Ein niedriger Verbrauch allein kann auch an geringerer Last liegen. Alternativ zur Play-Telemetrie kannst du HWiNFO oder GPU-Z nutzen.",
@@ -347,8 +347,8 @@ window.PLAY_GUIDE_DE = {
         "Schaltet die Anzeige ein oder aus. Das Einstellungsfenster oder seine Vorschau zu öffnen ist nicht dasselbe wie das Overlay zu aktivieren."
       ],
       [
-        "Display on: Desktop oder Game",
-        "Desktop zeigt das Overlay auf dem Desktop. Game zeigt es über einem erkannten Spiel im Vordergrund. So bestimmst du, wann die Werte sichtbar sein sollen."
+        "Display on: Desktop, Game oder Desktop + Game",
+        "Desktop zeigt das Overlay auf dem Hauptbildschirm und blendet es bei erkannten Spielen aus. Game zeigt es nur über einem erkannten Spiel im Vordergrund. Desktop + Game wechselt automatisch zwischen beiden. Der gewählte Modus gilt auch, während der Layout-Designer geöffnet ist. Spiele werden im Fenster oder randlosen Fenster unterstützt, nicht im exklusiven Vollbild."
       ],
       [
         "Anzeige, Werte, Layout, Farben, Profile",
@@ -525,7 +525,7 @@ window.PLAY_GUIDE_DE = {
   "stabilizer": {
     "purpose": "Stabilizer reagiert auf erkannte Treiberabstürze und korrigiert GPU-Kurve beziehungsweise Takt- und Spannungsziel.",
     "benefit": "Du musst nach einem erkannten Treiberabsturz nicht jede Korrektur selbst vornehmen. Play berücksichtigt sowohl Spielprofile als auch das globale Profil und speichert die Anpassungen im passenden Kontext.",
-    "how": "Aktiviere Stabilizer bei ausgeschaltetem DCC und wähle Strategie, Schrittweiten und Grenzen. Korrekturen findest du in My profiles → Stabilizer sowie unter Stabilizer Adjustments in der Game Library.",
+    "how": "Beim ersten Start ist der Stabilizer bereits eingeschaltet. Lass ihn gerade in der Anfangszeit aktiviert. Stabilizer und DCC werden alternativ genutzt. Wähle bei Bedarf Strategie, Schrittweiten und Grenzen. Korrekturen findest du in My profiles → Stabilizer sowie unter Stabilizer Adjustments in der Game Library.",
     "limit": "Nicht jeder Absturz wird erkannt. Stabilizer verhindert nicht alle Instabilitäten und ist kein Schutzversprechen gegen Schäden oder Datenverlust.",
     "controls": [
       [
@@ -570,7 +570,7 @@ window.PLAY_GUIDE_DE = {
       ]
     ],
     "scenarioTitle": "Weniger Nachjustieren nach einem Absturz.",
-    "scenario": "Undervolting bedeutet oft: ausprobieren, spielen, nachjustieren. Erkennt Play einen Treiberabsturz, kann Stabilizer den Takt schrittweise senken, die Spannung anheben oder beides kombinieren. Das hilft dir beim Weg zu einem stabilen Profil, für einzelne Spiele und für das globale Profil. Welche Strategie und Grenzen gelten, bestimmst du."
+    "scenario": "Nach bisherigen Erfahrungen sind häufig ein bis zwei Korrekturen nach einem Absturz nötig, bis ein Preset stabil läuft. Je nach Karte und Spiel können weitere Anpassungen erforderlich sein. Stabilität in einem Spiel garantiert sie nicht in jedem anderen. Der Stabilizer reagiert auf erkannte GPU-Treiberabstürze und passt das betroffene Spielprofil oder globale Profil im jeweiligen Kontext an. Geplant für v2.0.14: Nach einer erfolgreichen Korrektur zeigt Play im Hauptfenster an, was angepasst wurde."
   },
   "expert": {
     "purpose": "Expert voltage settings ergänzt dein UV-Profil um experimentelle Takt- und Spannungsparameter. Seit Play v2.0.9 gehören diese Werte zum jeweiligen Profil.",

@@ -4,7 +4,7 @@ window.PLAY_GUIDE_EN = {
     "purpose": "A UV profile combines voltage, GPU clock and power limit. The six slots in the main window let you activate saved settings with one click.",
     "benefit": "You choose: use the prepared profiles or your own. You can edit any of the six profile slots and replace its assignment with another profile. You can also go back later.",
     "how": "Choose one of the six profile slots as a starting point. Right-click → Edit profile to adjust its values. Manage profiles opens your saved profiles; the Stabilizer tab shows learned corrections. A startup profile can be set independently of normal Play Autostart.",
-    "limit": "These descriptions refer to the bundled profiles. Values vary by GPU model, and edited slots may contain different settings. Compare FPS and power draw in the same game and test stability on your own card.",
+    "limit": "The included presets are based on relatively conservative community profiles. However, instability or crashes can still occur, particularly with Performance and Max. Every GPU chip is different, and stability requirements vary from game to game. Values differ by GPU model, and edited slots may contain different settings. Test stability on your own card.",
     "controls": [
       [
         "Profile slots",
@@ -337,7 +337,7 @@ window.PLAY_GUIDE_EN = {
   "overlay": {
     "purpose": "The overlay shows selected performance and sensor readings on the desktop or over detected games.",
     "benefit": "See how a profile affects frame rate, power consumption and temperature while playing, without constantly switching windows.",
-    "how": "Enable the overlay, choose where to show it under Display on, and enable the desired values in Readings. Adjust the presentation with Layout and Colors.",
+    "how": "Enable the overlay and choose Desktop, Game or Desktop + Game under Display on. Since v2.0.13, it can switch automatically between the desktop and a detected game. Enable the desired values in Readings and adjust the presentation with Layout and Colors.",
     "limit": "Desktop, windowed and borderless modes are supported. Exclusive fullscreen has not been supported since v2.0.8. Some readings need compatible sensors or the optional PawnIO setup.",
     "scenarioTitle": "How can I tell whether my UV profile is working?",
     "scenario": "Watch GPU clock, voltage and power draw together with FPS. Compare the same game scene with identical settings and FPS cap, once at stock and once with the UV profile. Lower voltage at a comparable clock shows the effect of undervolting. Lower watts at similar FPS shows the efficiency gain. Low power draw alone can simply mean less load. HWiNFO or GPU-Z are alternatives to Play telemetry.",
@@ -347,8 +347,8 @@ window.PLAY_GUIDE_EN = {
         "Turns the display on or off. Opening its settings or preview is not the same as enabling the overlay."
       ],
       [
-        "Display on: Desktop or Game",
-        "Desktop shows the overlay on the desktop. Game shows it over a detected foreground game. This determines when the readings are visible."
+        "Display on: Desktop, Game or Desktop + Game",
+        "Desktop shows the overlay on the main display and hides it for detected games. Game shows it only over a detected foreground game. Desktop + Game switches automatically between both. The selected mode also applies while the layout designer is open. Games are supported in windowed or borderless mode, not exclusive fullscreen."
       ],
       [
         "Display, Readings, Layout, Colors, Profiles",
@@ -525,7 +525,7 @@ window.PLAY_GUIDE_EN = {
   "stabilizer": {
     "purpose": "Stabilizer responds to detected driver crashes by adjusting the GPU curve or clock and voltage targets.",
     "benefit": "You do not have to make every correction manually after a detected driver crash. Play handles both game profiles and the global profile, saving adjustments in the appropriate context.",
-    "how": "Enable Stabilizer while DCC is off and choose a strategy, step sizes and limits. Review corrections in My profiles → Stabilizer or Stabilizer Adjustments in the Game Library.",
+    "how": "The Stabilizer is enabled by default when you first start Play. Please keep it enabled while getting familiar with your card’s stability. Stabilizer and DCC are alternative modes. Choose a strategy, step sizes and limits if needed. Review corrections in My profiles → Stabilizer or Stabilizer Adjustments in the Game Library.",
     "limit": "Not every crash is detected. Stabilizer cannot prevent all instability and does not guarantee protection against damage or data loss.",
     "controls": [
       [
@@ -570,7 +570,7 @@ window.PLAY_GUIDE_EN = {
       ]
     ],
     "scenarioTitle": "Less manual adjustment after a crash.",
-    "scenario": "Undervolting often means trying settings, playing and adjusting again. When Play detects a driver crash, Stabilizer can gradually lower the clock, raise voltage or combine both. It helps you work towards a stable profile for individual games and the global profile. You choose the strategy and limits."
+    "scenario": "Based on experience so far, one or two corrections are often enough to reach stable settings. Some cards and games may require further adjustments, and stability in one game does not guarantee stability in every game. The Stabilizer responds to detected GPU driver crashes and adjusts the affected game or global profile in its appropriate context. Planned for v2.0.14: after a successful correction, Play will show what changed in the main window."
   },
   "expert": {
     "purpose": "Expert voltage settings adds experimental clock and voltage parameters to your UV profile. Since Play v2.0.9, these values belong to the individual profile.",

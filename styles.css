@@ -212,3 +212,5 @@ body.story-image-open{overflow:hidden}#story-image-dialog{padding:0;width:min(15
 
 /* Keep the combined license link usable at intermediate viewport widths. */
 .footer-links{flex-wrap:wrap}
+
+.update-preview>.notice{margin-top:18px}
