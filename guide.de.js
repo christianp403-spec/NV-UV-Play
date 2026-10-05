@@ -130,7 +130,7 @@ window.PLAY_GUIDE_DE = {
     "purpose": "Der UV-Kurveneditor legt fest, welche GPU-Frequenz zu einem Spannungspunkt gehört. Zusätzlich lassen sich Power limit und VRAM-Offset bearbeiten.",
     "benefit": "Du kannst dein Profil gezielt auf deine Grafikkarte und deine Spiele abstimmen: Setze einzelne Kurvenpunkte von Hand oder flache die Kurve manuell ab, wie beim klassischen Undervolting. Du kannst auch empfohlene Spannungs- und Taktwerte aus Foren oder Videos direkt eintragen oder Community-Profile über UV Try ausprobieren.",
     "how": "Wähle deine Zielspannung und den gewünschten Takt. Öffne die Flatline-Optionen über den Pfeil oder per Rechtsklick auf den Button. Flatline erstellt zunächst einen Entwurf. Prüfe ihn, bearbeite einzelne Punkte nach und vergleiche Änderungen mit Undo / Redo. Erst Apply curve übernimmt den Entwurf auf die GPU und speichert ihn im ausgewählten Profilplatz.",
-    "limit": "Die neuen Flatline-Optionen sind seit Play 2.0.15 verfügbar; entsprechende Profile benötigen diese Version oder neuer. Die abgebildete Editor-Aufnahme stammt aus v2.0.10 und zeigt das neue Optionsmenü noch nicht. Beispielwerte sind keine Empfehlung für deine GPU. Prüfe eigene Einstellungen auf Stabilität.",
+    "limit": "Die Flatline-Optionen sind seit Play 2.0.15 verfügbar. Neu erzeugte manuelle Flatline-Profile benötigen Play 2.0.15.1 oder neuer. Gespeicherte Kurven bleiben erhalten. Für die korrigierte Berechnung Flatline erneut ausführen, den Entwurf prüfen und anwenden. Die abgebildete Editor-Aufnahme stammt aus v2.0.10 und zeigt das neue Optionsmenü noch nicht. Beispielwerte sind keine Empfehlung für deine GPU. Prüfe eigene Einstellungen auf Stabilität.",
     "controls": [
       [
         "Profilplätze",
@@ -218,7 +218,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Start rise at…",
-        "Automatic (preset) ist voreingestellt. Alternativ wählst du eine vorhandene mV-Stufe unterhalb deines Zielpunkts. Punkte darunter bleiben erhalten. Ab dem gewählten Beginn gestaltet Play den Übergang zum Ziel und setzt anschließend das Plateau. Blackwell bietet Stufen bis 800 mV, mit 850 mV als Empfehlung. Ada und Ampere mit aktiviertem Gradient nutzen ihren unteren nativen Kurvenbereich. Manuelle Anstiege benötigen Gradient Lock; bei Ampere zusätzlich die optionale Gradient-Einstellung. Lange Listen sind scrollbar."
+        "Automatic (preset) ist voreingestellt. Alternativ wählst du eine vorhandene mV-Stufe unterhalb deines Zielpunkts. Punkte darunter bleiben erhalten. Ab dem gewählten Beginn verwendet Play dieselbe Preset-Berechnung wie Automatic. Bei gleichem Ziel bleiben die gemeinsamen Punkte unverändert. Anschließend folgt das Plateau. Blackwell bietet Stufen bis 800 mV, mit 850 mV als Empfehlung. Ada und Ampere mit aktiviertem Gradient nutzen ihren unteren nativen Kurvenbereich. Manuelle Anstiege benötigen Gradient Lock; bei Ampere zusätzlich die optionale Gradient-Einstellung. Lange Listen sind scrollbar."
       ],
       [
         "GPU-Familie und Preset-Modus",

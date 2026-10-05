@@ -9,8 +9,8 @@
   <link rel="alternate" hreflang="de" href="funktionen.html">
   <link rel="alternate" hreflang="en" href="features.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <link rel="stylesheet" href="styles.css?v=20261005-v2.0.15">
-  <script src="guide.de.js?v=20261005-v2.0.15" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261005-v2.0.15.1">
+  <script src="guide.de.js?v=20261005-v2.0.15.1" defer></script>
   <script src="guide-app.js?v=20260930-v2.0.12" defer></script>
   <script src="site-navigation.js?v=20260930-v2.0.12" defer></script>
 </head>
@@ -30,12 +30,12 @@
   <p>Wähle im <strong>Curve editor</strong> deine Zielspannung und den gewünschten Takt. Über den Pfeil neben <strong>Flatline</strong> oder einen Rechtsklick auf den Button bestimmst du, wie die Kurve angepasst wird.</p>
   <div class="update-grid"><button type="button" data-open="curve"><strong>Selected point <span aria-hidden="true">↗</span></strong><span>Ab dem ausgewählten Spannungspunkt bleibt der Takt konstant. Die Punkte davor behalten ihre bisherigen Werte und individuellen Anpassungen.</span></button>
 <button type="button" data-open="curve"><strong>Flatline + gradient, Automatic (preset) <span aria-hidden="true">↗</span></strong><span>Play berechnet den Verlauf bis zum Ziel anhand deiner GPU-Familie und der gewählten Lock-Einstellungen. Diese Option ist voreingestellt. Sie baut die Kurve neu auf und ersetzt dabei individuelle Punktänderungen.</span></button>
-<button type="button" data-open="curve"><strong>Manueller Anstiegsbeginn <span aria-hidden="true">↗</span></strong><span>Unter <strong>Start rise at…</strong> wählst du eine vorhandene Spannungsstufe unterhalb deines Zielpunkts. Punkte darunter bleiben erhalten. Ab der gewählten Stufe gestaltet Play den Übergang zum Ziel und setzt anschließend das Plateau.</span></button></div>
+<button type="button" data-open="curve"><strong>Manueller Anstiegsbeginn <span aria-hidden="true">↗</span></strong><span>Unter <strong>Start rise at…</strong> wählst du eine vorhandene Spannungsstufe unterhalb deines Zielpunkts. Punkte darunter bleiben erhalten. Ab der gewählten Stufe verwendet Play dieselbe Preset-Berechnung wie Automatic. Bei gleichem Ziel bleiben die gemeinsamen Punkte unverändert. Anschließend folgt das Plateau.</span></button></div>
   <div class="curve-workflow"><section><h3>Erst ansehen, dann anwenden</h3><p><strong>Flatline</strong> erstellt zunächst einen Entwurf. Du kannst ihn prüfen, einzelne Punkte nachbearbeiten und Änderungen mit <strong>Undo / Redo</strong> vergleichen. <strong>DRAFT</strong> zeigt an, dass deine Änderungen noch nicht angewendet wurden.</p><p>Erst <strong>Apply curve</strong> übernimmt den Entwurf auf die GPU und speichert ihn im ausgewählten Profilplatz.</p></section>
 <section><h3>Änderungen verwerfen</h3><p>Mit <strong>Discard draft</strong> neben Undo/Redo oder im Rechtsklickmenü des ausgewählten Profilplatzes lädst du dessen gespeicherten Stand wieder in den Editor. Auch ungespeicherte Power-Limit-, VRAM- und Expert-Einstellungen werden verworfen. Die aktiven GPU-Einstellungen bleiben unverändert.</p></section>
 <section><h3>Bestätigung vor dem Überschreiben</h3><p>Bevor <strong>Apply curve</strong> ein gespeichertes Profil überschreibt oder einen Preset-Platz ersetzt, nennt Play das betroffene Profil und fragt nach. Gemeinsam verwendete Profile ändern sich auch für ihre verknüpften Spiele und Profilplätze. Das ursprüngliche integrierte Preset bleibt verfügbar.</p><p>Für vorübergehenden Stock-Betrieb ohne Überschreiben deiner Profile verwendest du <strong>Default</strong>.</p></section>
 <section><h3>Passend zur GPU</h3><p>Manuelle Anstiege benötigen <strong>Gradient Lock</strong>, bei Ampere zusätzlich die optionale Gradient-Einstellung. Turing verwendet seinen bestehenden Preset-Verlauf ohne manuellen Anstiegsbeginn. Bei Blackwell beginnt die normale Ansicht bei 800 mV; als Anstiegsbeginn sind 850 mV empfohlen.</p></section></div>
-  <p class="notice">Profile mit den neuen Flatline-Optionen benötigen <strong>Play 2.0.15 oder neuer</strong>. Prüfe eigene Einstellungen auf deiner Karte auf Stabilität.</p>
+  <p class="notice">Neu erzeugte manuelle Flatline-Profile benötigen <strong>Play 2.0.15.1 oder neuer</strong>. Gespeicherte Kurven bleiben erhalten. Für die korrigierte Berechnung Flatline erneut ausführen, den Entwurf prüfen und anwenden. Prüfe eigene Einstellungen auf deiner Karte auf Stabilität.</p>
 </section>
     <div class="category-tabs" role="tablist" aria-label="Funktionskategorien" id="category-tabs"></div>
     <section id="feature-panel" role="tabpanel" tabindex="0" aria-labelledby="category-entry"><p id="category-description" class="category-description"></p><div class="feature-grid" id="feature-grid"></div></section>

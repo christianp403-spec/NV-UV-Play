@@ -9,8 +9,8 @@
   <link rel="alternate" hreflang="de" href="funktionen.html">
   <link rel="alternate" hreflang="en" href="features.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <link rel="stylesheet" href="styles.css?v=20261005-v2.0.15">
-  <script src="guide.en.js?v=20261005-v2.0.15" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261005-v2.0.15.1">
+  <script src="guide.en.js?v=20261005-v2.0.15.1" defer></script>
   <script src="guide.ui.en.js?v=20260930-v2.0.12" defer></script>
   <script src="guide-app.js?v=20260930-v2.0.12" defer></script>
   <script src="site-navigation.js?v=20260930-v2.0.12" defer></script>
@@ -31,12 +31,12 @@
   <p>Choose your target voltage and clock in <strong>Curve editor</strong>. Use the arrow beside <strong>Flatline</strong>, or right-click the button, to choose how Play adjusts the curve.</p>
   <div class="update-grid"><button type="button" data-open="curve"><strong>Selected point <span aria-hidden="true">↗</span></strong><span>Hold the selected clock from that voltage onward. Points below it retain their current values and individual edits.</span></button>
 <button type="button" data-open="curve"><strong>Flatline + gradient, Automatic (preset) <span aria-hidden="true">↗</span></strong><span>Play calculates the curve leading up to your target using your GPU family’s preset behavior and selected lock settings. This is the default option. It rebuilds the curve and replaces individual point edits.</span></button>
-<button type="button" data-open="curve"><strong>Manual rise start <span aria-hidden="true">↗</span></strong><span>Under <strong>Start rise at…</strong>, choose an available voltage step below your target. Lower points are preserved. Play shapes the transition from your chosen start to the target, then creates the plateau.</span></button></div>
+<button type="button" data-open="curve"><strong>Manual rise start <span aria-hidden="true">↗</span></strong><span>Under <strong>Start rise at…</strong>, choose an available voltage step below your target. Lower points are preserved. Play uses the same preset calculation as Automatic from your chosen start. With the same target, overlapping points keep identical values. The plateau follows at the target.</span></button></div>
   <div class="curve-workflow"><section><h3>Preview before applying</h3><p><strong>Flatline</strong> first creates a draft. Inspect it, adjust individual points and compare changes with <strong>Undo / Redo</strong>. <strong>DRAFT</strong> indicates that your edits have not been applied yet.</p><p><strong>Apply curve</strong> applies the draft to the GPU and saves it to the selected profile slot.</p></section>
 <section><h3>Discard your edits</h3><p>Use <strong>Discard draft</strong> beside Undo/Redo or in the selected slot’s right-click menu to reload its saved settings into the editor. Unsaved power-limit, VRAM and Expert settings are discarded too. Active GPU settings remain unchanged.</p></section>
 <section><h3>Confirm before overwriting</h3><p>Before <strong>Apply curve</strong> overwrites a saved profile or replaces a preset slot, Play names the affected profile and asks for confirmation. Other games and slots linked to that saved profile also use its updated settings. The original built-in preset remains available.</p><p>To temporarily run at stock without overwriting your profiles, use <strong>Default</strong>.</p></section>
 <section><h3>Matched to your GPU</h3><p>Manual rises require <strong>Gradient Lock</strong> and, on Ampere, the optional gradient setting. Turing uses its existing preset behavior without a manual rise start. The normal Blackwell view begins at 800 mV; 850 mV is the recommended rise start.</p></section></div>
-  <p class="notice">Profiles using the new Flatline options require <strong>Play 2.0.15 or newer</strong>. Test your own settings for stability on your card.</p>
+  <p class="notice">New manual Flatline profiles require <strong>Play 2.0.15.1 or newer</strong>. Saved curves are preserved. To use the corrected calculation, choose Flatline again, review the draft and apply it. Test your own settings for stability on your card.</p>
 </section>
     <div class="category-tabs" role="tablist" aria-label="Feature categories" id="category-tabs"></div>
     <section id="feature-panel" role="tabpanel" tabindex="0" aria-labelledby="category-entry"><p id="category-description" class="category-description"></p><div class="feature-grid" id="feature-grid"></div></section>

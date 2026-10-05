@@ -130,7 +130,7 @@ window.PLAY_GUIDE_EN = {
     "purpose": "The UV curve editor defines the GPU frequency at each voltage point. You can also change the power limit and VRAM offset.",
     "benefit": "Tailor your profile to your graphics card and games: edit individual curve points by hand or manually flatten the curve for classic undervolting. You can also enter recommended voltage and clock settings from forums or videos directly, or try community profiles through UV Try.",
     "how": "Choose your target voltage and clock. Open the Flatline options with the arrow beside the button or a right-click. Flatline first creates a draft. Inspect it, adjust individual points and compare changes with Undo / Redo. Apply curve applies the draft to the GPU and saves it to the selected profile slot.",
-    "limit": "The new Flatline options are available from Play 2.0.15; profiles using them require that version or newer. The editor capture is from v2.0.10 and does not yet show the new options menu. Example settings are not recommendations for your GPU. Test your own settings for stability.",
+    "limit": "Flatline options are available from Play 2.0.15. New manual Flatline profiles require Play 2.0.15.1 or newer. Saved curves are preserved. To use the corrected calculation, choose Flatline again, review the draft and apply it. The editor capture is from v2.0.10 and does not yet show the new options menu. Example settings are not recommendations for your GPU. Test your own settings for stability.",
     "controls": [
       [
         "Profile slots",
@@ -218,7 +218,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Start rise at…",
-        "Automatic (preset) is the default. Alternatively, choose an available mV step below your target. Lower points are preserved. Play shapes the transition from your chosen start to the target, then creates the plateau. Blackwell offers steps down to 800 mV, with 850 mV recommended. Ada and Ampere with gradient enabled use their lower native curve range. Manual rises require Gradient Lock and, on Ampere, the optional gradient setting. Long lists can be scrolled."
+        "Automatic (preset) is the default. Alternatively, choose an available mV step below your target. Lower points are preserved. Play uses the same preset calculation as Automatic from your chosen start. With the same target, overlapping points keep identical values. The plateau follows at the target. Blackwell offers steps down to 800 mV, with 850 mV recommended. Ada and Ampere with gradient enabled use their lower native curve range. Manual rises require Gradient Lock and, on Ampere, the optional gradient setting. Long lists can be scrolled."
       ],
       [
         "GPU family and preset mode",
