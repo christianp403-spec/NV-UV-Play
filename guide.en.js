@@ -129,8 +129,8 @@ window.PLAY_GUIDE_EN = {
   "curve": {
     "purpose": "The UV curve editor defines the GPU frequency at each voltage point. You can also change the power limit and VRAM offset.",
     "benefit": "Tailor your profile to your graphics card and games: edit individual curve points by hand or manually flatten the curve for classic undervolting. You can also enter recommended voltage and clock settings from forums or videos directly, or try community profiles through UV Try.",
-    "how": "Choose a profile slot and edit individual curve points. Apply curve applies and saves the entire curve exactly as shown. Flatline curve holds the selected point’s frequency at higher voltages, then applies and saves that curve. Tooltips explain both actions; hovering or focusing Flatline previews the plateau.",
-    "limit": "Test capture for Play v2.0.10. Actual editor UI based on a saved RTX 5090 stock curve. The example values are not recommendations for your GPU.",
+    "how": "Choose your target voltage and clock. Open the Flatline options with the arrow beside the button or a right-click. Flatline first creates a draft. Inspect it, adjust individual points and compare changes with Undo / Redo. Apply curve applies the draft to the GPU and saves it to the selected profile slot.",
+    "limit": "The new Flatline options are available from Play 2.0.15; profiles using them require that version or newer. The editor capture is from v2.0.10 and does not yet show the new options menu. Example settings are not recommendations for your GPU. Test your own settings for stability.",
     "controls": [
       [
         "Profile slots",
@@ -142,7 +142,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Apply curve",
-        "Applies the entire curve exactly as displayed, preserving your individual point edits. Activates the profile globally and saves it. This action does not automatically flatten the curve."
+        "Applies the entire curve exactly as displayed to the GPU and saves it to the selected profile slot. Before overwriting a saved profile or replacing a preset slot, Play names the affected profile and asks for confirmation. Linked games and slots also use the updated settings. The original built-in preset remains available."
       ],
       [
         "Save only",
@@ -190,7 +190,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Voltage",
-        "Selects the voltage point you want to edit. The frequency shown beside it belongs to that point."
+        "Selects the voltage point you want to edit. The frequency shown beside it belongs to that point. The normal Blackwell view starts at 800 mV; 850 mV is the recommended rise start. Right-click the graph to show the full curve. The view does not change driver voltage limits."
       ],
       [
         "Frequency (MHz)",
@@ -205,12 +205,44 @@ window.PLAY_GUIDE_EN = {
         "Changes the graphics-memory clock offset. This is separate from the GPU curve. Check memory changes for errors and stability."
       ],
       [
-        "Flatline curve",
-        "Holds the selected point’s frequency from that voltage to the right. Points to the left stay unchanged. The resulting curve is then applied globally and saved. Hover or keyboard focus shows a preview."
+        "Flatline",
+        "Prepares a draft with a constant clock from the selected voltage to the right. Selected point keeps the lower points. Flatline + gradient uses the family preset calculation or a manually chosen rise start. Apply curve applies and saves the draft."
       ],
       [
         "Offset range and warning",
         "Per-point offsets range from -1000 to +1050 MHz. Above +1000 MHz, Play shows a warning. Acceptance depends on the card and driver."
+      ],
+      [
+        "Flatline options",
+        "Open the menu with the arrow beside Flatline or a right-click. Selected point keeps the lower points; Flatline + gradient shapes the rise before the target. On Ampere with gradient disabled and on Turing, the second option is called Flatline + preset. The menu follows display and Play scaling."
+      ],
+      [
+        "Start rise at…",
+        "Automatic (preset) is the default. Alternatively, choose an available mV step below your target. Lower points are preserved. Play shapes the transition from your chosen start to the target, then creates the plateau. Blackwell offers steps down to 800 mV, with 850 mV recommended. Ada and Ampere with gradient enabled use their lower native curve range. Manual rises require Gradient Lock and, on Ampere, the optional gradient setting. Long lists can be scrolled."
+      ],
+      [
+        "GPU family and preset mode",
+        "Automatic calculation follows the GPU family and your lock settings. Ampere uses its existing Voltage Lock algorithm by default. Manual rises require Gradient Lock and, on Ampere, the optional gradient setting. Turing uses its existing preset behavior: stock below the target and a flat curve from the target, without a manual rise start."
+      ],
+      [
+        "Selected point",
+        "Hold the selected clock from that voltage onward. Points below it retain their current values and individual edits."
+      ],
+      [
+        "Automatic (preset)",
+        "Play calculates the curve leading up to your target using your GPU family’s preset behavior and selected lock settings. This is the default option. It rebuilds the curve and replaces individual point edits."
+      ],
+      [
+        "DRAFT",
+        "DRAFT indicates that your edits have not been applied yet. Flatline first creates this draft. Adjust individual points and compare changes with Undo / Redo. Apply curve applies and saves the draft."
+      ],
+      [
+        "Discard draft",
+        "Reloads the selected profile slot’s saved settings into the editor. Find Discard draft beside Undo/Redo or in the selected slot’s right-click menu. Unsaved power-limit, VRAM and Expert settings are discarded too. Active GPU settings remain unchanged."
+      ],
+      [
+        "Default",
+        "Temporarily activates stock operation without overwriting your saved profiles."
       ]
     ],
     "scenarioTitle": "Want more fine-tuning?",

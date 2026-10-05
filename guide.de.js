@@ -129,8 +129,8 @@ window.PLAY_GUIDE_DE = {
   "curve": {
     "purpose": "Der UV-Kurveneditor legt fest, welche GPU-Frequenz zu einem Spannungspunkt gehört. Zusätzlich lassen sich Power limit und VRAM-Offset bearbeiten.",
     "benefit": "Du kannst dein Profil gezielt auf deine Grafikkarte und deine Spiele abstimmen: Setze einzelne Kurvenpunkte von Hand oder flache die Kurve manuell ab, wie beim klassischen Undervolting. Du kannst auch empfohlene Spannungs- und Taktwerte aus Foren oder Videos direkt eintragen oder Community-Profile über UV Try ausprobieren.",
-    "how": "Wähle einen Profilplatz und bearbeite einzelne Kurvenpunkte. Apply curve wendet die gesamte Kurve genau wie im Editor an und speichert sie. Flatline curve hält den Takt des ausgewählten Punkts nach rechts konstant und wendet diese Kurve an. Tooltips erklären beide Aktionen; Flatline zeigt beim Darüberfahren oder Fokussieren eine Vorschau.",
-    "limit": "Testaufnahme für Play v2.0.10. Echte Editor-Oberfläche auf Basis einer gespeicherten RTX-5090-Stock-Kurve. Die Beispielwerte sind keine Empfehlung für deine Karte.",
+    "how": "Wähle deine Zielspannung und den gewünschten Takt. Öffne die Flatline-Optionen über den Pfeil oder per Rechtsklick auf den Button. Flatline erstellt zunächst einen Entwurf. Prüfe ihn, bearbeite einzelne Punkte nach und vergleiche Änderungen mit Undo / Redo. Erst Apply curve übernimmt den Entwurf auf die GPU und speichert ihn im ausgewählten Profilplatz.",
+    "limit": "Die neuen Flatline-Optionen sind seit Play 2.0.15 verfügbar; entsprechende Profile benötigen diese Version oder neuer. Die abgebildete Editor-Aufnahme stammt aus v2.0.10 und zeigt das neue Optionsmenü noch nicht. Beispielwerte sind keine Empfehlung für deine GPU. Prüfe eigene Einstellungen auf Stabilität.",
     "controls": [
       [
         "Profilplätze",
@@ -142,7 +142,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Apply curve",
-        "Übernimmt die gesamte Kurve genau wie dargestellt, einschließlich deiner einzeln bearbeiteten Punkte. Wendet das Profil global an und speichert es. Die Kurve wird dabei nicht automatisch abgeflacht."
+        "Übernimmt die gesamte Kurve genau wie dargestellt auf die GPU und speichert sie im ausgewählten Profilplatz. Vor dem Überschreiben eines gespeicherten Profils oder Ersetzen eines Preset-Platzes nennt Play das betroffene Profil und fragt nach. Verknüpfte Spiele und Profilplätze verwenden ebenfalls die neuen Einstellungen. Das ursprüngliche integrierte Preset bleibt verfügbar."
       ],
       [
         "Save only",
@@ -190,7 +190,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Voltage",
-        "Wählt den Spannungspunkt der Kurve, den du bearbeiten möchtest. Die daneben angegebene Frequenz gehört zu diesem Punkt."
+        "Wählt den Spannungspunkt der Kurve, den du bearbeiten möchtest. Die daneben angegebene Frequenz gehört zu diesem Punkt. Die normale Blackwell-Ansicht beginnt bei 800 mV; als Anstiegsbeginn sind 850 mV empfohlen. Die vollständige Kurve bleibt über Rechtsklick auf das Diagramm erreichbar. Die Ansicht verändert keine Treibergrenzen."
       ],
       [
         "Frequency (MHz)",
@@ -205,12 +205,44 @@ window.PLAY_GUIDE_DE = {
         "Ändert den Takt-Offset des Grafikspeichers. Das ist eine separate Einstellung zur GPU-Kurve. Prüfe Speicheränderungen auf Fehler und Stabilität."
       ],
       [
-        "Flatline curve",
-        "Hält den Takt des ausgewählten Punkts ab dieser Spannung nach rechts konstant. Punkte links davon bleiben erhalten. Anschließend wird die Kurve global angewendet und gespeichert. Mauszeiger oder Tastaturfokus auf der Schaltfläche zeigen die Vorschau."
+        "Flatline",
+        "Bereitet einen Entwurf mit konstantem Takt ab dem ausgewählten Spannungspunkt vor. Selected point erhält die unteren Punkte. Flatline + gradient verwendet die Preset-Berechnung oder einen manuell gewählten Anstiegsbeginn. Apply curve wendet den Entwurf an und speichert ihn."
       ],
       [
         "Offsetbereich und Warnung",
         "Pro Punkt gilt -1000 bis +1050 MHz. Über +1000 MHz erscheint eine Warnung. Ob der Treiber den Wert akzeptiert, hängt von Karte und Treiber ab."
+      ],
+      [
+        "Flatline options",
+        "Öffne das Menü über den Pfeil neben Flatline oder per Rechtsklick. Selected point erhält die unteren Punkte; Flatline + gradient formt den Anstieg vor dem Zielpunkt. Bei Ampere ohne Gradient und bei Turing heißt die zweite Option Flatline + preset. Das Menü berücksichtigt Anzeige- und Play-Skalierung."
+      ],
+      [
+        "Start rise at…",
+        "Automatic (preset) ist voreingestellt. Alternativ wählst du eine vorhandene mV-Stufe unterhalb deines Zielpunkts. Punkte darunter bleiben erhalten. Ab dem gewählten Beginn gestaltet Play den Übergang zum Ziel und setzt anschließend das Plateau. Blackwell bietet Stufen bis 800 mV, mit 850 mV als Empfehlung. Ada und Ampere mit aktiviertem Gradient nutzen ihren unteren nativen Kurvenbereich. Manuelle Anstiege benötigen Gradient Lock; bei Ampere zusätzlich die optionale Gradient-Einstellung. Lange Listen sind scrollbar."
+      ],
+      [
+        "GPU-Familie und Preset-Modus",
+        "Die automatische Berechnung verwendet die GPU-Familie und deine Lock-Einstellungen. Ampere verwendet standardmäßig seinen bisherigen Voltage-Lock-Algorithmus. Manuelle Anstiege benötigen Gradient Lock, bei Ampere zusätzlich die optionale Gradient-Einstellung. Turing verwendet seinen bestehenden Preset-Verlauf mit Stock unterhalb des Ziels und einer Flatline ab dem Ziel, ohne manuellen Anstiegsbeginn."
+      ],
+      [
+        "Selected point",
+        "Ab dem ausgewählten Spannungspunkt bleibt der Takt konstant. Die Punkte davor behalten ihre bisherigen Werte und individuellen Anpassungen."
+      ],
+      [
+        "Automatic (preset)",
+        "Play berechnet den Verlauf bis zum Ziel anhand deiner GPU-Familie und der gewählten Lock-Einstellungen. Diese Option ist voreingestellt. Sie baut die Kurve neu auf und ersetzt dabei individuelle Punktänderungen."
+      ],
+      [
+        "DRAFT",
+        "DRAFT zeigt an, dass deine Änderungen noch nicht angewendet wurden. Flatline erstellt zunächst diesen Entwurf. Du kannst einzelne Punkte nachbearbeiten und Änderungen mit Undo / Redo vergleichen. Apply curve übernimmt und speichert den Entwurf."
+      ],
+      [
+        "Discard draft",
+        "Lädt den gespeicherten Stand des ausgewählten Profilplatzes wieder in den Editor. Du findest Discard draft neben Undo/Redo oder im Rechtsklickmenü des ausgewählten Platzes. Auch ungespeicherte Power-Limit-, VRAM- und Expert-Einstellungen werden verworfen. Die aktiven GPU-Einstellungen bleiben unverändert."
+      ],
+      [
+        "Default",
+        "Aktiviert vorübergehend den Stock-Betrieb, ohne deine gespeicherten Profile zu überschreiben."
       ]
     ],
     "scenarioTitle": "Du möchtest mehr Feinabstimmung?",

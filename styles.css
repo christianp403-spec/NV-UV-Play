@@ -214,3 +214,6 @@ body.story-image-open{overflow:hidden}#story-image-dialog{padding:0;width:min(15
 .footer-links{flex-wrap:wrap}
 
 .update-preview>.notice{margin-top:18px}
+
+/* Curve workflow, Play v2.0.15 */
+.curve-workflow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 32px;margin-top:28px}.curve-workflow section{min-width:0}.curve-workflow h3{font-size:18px;line-height:1.4;margin:0 0 12px;color:var(--text)}.curve-workflow p{font-size:14px;line-height:1.75;margin:0 0 12px}.curve-workflow p:last-child{margin-bottom:0}.update-grid button>span strong{display:inline;font-size:inherit;margin:0}.update-grid button,.curve-workflow{overflow-wrap:break-word}@media(max-width:680px){.curve-workflow{grid-template-columns:minmax(0,1fr);gap:24px}}
