@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Updates, improvements and a look at upcoming versions.">
+  <meta name="theme-color" content="#0a0c0b">
+  <title>Play News | NV-UV Play</title>
+  <link rel="alternate" hreflang="de" href="neuigkeiten.html">
+  <link rel="alternate" hreflang="en" href="news.html">
+  <link rel="icon" type="image/png" href="assets/wordmark.png">
+  <link rel="stylesheet" href="styles.css?v=20261012-news">
+  <script src="guide.en.js?v=20261012-v2.0.17-preview" defer></script>
+  <script src="guide.ui.en.js?v=20261012-v2.0.17-preview" defer></script>
+  <script src="guide-app.js?v=20261012-v2.0.17-preview" defer></script>
+  <script src="site-navigation.js?v=20261012-news" defer></script>
+</head>
+<body data-page="news">
+<a class="skip-link" href="#top">Skip to content</a>
+<header class="site-header wrap">
+  <a class="brand" href="en.html" aria-label="NV-UV Play home"><img src="assets/wordmark.png" width="188" height="56" alt="NV-UV Play"></a>
+  <nav aria-label="Main navigation"><a href="en.html">Explore Play</a><a href="get-started.html">Get started</a><a href="features.html">Get to know Play</a><a href="news.html" aria-current="page">Play News</a><a href="success-stories.html">Success stories</a></nav>
+  <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="neuigkeiten.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div></div>
+</header>
+<main id="top">
+  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-2017">Preview of 2.0.17</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
+  <section class="guide-section wrap" aria-labelledby="news-title">
+    <div class="section-heading"><div><p class="eyebrow">UPDATES AND WHAT’S NEXT</p><h1 id="news-title">Play News</h1></div><p>Updates, improvements and a look at upcoming versions.</p></div>
+<section class="update-preview" id="updates-2017" aria-labelledby="update-2017-title">
+  <p class="eyebrow">PREVIEW OF NV-UV PLAY v2.0.17</p>
+  <h2 id="update-2017-title">More settings in your profile. Help with DCC recovery.</h2>
+  <p>These changes are prepared for the next update. Until it is released, the public download remains on the approved version.</p>
+  <div class="update-grid">
+    <button type="button" data-open="expert"><strong>Advanced GPU Tuning ↗</strong><span>The new name for experimental clock and voltage parameters. Once enabled in Settings, all available controls appear directly in the profile editor. Currently for Blackwell only.</span></button>
+    <button type="button" data-open="profiles"><strong>V-droop comp. per profile ↗</strong><span>An optional slider with Off and five levels, +1 to +5 V/F voltage steps. Step size depends on the GPU. Community profiles do not require these additional values.</span></button>
+    <button type="button" data-open="dcc"><strong>Recover DCC ↗</strong><span>Directly to the left of Cancel in DCC settings. Lights up when recovery is required, otherwise greyed out with a short tooltip. Profiles are preserved; DCC stays off after successful manual recovery.</span></button>
+  </div>
+  <div class="curve-workflow">
+    <section><h3>Switching profiles with tuning values</h3><p>Applying a profile uses that profile’s tuning values. A profile without these values restores the values Play captured earlier. Enabling Advanced GPU Tuning alone does not change GPU settings.</p></section>
+    <section><h3>Use blocked profiles again</h3><p>An unsupported NVIDIA power-efficiency function no longer blocks Play or profile application. The fix also covers users already affected. A damaged startup profile can be replaced by selecting a new profile.</p></section>
+    <section><h3>DCC detection and diagnostics</h3><p>Detection uses additional game and path information when executable names are shared. DCC performance logging is enabled by default with limited retention. Game database 2.35 contains 710 entries, including the two new ACE COMBAT entries.</p></section>
+    <section><h3>Application cache outside Temp</h3><p>Extracted application files are stored under LocalAppData. The update carries over profiles and Windows startup automatically. Old unused cache versions are cleaned up, keeping the current and one previous version. Running Play versions are protected.</p></section>
+    <section><h3>ASIC quality on Blackwell</h3><p>For Blackwell graphics cards, ASIC quality is now shown under Settings → About.</p></section>
+  </div>
+  <p class="notice">Advanced GPU Tuning remains experimental and requires explicit access to be enabled in Settings. Unsupported controls remain disabled. NVIDIA Power Efficiency Mode is a separate experimental DCC mode.</p>
+  <p>More information: <a href="https://christianp403-spec.github.io/NV-UV-Play/en.html">Website (English)</a></p>
+  <p>Thank you for your feedback, bug reports and diagnostic data.</p>
+</section>
+<section class="update-preview" id="updates-2016" aria-labelledby="update-2016-title">
+  <p class="eyebrow">ALREADY IN NV-UV PLAY v2.0.16</p>
+  <h2 id="update-2016-title">Check curves and manage profiles more easily</h2>
+  <ul>
+    <li><strong>Curve limits:</strong> A manual test checks lower curve starts on eligible Blackwell desktop cards. Its result applies to the tested GPU, BIOS and driver combination and does not replace stability testing.</li>
+    <li><strong>Scanner and import:</strong> Additional validation of RTX 30 / RTX 40 curve layouts and manual import of an Afterburner curve for the selected GPU. Importing does not apply the curve automatically.</li>
+    <li><strong>Profiles and display:</strong> Clearer actions for using, editing and reviewing history; fixes for saved curves, GPU readings and repeated overlay scaling.</li>
+  </ul>
+</section>
+<section class="update-preview" id="updates-2015" aria-labelledby="update-title">
+  <p class="eyebrow">NEW IN v2.0.15</p><h2 id="update-title">Shape your curve</h2>
+  <p>Choose your target voltage and clock in <strong>Curve editor</strong>. Use the arrow beside <strong>Flatline</strong>, or right-click the button, to choose how Play adjusts the curve.</p>
+  <div class="update-grid"><button type="button" data-open="curve"><strong>Selected point <span aria-hidden="true">↗</span></strong><span>Hold the selected clock from that voltage onward. Points below it retain their current values and individual edits.</span></button>
+<button type="button" data-open="curve"><strong>Flatline + gradient, Automatic (preset) <span aria-hidden="true">↗</span></strong><span>Play calculates the curve leading up to your target using your GPU family’s preset behavior and selected lock settings. This is the default option. It rebuilds the curve and replaces individual point edits.</span></button>
+<button type="button" data-open="curve"><strong>Manual rise start <span aria-hidden="true">↗</span></strong><span>Under <strong>Start rise at…</strong>, choose an available voltage step below your target. Lower points are preserved. Play uses the same preset calculation as Automatic from your chosen start. With the same target, overlapping points keep identical values. The plateau follows at the target.</span></button></div>
+  <div class="curve-workflow"><section><h3>Preview before applying</h3><p><strong>Flatline</strong> first creates a draft. Inspect it, adjust individual points and compare changes with <strong>Undo / Redo</strong>. <strong>DRAFT</strong> indicates that your edits have not been applied yet.</p><p><strong>Apply curve</strong> applies the draft to the GPU and saves it to the selected profile slot.</p></section>
+<section><h3>Discard your edits</h3><p>Use <strong>Discard draft</strong> beside Undo/Redo or in the selected slot’s right-click menu to reload its saved settings into the editor. Unsaved power-limit, VRAM and tuning settings are discarded too. Active GPU settings remain unchanged.</p></section>
+<section><h3>Confirm before overwriting</h3><p>Before <strong>Apply curve</strong> overwrites a saved profile or replaces a preset slot, Play names the affected profile and asks for confirmation. Other games and slots linked to that saved profile also use its updated settings. The original built-in preset remains available.</p><p>To temporarily run at stock without overwriting your profiles, use <strong>Default</strong>.</p></section>
+<section><h3>Matched to your GPU</h3><p>Manual rises require <strong>Gradient Lock</strong> and, on Ampere, the optional gradient setting. Turing uses its existing preset behavior without a manual rise start. The normal Blackwell view begins at 800 mV; 850 mV is the recommended rise start.</p></section></div>
+  <p class="notice">New manual Flatline profiles require <strong>Play 2.0.15.1 or newer</strong>. Saved curves are preserved. To use the corrected calculation, choose Flatline again, review the draft and apply it. Test your own settings for stability on your card.</p>
+</section>
+  </section>
+</main>
+<footer class="site-footer wrap"><div><strong>NV-UV <span>Play</span></strong><p>Efficiency wins.</p></div><div class="footer-links"><a href="https://github.com/christianp403-spec/NV-UV-Play" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">License and liability disclaimer ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/issues" target="_blank" rel="noopener noreferrer">Feedback ↗</a><a href="https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/" target="_blank" rel="noopener noreferrer">Community ↗</a><button type="button" id="open-contact" aria-haspopup="dialog" aria-controls="contact-dialog">Contact</button></div></footer>
+<dialog id="contact-dialog" aria-labelledby="contact-title"><div class="dialog-chrome"><h2 id="contact-title">Contact</h2><button type="button" id="close-contact" aria-label="Close contact window" autofocus>×</button></div><div class="contact-body"><p>NV-UV Play is currently a personal project.</p><p>by Christian Papaioannou</p><p>You can reach me at this email address:<br><a href="mailto:christian.papaioannou@protonmail.com">christian.papaioannou@protonmail.com</a></p><div class="project-support"><h3>Would you like to support the project?</h3><div class="support-links"><a href="https://paypal.me/christianpapaioannou" target="_blank" rel="noopener noreferrer">PayPal ↗</a><a href="https://ko-fi.com/chrispapa" target="_blank" rel="noopener noreferrer">Ko-fi ↗</a></div></div></div></dialog>
+<dialog id="feature-dialog" aria-labelledby="dialog-title"><div class="dialog-chrome"><button id="back-dialog" class="quiet" aria-label="Back to the previous feature" hidden>← Back</button><h2 id="dialog-title"></h2><button id="close-dialog" aria-label="Close window" autofocus>×</button></div><div id="dialog-body"></div></dialog>
+<div id="control-tooltip" popover="manual" role="dialog" aria-labelledby="tooltip-title" aria-describedby="tooltip-copy"><button id="close-tooltip" aria-label="Close explanation">×</button><p class="eyebrow">QUICK EXPLANATION</p><h3 id="tooltip-title"></h3><p id="tooltip-copy"></p><button class="text-link" id="tooltip-more" hidden>More about this feature ↗</button></div>
+<noscript><p class="noscript">Enable JavaScript for clickable original windows and feature categories. Text, language selection and download links work without JavaScript.</p></noscript>
+</body>
+</html>
