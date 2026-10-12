@@ -11,8 +11,8 @@ window.PLAY_UI_EN = {
   "Das Verhalten einfacher Presets verstehen: Gradient Lock, Voltage Lock und weitere Optionen.": "Understand simple preset behavior: Gradient Lock, Voltage Lock and additional options.",
   "Originale Lüftersteuerung aus Play v2.0.9 mit drei Lüfterkanälen, Fixed, Curve und GPU-Automatik": "Original Play v2.0.9 fan control with three fan channels, Fixed, Curve and GPU automatic modes",
   "Originalaufnahme · Play v2.0.9. Die drei Kanäle zeigen verschiedene Bearbeitungsmodi. Running zeigt die tatsächlich aktive Regelung.": "Original capture · Play v2.0.9. The three channels show different editing modes. Running shows the control actually in use.",
-  "Originale Expert voltage settings aus Play v2.0.9 mit Live-Werten und profilgebundenen Einstellungen": "Original Expert voltage settings from Play v2.0.9 with live readings and profile settings",
-  "Originalaufnahme · Play v2.0.9. Live-Werte und Expert-Entwurf dieser RTX 5090; keine Einstellungsempfehlung.": "Original capture · Play v2.0.9. Live readings and Expert draft for this RTX 5090; not recommended settings.",
+  "Originale Advanced GPU Tuning aus Play v2.0.9 mit Live-Werten und profilgebundenen Einstellungen": "Original Advanced GPU Tuning from Play v2.0.9 with live readings and profile settings",
+  "Originalaufnahme · Play v2.0.9. Live-Werte und Tuning-Entwurf dieser RTX 5090; keine Einstellungsempfehlung.": "Original capture · Play v2.0.9. Live readings and tuning draft for this RTX 5090; not recommended settings.",
   "Profile & Slots": "Profiles & Slots",
   "Community-Profile · UV Try": "Community profiles · UV Try",
   "Diagnostics & Hilfe": "Diagnostics & Help",
@@ -37,11 +37,11 @@ window.PLAY_UI_EN = {
   "Übersicht & Hilfe": "Monitoring & Help",
   "Mit Profilen anfangen, Erfahrungen aus der Community nutzen und Spiele zuordnen.": "Start with profiles, learn from the community and assign games.",
   "Weniger manuell nachregeln: Takt, Stabilität und Bildwiederholrate passend zum Einsatz.": "Less manual adjustment: clocks, stability and refresh rate suited to what you are doing.",
-  "Eigene Kurven und Tests oder ein Ausgangspunkt mit Auto-UV. Dazu Lüfter und Expertenoptionen.": "Custom curves and tests, or a starting point with Auto-UV. Plus fan control and expert options.",
+  "Eigene Kurven und Tests oder ein Ausgangspunkt mit Auto-UV. Dazu Lüfter und Advanced GPU Tuning.": "Custom curves and tests, or a starting point with Auto-UV. Plus fan control and Advanced GPU Tuning.",
   "Messwerte sehen, Play einrichten, aktuell halten und bei Problemen weiterkommen.": "View readings, set up Play, keep it updated and get help with issues.",
   "Originales NV-UV Play v2.0.9 Hauptfenster mit Profilplätzen, Fan curve und Funktionsschaltern": "Original NV-UV Play v2.0.9 main window with profile slots, Fan curve and feature switches",
   "Originalaufnahme · Play v2.0.9 mit erkannter RTX 5090. Die gezeigten Einstellungen sind keine Empfehlung für deine GPU.": "Original capture · Play v2.0.9 with a detected RTX 5090. The settings shown are not recommendations for your GPU.",
-  "Originaler Play v2.0.9 Kurveneditor mit erkannter RTX 5090 und Expert-Zugang": "Original Play v2.0.9 curve editor with a detected RTX 5090 and Expert access",
+  "Originaler Play v2.0.9 Kurveneditor mit erkannter RTX 5090 und Zugang zu Advanced GPU Tuning": "Original Play v2.0.9 curve editor with a detected RTX 5090 and access to Advanced GPU Tuning",
   "Originalaufnahme · Play v2.0.9. Die gezeigte UV-Kurve gehört zu dieser RTX 5090 und ist keine Empfehlung für andere Karten.": "Original capture · Play v2.0.9. This UV curve belongs to this RTX 5090 and is not a recommendation for other cards.",
   "Originale DCC Einstellungen mit Automatic, NVIDIA Power Efficiency Mode, Framelimit und Lernständen": "Original DCC settings with Automatic, NVIDIA Power Efficiency Mode, frame cap and learning data",
   "Originalaufnahme · DCC-Einstellungen aus dem lokalen Play-v2.0.9-Teststand.": "Original capture · DCC settings from a Play v2.0.9 test build.",
@@ -100,5 +100,7 @@ window.PLAY_UI_EN = {
   "Startprofil": "Startup profile",
   "Gespeicherte GPU-Einstellungen bei der Windows-Anmeldung anwenden. Danach beendet sich der Startprozess.": "Apply saved GPU settings at Windows sign-in. The startup process exits afterwards.",
   "Aufnahme aus Play v2.0.9. Der neue Zero-Fan-Schalter ist hier noch nicht abgebildet; seine Funktion ist unten erklärt.": "Capture from Play v2.0.9. The new Zero Fan toggle is not pictured here; its behavior is explained below.",
-  "Aufnahme aus Play v2.0.9. Die neue History mit Learned profiles und Blocked profiles ist unten erklärt.": "Capture from Play v2.0.9. The new History with Learned profiles and Blocked profiles is explained below."
+  "Aufnahme aus Play v2.0.9. Die neue History mit Learned profiles und Blocked profiles ist unten erklärt.": "Capture from Play v2.0.9. The new History with Learned profiles and Blocked profiles is explained below.",
+  "Advanced GPU Tuning in Play 2.0.17 mit profilgebundenen Takt- und Spannungsparametern": "Advanced GPU Tuning in Play 2.0.17 with profile-specific clock and voltage parameters",
+  "Vorschau auf Play 2.0.17 · Echte Oberfläche mit simuliertem GPU-Zustand und einem Testprofil. Die Werte sind keine Einstellungsempfehlung.": "Preview of Play 2.0.17 · Actual interface with simulated GPU state and a test profile. The values are not recommended settings."
 };

@@ -65,6 +65,10 @@ window.PLAY_GUIDE_DE = {
       [
         "Use as startup profile",
         "Wendet das gespeicherte Profil bei der Windows-Anmeldung an und beendet den Startprozess. Play-Autostart darf aus bleiben. Shift beim Anmelden überspringt diesen Start."
+      ],
+      [
+        "V-droop comp. · ab 2.0.17",
+        "Optional pro Profil: Off oder +1 bis +5 V/F-Spannungsschritte. Die Schrittweite hängt von der GPU ab. Die Kompensation verschiebt den Spannungsanker; sie garantiert weder konstante Spannung noch Stabilität. Community-Profile benötigen diese Zusatzwerte nicht."
       ]
     ]
   },
@@ -173,7 +177,7 @@ window.PLAY_GUIDE_DE = {
         "UV Try bietet Community-Profile. Auto-UV liefert einen NVIDIA-Ausgangspunkt. Der Scanner prüft Kandidaten unter Testlast. Keiner dieser Wege garantiert Stabilität auf jeder GPU."
       ],
       [
-        "Expert voltage settings",
+        "Advanced GPU Tuning",
         "Öffnet separat freizugebende experimentelle Spannungs- und Taktparameter. Dieser Bereich richtet sich an erfahrene Nutzer und hat zusätzliche Risiken."
       ],
       [
@@ -238,7 +242,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Discard draft",
-        "Lädt den gespeicherten Stand des ausgewählten Profilplatzes wieder in den Editor. Du findest Discard draft neben Undo/Redo oder im Rechtsklickmenü des ausgewählten Platzes. Auch ungespeicherte Power-Limit-, VRAM- und Expert-Einstellungen werden verworfen. Die aktiven GPU-Einstellungen bleiben unverändert."
+        "Lädt den gespeicherten Stand des ausgewählten Profilplatzes wieder in den Editor. Du findest Discard draft neben Undo/Redo oder im Rechtsklickmenü des ausgewählten Platzes. Auch ungespeicherte Power-Limit-, VRAM- und Tuning-Einstellungen werden verworfen. Die aktiven GPU-Einstellungen bleiben unverändert."
       ],
       [
         "Default",
@@ -246,7 +250,7 @@ window.PLAY_GUIDE_DE = {
       ]
     ],
     "scenarioTitle": "Du möchtest mehr Feinabstimmung?",
-    "scenario": "Passe deine UV-Kurve gezielt an deine Karte an. Du kannst Spannungspunkte und Takt bearbeiten, Power limit und VRAM-Offset abstimmen und eigene Profile speichern. Für weitere Tests steht der Voltage Step Scanner bereit; zusätzliche experimentelle Spannungswerte findest du in den Expert voltage settings."
+    "scenario": "Passe deine UV-Kurve gezielt an deine Karte an. Du kannst Spannungspunkte und Takt bearbeiten, Power limit und VRAM-Offset abstimmen und eigene Profile speichern. Für weitere Tests steht der Voltage Step Scanner bereit; zusätzliche experimentelle Spannungswerte findest du in den Advanced GPU Tuning."
   },
   "scanner": {
     "purpose": "Der Voltage Step Scanner prüft Spannungspunkte und Takt mit konfigurierbarer GPU-Testlast. Ergebnisse und Testverlauf helfen dir, deine eigenen Einstellungen weiter abzustimmen.",
@@ -296,7 +300,7 @@ window.PLAY_GUIDE_DE = {
     "purpose": "DCC regelt den Takt deiner Grafikkarte beim Spielen automatisch. Wird nicht die volle Leistung benötigt, kann das Strom sparen und die Abwärme reduzieren.",
     "benefit": "Wenn zusätzlicher Takt im aktuellen Spiel wenig bringt, kann DCC helfen, unnötigen Energiebedarf zu reduzieren. Der tatsächliche Nutzen hängt vom Spiel und der Hardware ab.",
     "how": "Wähle den Algorithmus in DCC settings. DCC und Stabilizer werden alternativ genutzt. Unter History wechselst du zwischen Learned profiles und Blocked profiles. NVIDIA Experimental konfigurierst du vor dem Spielstart.",
-    "limit": "Die neue History mit UV-Profilübernahme und Blockliste kommt mit dem nächsten Update. Eine UV-Kopie braucht vollständig erfasste Kurvendaten. Sie enthält den festen Zustand, keine dynamische DCC-Regelung.",
+    "limit": "Eine UV-Kopie braucht vollständig erfasste Kurvendaten. Sie enthält einen festen Zustand, keine dynamische DCC-Regelung. Recover DCC kommt mit 2.0.17.",
     "controls": [
       [
         "DCC Automatic",
@@ -304,7 +308,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "NVIDIA Power Efficiency Mode",
-        "Fordert einen Effizienzmodus des NVIDIA-Treibers an. Das Ziel ist von einem FPS-Limiter getrennt. Dieser separate DCC-Modus benötigt derzeit eine einzelne NVIDIA-GPU und ist unabhängig von den Expert-Spannungseinstellungen. Nach Änderungen das Spiel neu starten."
+        "Fordert einen Effizienzmodus des NVIDIA-Treibers an. Das Ziel ist von einem FPS-Limiter getrennt. Dieser separate DCC-Modus benötigt derzeit eine einzelne NVIDIA-GPU und ist unabhängig von den Advanced GPU Tuning. Nach Änderungen das Spiel neu starten."
       ],
       [
         "Set efficiency target manually",
@@ -340,7 +344,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Enable performance logging",
-        "Zeichnet Bildrate, GPU-Takt und Leistungsaufnahme lokal auf. Das hilft, das Verhalten von DCC nachzuvollziehen oder einen Fehlerbericht vorzubereiten."
+        "Zeichnet Bildrate, GPU-Takt und Leistungsaufnahme lokal auf. Ab 2.0.17 ist die Aufzeichnung standardmäßig eingeschaltet und ihre Aufbewahrung begrenzt. Du kannst sie hier ausschalten."
       ],
       [
         "History → Learned profiles",
@@ -361,6 +365,10 @@ window.PLAY_GUIDE_DE = {
       [
         "Was wird blockiert?",
         "Der EXE-Dateiname gilt in allen Ordnern. Apply beendet auch eine laufende DCC-Sitzung dieses Spiels. NVIDIA Experimental und globale FPS-/V-Sync-Einstellungen bleiben aktiv."
+      ],
+      [
+        "Recover DCC · ab 2.0.17",
+        "Steht in DCC settings direkt links neben Cancel. Bei erforderlicher Wiederherstellung leuchtet der Button; sonst ist er ausgegraut und erklärt den Zustand per Tooltip. Stellt zuvor gesicherte DCC-Einstellungen wieder her und erhält deine Profile. Nach erfolgreicher manueller Wiederherstellung bleibt DCC ausgeschaltet. Bei Bedarf erscheint auch im Hauptfenster ein Hinweis."
       ]
     ],
     "scenarioTitle": "2.700+ MHz, aber nur 30 bis 50 % Auslastung?",
@@ -605,10 +613,10 @@ window.PLAY_GUIDE_DE = {
     "scenario": "Nach bisherigen Erfahrungen sind häufig ein bis zwei Korrekturen nach einem Absturz nötig, bis ein Preset stabil läuft. Je nach Karte und Spiel können weitere Anpassungen erforderlich sein. Stabilität in einem Spiel garantiert sie nicht in jedem anderen. Der Stabilizer reagiert auf erkannte GPU-Treiberabstürze und passt das betroffene Spielprofil oder globale Profil im jeweiligen Kontext an. Geplant für v2.0.14: Nach einer erfolgreichen Korrektur zeigt Play im Hauptfenster an, was angepasst wurde."
   },
   "expert": {
-    "purpose": "Expert voltage settings ergänzt dein UV-Profil um experimentelle Takt- und Spannungsparameter. Seit Play v2.0.9 gehören diese Werte zum jeweiligen Profil.",
+    "purpose": "Advanced GPU Tuning ergänzt dein UV-Profil um experimentelle Takt- und Spannungsparameter. Seit Play v2.0.9 gehören diese Werte zum jeweiligen Profil.",
     "benefit": "Erfahrene Nutzer erhalten feinere Eingriffsmöglichkeiten über die normale UV-Kurve hinaus. Für den schnellen Einstieg mit Community-Profilen ist dieser Bereich nicht erforderlich.",
-    "how": "Nach der Freigabe unter Settings → Experimental features öffnest du Curve editor → Expert voltage settings. Save profile speichert den Entwurf. Apply & save profile aktiviert und speichert das gesamte Profil einschließlich Kurve, Power limit, VRAM und Expert-Werten.",
-    "limit": "Kann Instabilität, Datenverlust und dauerhafte Hardware-Schäden verursachen. Hardware- und Treiberunterstützung sind nicht überall validiert. Ein Restore ist keine Wiederherstellungsgarantie.",
+    "how": "Nach der Freigabe unter Settings → Experimental features ist Advanced GPU Tuning im Curve editor verfügbar. Ab 2.0.17 findest du die Einstellungen außerdem als Schieberegler direkt im Profilfenster. Save profile speichert den Entwurf. Apply & save profile aktiviert und speichert das gesamte Profil einschließlich Kurve, Power limit, VRAM und Tuning-Werten.",
+    "limit": "Aktuell nur für Blackwell verfügbar. Kann Instabilität, Datenverlust und dauerhafte Hardware-Schäden verursachen. Hardware- und Treiberunterstützung sind nicht überall validiert. Ein Restore ist keine Wiederherstellungsgarantie.",
     "controls": [
       [
         "XBAR / SYS",
@@ -616,27 +624,27 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Video clock / Core / Fabric / Voltage Boost",
-        "Weitere hardwareabhängige Expertenparameter. Verfügbarkeit und Wirkung unterscheiden sich je nach GPU und Treiber."
+        "Weitere hardwareabhängige Tuning-Parameter. Verfügbarkeit und Wirkung unterscheiden sich je nach GPU und Treiber."
       ],
       [
         "Apply & save profile",
-        "Wendet das gesamte ausgewählte Profil mit Kurve, Power limit, VRAM und Expert-Werten an und speichert es. Die Werte gelten, solange dieses Profil aktiv ist, unabhängig davon, ob es global oder durch UV Pilot gewählt wurde."
+        "Wendet das gesamte ausgewählte Profil mit Kurve, Power limit, VRAM und Tuning-Werten an und speichert es. Die Werte gelten, solange dieses Profil aktiv ist, unabhängig davon, ob es global oder durch UV Pilot gewählt wurde."
       ],
       [
         "Live readings / Remove from profile",
-        "Live readings zeigt aktuelle Messwerte, ohne deine Eingabefelder zu überschreiben. Remove from profile entfernt Expert-Werte zunächst aus dem Entwurf; erst das Anwenden des Profils gibt die bisherigen Anpassungen frei."
+        "Live readings zeigt aktuelle Messwerte, ohne deine Eingabefelder zu überschreiben. Remove from profile entfernt Tuning-Werte zunächst aus dem Entwurf; erst das Anwenden des Profils gibt die bisherigen Anpassungen frei."
       ],
       [
         "Abgrenzung zu DCC",
-        "DCC NVIDIA Experimental ist der Power Efficiency Mode. Er ist nicht dieser experimentelle Spannungsbereich."
+        "NVIDIA Power Efficiency Mode ist ein separater experimenteller DCC-Modus. Advanced GPU Tuning steuert zusätzliche Takt- und Spannungsparameter des Profils."
       ],
       [
         "Save profile",
-        "Speichert das Profil mit den Expert-Werten, ohne die GPU-Einstellungen sofort zu ändern."
+        "Speichert das Profil mit den Tuning-Werten, ohne die GPU-Einstellungen sofort zu ändern."
       ],
       [
         "Profilwechsel",
-        "Beim Wechsel gelten die Expert-Werte des neuen Profils. Ein Profil ohne Expert-Werte gibt die vorherigen Anpassungen auf die von Play zuvor erfassten Werte zurück. Ein Offset von null ist kein Werksreset."
+        "Beim Wechsel gelten die Tuning-Werte des neuen Profils. Ein Profil ohne Tuning-Werte gibt die vorherigen Anpassungen auf die von Play zuvor erfassten Werte zurück. Ein Offset von null ist kein Werksreset."
       ],
       [
         "More…",
@@ -664,11 +672,11 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Voltage Boost",
-        "Zusätzlicher treiberabhängiger Boost-Parameter in Prozent. In dieser Aufnahme meldet Play ihn als nicht verfügbar."
+        "Zusätzlicher treiberabhängiger Boost-Parameter in Prozent. Nicht unterstützte Einstellungen bleiben gesperrt."
       ],
       [
         "Remove from profile",
-        "Entfernt Expert-Werte aus dem Profilentwurf. Erst Apply & save profile aktiviert den geänderten Entwurf und gibt die bisherigen Expert-Anpassungen frei."
+        "Entfernt Tuning-Werte aus dem Profilentwurf. Erst Apply & save profile aktiviert den geänderten Entwurf und gibt die bisherigen Tuning-Anpassungen frei."
       ],
       [
         "Live readings",
@@ -676,7 +684,11 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Feld aktivieren",
-        "Das Kontrollkästchen bestimmt, ob dieses Profil den jeweiligen Expert-Wert verwalten soll. Die Auswahl gehört zunächst zum Entwurf; erst Anwenden ändert die GPU."
+        "Das Kontrollkästchen bestimmt, ob dieses Profil den jeweiligen Tuning-Wert verwalten soll. Die Auswahl gehört zunächst zum Entwurf; erst Anwenden ändert die GPU."
+      ],
+      [
+        "Im Profilfenster · ab 2.0.17",
+        "Nach der Freigabe erscheinen die Tuning-Schieberegler im Profilfenster. Die Werte werden optional pro Profil gespeichert. Das Aktivieren des Bereichs allein verändert die GPU nicht."
       ]
     ]
   },
@@ -716,7 +728,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Fenster und Skalierung",
-        "My profiles, Expert voltage settings und Game Library merken sich Größe und Position. Curve editor und UV Try lassen die anderen Fenster bedienbar."
+        "My profiles, Advanced GPU Tuning und Game Library merken sich Größe und Position. Curve editor und UV Try lassen die anderen Fenster bedienbar."
       ],
       [
         "Minimieren und Speicher",
@@ -745,6 +757,10 @@ window.PLAY_GUIDE_DE = {
       [
         "Portable ZIP",
         "Der vollständige Download bleibt die manuelle Alternative. Das gesamte Archiv zusammen entpacken, nicht nur die EXE."
+      ],
+      [
+        "Programmcache · ab 2.0.17",
+        "Die entpackten Programmdateien liegen unter LocalAppData statt im temporären Ordner. Das Update übernimmt bestehende Profile und den Windows-Autostart automatisch. Alte unbenutzte Cache-Versionen werden bereinigt; die aktuelle und eine vorherige Version bleiben erhalten. Dateien laufender Play-Versionen werden geschützt."
       ]
     ]
   },
@@ -888,7 +904,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "V-Step Compensation",
-        "Verschiebt den Spannungsanker um die gewählte Anzahl VF-Schritte nach oben. Kann einen Spannungsabfall unter Last berücksichtigen, kostet aber Effizienz und garantiert keinen konstanten Takt."
+        "Verschiebt den Spannungsanker um die gewählte Anzahl VF-Schritte nach oben. Kann einen Spannungsabfall unter Last berücksichtigen, kostet aber Effizienz und garantiert keinen konstanten Takt. Ab 2.0.17 heißt die Option V-droop comp. und sitzt mit Off sowie fünf Stufen direkt im Profilfenster."
       ],
       [
         "Gradient Lock on Ampere",

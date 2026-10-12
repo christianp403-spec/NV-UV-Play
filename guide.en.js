@@ -65,6 +65,10 @@ window.PLAY_GUIDE_EN = {
       [
         "Use as startup profile",
         "Applies the saved profile at Windows sign-in, then exits. Play Autostart can stay off. Hold Shift at sign-in to skip this startup."
+      ],
+      [
+        "V-droop comp. · from 2.0.17",
+        "Optional per profile: Off or +1 to +5 V/F voltage steps. Step size depends on the GPU. Compensation shifts the voltage anchor; it does not guarantee constant voltage or stability. Community profiles do not require these additional values."
       ]
     ]
   },
@@ -173,7 +177,7 @@ window.PLAY_GUIDE_EN = {
         "UV Try provides community profiles. Auto-UV provides a NVIDIA starting point. The scanner checks candidates under test load. None of these methods guarantees stability on every GPU."
       ],
       [
-        "Expert voltage settings",
+        "Advanced GPU Tuning",
         "Opens experimental voltage and clock parameters that require separate confirmation. This area is intended for experienced users and carries additional risks."
       ],
       [
@@ -238,7 +242,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Discard draft",
-        "Reloads the selected profile slot’s saved settings into the editor. Find Discard draft beside Undo/Redo or in the selected slot’s right-click menu. Unsaved power-limit, VRAM and Expert settings are discarded too. Active GPU settings remain unchanged."
+        "Reloads the selected profile slot’s saved settings into the editor. Find Discard draft beside Undo/Redo or in the selected slot’s right-click menu. Unsaved power-limit, VRAM and tuning settings are discarded too. Active GPU settings remain unchanged."
       ],
       [
         "Default",
@@ -246,7 +250,7 @@ window.PLAY_GUIDE_EN = {
       ]
     ],
     "scenarioTitle": "Want more fine-tuning?",
-    "scenario": "Tailor your UV curve to your card. Edit voltage points and clocks, adjust the power limit and VRAM offset, and save your own profiles. Use the Voltage Step Scanner for further tests and Expert voltage settings for additional experimental parameters."
+    "scenario": "Tailor your UV curve to your card. Edit voltage points and clocks, adjust the power limit and VRAM offset, and save your own profiles. Use the Voltage Step Scanner for further tests and Advanced GPU Tuning for additional experimental parameters."
   },
   "scanner": {
     "purpose": "The Voltage Step Scanner checks voltage points and clocks with a configurable GPU test load. Results and test history help you refine your settings.",
@@ -296,7 +300,7 @@ window.PLAY_GUIDE_EN = {
     "purpose": "DCC automatically adjusts your GPU clock while you play. When full GPU performance is not needed, it can reduce power consumption and heat.",
     "benefit": "When extra clock speed offers little benefit in a game, DCC can help reduce unnecessary power consumption. The actual benefit depends on the game and hardware.",
     "how": "Choose the algorithm in DCC settings. DCC and Stabilizer are used alternatively. Under History, switch between Learned profiles and Blocked profiles. Configure NVIDIA Experimental before launching a game.",
-    "limit": "The new History with UV-profile copies and a block list is coming in the next update. A UV copy needs complete recorded curve data. It contains a fixed setup, not dynamic DCC regulation.",
+    "limit": "A UV copy requires fully captured curve data. It contains a fixed state, not dynamic DCC control. Recover DCC arrives with 2.0.17.",
     "controls": [
       [
         "DCC Automatic",
@@ -304,7 +308,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "NVIDIA Power Efficiency Mode",
-        "Requests an efficiency mode from the NVIDIA driver. Its target is separate from an FPS limiter. This separate DCC mode currently requires a single NVIDIA GPU and is independent of Expert voltage settings. Restart the game after making changes."
+        "Requests an efficiency mode from the NVIDIA driver. Its target is separate from an FPS limiter. This separate DCC mode currently requires a single NVIDIA GPU and is independent of Advanced GPU Tuning. Restart the game after making changes."
       ],
       [
         "Set efficiency target manually",
@@ -340,7 +344,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Enable performance logging",
-        "Records frame rate, GPU clock and power draw locally. This helps explain DCC behavior or prepare a bug report."
+        "Records frame rate, GPU clock and power draw locally. From 2.0.17, logging is enabled by default with limited retention. You can turn it off here."
       ],
       [
         "History → Learned profiles",
@@ -361,6 +365,10 @@ window.PLAY_GUIDE_EN = {
       [
         "What is blocked?",
         "The EXE name matches in every folder. Apply also stops an active DCC session for that game. NVIDIA Experimental and global FPS / V-Sync settings remain active."
+      ],
+      [
+        "Recover DCC · from 2.0.17",
+        "Located directly to the left of Cancel in DCC settings. The button lights up when recovery is required; otherwise it is greyed out with a short status tooltip. Restores previously saved DCC settings while preserving your profiles. DCC stays off after successful manual recovery. A notice also appears in the main window when needed."
       ]
     ],
     "scenarioTitle": "2,700+ MHz, but only 30 to 50% utilization?",
@@ -605,10 +613,10 @@ window.PLAY_GUIDE_EN = {
     "scenario": "Based on experience so far, one or two corrections are often enough to reach stable settings. Some cards and games may require further adjustments, and stability in one game does not guarantee stability in every game. The Stabilizer responds to detected GPU driver crashes and adjusts the affected game or global profile in its appropriate context. Planned for v2.0.14: after a successful correction, Play will show what changed in the main window."
   },
   "expert": {
-    "purpose": "Expert voltage settings adds experimental clock and voltage parameters to your UV profile. Since Play v2.0.9, these values belong to the individual profile.",
+    "purpose": "Advanced GPU Tuning adds experimental clock and voltage parameters to your UV profile. Since Play v2.0.9, these values belong to the individual profile.",
     "benefit": "Experienced users gain finer control beyond the normal UV curve. This area is not needed for a quick start with community profiles.",
-    "how": "After enabling access under Settings → Experimental features, open Curve editor → Expert voltage settings. Save profile stores the draft. Apply & save profile activates and saves the entire profile, including its curve, power limit, VRAM and Expert values.",
-    "limit": "Can cause instability, data loss and permanent hardware damage. Hardware and driver support have not been validated everywhere. Restore does not guarantee recovery.",
+    "how": "After enabling access under Settings → Experimental features, open Advanced GPU Tuning in the Curve editor. From 2.0.17, its sliders are also available directly in the profile editor. Save profile stores the draft. Apply & save profile activates and saves the entire profile, including its curve, power limit, VRAM and tuning values.",
+    "limit": "Currently available for Blackwell only. Can cause instability, data loss and permanent hardware damage. Hardware and driver support have not been validated everywhere. Restore is not a recovery guarantee.",
     "controls": [
       [
         "XBAR / SYS",
@@ -616,27 +624,27 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Video clock / Core / Fabric / Voltage Boost",
-        "Further hardware-dependent expert parameters. Availability and effects vary by GPU and driver."
+        "Further hardware-dependent tuning parameters. Availability and effects vary by GPU and driver."
       ],
       [
         "Apply & save profile",
-        "Applies and saves the entire selected profile with its curve, power limit, VRAM and Expert values. These values stay in effect while that profile is active, whether selected globally or through UV Pilot."
+        "Applies and saves the entire selected profile with its curve, power limit, VRAM and tuning values. These values stay in effect while that profile is active, whether selected globally or through UV Pilot."
       ],
       [
         "Live readings / Remove from profile",
-        "Live readings shows current measurements without overwriting your inputs. Remove from profile first removes Expert values from the draft; applying the profile releases the previous adjustments."
+        "Live readings shows current measurements without overwriting your inputs. Remove from profile first removes tuning values from the draft; applying the profile releases the previous adjustments."
       ],
       [
         "Difference from DCC",
-        "DCC NVIDIA Experimental is the Power Efficiency Mode. It is not this experimental voltage-settings area."
+        "NVIDIA Power Efficiency Mode is a separate experimental DCC mode. Advanced GPU Tuning controls additional clock and voltage parameters belonging to the profile."
       ],
       [
         "Save profile",
-        "Saves the profile with its Expert values without immediately changing GPU settings."
+        "Saves the profile with its tuning values without immediately changing GPU settings."
       ],
       [
         "Profile switching",
-        "The newly active profile uses its own Expert values. A profile without Expert values releases the preceding adjustments to the values Play captured earlier. A zero offset is not a factory reset."
+        "The newly active profile uses its own tuning values. A profile without tuning values releases the preceding adjustments to the values Play captured earlier. A zero offset is not a factory reset."
       ],
       [
         "More…",
@@ -664,11 +672,11 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Voltage Boost",
-        "An additional driver-dependent Boost parameter in percent. Play reports it as unavailable in this capture."
+        "An additional driver-dependent boost parameter expressed as a percentage. Unsupported settings remain disabled."
       ],
       [
         "Remove from profile",
-        "Removes Expert values from the profile draft. Apply & save profile activates the changed draft and releases the previous Expert adjustments."
+        "Removes tuning values from the profile draft. Apply & save profile activates the changed draft and releases the previous tuning adjustments."
       ],
       [
         "Live readings",
@@ -676,7 +684,11 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Enable a field",
-        "The checkbox determines whether this profile should manage that Expert value. The selection first belongs to the draft; only applying it changes the GPU."
+        "The checkbox determines whether this profile should manage that tuning value. The selection first belongs to the draft; only applying it changes the GPU."
+      ],
+      [
+        "In the profile editor · from 2.0.17",
+        "Once enabled, tuning sliders appear in the profile editor. Values are optional and saved per profile. Enabling access alone does not change GPU settings."
       ]
     ]
   },
@@ -716,7 +728,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Windows and scaling",
-        "My profiles, Expert voltage settings and Game Library remember size and position. Curve editor and UV Try keep other windows accessible."
+        "My profiles, Advanced GPU Tuning and Game Library remember size and position. Curve editor and UV Try keep other windows accessible."
       ],
       [
         "Minimizing and memory",
@@ -745,6 +757,10 @@ window.PLAY_GUIDE_EN = {
       [
         "Portable ZIP",
         "The full download remains the manual alternative. Extract the entire archive together, not just the EXE."
+      ],
+      [
+        "Application cache · from 2.0.17",
+        "Extracted application files are stored under LocalAppData instead of the temporary folder. Existing profiles and Windows startup are carried over automatically during the update. Old unused cache versions are cleaned up, keeping the current and one previous version. Files used by running Play versions are protected."
       ]
     ]
   },
@@ -888,7 +904,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "V-Step Compensation",
-        "Raises the voltage anchor by the selected number of VF steps. It can account for voltage droop under load, at the expense of efficiency, and does not guarantee a constant clock."
+        "Raises the voltage anchor by the selected number of VF steps. It can account for voltage droop under load, at the expense of efficiency, and does not guarantee a constant clock.From 2.0.17, this option is named V-droop comp. and is located directly in the profile editor, with Off and five levels."
       ],
       [
         "Gradient Lock on Ampere",

@@ -20,7 +20,7 @@
     autouv:['NVIDIA Auto-UV','↘','Einen Ausgangspunkt aus der Werkskurve deiner GPU ermitteln und als Profil übernehmen.'],
     fan:['Fan curve','✣','Lüfterkurven abstimmen. Bei 0% die automatische Kühlung der GPU nutzen.'],
     advanced:['Advanced options','⚒','Das Verhalten einfacher Presets verstehen: Gradient Lock, Voltage Lock und weitere Optionen.'],
-    expert:['Expert voltage settings','±','Zusätzliche experimentelle Takt- und Spannungsparameter für erfahrene Nutzer.'],
+    expert:['Advanced GPU Tuning','±','Zusätzliche experimentelle Takt- und Spannungsparameter für erfahrene Nutzer.'],
     overlay:['Telemetry & Overlay','▥','Bildrate, Verbrauch und Temperaturen im Blick behalten. Veränderungen beim Spielen sehen.'],
     settings:['Settings & GPU','⚙','Die gewünschte GPU wählen und allgemeine Einstellungen zentral finden.'],
     updates:['Updates','↓','Neue Play-Versionen prüfen, herunterladen und nach Bestätigung installieren.'],
@@ -29,7 +29,7 @@
   const categories = {
     entry:{name:'Einstieg',description:'Mit Profilen anfangen, Erfahrungen aus der Community nutzen und Spiele zuordnen.',items:['profiles','community','pilot','library']},
     automatic:{name:'Automatik & Effizienz',description:'Weniger manuell nachregeln: Takt, Stabilität und Bildwiederholrate passend zum Einsatz.',items:['startup','dcc','stabilizer','hz']},
-    tuning:{name:'Feintuning',description:'Eigene Kurven und Tests oder ein Ausgangspunkt mit Auto-UV. Dazu Lüfter und Expertenoptionen.',items:['curve','autouv','scanner','fan','expert','advanced']},
+    tuning:{name:'Feintuning',description:'Eigene Kurven und Tests oder ein Ausgangspunkt mit Auto-UV. Dazu Lüfter und Advanced GPU Tuning.',items:['curve','autouv','scanner','fan','expert','advanced']},
     overview:{name:'Übersicht & Hilfe',description:'Messwerte sehen, Play einrichten, aktuell halten und bei Problemen weiterkommen.',items:['overlay','settings','updates','diagnostics']}
   };
   // Hotspots use percentages of the unchanged product capture, never reconstructed UI.
@@ -100,8 +100,8 @@
       s('fan',0,[2.7,40.4,9.5,4.8],'Fan 1 · Auto'),s('fan',1,[12.5,40.4,9.5,4.8],'Fan 1 · Fixed'),s('fan',2,[22.3,40.4,9.9,4.8],'Fan 1 · Curve'),s('fan',0,[35.2,40.4,9.5,4.8],'Fan 2 · Auto'),s('fan',1,[45,40.4,9.5,4.8],'Fan 2 · Fixed'),s('fan',2,[54.8,40.4,9.9,4.8],'Fan 2 · Curve'),s('fan',0,[67.6,40.4,9.5,4.8],'Fan 3 · Auto'),s('fan',1,[77.4,40.4,9.5,4.8],'Fan 3 · Fixed'),s('fan',2,[87.2,40.4,10,4.8],'Fan 3 · Curve'),
       s('fan',1,[2.7,68,29.5,8.4],'Fixed speed'),s('fan',13,[35.2,46,29.5,19.8],'Fan curve · Graph'),s('fan',13,[35.2,68,18,8.4],'Point · °C / % / + / −'),s('fan',5,[1.5,93,9.5,5],'Apply & save'),s('fan',14,[11.5,93,12.5,5],'GPU automatic · all'),s('fan',15,[24.5,93,9.5,5],'Discard edits')
     ]},
-    expert:{file:'play-expert-v2.0.9.jpg',width:900,height:610,shape:'wide',alt:'Originale Expert voltage settings aus Play v2.0.9 mit Live-Werten und profilgebundenen Einstellungen',caption:'Originalaufnahme · Play v2.0.9. Live-Werte und Expert-Entwurf dieser RTX 5090; keine Einstellungsempfehlung.',spots:[
-      s('expert',15,[2,14,96,9],'Live readings'),s('expert',6,[2,23.5,42,3.8],'Profile: Balanced'),
+    expert:{file:'play-advanced-gpu-tuning-v2.0.17.png',width:1350,height:915,shape:'wide',alt:'Advanced GPU Tuning in Play 2.0.17 mit profilgebundenen Takt- und Spannungsparametern',caption:'Vorschau auf Play 2.0.17 · Echte Oberfläche mit simuliertem GPU-Zustand und einem Testprofil. Die Werte sind keine Einstellungsempfehlung.',spots:[
+      s('expert',15,[2,14,96,9],'Live readings'),s('expert',6,[2,23.5,42,3.8],'Profile'),
       s('expert',8,[2,31.5,31,8],'XBAR Clock offset'),s('expert',9,[2,40,31,8],'XBAR Voltage demand'),s('expert',8,[34,31.5,32,8],'SYS Clock offset'),s('expert',9,[34,40,32,8],'SYS Voltage demand'),s('expert',8,[67,31.5,31,8],'Video Clock offset'),
       s('expert',10,[2,53.4,31,8],'Core Minimum offset'),s('expert',11,[2,61.5,31,8],'Core Reliability offset'),s('expert',12,[2,69.5,31,8],'Core Operating offset'),s('expert',10,[34,53.4,32,8],'Fabric Minimum offset'),s('expert',11,[34,61.5,32,8],'Fabric Reliability offset'),s('expert',12,[34,69.5,32,8],'Fabric Operating offset'),s('expert',13,[67,53.4,31,8],'Voltage Boost'),
       s('expert',6,[2,82.5,48,5],'How these settings work'),s('expert',2,[2,93.3,14.5,4.8],'Apply & save profile'),s('expert',5,[17,93.3,9.5,4.8],'Save profile'),s('expert',14,[27,93.3,14.5,4.8],'Remove from profile'),s('expert',7,[42,93.3,7.5,4.8],'More…')
