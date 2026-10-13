@@ -3,12 +3,17 @@
   // Keep previously shared single-page links working after the page split.
   const english = document.documentElement.lang === 'en';
   const featureAnchors = new Set(['guide','guide-title','feature-panel','category-tabs','category-description','feature-grid','alltag','scenarios-title','alltag-einstieg','einfach-starten','play-standalone','telemetrie','alltag-spielen','alltag-feintuning','fan-modus']);
-  const newsAnchors = new Set(['updates-2017','update-2017-title','updates-2016','update-2016-title','updates-2015','update-title']);
+  const newsAnchors = new Set(['updates-211','update-211-title','updates-210','update-210-title','updates-2017','update-2017-title','updates-2016','update-2016-title','updates-2015','update-title']);
   const startAnchors = new Set(['start','start-title','faq','faq-title']);
   function routeLegacyAnchor() {
     const anchor = location.hash.slice(1);
+    const currentAnchor = ({'updates-2017':'updates-210','update-2017-title':'update-210-title'})[anchor] || anchor;
+    if (currentAnchor !== anchor && document.body.dataset.page === 'news') {
+      location.replace('#' + currentAnchor);
+      return;
+    }
     if (newsAnchors.has(anchor) && document.body.dataset.page !== 'news') {
-      location.replace((english ? 'news.html' : 'neuigkeiten.html') + location.hash);
+      location.replace((english ? 'news.html' : 'neuigkeiten.html') + '#' + currentAnchor);
       return;
     }
     if (document.body.dataset.page !== 'home') return;

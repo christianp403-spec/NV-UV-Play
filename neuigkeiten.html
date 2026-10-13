@@ -9,10 +9,10 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <link rel="stylesheet" href="styles.css?v=20261012-news">
-  <script src="guide.de.js?v=20261012-v2.0.17-preview" defer></script>
-  <script src="guide-app.js?v=20261012-v2.0.17-preview" defer></script>
-  <script src="site-navigation.js?v=20261012-news" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261013-v2.1.1">
+  <script src="guide.de.js?v=20261013-v2.1.1" defer></script>
+  <script src="guide-app.js?v=20261013-v2.1.1" defer></script>
+  <script src="site-navigation.js?v=20261013-v2.1.1" defer></script>
 </head>
 <body data-page="news">
 <a class="skip-link" href="#top">Zum Inhalt</a>
@@ -22,24 +22,36 @@
   <div class="header-actions"><div class="language-switch" aria-label="Sprache"><span lang="de" aria-current="page">DE</span><a href="news.html" lang="en" hreflang="en" aria-label="Switch to English" data-language-switch>EN</a></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-2017">Vorschau auf 2.0.17</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-211">Aktuell: 2.1.1</a><a href="#updates-210">Neu in 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES UND AUSBLICK</p><h1 id="news-title">Play-Neuigkeiten</h1></div><p>Updates, Verbesserungen und ein Ausblick auf kommende Versionen.</p></div>
-<section class="update-preview" id="updates-2017" aria-labelledby="update-2017-title">
-  <p class="eyebrow">VORSCHAU AUF NV-UV PLAY v2.0.17</p>
-  <h2 id="update-2017-title">Mehr Einstellungen direkt im Profil. Hilfe bei DCC-Problemen.</h2>
-  <p>Diese Änderungen sind für das nächste Update vorbereitet. Der öffentliche Download bleibt bis zur Veröffentlichung bei der freigegebenen Version.</p>
+<section class="update-preview" id="updates-211" aria-labelledby="update-211-title">
+  <p class="eyebrow">NV-UV PLAY v2.1.1</p>
+  <h2 id="update-211-title">Patchnotes wieder direkt in Play</h2>
+  <p>Version 2.1.1 behebt die fehlenden Patchnotes in Play nach dem Update. Die vollständigen Hinweise zu 2.1.0 sind enthalten. Alle mit 2.1.0 eingeführten Funktionen bleiben verfügbar.</p>
+</section>
+<section class="update-preview" id="updates-210" aria-labelledby="update-210-title">
+  <p class="eyebrow">NV-UV PLAY v2.1.0</p>
+  <h2 id="update-210-title">Mehr Kontrolle über Profile und deinen Desktop</h2>
+  <p>Seit 2.1.0 dabei und auch in 2.1.1 enthalten: die neuen Funktionen mit aktuellen Bildern und praktischen Beispielen.</p>
   <div class="update-grid">
     <button type="button" data-open="expert"><strong>Advanced GPU Tuning ↗</strong><span>Der neue Name für die experimentellen Takt- und Spannungsparameter. Nach Freigabe in den Optionen stehen alle verfügbaren Regler direkt im Profilfenster bereit. Aktuell nur für Blackwell.</span></button>
     <button type="button" data-open="profiles"><strong>V-droop comp. pro Profil ↗</strong><span>Optionaler Schieberegler mit Off und fünf Stufen, +1 bis +5 V/F-Spannungsschritte. Die Schrittweite hängt von der GPU ab. Community-Profile benötigen diese Zusatzwerte nicht.</span></button>
     <button type="button" data-open="dcc"><strong>Recover DCC ↗</strong><span>Direkt links neben Cancel im DCC-Fenster. Leuchtet bei erforderlicher Wiederherstellung, sonst ausgegraut mit kurzem Tooltip. Deine Profile bleiben erhalten; nach erfolgreicher manueller Wiederherstellung bleibt DCC ausgeschaltet.</span></button>
+    <button type="button" data-open="pilot"><strong>Dein Desktop, dein Profil ↗</strong><span>UV Pilot verwendet standardmäßig Stock auf dem Desktop. Unter Game override & presets kannst du ein eigenes Desktop-Profil wählen. Nach Spielende kehrt Play dorthin zurück. Der Game override bleibt davon unabhängig.</span></button>
+    <button type="button" data-open="advanced"><strong>Hotkeys und Tray-Schnellwahl ↗</strong><span>Mit Strg + Alt + Bild auf/ab oder dem Tray-Menü wechseln. Beide verwenden standardmäßig belegte Plätze 1 bis 6. Unter Advanced options kannst du die Tastenkürzel ändern und alle gespeicherten Profile einbeziehen.</span></button>
+    <button type="button" data-open="overlay"><strong>Overlay auf einem anderen Monitor ↗</strong><span>Unter Overlay settings → Display → Monitor einen Bildschirm auswählen. So kannst du Spielwerte auf einem zweiten Monitor anzeigen. Beim Trennen nutzt Play den Hauptmonitor und merkt sich deine Auswahl.</span></button>
   </div>
   <div class="curve-workflow">
     <section><h3>Profilwechsel mit Tuning-Werten</h3><p>Beim Anwenden eines Profils werden dessen Tuning-Werte übernommen. Ein Profil ohne diese Werte stellt die zuvor von Play erfassten Werte wieder her. Das Einschalten von Advanced GPU Tuning allein verändert noch keine GPU-Einstellung.</p></section>
     <section><h3>Blockierte Profile wieder verwenden</h3><p>Eine nicht unterstützte NVIDIA-Power-Efficiency-Funktion blockiert Play und die Profilanwendung nicht mehr. Die Korrektur berücksichtigt bereits betroffene Nutzer. Ein beschädigtes Startprofil kann durch ein neu ausgewähltes Profil ersetzt werden.</p></section>
-    <section><h3>DCC-Erkennung und Diagnose</h3><p>Die Zuordnung berücksichtigt bei identischen EXE-Namen zusätzliche Spiel- und Pfadinformationen. DCC-Performanceaufzeichnungen sind standardmäßig aktiv und werden begrenzt aufbewahrt. Die Spiele-Datenbank 2.35 enthält 710 Einträge, einschließlich der beiden neuen ACE-COMBAT-Einträge.</p></section>
-    <section><h3>Programmcache außerhalb von Temp</h3><p>Entpackte Programmdateien liegen unter LocalAppData. Das Update übernimmt Profile und Windows-Autostart automatisch. Alte unbenutzte Cache-Versionen werden aufgeräumt; die aktuelle und eine vorherige bleiben erhalten. Laufende Play-Versionen werden geschützt.</p></section>
-    <section><h3>ASIC Quality bei Blackwell</h3><p>Bei Blackwell-Grafikkarten findest du den ASIC-Quality-Wert jetzt unter Settings → About (Über).</p></section>
+    <section><h3>DCC-Erkennung und Diagnose</h3><p>Die Zuordnung berücksichtigt bei identischen EXE-Namen zusätzliche Spiel- und Pfadinformationen. DCC-Performanceaufzeichnungen sind standardmäßig aktiv und werden begrenzt aufbewahrt. Die Spiele-Datenbank 2.36 enthält 711 Einträge, darunter Lessaria: Fantasy Kingdom Sim (Balanced), ACE COMBAT ZERO (Eco) und ACE COMBAT 8 (Performance).</p></section>
+    <section><h3>Programmcache außerhalb von Temp</h3><p>Entpackte Programmdateien liegen unter LocalAppData. Das Update übernimmt Profile und Windows-Autostart automatisch. Alte unbenutzte Cache-Versionen werden aufgeräumt; die aktuelle und eine vorherige bleiben erhalten. Laufende Play-Versionen bleiben geschützt und können vorübergehend weitere Cache-Ordner benötigen.</p></section>
+    <section><h3>ASIC Quality bei Blackwell</h3><p>Settings → About zeigt bei Blackwell ASIC quality und Core voltage limit in mV. Die Spannungsgrenze wird beim Start gelesen und ist kein fester Stock-VID-Wert.</p></section>
+    <section><h3>Beispiel: Desktop → Spiel → Desktop</h3><p>Wähle dein eigenes Desktop-Profil und ordne einem Spiel Balanced zu. Bei aktivem UV Pilot nutzt Play dein Desktop-Profil bis zum Spielstart, wechselt dann zu Balanced und kehrt nach Spielende zurück. Ein Game override betrifft nur Spiele. Spiele mit No Override behalten ihre eigene Zuordnung.</p></section>
+    <section><h3>Beispiel: einen Tuning-Wert ausschalten</h3><p>Im aktiven Profil stellt Off am Regler oder das Entfernen des Hakens nur diesen Wert sofort auf den zuvor von Play erfassten Zustand zurück. Andere offene Änderungen werden nicht angewendet. Save speichert Off im Profil; Cancel aktiviert den Wert nicht erneut. Der wiederhergestellte Wert muss nicht null sein.</p></section>
+    <section><h3>Manuelle Schnellwahl</h3><p>Hotkeys und Tray-Auswahl aktivieren ein Profil im manuellen Modus. Mit Automatic in Play übernimmt UV Pilot wieder. Für eine kurze Auswahl bleiben belegte Plätze 1 bis 6 der Standard. Include all saved profiles unter Advanced options bezieht weitere gespeicherte Profile ein.</p></section>
+    <section><h3>Mehr Platz für die Kurve</h3><p>Im Curve editor bleibt die Grafik sichtbar, während die Einstellungen separat scrollen. Die unteren Aktionen bleiben auch bei kleinen Fenstern und hoher UI-Skalierung erreichbar. Game override & presets und Advanced options sind ebenfalls kompakter.</p></section>
   </div>
 </section>
 <section class="update-preview" id="updates-2016" aria-labelledby="update-2016-title">

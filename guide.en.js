@@ -67,15 +67,19 @@ window.PLAY_GUIDE_EN = {
         "Applies the saved profile at Windows sign-in, then exits. Play Autostart can stay off. Hold Shift at sign-in to skip this startup."
       ],
       [
-        "V-droop comp. · from 2.0.17",
+        "V-droop comp. · from 2.1.0",
         "Optional per profile: Off or +1 to +5 V/F voltage steps. Step size depends on the GPU. Compensation shifts the voltage anchor; it does not guarantee constant voltage or stability. Community profiles do not require these additional values."
+      ],
+      [
+        "Hotkeys and tray",
+        "Use Ctrl + Alt + Page Up/Down or the tray menu to select a profile in Manual mode. Occupied slots 1 to 6 are available by default. Change the shortcuts and enable Include all saved profiles in Advanced options to expand the selection. Play must be active. Select Automatic in Play to resume UV Pilot."
       ]
     ]
   },
   "pilot": {
     "purpose": "UV Pilot detects games through the Game Library and automatically uses their assigned profiles.",
     "benefit": "Use different settings for different games without switching manually before each launch.",
-    "how": "Assign a profile in the Game Library and enable UV Pilot. Launch the game. Play detects the matching entry and uses its assignment.",
+    "how": "UV Pilot uses Stock on the desktop by default. Choose your own desktop profile in Game override & presets. Play returns to it after the game ends. Game override remains independent.",
     "limit": "Clicking a global profile slot directly turns UV Pilot off. A launcher may use a different EXE from the actual game.",
     "controls": [
       [
@@ -85,10 +89,14 @@ window.PLAY_GUIDE_EN = {
       [
         "Game detection",
         "Play needs a matching process entry in the library. If detection fails, check the actual game EXE, not just its launcher."
+      ],
+      [
+        "Desktop profile",
+        "UV Pilot uses Stock on the desktop by default. Choose your own desktop profile in Game override & presets. Play returns to it after the game ends. Game override remains independent."
       ]
     ],
-    "scenarioTitle": "Different games. Different UV profiles.",
-    "scenario": "An older title may run well with a power-saving profile. For a demanding game you want more performance, and for another you have tuned your own UV curve. Assign each game a suitable profile in the Game Library. UV Pilot detects the launch and switches for you."
+    "scenarioTitle": "Example: desktop → game → desktop",
+    "scenario": "Choose your own desktop profile and assign Balanced to a game. With UV Pilot on, Play uses your desktop profile until the game starts, switches to Balanced, then returns after the game ends. Game override affects games only. Games marked No Override retain their own assignment."
   },
   "library": {
     "purpose": "The Game Library links games to profiles and manages the entries used for game detection.",
@@ -110,7 +118,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Game override / No Override",
-        "A game override can use a shared setting. No Override excludes individual games from it, which is useful for exceptions."
+        "Choose one profile for all recognized games. Games marked No Override keep their own assignment. None restores individual assignments. The desktop profile remains independent."
       ],
       [
         "Search / Filter",
@@ -127,6 +135,10 @@ window.PLAY_GUIDE_EN = {
       [
         "Choose MFG for a game",
         "On Blackwell/RTX 50, the MFG profile is available for games with Multi Frame Generation. Assign it to the appropriate game. UV Pilot uses the assignment automatically when it is enabled and detects the game."
+      ],
+      [
+        "Desktop profile",
+        "UV Pilot uses Stock on the desktop by default. Choose your own desktop profile in Game override & presets. Play returns to it after the game ends. Game override remains independent."
       ]
     ]
   },
@@ -247,6 +259,10 @@ window.PLAY_GUIDE_EN = {
       [
         "Default",
         "Temporarily activates stock operation without overwriting your saved profiles."
+      ],
+      [
+        "Window size and scaling",
+        "The Curve editor keeps the graph visible while settings scroll separately. Bottom actions remain accessible at small window sizes and high UI scaling. Game override & presets and Advanced options are more compact too."
       ]
     ],
     "scenarioTitle": "Want more fine-tuning?",
@@ -300,7 +316,7 @@ window.PLAY_GUIDE_EN = {
     "purpose": "DCC automatically adjusts your GPU clock while you play. When full GPU performance is not needed, it can reduce power consumption and heat.",
     "benefit": "When extra clock speed offers little benefit in a game, DCC can help reduce unnecessary power consumption. The actual benefit depends on the game and hardware.",
     "how": "Choose the algorithm in DCC settings. DCC and Stabilizer are used alternatively. Under History, switch between Learned profiles and Blocked profiles. Configure NVIDIA Experimental before launching a game.",
-    "limit": "A UV copy requires fully captured curve data. It contains a fixed state, not dynamic DCC control. Recover DCC arrives with 2.0.17.",
+    "limit": "A UV copy requires fully captured curve data. It contains a fixed state, not dynamic DCC control. Find Recover DCC in DCC settings.",
     "controls": [
       [
         "DCC Automatic",
@@ -344,7 +360,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Enable performance logging",
-        "Records frame rate, GPU clock and power draw locally. From 2.0.17, logging is enabled by default with limited retention. You can turn it off here."
+        "Records frame rate, GPU clock and power draw locally. From 2.1.0, logging is enabled by default with limited retention. You can turn it off here."
       ],
       [
         "History → Learned profiles",
@@ -367,7 +383,7 @@ window.PLAY_GUIDE_EN = {
         "The EXE name matches in every folder. Apply also stops an active DCC session for that game. NVIDIA Experimental and global FPS / V-Sync settings remain active."
       ],
       [
-        "Recover DCC · from 2.0.17",
+        "Recover DCC · from 2.1.0",
         "Located directly to the left of Cancel in DCC settings. The button lights up when recovery is required; otherwise it is greyed out with a short status tooltip. Restores previously saved DCC settings while preserving your profiles. DCC stays off after successful manual recovery. A notice also appears in the main window when needed."
       ]
     ],
@@ -387,8 +403,8 @@ window.PLAY_GUIDE_EN = {
         "Turns the display on or off. Opening its settings or preview is not the same as enabling the overlay."
       ],
       [
-        "Display on: Desktop, Game or Desktop + Game",
-        "Desktop shows the overlay on the main display and hides it for detected games. Game shows it only over a detected foreground game. Desktop + Game switches automatically between both. The selected mode also applies while the layout designer is open. Games are supported in windowed or borderless mode, not exclusive fullscreen."
+        "Display on",
+        "Desktop shows the overlay outside detected games. Game shows readings for a recognized foreground game. Desktop + Game switches automatically. Select its screen separately under Display → Monitor."
       ],
       [
         "Display, Readings, Layout, Colors, Profiles",
@@ -465,6 +481,10 @@ window.PLAY_GUIDE_EN = {
       [
         "Reset defaults",
         "Resets overlay settings to their defaults. This affects the display, not the GPU’s UV profile. Play saves overlay changes automatically."
+      ],
+      [
+        "Monitor",
+        "Choose a display under Overlay settings → Display → Monitor. Show game readings on a second screen. If it disconnects, Play uses the primary monitor and remembers your choice. Automatic follows the game screen or the primary desktop monitor."
       ]
     ]
   },
@@ -472,7 +492,7 @@ window.PLAY_GUIDE_EN = {
     "purpose": "Fan control offers GPU automatic control, a fixed fan setting or a custom temperature curve for each supported channel.",
     "benefit": "Adapt cooling and noise to your everyday use. Zero Fan allows 0% curve points in the low-temperature range.",
     "how": "Open Fan curve and choose GPU automatic, a fixed speed or a temperature curve. For Zero Fan, enable the toggle and set low-temperature points to 0%. Apply & save applies the settings.",
-    "limit": "Zero Fan is coming in the next update. At 0%, the GPU’s automatic cooling takes over. The card decides whether the fans actually stop. Custom ongoing fan curves need Play running.",
+    "limit": "At 0%, the GPU’s automatic cooling takes over. The card decides whether the fans actually stop. Custom ongoing fan curves need Play running.",
     "scenarioTitle": "Adjust cooling and noise to your needs.",
     "scenario": "GPU automatic, a fixed speed or your own temperature curve: choose how you want to control cooling. Zero Fan leaves the 0% range to the GPU; above it, your curve takes over again.",
     "controls": [
@@ -610,12 +630,12 @@ window.PLAY_GUIDE_EN = {
       ]
     ],
     "scenarioTitle": "Less manual adjustment after a crash.",
-    "scenario": "Based on experience so far, one or two corrections are often enough to reach stable settings. Some cards and games may require further adjustments, and stability in one game does not guarantee stability in every game. The Stabilizer responds to detected GPU driver crashes and adjusts the affected game or global profile in its appropriate context. Planned for v2.0.14: after a successful correction, Play will show what changed in the main window."
+    "scenario": "Based on experience so far, one or two corrections are often enough to reach stable settings. Some cards and games may require further adjustments, and stability in one game does not guarantee stability in every game. The Stabilizer responds to detected GPU driver crashes and adjusts the affected game or global profile in its appropriate context. After a successful correction, Play shows what changed in the main window."
   },
   "expert": {
     "purpose": "Advanced GPU Tuning adds experimental clock and voltage parameters to your UV profile. Since Play v2.0.9, these values belong to the individual profile.",
     "benefit": "Experienced users gain finer control beyond the normal UV curve. This area is not needed for a quick start with community profiles.",
-    "how": "After enabling access under Settings → Experimental features, open Advanced GPU Tuning in the Curve editor. From 2.0.17, its sliders are also available directly in the profile editor. Save profile stores the draft. Apply & save profile activates and saves the entire profile, including its curve, power limit, VRAM and tuning values.",
+    "how": "After enabling access under Settings → Experimental features, use the controls in Curve editor or the profile editor. Apply & save profile activates and saves the entire profile, including curve, power limit, VRAM and tuning values. Off in the active profile restores that field immediately.",
     "limit": "Currently available for Blackwell only. Can cause instability, data loss and permanent hardware damage. Hardware and driver support have not been validated everywhere. Restore is not a recovery guarantee.",
     "controls": [
       [
@@ -632,7 +652,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Live readings / Remove from profile",
-        "Live readings shows current measurements without overwriting your inputs. Remove from profile first removes tuning values from the draft; applying the profile releases the previous adjustments."
+        "Green values show current telemetry. Removes tuning values from the profile draft. In the active profile, Play immediately restores the values it managed. Save keeps the change; Cancel does not reapply them. The curve and other profile values are preserved."
       ],
       [
         "Difference from DCC",
@@ -640,7 +660,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Save profile",
-        "Saves the profile with its tuning values without immediately changing GPU settings."
+        "Saves the draft without applying further GPU values. Values already restored by turning them Off remain restored."
       ],
       [
         "Profile switching",
@@ -676,18 +696,18 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Remove from profile",
-        "Removes tuning values from the profile draft. Apply & save profile activates the changed draft and releases the previous tuning adjustments."
+        "Removes tuning values from the profile draft. In the active profile, Play immediately restores the values it managed. Save keeps the change; Cancel does not reapply them. The curve and other profile values are preserved."
       ],
       [
         "Live readings",
         "Green values show current measurements. They change with load without overwriting your inputs. Reported GPU voltage and individual rail sensors can show different readings."
       ],
       [
-        "Enable a field",
-        "The checkbox determines whether this profile should manage that tuning value. The selection first belongs to the draft; only applying it changes the GPU."
+        "Enable a field or turn it Off",
+        "Checking a field includes it in the draft. Apply & save profile applies new values. In the active profile, turning a slider Off or clearing its checkbox immediately restores only that field to the value Play captured before changing it. Other pending edits are not applied. Save keeps the field Off in the profile; Cancel does not reapply it. The restored value is not necessarily zero."
       ],
       [
-        "In the profile editor · from 2.0.17",
+        "In the profile editor · from 2.1.0",
         "Once enabled, tuning sliders appear in the profile editor. Values are optional and saved per profile. Enabling access alone does not change GPU settings."
       ]
     ]
@@ -733,6 +753,10 @@ window.PLAY_GUIDE_EN = {
       [
         "Minimizing and memory",
         "Minimizing or hiding in the tray triggers memory trimming. Windows may reload needed memory pages when the window is opened again."
+      ],
+      [
+        "About: Blackwell",
+        "About shows ASIC quality and Core voltage limit in mV. The limit is read at startup and is not a fixed Stock VID."
       ]
     ]
   },
@@ -759,7 +783,7 @@ window.PLAY_GUIDE_EN = {
         "The full download remains the manual alternative. Extract the entire archive together, not just the EXE."
       ],
       [
-        "Application cache · from 2.0.17",
+        "Application cache · from 2.1.0",
         "Extracted application files are stored under LocalAppData instead of the temporary folder. Existing profiles and Windows startup are carried over automatically during the update. Old unused cache versions are cleaned up, keeping the current and one previous version. Files used by running Play versions are protected."
       ]
     ]
@@ -881,10 +905,10 @@ window.PLAY_GUIDE_EN = {
     ]
   },
   "advanced": {
-    "purpose": "Advanced options controls how Play applies simple UV presets: Gradient Lock, Voltage Lock, optional Hard Lock and V-Step Compensation.",
+    "purpose": "Advanced options contains profile shortcuts, the scope of quick selection and the methods used to apply simple UV presets.",
     "benefit": "Understand and adjust how simple presets behave. Saved V-curves instead use their own points and dynamic clock scaling.",
     "how": "Open Settings → Advanced options. Read the explanation for the method you want to use. Save stores the selection; Cancel discards changes in the window.",
-    "limit": "These methods and V-Step Compensation apply to simple presets. Hard Lock prevents normal idle downclocking and may increase idle power. Availability and effects depend on the GPU and driver.",
+    "limit": "Apply methods affect simple presets. Saved V-curves use their own points. V-droop comp. is set per profile. Hard Lock and Gradient Lock on Ampere remain experimental.",
     "controls": [
       [
         "Autostart without minimizing",
@@ -903,8 +927,8 @@ window.PLAY_GUIDE_EN = {
         "Requests the same minimum and maximum GPU clock at the preset target. Prevents normal idle downclocking and may increase consumption. Requires GPU and driver support and DCC to be off."
       ],
       [
-        "V-Step Compensation",
-        "Raises the voltage anchor by the selected number of VF steps. It can account for voltage droop under load, at the expense of efficiency, and does not guarantee a constant clock.From 2.0.17, this option is named V-droop comp. and is located directly in the profile editor, with Off and five levels."
+        "V-droop comp. in the profile editor",
+        "The former V-Step Compensation is now in each profile: Off or +1 to +5 V/F voltage steps. Step size depends on the GPU. Additional voltage costs efficiency and does not guarantee a constant clock."
       ],
       [
         "Gradient Lock on Ampere",
@@ -913,6 +937,14 @@ window.PLAY_GUIDE_EN = {
       [
         "Save / Cancel",
         "Save stores the selection. Preset changes can immediately reapply an active preset. Cancel closes the window without saving changes."
+      ],
+      [
+        "Hotkeys and tray",
+        "Use Ctrl + Alt + Page Up/Down or the tray menu to select a profile in Manual mode. Occupied slots 1 to 6 are available by default. Change the shortcuts and enable Include all saved profiles in Advanced options to expand the selection. Play must be active. Select Automatic in Play to resume UV Pilot."
+      ],
+      [
+        "Default shortcuts / None",
+        "Default shortcuts restores the default key combinations. None removes the corresponding shortcut. Play must be active to switch profiles."
       ]
     ]
   },

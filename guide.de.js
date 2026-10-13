@@ -67,15 +67,19 @@ window.PLAY_GUIDE_DE = {
         "Wendet das gespeicherte Profil bei der Windows-Anmeldung an und beendet den Startprozess. Play-Autostart darf aus bleiben. Shift beim Anmelden überspringt diesen Start."
       ],
       [
-        "V-droop comp. · ab 2.0.17",
+        "V-droop comp. · ab 2.1.0",
         "Optional pro Profil: Off oder +1 bis +5 V/F-Spannungsschritte. Die Schrittweite hängt von der GPU ab. Die Kompensation verschiebt den Spannungsanker; sie garantiert weder konstante Spannung noch Stabilität. Community-Profile benötigen diese Zusatzwerte nicht."
+      ],
+      [
+        "Hotkeys und Tray",
+        "Mit Strg + Alt + Bild auf/ab oder dem Tray-Menü ein Profil im manuellen Modus wählen. Standardmäßig stehen belegte Plätze 1 bis 6 bereit. Unter Advanced options kannst du die Tastenkürzel ändern und mit Include all saved profiles die Auswahl erweitern. Play muss aktiviert sein. Mit Automatic in Play übernimmt UV Pilot wieder."
       ]
     ]
   },
   "pilot": {
     "purpose": "UV Pilot erkennt Spiele anhand der Game Library und verwendet die zugeordneten Profile automatisch.",
     "benefit": "Du kannst für verschiedene Spiele unterschiedliche Einstellungen nutzen, ohne vor jedem Start selbst umzuschalten.",
-    "how": "Ordne in der Game Library ein Profil zu und schalte UV Pilot ein. Starte danach das Spiel. Play erkennt den passenden Eintrag und verwendet seine Zuordnung.",
+    "how": "UV Pilot verwendet standardmäßig Stock auf dem Desktop. Unter Game override & presets kannst du ein eigenes Desktop-Profil wählen. Nach Spielende kehrt Play dorthin zurück. Der Game override bleibt davon unabhängig.",
     "limit": "Ein direkt angeklickter globaler Profilplatz schaltet UV Pilot aus. Ein Launcher kann eine andere EXE als das eigentliche Spiel verwenden.",
     "controls": [
       [
@@ -85,10 +89,14 @@ window.PLAY_GUIDE_DE = {
       [
         "Spielerkennung",
         "Play braucht einen passenden Prozesseintrag in der Bibliothek. Bei Problemen die eigentliche Spiel-EXE prüfen, nicht nur den Launcher."
+      ],
+      [
+        "Desktop profile",
+        "UV Pilot verwendet standardmäßig Stock auf dem Desktop. Unter Game override & presets kannst du ein eigenes Desktop-Profil wählen. Nach Spielende kehrt Play dorthin zurück. Der Game override bleibt davon unabhängig."
       ]
     ],
-    "scenarioTitle": "Unterschiedliche Spiele. Unterschiedliche UV-Profile.",
-    "scenario": "Für einen älteren Titel genügt dir ein sparsames Profil. Für ein anspruchsvolles Spiel möchtest du mehr Leistung, für ein anderes eine selbst angepasste UV-Kurve. Ordne jedem Spiel in der Game Library das passende Profil zu. UV Pilot erkennt den Spielstart und übernimmt den Wechsel für dich."
+    "scenarioTitle": "Beispiel: Desktop → Spiel → Desktop",
+    "scenario": "Wähle dein eigenes Desktop-Profil und ordne einem Spiel Balanced zu. Bei aktivem UV Pilot nutzt Play dein Desktop-Profil bis zum Spielstart, wechselt dann zu Balanced und kehrt nach Spielende zurück. Ein Game override betrifft nur Spiele. Spiele mit No Override behalten ihre eigene Zuordnung."
   },
   "library": {
     "purpose": "Die Game Library verknüpft Spiele mit ihren Profilen und verwaltet die Einträge für die Spielerkennung.",
@@ -110,7 +118,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Game override / No Override",
-        "Ein Spiel-Override kann eine gemeinsame Vorgabe nutzen. No Override nimmt einzelne Spiele aus dieser Vorgabe heraus. Das ist praktisch für Ausnahmen."
+        "Ein Profil für alle erkannten Spiele wählen. Spiele mit No Override behalten ihre eigene Zuordnung. None stellt die individuellen Spielzuordnungen wieder her. Das Desktop-Profil bleibt unabhängig."
       ],
       [
         "Search / Filter",
@@ -127,6 +135,10 @@ window.PLAY_GUIDE_DE = {
       [
         "MFG für ein Spiel wählen",
         "Auf Blackwell/RTX 50 steht auch das MFG-Profil für Spiele mit Multi Frame Generation zur Verfügung. Ordne es dem passenden Spiel zu. UV Pilot verwendet die Zuordnung automatisch, wenn er aktiv ist und das Spiel erkennt."
+      ],
+      [
+        "Desktop profile",
+        "UV Pilot verwendet standardmäßig Stock auf dem Desktop. Unter Game override & presets kannst du ein eigenes Desktop-Profil wählen. Nach Spielende kehrt Play dorthin zurück. Der Game override bleibt davon unabhängig."
       ]
     ]
   },
@@ -247,6 +259,10 @@ window.PLAY_GUIDE_DE = {
       [
         "Default",
         "Aktiviert vorübergehend den Stock-Betrieb, ohne deine gespeicherten Profile zu überschreiben."
+      ],
+      [
+        "Fenstergröße und Skalierung",
+        "Im Curve editor bleibt die Grafik sichtbar, während die Einstellungen separat scrollen. Die unteren Aktionen bleiben auch bei kleinen Fenstern und hoher UI-Skalierung erreichbar. Game override & presets und Advanced options sind ebenfalls kompakter."
       ]
     ],
     "scenarioTitle": "Du möchtest mehr Feinabstimmung?",
@@ -300,7 +316,7 @@ window.PLAY_GUIDE_DE = {
     "purpose": "DCC regelt den Takt deiner Grafikkarte beim Spielen automatisch. Wird nicht die volle Leistung benötigt, kann das Strom sparen und die Abwärme reduzieren.",
     "benefit": "Wenn zusätzlicher Takt im aktuellen Spiel wenig bringt, kann DCC helfen, unnötigen Energiebedarf zu reduzieren. Der tatsächliche Nutzen hängt vom Spiel und der Hardware ab.",
     "how": "Wähle den Algorithmus in DCC settings. DCC und Stabilizer werden alternativ genutzt. Unter History wechselst du zwischen Learned profiles und Blocked profiles. NVIDIA Experimental konfigurierst du vor dem Spielstart.",
-    "limit": "Eine UV-Kopie braucht vollständig erfasste Kurvendaten. Sie enthält einen festen Zustand, keine dynamische DCC-Regelung. Recover DCC kommt mit 2.0.17.",
+    "limit": "Eine UV-Kopie braucht vollständig erfasste Kurvendaten. Sie enthält einen festen Zustand, keine dynamische DCC-Regelung. Recover DCC findest du in den DCC-Einstellungen.",
     "controls": [
       [
         "DCC Automatic",
@@ -344,7 +360,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Enable performance logging",
-        "Zeichnet Bildrate, GPU-Takt und Leistungsaufnahme lokal auf. Ab 2.0.17 ist die Aufzeichnung standardmäßig eingeschaltet und ihre Aufbewahrung begrenzt. Du kannst sie hier ausschalten."
+        "Zeichnet Bildrate, GPU-Takt und Leistungsaufnahme lokal auf. Ab 2.1.0 ist die Aufzeichnung standardmäßig eingeschaltet und ihre Aufbewahrung begrenzt. Du kannst sie hier ausschalten."
       ],
       [
         "History → Learned profiles",
@@ -367,7 +383,7 @@ window.PLAY_GUIDE_DE = {
         "Der EXE-Dateiname gilt in allen Ordnern. Apply beendet auch eine laufende DCC-Sitzung dieses Spiels. NVIDIA Experimental und globale FPS-/V-Sync-Einstellungen bleiben aktiv."
       ],
       [
-        "Recover DCC · ab 2.0.17",
+        "Recover DCC · ab 2.1.0",
         "Steht in DCC settings direkt links neben Cancel. Bei erforderlicher Wiederherstellung leuchtet der Button; sonst ist er ausgegraut und erklärt den Zustand per Tooltip. Stellt zuvor gesicherte DCC-Einstellungen wieder her und erhält deine Profile. Nach erfolgreicher manueller Wiederherstellung bleibt DCC ausgeschaltet. Bei Bedarf erscheint auch im Hauptfenster ein Hinweis."
       ]
     ],
@@ -387,8 +403,8 @@ window.PLAY_GUIDE_DE = {
         "Schaltet die Anzeige ein oder aus. Das Einstellungsfenster oder seine Vorschau zu öffnen ist nicht dasselbe wie das Overlay zu aktivieren."
       ],
       [
-        "Display on: Desktop, Game oder Desktop + Game",
-        "Desktop zeigt das Overlay auf dem Hauptbildschirm und blendet es bei erkannten Spielen aus. Game zeigt es nur über einem erkannten Spiel im Vordergrund. Desktop + Game wechselt automatisch zwischen beiden. Der gewählte Modus gilt auch, während der Layout-Designer geöffnet ist. Spiele werden im Fenster oder randlosen Fenster unterstützt, nicht im exklusiven Vollbild."
+        "Display on",
+        "Desktop zeigt das Overlay außerhalb erkannter Spiele. Game zeigt Werte eines erkannten Vordergrundspiels. Desktop + Game wechselt automatisch. Den Bildschirm wählst du separat unter Display → Monitor."
       ],
       [
         "Anzeige, Werte, Layout, Farben, Profile",
@@ -465,6 +481,10 @@ window.PLAY_GUIDE_DE = {
       [
         "Reset defaults",
         "Setzt die Overlay-Einstellungen auf ihre Vorgaben zurück. Das betrifft die Anzeige, nicht das Undervolting-Profil. Änderungen am Overlay werden in Play automatisch gespeichert."
+      ],
+      [
+        "Monitor",
+        "Unter Overlay settings → Display → Monitor einen Bildschirm auswählen. So kannst du Spielwerte auf einem zweiten Monitor anzeigen. Beim Trennen nutzt Play den Hauptmonitor und merkt sich deine Auswahl. Automatic folgt dem Spielbildschirm bzw. dem Hauptmonitor auf dem Desktop."
       ]
     ]
   },
@@ -472,7 +492,7 @@ window.PLAY_GUIDE_DE = {
     "purpose": "Die Lüftersteuerung nutzt GPU-Automatik, einen festen Lüfterwert oder eine eigene Temperaturkurve pro unterstütztem Kanal.",
     "benefit": "Kühlung und Lautstärke an deinen Alltag anpassen. Mit Zero Fan kannst du im kühlen Bereich 0%-Kurvenpunkte verwenden.",
     "how": "Öffne Fan curve und wähle GPU-Automatik, eine feste Drehzahl oder eine Temperaturkurve. Für Zero Fan den Schalter aktivieren und niedrige Temperaturpunkte auf 0% setzen. Apply & save übernimmt die Einstellungen.",
-    "limit": "Zero Fan kommt mit dem nächsten Update. Bei 0% übernimmt die automatische Kühlung der GPU. Ob die Lüfter tatsächlich stoppen, entscheidet die Karte. Eigene laufende Lüfterkurven brauchen Play.",
+    "limit": "Bei 0% übernimmt die automatische Kühlung der GPU. Ob die Lüfter tatsächlich stoppen, entscheidet die Karte. Eigene laufende Lüfterkurven brauchen Play.",
     "scenarioTitle": "Kühlung und Lautstärke selbst abstimmen.",
     "scenario": "GPU-Automatik, feste Drehzahl oder eigene Temperaturkurve: Du entscheidest, wie du die Kühlung steuern möchtest. Zero Fan überlässt den 0%-Bereich der GPU; oberhalb davon regelt wieder deine Kurve.",
     "controls": [
@@ -610,12 +630,12 @@ window.PLAY_GUIDE_DE = {
       ]
     ],
     "scenarioTitle": "Weniger Nachjustieren nach einem Absturz.",
-    "scenario": "Nach bisherigen Erfahrungen sind häufig ein bis zwei Korrekturen nach einem Absturz nötig, bis ein Preset stabil läuft. Je nach Karte und Spiel können weitere Anpassungen erforderlich sein. Stabilität in einem Spiel garantiert sie nicht in jedem anderen. Der Stabilizer reagiert auf erkannte GPU-Treiberabstürze und passt das betroffene Spielprofil oder globale Profil im jeweiligen Kontext an. Geplant für v2.0.14: Nach einer erfolgreichen Korrektur zeigt Play im Hauptfenster an, was angepasst wurde."
+    "scenario": "Nach bisherigen Erfahrungen sind häufig ein bis zwei Korrekturen nach einem Absturz nötig, bis ein Preset stabil läuft. Je nach Karte und Spiel können weitere Anpassungen erforderlich sein. Stabilität in einem Spiel garantiert sie nicht in jedem anderen. Der Stabilizer reagiert auf erkannte GPU-Treiberabstürze und passt das betroffene Spielprofil oder globale Profil im jeweiligen Kontext an. Nach einer erfolgreichen Korrektur zeigt Play im Hauptfenster an, was angepasst wurde."
   },
   "expert": {
     "purpose": "Advanced GPU Tuning ergänzt dein UV-Profil um experimentelle Takt- und Spannungsparameter. Seit Play v2.0.9 gehören diese Werte zum jeweiligen Profil.",
     "benefit": "Erfahrene Nutzer erhalten feinere Eingriffsmöglichkeiten über die normale UV-Kurve hinaus. Für den schnellen Einstieg mit Community-Profilen ist dieser Bereich nicht erforderlich.",
-    "how": "Nach der Freigabe unter Settings → Experimental features ist Advanced GPU Tuning im Curve editor verfügbar. Ab 2.0.17 findest du die Einstellungen außerdem als Schieberegler direkt im Profilfenster. Save profile speichert den Entwurf. Apply & save profile aktiviert und speichert das gesamte Profil einschließlich Kurve, Power limit, VRAM und Tuning-Werten.",
+    "how": "Nach der Freigabe unter Settings → Experimental features sind die Regler im Curve editor und Profilfenster verfügbar. Apply & save profile aktiviert und speichert das gesamte Profil einschließlich Kurve, Power limit, VRAM und Tuning-Werten. Off im aktiven Profil stellt den betreffenden Wert sofort zurück.",
     "limit": "Aktuell nur für Blackwell verfügbar. Kann Instabilität, Datenverlust und dauerhafte Hardware-Schäden verursachen. Hardware- und Treiberunterstützung sind nicht überall validiert. Ein Restore ist keine Wiederherstellungsgarantie.",
     "controls": [
       [
@@ -632,7 +652,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Live readings / Remove from profile",
-        "Live readings zeigt aktuelle Messwerte, ohne deine Eingabefelder zu überschreiben. Remove from profile entfernt Tuning-Werte zunächst aus dem Entwurf; erst das Anwenden des Profils gibt die bisherigen Anpassungen frei."
+        "Grüne Werte zeigen aktuelle Telemetrie. Entfernt die Tuning-Werte aus dem Profilentwurf. Im aktiven Profil stellt Play die von ihm verwalteten Werte sofort wieder her. Save behält die Änderung; Cancel wendet die Werte nicht erneut an. Kurve und andere Profilwerte bleiben erhalten."
       ],
       [
         "Abgrenzung zu DCC",
@@ -640,7 +660,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Save profile",
-        "Speichert das Profil mit den Tuning-Werten, ohne die GPU-Einstellungen sofort zu ändern."
+        "Speichert den Entwurf, ohne weitere GPU-Werte anzuwenden. Bereits durch Off zurückgestellte Werte bleiben zurückgestellt."
       ],
       [
         "Profilwechsel",
@@ -676,18 +696,18 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Remove from profile",
-        "Entfernt Tuning-Werte aus dem Profilentwurf. Erst Apply & save profile aktiviert den geänderten Entwurf und gibt die bisherigen Tuning-Anpassungen frei."
+        "Entfernt die Tuning-Werte aus dem Profilentwurf. Im aktiven Profil stellt Play die von ihm verwalteten Werte sofort wieder her. Save behält die Änderung; Cancel wendet die Werte nicht erneut an. Kurve und andere Profilwerte bleiben erhalten."
       ],
       [
         "Live readings",
         "Grüne Werte zeigen aktuelle Messungen. Sie ändern sich mit der Last und überschreiben deine Eingabewerte nicht. Die gemeldete GPU-Spannung und einzelne Railsensoren können unterschiedliche Werte zeigen."
       ],
       [
-        "Feld aktivieren",
-        "Das Kontrollkästchen bestimmt, ob dieses Profil den jeweiligen Tuning-Wert verwalten soll. Die Auswahl gehört zunächst zum Entwurf; erst Anwenden ändert die GPU."
+        "Feld aktivieren oder ausschalten",
+        "Ein Haken nimmt den Wert in den Entwurf auf. Neue Werte werden mit Apply & save profile angewendet. Im aktiven Profil stellt Off am Regler oder das Entfernen des Hakens nur diesen Wert sofort auf den zuvor von Play erfassten Zustand zurück. Andere offene Änderungen werden nicht angewendet. Save speichert Off im Profil; Cancel aktiviert den Wert nicht erneut. Der wiederhergestellte Wert muss nicht null sein."
       ],
       [
-        "Im Profilfenster · ab 2.0.17",
+        "Im Profilfenster · ab 2.1.0",
         "Nach der Freigabe erscheinen die Tuning-Schieberegler im Profilfenster. Die Werte werden optional pro Profil gespeichert. Das Aktivieren des Bereichs allein verändert die GPU nicht."
       ]
     ]
@@ -733,6 +753,10 @@ window.PLAY_GUIDE_DE = {
       [
         "Minimieren und Speicher",
         "Minimieren oder Verbergen im Tray löst den Speicher-Trim aus. Beim erneuten Öffnen kann Windows benötigte Speicherseiten wieder laden."
+      ],
+      [
+        "About: Blackwell",
+        "About zeigt ASIC quality und Core voltage limit in mV. Die Spannungsgrenze wird beim Start gelesen und ist kein fester Stock VID."
       ]
     ]
   },
@@ -759,7 +783,7 @@ window.PLAY_GUIDE_DE = {
         "Der vollständige Download bleibt die manuelle Alternative. Das gesamte Archiv zusammen entpacken, nicht nur die EXE."
       ],
       [
-        "Programmcache · ab 2.0.17",
+        "Programmcache · ab 2.1.0",
         "Die entpackten Programmdateien liegen unter LocalAppData statt im temporären Ordner. Das Update übernimmt bestehende Profile und den Windows-Autostart automatisch. Alte unbenutzte Cache-Versionen werden bereinigt; die aktuelle und eine vorherige Version bleiben erhalten. Dateien laufender Play-Versionen werden geschützt."
       ]
     ]
@@ -881,10 +905,10 @@ window.PLAY_GUIDE_DE = {
     ]
   },
   "advanced": {
-    "purpose": "Advanced options steuert, wie Play einfache UV-Presets anwendet: Gradient Lock, Voltage Lock, optional Hard Lock und V-Step Compensation.",
+    "purpose": "Advanced options enthält Profil-Tastenkürzel, den Umfang der Schnellwahl und die Verfahren zum Anwenden einfacher UV-Presets.",
     "benefit": "Du kannst das Verhalten einfacher Presets genauer verstehen und anpassen. Gespeicherte V-Kurven verwenden dagegen ihre eigenen Punkte und dynamische Taktskalierung.",
     "how": "Öffne Settings → Advanced options. Lies die Erklärung zum gewünschten Verfahren. Save speichert die Auswahl; Cancel verwirft Änderungen im Fenster.",
-    "limit": "Diese Verfahren und V-Step Compensation gelten für einfache Presets. Hard Lock verhindert normales Heruntertakten im Leerlauf und kann den Idle-Verbrauch erhöhen. Verfügbarkeit und Wirkung hängen von GPU und Treiber ab.",
+    "limit": "Die Apply-Verfahren gelten für einfache Presets. Gespeicherte V-Kurven verwenden ihre eigenen Punkte. V-droop comp. wird pro Profil eingestellt. Hard Lock und Gradient Lock auf Ampere bleiben experimentell.",
     "controls": [
       [
         "Autostart without minimizing",
@@ -903,8 +927,8 @@ window.PLAY_GUIDE_DE = {
         "Fordert denselben minimalen und maximalen GPU-Takt am Preset-Ziel an. Verhindert normales Idle-Heruntertakten und kann den Verbrauch erhöhen. Benötigt passende GPU- und Treiberunterstützung sowie ausgeschaltetes DCC."
       ],
       [
-        "V-Step Compensation",
-        "Verschiebt den Spannungsanker um die gewählte Anzahl VF-Schritte nach oben. Kann einen Spannungsabfall unter Last berücksichtigen, kostet aber Effizienz und garantiert keinen konstanten Takt. Ab 2.0.17 heißt die Option V-droop comp. und sitzt mit Off sowie fünf Stufen direkt im Profilfenster."
+        "V-droop comp. im Profilfenster",
+        "Die frühere V-Step Compensation sitzt jetzt im Profilfenster: Off oder +1 bis +5 V/F-Spannungsschritte. Die Schrittweite hängt von der GPU ab. Zusätzliche Spannung kostet Effizienz und garantiert keinen konstanten Takt."
       ],
       [
         "Gradient Lock on Ampere",
@@ -913,6 +937,14 @@ window.PLAY_GUIDE_DE = {
       [
         "Save / Cancel",
         "Save speichert die Auswahl. Preset-Änderungen können ein aktives Preset direkt neu anwenden. Cancel schließt das Fenster ohne die Änderungen zu speichern."
+      ],
+      [
+        "Hotkeys und Tray",
+        "Mit Strg + Alt + Bild auf/ab oder dem Tray-Menü ein Profil im manuellen Modus wählen. Standardmäßig stehen belegte Plätze 1 bis 6 bereit. Unter Advanced options kannst du die Tastenkürzel ändern und mit Include all saved profiles die Auswahl erweitern. Play muss aktiviert sein. Mit Automatic in Play übernimmt UV Pilot wieder."
+      ],
+      [
+        "Default shortcuts / None",
+        "Default shortcuts stellt die Standard-Tastenkürzel wieder her. None entfernt das jeweilige Kürzel. Play muss für Profilwechsel aktiviert sein."
       ]
     ]
   },

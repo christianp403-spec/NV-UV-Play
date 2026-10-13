@@ -9,11 +9,11 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <link rel="stylesheet" href="styles.css?v=20261012-news">
-  <script src="guide.en.js?v=20261012-v2.0.17-preview" defer></script>
-  <script src="guide.ui.en.js?v=20261012-v2.0.17-preview" defer></script>
-  <script src="guide-app.js?v=20261012-v2.0.17-preview" defer></script>
-  <script src="site-navigation.js?v=20261012-news" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261013-v2.1.1">
+  <script src="guide.en.js?v=20261013-v2.1.1" defer></script>
+  <script src="guide.ui.en.js?v=20261013-v2.1.1" defer></script>
+  <script src="guide-app.js?v=20261013-v2.1.1" defer></script>
+  <script src="site-navigation.js?v=20261013-v2.1.1" defer></script>
 </head>
 <body data-page="news">
 <a class="skip-link" href="#top">Skip to content</a>
@@ -23,24 +23,36 @@
   <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="neuigkeiten.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-2017">Preview of 2.0.17</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-211">Current: 2.1.1</a><a href="#updates-210">New in 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES AND WHAT’S NEXT</p><h1 id="news-title">Play News</h1></div><p>Updates, improvements and a look at upcoming versions.</p></div>
-<section class="update-preview" id="updates-2017" aria-labelledby="update-2017-title">
-  <p class="eyebrow">PREVIEW OF NV-UV PLAY v2.0.17</p>
-  <h2 id="update-2017-title">More settings in your profile. Help with DCC recovery.</h2>
-  <p>These changes are prepared for the next update. Until it is released, the public download remains on the approved version.</p>
+<section class="update-preview" id="updates-211" aria-labelledby="update-211-title">
+  <p class="eyebrow">NV-UV PLAY v2.1.1</p>
+  <h2 id="update-211-title">Patch notes are back</h2>
+  <p>Version 2.1.1 fixes the missing in-app patch notes after updating. The complete 2.1.0 notes are included. All features introduced in 2.1.0 remain available.</p>
+</section>
+<section class="update-preview" id="updates-210" aria-labelledby="update-210-title">
+  <p class="eyebrow">NV-UV PLAY v2.1.0</p>
+  <h2 id="update-210-title">More control over profiles and your desktop</h2>
+  <p>Introduced in 2.1.0 and included in 2.1.1: explore the new features with current screenshots and practical examples.</p>
   <div class="update-grid">
     <button type="button" data-open="expert"><strong>Advanced GPU Tuning ↗</strong><span>The new name for experimental clock and voltage parameters. Once enabled in Settings, all available controls appear directly in the profile editor. Currently for Blackwell only.</span></button>
     <button type="button" data-open="profiles"><strong>V-droop comp. per profile ↗</strong><span>An optional slider with Off and five levels, +1 to +5 V/F voltage steps. Step size depends on the GPU. Community profiles do not require these additional values.</span></button>
     <button type="button" data-open="dcc"><strong>Recover DCC ↗</strong><span>Directly to the left of Cancel in DCC settings. Lights up when recovery is required, otherwise greyed out with a short tooltip. Profiles are preserved; DCC stays off after successful manual recovery.</span></button>
+    <button type="button" data-open="pilot"><strong>Your desktop, your profile ↗</strong><span>UV Pilot uses Stock on the desktop by default. Choose your own desktop profile in Game override & presets. Play returns to it after the game ends. Game override remains independent.</span></button>
+    <button type="button" data-open="advanced"><strong>Hotkeys and tray shortcuts ↗</strong><span>Switch with Ctrl + Alt + Page Up/Down or the tray menu. Both use occupied slots 1 to 6 by default. Advanced options lets you change shortcuts and include all saved profiles.</span></button>
+    <button type="button" data-open="overlay"><strong>Overlay on another monitor ↗</strong><span>Choose a display under Overlay settings → Display → Monitor. Show game readings on a second screen. If it disconnects, Play uses the primary monitor and remembers your choice.</span></button>
   </div>
   <div class="curve-workflow">
     <section><h3>Switching profiles with tuning values</h3><p>Applying a profile uses that profile’s tuning values. A profile without these values restores the values Play captured earlier. Enabling Advanced GPU Tuning alone does not change GPU settings.</p></section>
     <section><h3>Use blocked profiles again</h3><p>An unsupported NVIDIA power-efficiency function no longer blocks Play or profile application. The fix also covers users already affected. A damaged startup profile can be replaced by selecting a new profile.</p></section>
-    <section><h3>DCC detection and diagnostics</h3><p>Detection uses additional game and path information when executable names are shared. DCC performance logging is enabled by default with limited retention. Game database 2.35 contains 710 entries, including the two new ACE COMBAT entries.</p></section>
-    <section><h3>Application cache outside Temp</h3><p>Extracted application files are stored under LocalAppData. The update carries over profiles and Windows startup automatically. Old unused cache versions are cleaned up, keeping the current and one previous version. Running Play versions are protected.</p></section>
-    <section><h3>ASIC quality on Blackwell</h3><p>For Blackwell graphics cards, ASIC quality is now shown under Settings → About.</p></section>
+    <section><h3>DCC detection and diagnostics</h3><p>Detection uses additional game and path information when executable names are shared. DCC performance logging is enabled by default with limited retention. Game database 2.36 contains 711 entries, including Lessaria: Fantasy Kingdom Sim (Balanced), ACE COMBAT ZERO (Eco) and ACE COMBAT 8 (Performance).</p></section>
+    <section><h3>Application cache outside Temp</h3><p>Extracted application files are stored under LocalAppData. The update carries over profiles and Windows startup automatically. Old unused cache versions are cleaned up, keeping the current and one previous version. Running Play versions are protected and may temporarily require additional cache folders.</p></section>
+    <section><h3>ASIC quality on Blackwell</h3><p>Settings → About now shows ASIC quality and Core voltage limit in mV on Blackwell. The limit is read at startup and is not a fixed Stock VID.</p></section>
+    <section><h3>Example: desktop → game → desktop</h3><p>Choose your own desktop profile and assign Balanced to a game. With UV Pilot on, Play uses your desktop profile until the game starts, switches to Balanced, then returns after the game ends. Game override affects games only. Games marked No Override retain their own assignment.</p></section>
+    <section><h3>Example: turn one tuning value Off</h3><p>In the active profile, turning a slider Off or clearing its checkbox immediately restores only that field to the value Play captured before changing it. Other pending edits are not applied. Save keeps the field Off in the profile; Cancel does not reapply it. The restored value is not necessarily zero.</p></section>
+    <section><h3>Manual quick selection</h3><p>Hotkeys and tray selection activate a profile in Manual mode. UV Pilot resumes when you select Automatic in Play. Occupied slots 1 to 6 remain the default for a short selection. Include all saved profiles in Advanced options adds other saved profiles.</p></section>
+    <section><h3>More room for the curve</h3><p>The Curve editor keeps the graph visible while settings scroll separately. Bottom actions remain accessible at small window sizes and high UI scaling. Game override & presets and Advanced options are more compact too.</p></section>
   </div>
 </section>
 <section class="update-preview" id="updates-2016" aria-labelledby="update-2016-title">
