@@ -4,7 +4,7 @@
 
 **Explore Play:** [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html) · [Webseite (Deutsch)](https://christianp403-spec.github.io/NV-UV-Play/)
 
-NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.0.16 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.0.16).** This is an Alpha prerelease.
+NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.0 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.0).** This is an Alpha prerelease.
 
 **New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play. Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
 
@@ -12,13 +12,13 @@ NV⚡UV Play applies your chosen GPU profile when a game starts. Use the communi
 
 - **Profiles and UV Pilot:** six existing profile slots, shared global and per-game profiles, automatic game detection and per-game exceptions. My profiles keeps saved and downloaded profiles, history and right-click actions together.
 - **Curve editor:** edit individual voltage/frequency points, use Undo/Redo, and adjust power limits and VRAM offsets.
-- **Experimental voltage settings:** XBAR/SYS clock and voltage-demand offsets, video clock, Core/Fabric voltage limits and Voltage Boost, with live telemetry. Enable them under **Settings → Experimental features**, then open **Curve editor → Expert voltage settings**. Values are saved with the profile and affect the selected GPU while that profile is active. A profile without Expert settings restores the values Play replaced. Previous global values are kept for explicit copying into a profile; they are not applied as a global fallback. Compatible GPU/driver support and explicit risk acknowledgment are required. Voltage demand is not a fixed rail voltage; new controls still need hardware validation.
+- **Advanced GPU Tuning:** XBAR/SYS clock and voltage-demand offsets, video clock, Core/Fabric voltage limits and Voltage Boost, with live telemetry. Enable them under **Settings → Experimental features**, then open **Curve editor → Advanced GPU Tuning**. Values are saved with the profile and affect the selected GPU while that profile is active. A profile without Advanced GPU Tuning settings restores the values Play replaced. Previous global values are kept for explicit copying into a profile; they are not applied as a global fallback. Compatible GPU/driver support and explicit risk acknowledgment are required. Voltage demand is not a fixed rail voltage; new controls still need hardware validation.
 - **Fan control:** GPU automatic mode, fixed speed or custom curves with hysteresis per reported channel, with saved profiles and optional activation at startup. Open **Fan curve** in the main window. Compatible driver support is required; hardware write validation is pending.
 - **UV scanner:** configurable tests, saved results and history, NVIDIA Auto-UV starting points and UV Try community profiles.
 - **DCC:** Automatic clock regulation with per-game learning, plus an experimental NVIDIA Power Efficiency mode.
 - **Enhanced Overlay in v2.0.1:** one settings window for display, readings, layout, colors and saved overlay profiles, with a live preview. Select and move readings in the preview, or start from the existing defaults.
 - **Performance readings:** FPS, 1% lows, frame times, GPU usage, voltage, power, clocks and temperatures, plus available CPU and RAM readings. Sensor availability depends on the hardware; some readings require optional PawnIO setup.
-- **Stabilizer and Smart Hz:** profile corrections after detected driver crashes and automatic display refresh-rate switching. **Enhanced Stabilizer** is a separate option under Experimental features: it can adjust selected Expert settings using your own per-profile steps and stop values. These corrections are not sufficiently validated and can improve or worsen stability; no recommended values are supplied. It is separate from DCC NVIDIA Experimental (Power Efficiency Mode).
+- **Stabilizer and Smart Hz:** profile corrections after detected driver crashes and automatic display refresh-rate switching. **Enhanced Stabilizer** is a separate option under Experimental features: it can adjust selected Advanced GPU Tuning settings using your own per-profile steps and stop values. These corrections are not sufficiently validated and can improve or worsen stability; no recommended values are supplied. It is separate from DCC NVIDIA Experimental (Power Efficiency Mode).
 - **Game library, diagnostics and updates:** game database updates, game requests, diagnostic exports and optional report uploads, plus a signed in-app updater. Play can restart after a repeatedly confirmed NVIDIA driver version change, waiting for open editors and running operations. A driver crash, brief reset or same-version reinstall does not trigger this restart.
 
 ## Install or update
@@ -29,7 +29,7 @@ For a new installation:
 2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
 3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
 
-If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.0.16 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
+If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.1.0 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
 ## Requirements and hardware support
 
@@ -79,7 +79,7 @@ Special thanks to Unwinder for his longstanding work on MSI Afterburner and GPU 
 
 Play lets you adjust GPU settings to suit your system. Stability varies between GPUs, so test your own settings, presets and scanner results on your hardware. Unstable settings may cause application or driver crashes.
 
-**Experimental Expert voltage settings require extra care.** These advanced controls are not fully validated across GPU and driver combinations. Incorrect settings may cause instability, data loss or hardware damage. Use them only if you understand the settings and associated risks.
+**Experimental Advanced GPU Tuning requires extra care.** These advanced controls are not fully validated across GPU and driver combinations. Incorrect settings may cause instability, data loss or hardware damage. Use them only if you understand the settings and associated risks.
 
 The [Play license](LICENSE.txt) sets out the risk notices and liability exclusions and limitations, including the mandatory legal exceptions. Kilby is in Alpha. Bugs and changes between versions are expected. Thank you for your feedback, bug reports and diagnostic data!
 
