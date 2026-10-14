@@ -27,11 +27,16 @@
 <section class="update-preview" id="updates-212" aria-labelledby="update-212-title">
   <p class="eyebrow">IN ENTWICKLUNG</p>
   <h2 id="update-212-title">NV-UV Play v2.1.2</h2>
-  <p>Diese Verbesserungen sind geplant:</p>
+  <p>Die neuen Funktionen und Fehlerbehebungen sind im Testbuild umgesetzt und werden vor der Veröffentlichung noch getestet.</p>
   <ul>
-    <li><strong>Settings besser sichtbar:</strong> Die Schaltfläche erhält einen Rahmen passend zu Updates und Diagnostics.</li>
-    <li><strong>Update-Bereinigung:</strong> Ein Fehler wird behoben, durch den alte Updatepakete und Installationsreste liegen bleiben und unnötig Speicherplatz belegen.</li>
-    <li><strong>DCC:</strong> Die Kompatibilität mit älteren DirectX-8-Spielen wird aktuell getestet.</li>
+    <li><strong>Hauptansicht:</strong> Settings steht als umrahmte Schaltfläche direkt neben Updates und Diagnostics. Autostart steht darüber; die Beschriftungen für Autostart und UI scaling sind besser lesbar.</li>
+    <li><strong>Update-Bereinigung:</strong> Alte Updatepakete und Installationsreste werden automatisch aufgeräumt. Fehlgeschlagene Updates werden nach sieben Tagen ohne Änderungen ebenfalls entfernt, sobald eine neuere Version erfolgreich läuft.</li>
+    <li><strong>DCC-Kompatibilität:</strong> Die Spielerkennung wurde für Helldivers 2 und weitere Spiele mit Anti-Cheat angepasst.</li>
+    <li><strong>DirectX 8 ohne RTSS:</strong> Erste Unterstützung für ältere Spiele wie Blitzkrieg. DCC und das Play-Overlay können dort FPS ohne RTSS erfassen.</li>
+    <li><strong>FPS-Limit und VSync:</strong> DCC zeigt die globalen NVIDIA-Treibereinstellungen an und überträgt eigene Änderungen in den Treiber. Beim Ausschalten von DCC wird der vorherige Zustand wiederhergestellt.</li>
+    <li><strong>Overlay:</strong> Die Grafik-API lässt sich als Messwert einblenden, einschließlich einer getrennten Anzeige von DX11 und DX12 bei eindeutiger Erkennung. Ein neues Standardlayout mit zwei Spalten und Graph wird verwendet, wenn noch keine Overlay-Einstellungen gespeichert sind. Eigene Einstellungen bleiben erhalten.</li>
+    <li><strong>DCC-Recovery:</strong> Die Wiederherstellung nach Änderungen der Treiberumgebung wurde verbessert. Gespeicherte Profile bleiben erhalten. Der Hinweis danach erklärt die erneute UV-Profilauswahl über die Slots; DCC bleibt ausgeschaltet.</li>
+    <li><strong>Spieledatenbank:</strong> Version 2.37 mit 731 Einträgen ist enthalten.</li>
   </ul>
 </section>
 <section class="update-preview" id="updates-211" aria-labelledby="update-211-title">

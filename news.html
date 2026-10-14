@@ -28,11 +28,16 @@
 <section class="update-preview" id="updates-212" aria-labelledby="update-212-title">
   <p class="eyebrow">IN DEVELOPMENT</p>
   <h2 id="update-212-title">NV-UV Play v2.1.2</h2>
-  <p>These improvements are planned:</p>
+  <p>The new features and fixes are implemented in the test build and are being tested before release.</p>
   <ul>
-    <li><strong>A more visible Settings button:</strong> The button will have a border matching Updates and Diagnostics.</li>
-    <li><strong>Update cleanup:</strong> An issue that leaves old update packages and installation files behind, taking up unnecessary disk space, is being fixed.</li>
-    <li><strong>DCC:</strong> Compatibility with older DirectX 8 games is currently being tested.</li>
+    <li><strong>Main window:</strong> Settings is now a bordered button next to Updates and Diagnostics. Autostart sits above them, with brighter labels for Autostart and UI scaling.</li>
+    <li><strong>Update cleanup:</strong> Old update packages and installation files are cleaned up automatically. Failed updates are also removed after seven days without changes once a newer version is running successfully.</li>
+    <li><strong>DCC compatibility:</strong> Game detection has been adjusted for Helldivers 2 and other games using anti-cheat.</li>
+    <li><strong>DirectX 8 without RTSS:</strong> Initial support for older games such as Blitzkrieg. DCC and the Play overlay can capture FPS in these games without RTSS.</li>
+    <li><strong>FPS limit and VSync:</strong> DCC displays the global NVIDIA driver settings and applies its own changes to the driver. Turning DCC off restores the previous state.</li>
+    <li><strong>Overlay:</strong> The graphics API can be shown as a reading, including separate DX11 and DX12 labels when clearly identified. A new default layout with two columns and a graph is used when no overlay settings have been saved. Existing settings are preserved.</li>
+    <li><strong>DCC recovery:</strong> Recovery after changes to the driver environment has been improved. Saved profiles are preserved. The message afterwards explains how to select a UV profile from the slots again; DCC stays off.</li>
+    <li><strong>Game database:</strong> Version 2.37 with 731 entries is included.</li>
   </ul>
 </section>
 <section class="update-preview" id="updates-211" aria-labelledby="update-211-title">
