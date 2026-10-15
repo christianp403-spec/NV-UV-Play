@@ -220,3 +220,11 @@ body.story-image-open{overflow:hidden}#story-image-dialog{padding:0;width:min(15
 
 /* Keep the expanded navigation readable on tablets. */
 @media(min-width:681px) and (max-width:1100px){.site-header{height:auto;min-height:100px;flex-wrap:wrap;padding-top:16px;padding-bottom:0}.site-header nav{order:3;flex-basis:100%;justify-content:center;flex-wrap:wrap;gap:8px 24px}.header-actions{margin-left:auto}}
+
+/* Current release examples use complete product captures. */
+.release-examples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 32px;margin-top:30px}
+.release-examples section{min-width:0}.release-examples h3{font-size:19px;line-height:1.4;margin:0 0 12px}.release-examples p{font-size:14px;line-height:1.75;margin:0 0 16px}
+.release-examples figure{margin:18px 0 24px}.release-examples img{display:block;max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.release-examples figure>a{display:block;width:fit-content;max-width:100%}.release-examples figcaption{font-size:12px;line-height:1.6;color:var(--muted);margin-top:10px}
+.release-examples .api-example{max-width:360px}.release-examples .overlay-example{max-width:540px}
+@media(max-width:800px){.release-examples{grid-template-columns:minmax(0,1fr);gap:20px}}

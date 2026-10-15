@@ -352,11 +352,11 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "NVIDIA Max Frame Rate",
-        "Begrenzt die vom Spiel berechneten Bilder pro Sekunde. Ein sinnvolles Limit kann unnötig hohe Bildraten und damit zusätzliche Last vermeiden. Der Limiter ist vom DCC-Algorithmus getrennt."
+        "Begrenzt die vom Spiel berechneten Bilder pro Sekunde. DCC liest das aktuelle globale NVIDIA-Limit und zeigt es an. Änderungen über DCC gelten bei eingeschaltetem DCC; beim Ausschalten wird der vorherige Wert wiederhergestellt. Der Limiter ist vom DCC-Algorithmus getrennt."
       ],
       [
         "Global NVIDIA VSync",
-        "Synchronisiert die Bildausgabe über den NVIDIA-Treiber mit der Bildwiederholrate. Das kann Bildrisse vermeiden. Wenn VSync schon im Spiel oder Treiber gesetzt ist, musst du es hier nicht zusätzlich einschalten."
+        "Synchronisiert die Bildausgabe über den NVIDIA-Treiber mit der Bildwiederholrate. DCC liest die aktuelle globale VSync-Einstellung. Änderungen über DCC gelten während der Nutzung; beim Ausschalten wird der vorherige Treiberwert wiederhergestellt."
       ],
       [
         "Enable performance logging",
@@ -448,7 +448,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Readings",
-        "Wählt die angezeigten Messwerte. Zum Prüfen deines UV-Profils helfen GPU-Takt, Spannung, Leistungsaufnahme und FPS. Temperatur und GPU-Auslastung ergänzen den Vergleich. Seit v2.0.12 kannst du auch Uhrzeit und Datum wählen: Clock European zeigt HH:mm:ss, Clock US hh:mm:ss mit AM/PM, Date European DD.MM.YYYY und Date US MM/DD/YYYY. Grundlage ist die lokale Windows-Zeit. Alle vier lassen sich einzeln aktivieren, mischen, platzieren, einfärben und in Overlay-Profilen speichern."
+        "Wählt die angezeigten Messwerte. Zum Prüfen deines UV-Profils helfen GPU-Takt, Spannung, Leistungsaufnahme und FPS. Temperatur und GPU-Auslastung ergänzen den Vergleich. Seit v2.0.12 kannst du auch Uhrzeit und Datum wählen: Clock European zeigt HH:mm:ss, Clock US hh:mm:ss mit AM/PM, Date European DD.MM.YYYY und Date US MM/DD/YYYY. Grundlage ist die lokale Windows-Zeit. Alle vier lassen sich einzeln aktivieren, mischen, platzieren, einfärben und in Overlay-Profilen speichern. Graphics API zeigt DirectX 8 bis 12, Vulkan oder OpenGL an, abhängig vom Spiel und der eindeutigen Erkennung. Uneindeutige DirectX-Ergebnisse bleiben DXGI. OpenGL-Erkennung ergänzt keine FPS-Erfassung."
       ],
       [
         "Layout",
@@ -460,7 +460,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Profiles",
-        "Verwaltet gespeicherte Overlay-Layouts. Diese Anzeigeprofile sind von den Undervolting-Profilen deiner GPU getrennt."
+        "Verwaltet gespeicherte Overlay-Layouts. Diese Anzeigeprofile sind von den Undervolting-Profilen deiner GPU getrennt. Ohne eigenes Overlay dient das DEV-Layout als Ausgangspunkt. Es lässt sich anpassen und unter einem eigenen Namen speichern. Vorhandene Layouts und Zuordnungen bleiben erhalten."
       ],
       [
         "Font size",

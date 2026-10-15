@@ -352,11 +352,11 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "NVIDIA Max Frame Rate",
-        "Caps the frames rendered per second. A suitable cap can avoid unnecessarily high frame rates and extra load. The limiter is separate from the DCC algorithm."
+        "Caps the frames rendered per second. DCC reads and displays the current global NVIDIA limit. Changes made through DCC apply while DCC is enabled; turning it off restores the previous value. The limiter is separate from the DCC algorithm."
       ],
       [
         "Global NVIDIA VSync",
-        "Uses the NVIDIA driver to synchronize frame output with the refresh rate, which can prevent tearing. If VSync is already configured in the game or driver, you do not need to enable it again here."
+        "Uses the NVIDIA driver to synchronize frame output with the refresh rate. DCC reads the current global VSync setting. Changes made through DCC apply while it is in use; turning it off restores the previous driver value."
       ],
       [
         "Enable performance logging",
@@ -448,7 +448,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Readings",
-        "Selects the displayed values. GPU clock, voltage, power draw and FPS help check your UV profile. Temperature and GPU utilization add context. Since v2.0.12, you can also select time and date: Clock European shows HH:mm:ss, Clock US hh:mm:ss with AM/PM, Date European DD.MM.YYYY and Date US MM/DD/YYYY. These use local Windows time. Enable, mix, position and color all four independently and save them in overlay profiles."
+        "Selects the displayed values. GPU clock, voltage, power draw and FPS help check your UV profile. Temperature and GPU utilization add context. Since v2.0.12, you can also select time and date: Clock European shows HH:mm:ss, Clock US hh:mm:ss with AM/PM, Date European DD.MM.YYYY and Date US MM/DD/YYYY. These use local Windows time. Enable, mix, position and color all four independently and save them in overlay profiles. Graphics API displays DirectX 8 to 12, Vulkan or OpenGL, depending on the game and clear identification. Ambiguous DirectX results remain DXGI. OpenGL identification does not add FPS capture."
       ],
       [
         "Layout",
@@ -460,7 +460,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Profiles",
-        "Manages saved overlay layouts. These display profiles are separate from your GPU’s undervolting profiles."
+        "Manages saved overlay layouts. These display profiles are separate from your GPU’s undervolting profiles. If you have not created your own overlay, the DEV layout provides a starting point. Customize it and save it under a name of your choice. Existing layouts and assignments are preserved."
       ],
       [
         "Font size",

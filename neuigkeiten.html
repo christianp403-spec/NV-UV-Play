@@ -8,10 +8,10 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <link rel="stylesheet" href="styles.css?v=20261013-v2.1.1">
-  <script src="guide.de.js?v=20261013-v2.1.1" defer></script>
-  <script src="guide-app.js?v=20261013-v2.1.1" defer></script>
-  <script src="site-navigation.js?v=20261013-v2.1.1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261015-v2.1.2">
+  <script src="guide.de.js?v=20261015-v2.1.2" defer></script>
+  <script src="guide-app.js?v=20261015-v2.1.2" defer></script>
+  <script src="site-navigation.js?v=20261015-v2.1.2" defer></script>
 </head>
 <body data-page="news">
 <a class="skip-link" href="#top">Zum Inhalt</a>
@@ -21,23 +21,43 @@
   <div class="header-actions"><div class="language-switch" aria-label="Sprache"><span lang="de" aria-current="page">DE</span><a href="news.html" lang="en" hreflang="en" aria-label="Switch to English" data-language-switch>EN</a></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-212">Ausblick: 2.1.2</a><a href="#updates-211">Aktuell: 2.1.1</a><a href="#updates-210">Neu in 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-212">Aktuell: 2.1.2</a><a href="#updates-211">In Version 2.1.1</a><a href="#updates-210">Neu in 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES UND AUSBLICK</p><h1 id="news-title">Play-Neuigkeiten</h1></div></div>
 <section class="update-preview" id="updates-212" aria-labelledby="update-212-title">
-  <p class="eyebrow">IN ENTWICKLUNG</p>
-  <h2 id="update-212-title">NV-UV Play v2.1.2</h2>
-  <p>Die neuen Funktionen und Fehlerbehebungen sind im Testbuild umgesetzt und werden vor der Veröffentlichung noch getestet.</p>
-  <ul>
-    <li><strong>Hauptansicht:</strong> Settings steht als umrahmte Schaltfläche direkt neben Updates und Diagnostics. Autostart steht darüber; die Beschriftungen für Autostart und UI scaling sind besser lesbar.</li>
-    <li><strong>Update-Bereinigung:</strong> Alte Updatepakete und Installationsreste werden automatisch aufgeräumt. Fehlgeschlagene Updates werden nach sieben Tagen ohne Änderungen ebenfalls entfernt, sobald eine neuere Version erfolgreich läuft.</li>
-    <li><strong>DCC-Kompatibilität:</strong> Die Spielerkennung wurde für Helldivers 2 und weitere Spiele mit Anti-Cheat angepasst.</li>
-    <li><strong>DirectX 8 ohne RTSS:</strong> Erste Unterstützung für ältere Spiele wie Blitzkrieg. DCC und das Play-Overlay können dort FPS ohne RTSS erfassen.</li>
-    <li><strong>FPS-Limit und VSync:</strong> DCC zeigt die globalen NVIDIA-Treibereinstellungen an und überträgt eigene Änderungen in den Treiber. Beim Ausschalten von DCC wird der vorherige Zustand wiederhergestellt.</li>
-    <li><strong>Overlay:</strong> Die Grafik-API lässt sich als Messwert einblenden, einschließlich einer getrennten Anzeige von DX11 und DX12 bei eindeutiger Erkennung. Ein neues Standardlayout mit zwei Spalten und Graph wird verwendet, wenn noch keine Overlay-Einstellungen gespeichert sind. Eigene Einstellungen bleiben erhalten.</li>
-    <li><strong>DCC-Recovery:</strong> Die Wiederherstellung nach Änderungen der Treiberumgebung wurde verbessert. Gespeicherte Profile bleiben erhalten. Der Hinweis danach erklärt die erneute UV-Profilauswahl über die Slots; DCC bleibt ausgeschaltet.</li>
-    <li><strong>Spieledatenbank:</strong> Version 2.37 mit 731 Einträgen ist enthalten.</li>
-  </ul>
+  <p class="eyebrow">NV-UV PLAY v2.1.2</p>
+  <h2 id="update-212-title">DCC-Profile behalten, Grafik-API im Blick</h2>
+  <p>DCC speichert gelernte Profile wieder zuverlässig und kann sie beim nächsten Spielstart übernehmen. Dazu kommen die Grafik-API im Overlay, ein verbesserter Frametime-Graph und die automatische Bereinigung alter Updates.</p>
+  <div class="update-grid">
+    <button type="button" data-open="dcc"><strong>Gelernte Profile wieder nutzen ↗</strong><span>Ein Fehler beim Speichern von DCC-Profilen wurde behoben. Gespeicherte Werte stehen beim nächsten Spielstart wieder zur Verfügung.</span></button>
+    <button type="button" data-open="dcc"><strong>Spielerkennung und Alt-Tab ↗</strong><span>Die Erkennung und Rückkehr nach Alt-Tab wurden für Spiele mit Anti-Cheat wie Helldivers 2 verbessert. Auch überhöhte FPS-Werte wurden korrigiert.</span></button>
+    <button type="button" data-open="overlay"><strong>Grafik-API als Reading ↗</strong><span>Unter Readings lässt sich Graphics API auswählen. So stehen beispielsweise DX11, DX12 oder Vulkan direkt neben deinen anderen Messwerten.</span></button>
+    <button type="button" data-open="overlay"><strong>Ein Ausgangspunkt fürs Overlay ↗</strong><span>Ohne eigenes Overlay dient das DEV-Layout als Vorlage. Es kann angepasst und unter einem eigenen Namen gespeichert werden. Vorhandene Layouts und Zuordnungen bleiben erhalten.</span></button>
+    <button type="button" data-open="updates"><strong>Alte Updates werden aufgeräumt ↗</strong><span>Alte Updatepakete und Installationsreste werden nach erfolgreichen Updates bereinigt. Auch bestätigte fehlgeschlagene Updates bleiben nicht dauerhaft liegen.</span></button>
+    <button type="button" data-open="settings"><strong>Settings leichter finden ↗</strong><span>Der Settings-Button ist nun besser erkennbar. Das aktuelle Hauptfenster mit den neuen Positionen ist auf der Startseite zu sehen.</span></button>
+  </div>
+  <div class="release-examples">
+    <section>
+      <h3>Beispiel: ein vorhandenes 120-FPS-Limit</h3>
+      <p>Ist global im NVIDIA-Treiber ein Limit von 120 FPS gesetzt, zeigt DCC diesen Wert an. Das gilt auch für die globale VSync-Einstellung. Änderungen über DCC gelten während der Nutzung; beim Ausschalten wird der vorherige Treiberzustand wiederhergestellt.</p>
+      <figure><a href="assets/play-dcc-v2.1.2.png" target="_blank" rel="noopener" aria-label="DCC-Einstellungen in voller Größe öffnen"><img src="assets/play-dcc-v2.1.2.png" width="1350" height="1368" loading="lazy" alt="DCC settings in Play 2.1.2 mit 120-FPS-Limit, globalem VSync und Learned profiles"></a><figcaption>Play 2.1.2: Originalfenster mit simulierten Treiberwerten. Bild anklicken zum Vergrößern.</figcaption></figure>
+    </section>
+    <section>
+      <h3>Beispiel: die Grafik-API einblenden</h3>
+      <p>Öffne <strong>Overlay settings → Readings</strong> und aktiviere <strong>Graphics API</strong>. Position und Farbe lassen sich wie bei den anderen Readings anpassen.</p>
+      <figure class="api-example"><a href="assets/play-api-v2.1.2.png" target="_blank" rel="noopener" aria-label="Grafik-API im Overlay in voller Größe öffnen"><img src="assets/play-api-v2.1.2.png" width="360" height="47" loading="lazy" alt="Play-Overlay mit API DX12 und 120 FPS"></a><figcaption>Play 2.1.2: DX12 und FPS mit Beispieldaten.</figcaption></figure>
+      <p>Die Anzeige umfasst DirectX 8, 9, 10, 11 und 12 sowie Vulkan und OpenGL. Die Erkennung hängt vom Spiel und Darstellungsmodus ab. Bei uneindeutiger DirectX-Zuordnung bleibt DXGI stehen. Die OpenGL-Erkennung ergänzt keine FPS-Erfassung.</p>
+      <h3>Messwerte nach deinen Vorstellungen</h3>
+      <p>Ein Overlay kann Messwerte in zwei Spalten und den Frametime-Verlauf darunter zeigen. Der Graph wurde verbessert. Layouts lassen sich weiter individuell zusammenstellen und speichern.</p>
+      <figure class="overlay-example"><a href="assets/play-overlay-example-v2.1.2.png" target="_blank" rel="noopener" aria-label="Overlay-Beispiel in voller Größe öffnen"><img src="assets/play-overlay-example-v2.1.2.png" width="540" height="386" loading="lazy" alt="Play 2.1.2 Overlay mit zwei Messwertspalten und Frametime-Graph"></a><figcaption>Original-Overlay aus Play 2.1.2 mit Beispieldaten. Keine Einstellungsempfehlung.</figcaption></figure>
+    </section>
+  </div>
+  <div class="curve-workflow">
+    <section><h3>Wenn ein Spiel nicht erkannt wird</h3><p>Prüfe, ob es in der <strong>Game Library</strong> steht, und füge es bei Bedarf manuell hinzu. Für die Aufnahme in die gemeinsame Bibliothek gibt es <strong>Request a game</strong>. Datenbank 2.39 enthält 734 Einträge, darunter Life is Strange, Life is Strange Remastered und Blitzkrieg. Die EXE-Zuordnung von Golf It! wurde korrigiert.</p></section>
+    <section><h3>Was mit Update-Resten passiert</h3><p>Bestätigte fehlgeschlagene Updates werden nach sieben Tagen ohne Änderungen entfernt, sobald eine neuere Play-Version erfolgreich gestartet wurde und mindestens eine Minute läuft. Aktive Updates und unbekannte Dateien bleiben geschützt. Neue Update-Dateien liegen unter <strong>ProgramData/NV-UV-Play/Updates</strong>; der frühere CurveLab-Updateordner wird mitbereinigt.</p></section>
+    <section><h3>DCC nach Änderungen wiederherstellen</h3><p><strong>Recover DCC</strong> kann einen blockierten Zustand nach Änderungen der Treiberumgebung nach Bestätigung und GPU-Prüfung wiederherstellen. Gespeicherte Profile bleiben erhalten. DCC bleibt zunächst aus; die automatische Profilumschaltung pausiert bis zur Fortsetzung. Der Hinweis verweist auf die UV-Profilplätze.</p></section>
+    <section><h3>Version 2.1.2 laden</h3><p>Das Update ist über <strong>Updates</strong> in Play und als Portable-ZIP verfügbar.</p><p><a class="text-link" href="https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.2" target="_blank" rel="noopener noreferrer">Download und vollständige Patchnotes ↗</a></p></section>
+  </div>
 </section>
 <section class="update-preview" id="updates-211" aria-labelledby="update-211-title">
   <p class="eyebrow">NV-UV PLAY v2.1.1</p>

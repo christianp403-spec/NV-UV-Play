@@ -127,5 +127,10 @@ window.PLAY_UI_EN = {
   "Flatline-Beispiel im aktuellen Kurveneditor": "Flatline example in the current curve editor",
   "DCC-Beispiele": "DCC examples",
   "Keine Wiederherstellung nötig": "No recovery needed",
-  "Wiederherstellung erforderlich": "Recovery required"
+  "Wiederherstellung erforderlich": "Recovery required",
+  "NV-UV Play 2.1.2 Hauptfenster mit Profilplätzen und UV Pilot": "NV-UV Play 2.1.2 main window with profile slots and UV Pilot",
+  "Play 2.1.2 · MFG-Beispielprofil mit simuliertem GPU-Zustand.": "Play 2.1.2 · MFG example profile with simulated GPU state.",
+  "Play 2.1.2 · Recover DCC bleibt sichtbar und ist ohne ausstehende Wiederherstellung ausgegraut.": "Play 2.1.2 · Recover DCC remains visible and is greyed out when no recovery is pending.",
+  "Play 2.1.2 · Simulierter Wiederherstellungsfall. Recover DCC leuchtet links neben Cancel. Gespeicherte Profile bleiben erhalten.": "Play 2.1.2 · Simulated recovery case. Recover DCC lights up to the left of Cancel. Saved profiles are preserved.",
+  "Play 2.1.2 · Monitorwahl und Overlay-Vorschau mit simulierten Messwerten.": "Play 2.1.2 · Monitor selection and overlay preview with simulated readings."
 };

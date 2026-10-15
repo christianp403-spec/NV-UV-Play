@@ -35,7 +35,7 @@
   // Hotspots use percentages of the unchanged product capture, never reconstructed UI.
   const s = (feature, control, rect, label) => ({feature,control,rect,label});
   const screens = {
-    main:{"file": "play-main-v2.1.1.png", "width": 533, "height": 980, "shape": "main", "alt": "NV-UV Play 2.1.1 Hauptfenster mit Profilplätzen und UV Pilot", "caption": "Play 2.1.1 · MFG-Beispielprofil mit simuliertem GPU-Zustand.",
+    main:{"file": "play-main-v2.1.2.png", "width": 533, "height": 980, "shape": "main", "alt": "NV-UV Play 2.1.2 Hauptfenster mit Profilplätzen und UV Pilot", "caption": "Play 2.1.2 · MFG-Beispielprofil mit simuliertem GPU-Zustand.",
       spots:[
       s('profiles',1,[5.253,22.143,13.696,5.204],'Eco'),
       s('profiles',5,[20.45,22.143,13.696,5.204],'MFG'),
@@ -52,10 +52,10 @@
       s('stabilizer',null,[5.253,60.204,89.681,5.204],'Stabilizer'),
       s('hz',null,[5.253,65.408,89.681,5.204],'Smart Hz'),
       s('overlay',null,[5.253,70.612,89.681,5.204],'Overlay'),
-      s('settings',null,[5.253,78.469,17.073,4.184],'Settings'),
-      s('updates',null,[54.597,78.469,17.073,4.184],'Updates'),
-      s('diagnostics',null,[73.358,78.469,21.576,4.184],'Diagnostics'),
-      s('settings',1,[5.253,83.163,89.681,5.204],'Autostart'),
+      s('settings',null,[30.019, 83.776, 22.889, 4.184],'Settings'),
+      s('updates',null,[54.597, 83.776, 17.073, 4.184],'Updates'),
+      s('diagnostics',null,[73.358, 83.776, 21.576, 4.184],'Diagnostics'),
+      s('settings',1,[5.253, 78.061, 89.681, 5.204],'Autostart'),
       s('settings',2,[19.137,95.408,21.013,3.367],'UI scaling')]},
     curve:{"file": "play-curve-v2.1.1.png", "width": 1650, "height": 1218, "shape": "wide", "alt": "Kurveneditor in Play 2.1.1 mit Punktbearbeitung und getrennten Aktionen", "caption": "Play 2.1.1 · Kurveneditor mit einer simulierten Beispielkurve und ungespeicherten Punktänderungen.",
       spots:[s("curve",1,[2.061, 30.624, 72.424, 51.97],"Voltage / frequency curve"),
@@ -81,15 +81,15 @@
       s("curve",20,[84.5, 60.5, 1.8, 4.3],"Flatline options"),
       s("curve",26,[27.5, 87.7, 8.2, 3.8],"Discard draft"),
       s("profiles",7,[56.8, 6.6, 7.6, 5.4],"Default")]},
-    dcc:{"file": "play-dcc-v2.1.1.png", "width": 1350, "height": 1368, "shape": "dcc", "alt": "DCC-Einstellungen mit ausgegrautem Recover DCC", "caption": "Play 2.1.1 · Recover DCC bleibt sichtbar und ist ohne ausstehende Wiederherstellung ausgegraut.",
+    dcc:{"file": "play-dcc-v2.1.2.png", "width": 1350, "height": 1368, "shape": "dcc", "alt": "DCC-Einstellungen mit ausgegrautem Recover DCC", "caption": "Play 2.1.2 · Recover DCC bleibt sichtbar und ist ohne ausstehende Wiederherstellung ausgegraut.",
       spots:[s("dcc",0,[4, 12.6, 90, 5],"DCC algorithm (automatic)"),
       s("dcc",1,[4, 20.3, 90, 9],"NVIDIA Power Efficiency Mode"),
       s("dcc",2,[6.5, 30, 87.5, 11],"Set efficiency target manually"),
       s("dcc",8,[4, 47.5, 90, 9],"NVIDIA Max Frame Rate"),
       s("dcc",9,[4, 57.5, 90, 9],"Global NVIDIA VSync"),
       s("dcc",10,[4, 72.5, 90, 8],"Enable performance logging"),
-      s("dcc",11,[4, 82.8, 14, 3.2],"Learned profiles"),
-      s("dcc",13,[18.8, 82.8, 14, 3.2],"Blocked profiles"),
+      s("dcc",11,[4, 86.1, 14, 3.6],"Learned profiles"),
+      s("dcc",13,[18.8, 86.1, 14, 3.6],"Blocked profiles"),
       s("dcc",16,[66, 94.4, 11.2, 3.5],"Recover DCC"),
       s("dcc",6,[88.3, 94.4, 9.3, 3.5],"Apply")]},
     stabilizer:{file:'play-stabilizer-original.png',width:630,height:960,shape:'portrait',alt:'Originale Stabilizer Einstellungen mit Strategie, Takt- und Spannungsschritten sowie Grenzen',caption:'Originalaufnahme · Stabilizer aus dem lokalen Play-v2.0.9-Teststand. Die angezeigten Werte sind keine Empfehlung für deine GPU.',
@@ -103,7 +103,7 @@
       s('stabilizer',5,[52,78,22,6],'Cancel'),
       s('stabilizer',5,[75,78,21,6],'Save')
     ]},
-    overlay:{"file": "play-overlay-v2.1.1.png", "width": 1620, "height": 1275, "shape": "wide", "alt": "Overlay-Einstellungen mit Monitor-Auswahl und Vorschau", "caption": "Play 2.1.1 · Monitorwahl und Overlay-Vorschau mit simulierten Messwerten.",
+    overlay:{"file": "play-overlay-v2.1.2.png", "width": 1620, "height": 1275, "shape": "wide", "alt": "Overlay-Einstellungen mit Monitor-Auswahl und Vorschau", "caption": "Play 2.1.2 · Monitorwahl und Overlay-Vorschau mit simulierten Messwerten.",
       spots:[s("overlay",0,[1.8, 3.8, 23, 4],"Enable overlay"),
       s("overlay",1,[78, 3.8, 20, 4],"Display on"),
       s("overlay",11,[1.8, 10.7, 5.6, 3.6],"Display"),
@@ -217,7 +217,7 @@
       s("profiles",2,[3.3, 59.0, 93.3, 8],"Balanced"),
       s("profiles",3,[3.3, 68.5, 93.3, 8],"Performance"),
       s("profiles",4,[3.3, 78.0, 93.3, 8],"Max")]};
-  screens.dccrecover = {"file": "play-dccrecover-v2.1.1.png", "width": 1350, "height": 1368, "shape": "dcc", "alt": "DCC-Einstellungen mit aktivem Recover DCC und Wiederherstellungshinweis", "caption": "Play 2.1.1 · Simulierter Wiederherstellungsfall. Recover DCC leuchtet links neben Cancel. Gespeicherte Profile bleiben erhalten.",
+  screens.dccrecover = {"file": "play-dccrecover-v2.1.2.png", "width": 1350, "height": 1368, "shape": "dcc", "alt": "DCC-Einstellungen mit aktivem Recover DCC und Wiederherstellungshinweis", "caption": "Play 2.1.2 · Simulierter Wiederherstellungsfall. Recover DCC leuchtet links neben Cancel. Gespeicherte Profile bleiben erhalten.",
       spots:[s("dcc",16,[2.4, 8.7, 93.3, 10.5],"DCC restoration"),
       s("dcc",0,[4, 24.8, 90, 7],"DCC algorithm (automatic)"),
       s("dcc",1,[4, 31.8, 90, 10],"NVIDIA Power Efficiency Mode"),
@@ -287,7 +287,7 @@
   }
   function screenMarkup(key, highlighted) {
     const screen = screens[key];
-    return `<img src="assets/${screen.file}?v=20261013-v2.1.1" alt="${esc(screen.alt)}" width="${screen.width}" height="${screen.height}">${screen.spots.map((spot,index)=>hotspotMarkup(spot,index,key,highlighted)).join('')}`;
+    return `<img src="assets/${screen.file}?v=20261015-v2.1.2" alt="${esc(screen.alt)}" width="${screen.width}" height="${screen.height}">${screen.spots.map((spot,index)=>hotspotMarkup(spot,index,key,highlighted)).join('')}`;
   }
   function setCategory(key, focus=false) {
     if (!Object.hasOwn(categories,key)) return false;
