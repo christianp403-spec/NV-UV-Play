@@ -8,11 +8,11 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <link rel="stylesheet" href="styles.css?v=20261015-v2.1.2">
+  <link rel="stylesheet" href="styles.css?v=20261017-development-213">
   <script src="guide.en.js?v=20261015-v2.1.2" defer></script>
   <script src="guide.ui.en.js?v=20261015-v2.1.2" defer></script>
   <script src="guide-app.js?v=20261015-v2.1.2" defer></script>
-  <script src="site-navigation.js?v=20261015-v2.1.2" defer></script>
+  <script src="site-navigation.js?v=20261017-development-213" defer></script>
 </head>
 <body data-page="news">
 <a class="skip-link" href="#top">Skip to content</a>
@@ -22,9 +22,19 @@
   <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="neuigkeiten.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-212">Current: 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">New in 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-213">In development: 2.1.3</a><a href="#updates-212">Current: 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">New in 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
-    <div class="section-heading"><div><p class="eyebrow">UPDATES AND WHAT’S NEXT</p><h1 id="news-title">Play News</h1></div></div>
+    <div class="section-heading"><div><p class="eyebrow">UPDATES AND DEVELOPMENT</p><h1 id="news-title">Play News</h1></div></div>
+<section class="update-preview" id="updates-213" aria-labelledby="update-213-title">
+  <p class="eyebrow">IN DEVELOPMENT: 2.1.3</p>
+  <h2 id="update-213-title">NV-UV Play v2.1.3</h2>
+  <p>These changes are implemented in the current development build. Testing for version 2.1.3 is ongoing.</p>
+  <ul>
+    <li><strong>Overlay readings:</strong> Labels have been revised and can be edited directly in the selection list and the preview. Custom names can be reset to their defaults.</li>
+    <li><strong>Celsius and Fahrenheit:</strong> Temperatures can be displayed in °C or °F throughout the app. The overlay follows the app setting or uses a separate unit of your choice.</li>
+    <li><strong>Overlay and G-Sync:</strong> Investigation continues into the bug that disables G-Sync on affected systems while the overlay is visible. A fix has not yet been confirmed.</li>
+  </ul>
+</section>
 <section class="update-preview" id="updates-212" aria-labelledby="update-212-title">
   <p class="eyebrow">NV-UV PLAY v2.1.2</p>
   <h2 id="update-212-title">Keep DCC profiles, see your graphics API</h2>
@@ -89,6 +99,8 @@
     <section><h3>More room for the curve</h3><p>The Curve editor keeps the graph visible while settings scroll separately. Bottom actions remain accessible at small window sizes and high UI scaling. Game override & presets and Advanced options are more compact too.</p></section>
   </div>
 </section>
+<details class="news-archive">
+  <summary>NV-UV Play v2.0.16</summary>
 <section class="update-preview" id="updates-2016" aria-labelledby="update-2016-title">
   <p class="eyebrow">ALREADY IN NV-UV PLAY v2.0.16</p>
   <h2 id="update-2016-title">Check curves and manage profiles more easily</h2>
@@ -98,6 +110,9 @@
     <li><strong>Profiles and display:</strong> Clearer actions for using, editing and reviewing history; fixes for saved curves, GPU readings and repeated overlay scaling.</li>
   </ul>
 </section>
+</details>
+<details class="news-archive">
+  <summary>NV-UV Play v2.0.15</summary>
 <section class="update-preview" id="updates-2015" aria-labelledby="update-title">
   <p class="eyebrow">NEW IN v2.0.15</p><h2 id="update-title">Shape your curve</h2>
   <p>Choose your target voltage and clock in <strong>Curve editor</strong>. Use the arrow beside <strong>Flatline</strong>, or right-click the button, to choose how Play adjusts the curve.</p>
@@ -110,6 +125,7 @@
 <section><h3>Matched to your GPU</h3><p>Manual rises require <strong>Gradient Lock</strong> and, on Ampere, the optional gradient setting. Turing uses its existing preset behavior without a manual rise start. The normal Blackwell view begins at 800 mV; 850 mV is the recommended rise start.</p></section></div>
   <p class="notice">New manual Flatline profiles require <strong>Play 2.0.15.1 or newer</strong>. Saved curves are preserved. To use the corrected calculation, choose Flatline again, review the draft and apply it. Test your own settings for stability on your card.</p>
 </section>
+</details>
   </section>
 </main>
 <footer class="site-footer wrap"><div><strong>NV-UV <span>Play</span></strong><p>Efficiency wins.</p></div><div class="footer-links"><a href="https://github.com/christianp403-spec/NV-UV-Play" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">License and liability disclaimer ↗</a><a href="https://github.com/christianp403-spec/NV-UV-Play/issues" target="_blank" rel="noopener noreferrer">Feedback ↗</a><a href="https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/" target="_blank" rel="noopener noreferrer">Community ↗</a><button type="button" id="open-contact" aria-haspopup="dialog" aria-controls="contact-dialog">Contact</button></div></footer>

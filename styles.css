@@ -228,3 +228,11 @@ body.story-image-open{overflow:hidden}#story-image-dialog{padding:0;width:min(15
 .release-examples figure>a{display:block;width:fit-content;max-width:100%}.release-examples figcaption{font-size:12px;line-height:1.6;color:var(--muted);margin-top:10px}
 .release-examples .api-example{max-width:360px}.release-examples .overlay-example{max-width:540px}
 @media(max-width:800px){.release-examples{grid-template-columns:minmax(0,1fr);gap:20px}}
+
+/* Older release posts remain available behind their version headings. */
+.news-archive{margin-top:24px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.news-archive>summary{cursor:pointer;padding:18px 24px;font-size:18px;font-weight:600;color:var(--text)}
+.news-archive>summary::marker{color:var(--accent)}
+.news-archive[open]>summary{border-bottom:1px solid var(--line)}
+.news-archive>.update-preview{margin:0;padding:24px;border:0;background:transparent}
+@media(max-width:600px){.news-archive>summary,.news-archive>.update-preview{padding:18px}}
