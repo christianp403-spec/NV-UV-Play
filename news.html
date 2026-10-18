@@ -23,62 +23,55 @@
   <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="neuigkeiten.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-213">Preview: 2.1.3</a><a href="#updates-212">Current: 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">New in 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-213">New in 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES AND DEVELOPMENT</p><h1 id="news-title">Play News</h1></div></div>
 <section class="update-preview" id="updates-213" aria-labelledby="update-213-title">
-  <p class="eyebrow">NV-UV PLAY v2.1.3 · PREVIEW</p>
-  <h2 id="update-213-title">Your overlay, your labels</h2>
-  <p class="release-intro">Give readings names that make sense to you, keep display status above the graph and choose the temperature unit you prefer.</p>
-  <p class="release-availability"><strong>Before release:</strong> These features are implemented in the 2.1.3 preview. The public download is still <a href="#updates-212">version 2.1.2</a>.</p>
+  <p class="eyebrow">NEW IN VERSION 2.1.3</p>
+  <h2 id="update-213-title">Better overlay customization</h2>
+  <p class="release-intro">Custom names, organized readings and new status indicators. Plus your choice of Celsius or Fahrenheit.</p>
   <nav class="release-topics" aria-label="Features in version 2.1.3">
     <a href="#readings-213">Names &amp; categories</a><a href="#status-213">Display status</a><a href="#dev-213">DEV! template</a><a href="#temperature-213">°C / °F</a><a href="#stabilizer-213">Stabilizer</a><a href="#compatibility-213">Compatibility</a>
   </nav>
   <div class="release-feature-lead">
     <section id="dev-213" aria-labelledby="dev-213-title">
-      <h3 id="dev-213-title">A fresh starting point with DEV!</h3>
-      <p>The updated <strong>DEV!</strong> template puts API, resolution, HDR and G-SYNC above frametime. Wider columns, a rearranged grid and 71% background opacity leave more room for names and values.</p>
-      <ol class="release-steps">
-        <li>Open <strong>Overlay → Profiles</strong>. Save your current arrangement as a profile if you want to keep it alongside the new one.</li>
-        <li>Select <strong>Use DEV! template</strong>.</li>
-        <li>Choose your readings, names and colors, then save your own overlay profile.</li>
-      </ol>
-      <p>Updating Play preserves existing layouts. You choose when to load the new template. Overlay profiles are separate from GPU tuning profiles.</p>
+      <h3 id="dev-213-title">The new DEV! template</h3>
+      <p><strong>DEV!</strong> offers wider columns, a rearranged grid and 71% background opacity. API, resolution, HDR and G-SYNC sit above the frametime graph.</p>
+      <p>Load it through <strong>Overlay → Profiles → Use DEV! template</strong>. Save your current layout as a profile first if you want to keep it. Updating Play alone preserves existing layouts.</p>
     </section>
-    <figure class="release-dev-image"><a href="assets/play-overlay-dev-v2.1.3.png" target="_blank" rel="noopener" aria-label="Enlarge the DEV! overlay"><img src="assets/play-overlay-dev-v2.1.3.png" width="344" height="405" alt="DEV! overlay with four status badges, frametime and two columns of readings"></a><figcaption>Actual 2.1.3 overlay with simulated readings and display status. The values are examples, not a tuning recommendation.</figcaption></figure>
+    <figure class="release-dev-image"><a href="assets/play-overlay-dev-v2.1.3.png" target="_blank" rel="noopener" aria-label="Enlarge the DEV! overlay"><img src="assets/play-overlay-dev-v2.1.3.png" width="344" height="405" alt="DEV! overlay with four status badges, frametime and two columns of readings"></a><figcaption>DEV! with simulated readings and status indicators.</figcaption></figure>
   </div>
   <section class="release-feature-section" id="readings-213" aria-labelledby="readings-213-title">
-    <h3 id="readings-213-title">Find readings, then make them yours</h3>
-    <p><strong>GPU, CPU and General</strong> group the readings by purpose. Default names identify the component: GPU usage, GPU temperature or CPU power instead of an ambiguous Usage, Temp or Power.</p>
-    <p>Click a name in <strong>Readings</strong> or in the preview to edit it directly. Enter or leaving the field saves it; Escape cancels the edit. The small reset arrow restores the default name. Custom names are saved with the overlay profile.</p>
-    <p><strong>Example:</strong> rename GPU power to <strong>My board power</strong>. The reading still reports watts; only its label changes. Drag a value in the preview to move its tile. Select a whole tile or badge and press Delete to remove it. Inside a name field, Delete edits text as usual.</p>
-    <figure class="release-wide-image"><a href="assets/play-overlay-readings-v2.1.3.png" target="_blank" rel="noopener" aria-label="Enlarge the readings and name editor"><img src="assets/play-overlay-readings-v2.1.3.png" width="1350" height="1063" loading="lazy" alt="Readings grouped by component, with GPU power renamed to My board power in both the list and preview"></a><figcaption>Play 2.1.3: direct editing in the list and preview, with example readings. Select the image to enlarge.</figcaption></figure>
-    <p>Mouse-wheel scrolling now works throughout the overlay settings, using the existing scrollbar on the right.</p>
+    <h3 id="readings-213-title">Organize and rename readings</h3>
+    <p>The <strong>GPU, CPU and General</strong> categories make readings easier to find. Clear names such as GPU usage and CPU temperature identify what is measured.</p>
+    <p>Click a name in <strong>Readings</strong> or the preview. Enter or leaving the field saves it, Escape cancels, and the reset arrow restores the default. Custom names are saved with the overlay profile.</p>
+    <p>Drag a value to move it. Delete removes a selected tile or badge; inside a name field, it deletes text. Mouse-wheel scrolling works throughout the overlay settings.</p>
+    <figure class="release-wide-image"><a href="assets/play-overlay-readings-v2.1.3.png" target="_blank" rel="noopener" aria-label="Enlarge the readings and name editor"><img src="assets/play-overlay-readings-v2.1.3.png" width="1350" height="1063" loading="lazy" alt="Readings grouped by component, with GPU power renamed to My board power in both the list and preview"></a><figcaption>Example: GPU power renamed to “My board power” in the list and preview. Click to enlarge.</figcaption></figure>
   </section>
   <section class="release-feature-section" id="status-213" aria-labelledby="status-213-title">
-    <h3 id="status-213-title">Four small badges, separate from the grid</h3>
-    <p>Under <strong>Overlay → Readings → General</strong>, enable each status independently. They stay above the frametime graph. Existing enabled API or status readings move out of the grid while retaining their names and colors.</p>
+    <h3 id="status-213-title">Display status above the graph</h3>
+    <p>Enable each indicator under <strong>Overlay → Readings → General</strong>. Existing status readings move above the grid and keep their names and colors.</p>
     <dl class="release-status-grid">
-      <div><dt>API</dt><dd>The detected graphics API, such as DX11, DX12 or Vulkan. Identification depends on the game; ambiguous DirectX results remain DXGI.</dd></div>
-      <div><dt>Resolution</dt><dd>The game window’s client size in physical pixels, or the selected desktop monitor’s full size. It does not show the internal resolution used by DLSS, FSR or dynamic resolution.</dd></div>
-      <div><dt>HDR</dt><dd>Off, HDR10, HDR10+ or Unknown for the game’s display. This describes display output; it does not distinguish native game HDR, Auto HDR or SDR content on an HDR desktop.</dd></div>
-      <div><dt>G-SYNC / VRR</dt><dd>Active, Inactive or Unknown from the driver-reported display status. Active is not a guarantee that variable refresh is working correctly in every game. Unknown means no reliable status is available.</dd></div>
+      <div><dt>API</dt><dd>Detected graphics API, such as DX11, DX12 or Vulkan. Ambiguous DirectX results remain DXGI.</dd></div>
+      <div><dt>Resolution</dt><dd>Game window client area or desktop monitor in physical pixels. Does not show internal DLSS, FSR or dynamic resolution.</dd></div>
+      <div><dt>HDR</dt><dd>Display output: Off, HDR10, HDR10+ or Unknown. Does not distinguish native game HDR, Auto HDR and SDR content on an HDR desktop.</dd></div>
+      <div><dt>G-SYNC / VRR</dt><dd>Driver status: Active, Inactive or Unknown. Active does not confirm correct operation in a game; Unknown means no reliable status is available.</dd></div>
     </dl>
   </section>
   <section class="release-feature-section" id="temperature-213" aria-labelledby="temperature-213-title">
-    <h3 id="temperature-213-title">Celsius or Fahrenheit, with a separate overlay choice</h3>
+    <h3 id="temperature-213-title">Celsius or Fahrenheit</h3>
     <div class="release-temperature-grid">
-      <div><p>Under <strong>Settings → Advanced options → Temperature unit</strong>, select Celsius or Fahrenheit for Play. Temperature displays, fan-curve inputs and scanner readings use the selected unit.</p>
-        <p>Under <strong>Overlay → Readings → Temperature unit</strong>, choose <strong>Use app setting</strong>, Celsius or Fahrenheit. This choice affects only overlay readings and is saved with the overlay profile.</p>
-        <p><strong>Example:</strong> keep Play in Celsius and select Fahrenheit for the overlay. A GPU temperature of 60 °C appears as 140 °F there. Changing units does not change the underlying fan curve or cooling settings.</p></div>
-      <figure><a href="assets/play-temperature-v2.1.3.png" target="_blank" rel="noopener" aria-label="Enlarge the temperature unit in Advanced options"><img src="assets/play-temperature-v2.1.3.png" width="813" height="938" loading="lazy" alt="Advanced Options with the app-wide Temperature unit selector at the top"></a><figcaption>Play 2.1.3: the app-wide setting is at the top of Advanced options. The separate overlay choice is shown in the Readings image above.</figcaption></figure>
+      <div><p><strong>Settings → Advanced options → Temperature unit</strong> sets the unit for Play, including fan-curve inputs and scanner readings.</p>
+        <p>Under <strong>Overlay → Readings → Temperature unit</strong>, the overlay can follow the app or use its own unit. The choice is saved with the overlay profile.</p>
+        <p>Play can show 60 °C while the overlay shows 140 °F. Cooling settings remain unchanged.</p></div>
+      <figure><a href="assets/play-temperature-v2.1.3.png" target="_blank" rel="noopener" aria-label="Enlarge the temperature unit in Advanced options"><img src="assets/play-temperature-v2.1.3.png" width="813" height="938" loading="lazy" alt="Advanced Options with the app-wide Temperature unit selector at the top"></a><figcaption>The app-wide unit under Advanced options.</figcaption></figure>
     </div>
   </section>
   <div class="curve-workflow release-feature-section">
-    <section id="stabilizer-213"><h3>Open Stabilizer corrections directly</h3><p><strong>Stabilizer Settings → Open corrections</strong> opens saved adjustments. Pending settings remain in place when you return. Stabilizer reacts to detected GPU driver crashes; a game closing by itself is not necessarily a GPU driver crash.</p></section>
-    <section><h3>Smaller changes you can see</h3><p>The update action now says <strong>Restart NV-UV Play and install update</strong>. Patch notes have more room, with older versions expandable individually. Green outlines around UV Try, Auto-UV and Scanner are consistent, and rounded dialog buttons remain complete at fractional display scales.</p></section>
-    <section><h3>Game database 2.40</h3><p>The bundled database contains 735 games. <strong>Clive Barker’s Hellraiser: Revival</strong> has been added, and Rust now suggests <strong>Balanced</strong> as a starting profile. Test any profile on your own system.</p></section>
-    <section id="compatibility-213"><h3>Overlay compatibility and diagnostics</h3><p><strong>Borderless windowed mode is recommended. Exclusive fullscreen is unsupported.</strong> Reports of G-SYNC behaving differently while the overlay is visible are still being investigated. Version 2.1.3 does not claim to fix this issue.</p><p>Reports now include more overlay and display information. If you are affected, send a diagnostic report through Play and include the game, display mode and what changes when you toggle the overlay. The default shortcut is <strong>Ctrl + Alt + O</strong>.</p></section>
+    <section id="stabilizer-213"><h3>Open Stabilizer corrections</h3><p><strong>Stabilizer Settings → Open corrections</strong> shows saved adjustments without losing pending settings. Stabilizer reacts to detected GPU driver crashes.</p></section>
+    <section><h3>Interface improvements</h3><p>Clearer update text, larger patch notes with expandable versions, plus corrected green outlines and rounded dialog buttons.</p></section>
+    <section><h3>Game database 2.40</h3><p>735 games, now including <strong>Clive Barker’s Hellraiser: Revival</strong>. Rust suggests <strong>Balanced</strong> as its starting profile.</p></section>
+    <section id="compatibility-213"><h3>Compatibility and diagnostics</h3><p><strong>Borderless windowed mode recommended; exclusive fullscreen unsupported.</strong> G-SYNC reports remain under investigation; a fix is not confirmed. Extended reports capture overlay and display information. Include the game, display mode and what changes when toggling with <strong>Ctrl + Alt + O</strong>.</p></section>
   </div>
 </section>
 <section class="update-preview" id="updates-212" aria-labelledby="update-212-title">
@@ -116,11 +109,16 @@
     <section><h3>Get version 2.1.2</h3><p>The update is available through <strong>Updates</strong> in Play and as a portable ZIP.</p><p><a class="text-link" href="https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.2" target="_blank" rel="noopener noreferrer">Download and complete patch notes ↗</a></p></section>
   </div>
 </section>
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.1</summary>
 <section class="update-preview" id="updates-211" aria-labelledby="update-211-title">
   <p class="eyebrow">NV-UV PLAY v2.1.1</p>
   <h2 id="update-211-title">Patch notes are back</h2>
   <p>Version 2.1.1 fixes the missing in-app patch notes after updating. The complete 2.1.0 notes are included. All features introduced in 2.1.0 remain available.</p>
 </section>
+</details>
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.0</summary>
 <section class="update-preview" id="updates-210" aria-labelledby="update-210-title">
   <p class="eyebrow">NV-UV PLAY v2.1.0</p>
   <h2 id="update-210-title">More control over profiles and your desktop</h2>
@@ -145,6 +143,7 @@
     <section><h3>More room for the curve</h3><p>The Curve editor keeps the graph visible while settings scroll separately. Bottom actions remain accessible at small window sizes and high UI scaling. Game override & presets and Advanced options are more compact too.</p></section>
   </div>
 </section>
+</details>
 <details class="news-archive">
   <summary>NV-UV Play v2.0.16</summary>
 <section class="update-preview" id="updates-2016" aria-labelledby="update-2016-title">
