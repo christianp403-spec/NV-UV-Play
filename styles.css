@@ -236,3 +236,32 @@ body.story-image-open{overflow:hidden}#story-image-dialog{padding:0;width:min(15
 .news-archive[open]>summary{border-bottom:1px solid var(--line)}
 .news-archive>.update-preview{margin:0;padding:24px;border:0;background:transparent}
 @media(max-width:600px){.news-archive>summary,.news-archive>.update-preview{padding:18px}}
+
+/* Version-specific feature descriptions and original product captures. */
+#updates-213{background:#101510;overflow-wrap:break-word}
+#updates-213 .release-intro{font-size:18px;max-width:820px;line-height:1.7}
+.release-availability{padding:12px 16px;border-left:3px solid var(--accent);background:#a2df3908}
+.release-availability a{text-decoration:underline;text-underline-offset:3px}
+.release-topics{display:flex;flex-wrap:wrap;gap:8px 24px;border-bottom:1px solid var(--line);padding:6px 0 18px;margin:24px 0 30px;font-size:13px}
+.release-topics a{display:flex;align-items:center;min-height:44px;color:#d4dfcb}
+.release-topics a:hover{color:var(--accent)}
+.release-feature-lead{display:grid;grid-template-columns:minmax(0,1fr) 344px;gap:36px;align-items:center}
+.release-feature-lead h3,.release-feature-section h3{font-size:22px;line-height:1.35;letter-spacing:-.015em;margin:0 0 16px}
+.release-feature-lead p,.release-feature-section p,.release-steps{font-size:15px;line-height:1.8}
+.release-steps{padding-left:22px;color:var(--muted)}
+.release-steps li{padding-left:4px;margin-bottom:10px}
+.release-feature-section{padding-top:30px;margin-top:30px;border-top:1px solid var(--line)}
+#updates-213 figure{margin:0}
+#updates-213 figure a{display:block;width:fit-content;max-width:100%}
+#updates-213 figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+#updates-213 figcaption{font-size:12px;line-height:1.65;color:var(--muted);margin-top:10px}
+#updates-213 .release-wide-image{max-width:1000px;margin:24px auto}
+.release-dev-image{width:344px;max-width:100%}
+.release-status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 30px;margin:22px 0 0}
+.release-status-grid div{border-left:2px solid #435438;padding-left:18px;min-width:0}
+.release-status-grid dt{font-size:16px;color:var(--accent);font-weight:600;margin-bottom:7px}
+.release-status-grid dd{font-size:14px;line-height:1.8;color:var(--muted);margin:0}
+.release-temperature-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:32px;align-items:start}
+.release-temperature-grid figure{max-width:500px}
+@media(max-width:800px){.release-feature-lead,.release-temperature-grid{grid-template-columns:minmax(0,1fr);gap:20px}.release-dev-image{justify-self:center}.release-temperature-grid figure{justify-self:center}.release-status-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){#updates-213 .release-intro{font-size:16px}.release-feature-lead h3,.release-feature-section h3{font-size:20px}.release-feature-lead p,.release-feature-section p,.release-steps{font-size:14px}.release-topics{gap:4px 20px}.release-feature-section{padding-top:24px;margin-top:24px}}
