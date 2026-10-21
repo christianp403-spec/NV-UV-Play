@@ -8,11 +8,11 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.4: geführte Vix-Integration für Power- und Offset-Limits, BIOS-Lüfterkurven und Zero RPM sowie genauere Kurvenprüfung.">
-  <link rel="stylesheet" href="styles.css?v=20261021-features-214">
+  <meta name="description" content="NV-UV Play 2.1.5 Hotfix: korrigierte Kurvenprüfung, Scanner und Vix-Kompatibilität sowie einheitliche Overlay-Abstände und graue Einstellungen.">
+  <link rel="stylesheet" href="styles.css?v=20261021-hotfix-215">
   <script src="guide.de.js?v=20261015-v2.1.2" defer></script>
   <script src="guide-app.js?v=20261015-v2.1.2" defer></script>
-  <script src="site-navigation.js?v=20261021-features-214" defer></script>
+  <script src="site-navigation.js?v=20261021-hotfix-215" defer></script>
 </head>
 <body data-page="news">
 <a class="skip-link" href="#top">Zum Inhalt</a>
@@ -22,9 +22,39 @@
   <div class="header-actions"><div class="language-switch" aria-label="Sprache"><span lang="de" aria-current="page">DE</span><a href="news.html" lang="en" hreflang="en" aria-label="Switch to English" data-language-switch>EN</a></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-214">In Version 2.1.4</a><a href="#updates-213">In Version 2.1.3</a><a href="#updates-212">In Version 2.1.2</a><a href="#updates-211">In Version 2.1.1</a><a href="#updates-210">In Version 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-215">In Version 2.1.5</a><a href="#updates-214">In Version 2.1.4</a><a href="#updates-213">In Version 2.1.3</a><a href="#updates-212">In Version 2.1.2</a><a href="#updates-211">In Version 2.1.1</a><a href="#updates-210">In Version 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES UND ENTWICKLUNG</p><h1 id="news-title">Play-Neuigkeiten</h1></div></div>
+<section class="update-preview" id="updates-215" aria-labelledby="update-215-title">
+  <p class="eyebrow">NEU IN VERSION 2.1.5</p>
+  <h2 id="update-215-title">Hotfix für Kurvenprüfung, Scanner und Vix</h2>
+  <p class="release-intro">Eine zusätzliche Prüfung in 2.1.4 konnte korrekt angewendete Kurven ablehnen. Der Hotfix entfernt diese Prüfung, korrigiert einen Scanner-Abbruch und gibt Vix auf den vom Loader unterstützten Treibern wieder frei.</p>
+  <section class="release-feature-section" id="curves-215">
+    <h3>Kurvenabweichungen bleiben in der Diagnose</h3>
+    <p>Die mit 2.1.4 eingeführte Kurvenprüfung war zu restriktiv. Das Ziel bleibt, möglichst saubere und verlässliche Ergebnisse zu erzielen. Taktabweichungen werden deshalb künftig in der Diagnose erfasst, um weitere Erkenntnisse zu sammeln und zukünftige Prüfungen zu verbessern. Play lehnt eine Kurve nicht mehr allein aufgrund dieser Abweichung ab. Geschriebene Offsets, Spannungspunkte und das erzeugte Plateau werden weiterhin geprüft.</p>
+    <p>Der Scanner berücksichtigt außerdem die vorhandene Behandlung eines unterstützten zusätzlichen Leerlaufpunkts bei RTX-30- und RTX-40-Karten. Eine Änderung an diesem Punkt konnte bisher einen Scan unterbrechen. Echte Schreibfehler und erkannte Instabilität beenden den Test weiterhin.</p>
+    <p>Betroffene Profile und Scans nach dem Update bitte erneut testen. Falls das Problem bleibt, hilft ein neuer Diagnosebericht.</p>
+  </section>
+  <section class="release-feature-section" id="vix-215">
+    <h3>Vix richtet sich nach der Treiberunterstützung des Loaders</h3>
+    <p>Die Vix-Integration in Play war zu restriktiv. Die zusätzliche Begrenzung nach Treiberversion entfällt. Maßgeblich ist jetzt die Kompatibilitätsprüfung des installierten Vix-Loaders.</p>
+    <p>Falls nach einem zukünftigen Treiberupdate eine Inkompatibilität auftritt, lassen sich über <strong>Update Vix tools...</strong> in der Einrichtung die aktuellen Komponenten erneut herunterladen.</p>
+    <p><strong>Settings changed</strong> zeigt jetzt tatsächliche Änderungen an. Beispielsweise markiert das Anklicken einer unveränderten GPU-Offset-Grenze die Einstellungen nicht mehr als geändert. Wird ein bearbeiteter Wert zurückgesetzt, erscheint wieder der vorherige Status.</p>
+  </section>
+  <section class="release-feature-section" id="interface-215">
+    <h3>Einheitliche graue Flächen und Overlay-Abstände</h3>
+    <p>Scanner und Overlay-Einstellungen erhalten dieselben flachen grauen Hintergründe wie Advanced GPU Tuning. Alle Overlay-Messwertspalten haben nun gleiche Innenabstände auf beiden Seiten, auch bei schmalen Kacheln geprüft.</p>
+    <figure class="release-wide-image"><a href="assets/play-scanner-v2.1.5.png" target="_blank" rel="noopener"><img src="assets/play-scanner-v2.1.5.png" width="1275" height="1570" loading="lazy" alt="Scanner-Einstellungen mit den neuen grauen Flächen"></a><figcaption>Scanner-Einstellungen. Beispielwerte zur Darstellung der Oberfläche, keine Tuning-Empfehlung.</figcaption></figure>
+    <p>Enthält die Spieledatenbank 2.42 mit 739 Spielen.</p>
+  </section>
+  <section class="release-feature-section" id="windows-security-215">
+    <h3>SmartScreen und Microsoft Defender</h3>
+    <p>Es gibt weiterhin Probleme mit SmartScreen und Defender beim Update oder Start. Falls SmartScreen das automatische Update blockiert, die Version bitte manuell von <a href="https://github.com/christianp403-spec/NV-UV-Play/releases" target="_blank" rel="noopener">GitHub</a> herunterladen.</p>
+    <p>Startet Play nicht, bitte unter <strong>Windows-Sicherheit &gt; Viren- &amp; Bedrohungsschutz &gt; Schutzverlauf</strong> nachsehen, ob eine EXE- oder DLL-Datei von Play in Quarantäne liegt. Nach Prüfung der Erkennung und der Herkunft aus dem offiziellen Play-Release die betroffene Datei wiederherstellen und bei Bedarf auf dem Gerät zulassen. <a href="https://support.microsoft.com/de-de/windows/security/windows-security/protection-history-in-the-windows-security-app" target="_blank" rel="noopener">Microsoft erläutert diese Aktionen im Schutzverlauf.</a></p>
+    <p>Ein Bericht wurde bereits an Microsoft gesendet.</p>
+  </section>
+</section>
+
 <section class="update-preview" id="updates-214" aria-labelledby="update-214-title">
   <p class="eyebrow">NEU IN VERSION 2.1.4</p>
   <h2 id="update-214-title">Mehr Kontrolle über Limits und Lüfter mit Vix</h2>
