@@ -30,12 +30,13 @@
   <p class="eyebrow">NEW IN VERSION 2.1.4</p>
   <h2 id="update-214-title">More control over limits and fans with Vix</h2>
   <p class="release-intro">Power and offset limits, BIOS fan curves and Zero RPM, with a guided setup from BIOS backup to verification after restarting Windows.</p>
-  <nav class="release-topics" aria-label="Features in version 2.1.4"><a href="#vix-214">Vix integration</a><a href="#setup-214">Setup</a><a href="#fans-214">Fans &amp; Zero RPM</a><a href="#restore-214">Restore &amp; cleanup</a><a href="#fixes-214">Curve &amp; profile fixes</a></nav>
+  <nav class="release-topics" aria-label="Features in version 2.1.4"><a href="#vix-214">Vix integration</a><a href="#setup-214">Setup</a><a href="#fans-214">Fans &amp; Zero RPM</a><a href="#restore-214">Restore &amp; cleanup</a><a href="#recovery-214">Safe Mode recovery</a><a href="#fixes-214">Curve &amp; profile fixes</a></nav>
   <section id="vix-214" class="release-feature-section" aria-labelledby="vix-214-title">
     <h3 id="vix-214-title">Selected Vix features, guided by Play</h3>
     <p>Enable <strong>Settings → Experimental features → Advanced GPU Tuning</strong>, then open <strong>Curve editor → Advanced GPU Tuning</strong>. The new <strong>VBIOS limits &amp; fans</strong> area is currently available for <strong>Blackwell</strong>, with NVIDIA driver <strong>616.56 or later within the 616.x and 617.x series</strong>. Other GPU families and driver series are not currently enabled.</p>
     <p>Play downloads the original, unchanged Vix tools separately from their official project releases and uses their command-line interface. The integration includes selected settings; Vix provides the underlying editing and loading tools.</p>
     <p>Adjust the minimum and maximum power limit, GPU offset ceiling and VRAM offset ceiling. These are GPU-wide limits. Changing them does not itself apply a power limit or an offset to your UV profile.</p>
+    <p><strong>Vix settings cannot be reset normally?</strong> If normal recovery fails or the NVIDIA driver no longer starts after applying an override, remove the affected GPU's Play override in Windows Safe Mode, then restart Windows normally. <a href="#recovery-214">Follow the recovery steps below.</a> Entering Safe Mode alone does not remove the override.</p>
     <div class="release-credit"><h3>Thank you, Panchovix!</h3><p>A big thank you to <strong>Panchovix and the Vix contributors</strong> for opening up these ways to customize a GPU. Take a look at the original projects for the full range of settings and more features:</p><p><a class="text-link" href="https://github.com/Panchovix/nvidia-vbios-vix-editor" target="_blank" rel="noopener noreferrer">Vix Editor ↗</a> <a class="text-link" href="https://github.com/Panchovix/nvidia-windows-vbios-vix-loader" target="_blank" rel="noopener noreferrer">Windows VBIOS Vix Loader ↗</a></p></div>
   </section>
   <section id="setup-214" class="release-feature-section" aria-labelledby="setup-214-title">
@@ -62,6 +63,17 @@
     <section><h3>A clearer tuning window</h3><p>Expandable categories remember their state. Inputs show current driver limits, while original ROM values remain visible for comparison. Profile-specific clock and voltage tuning stays in its own tab, with shorter help and separate save actions.</p></section>
     <section><h3>Apply a UV curve at sign-in</h3><p>Play already supports a startup profile. With normal Play autostart disabled, the startup task applies the saved curve at Windows sign-in and exits. Play does not have to remain running for that curve. This does not write the curve to the BIOS.</p></section>
   </div>
+  <section id="recovery-214" class="release-feature-section" aria-labelledby="recovery-214-title">
+    <h3 id="recovery-214-title">Reset a Vix override in Windows Safe Mode</h3>
+    <p>If Play still works, first use <strong>Advanced GPU Tuning → VBIOS limits &amp; fans → Setup → Restore, recovery &amp; cleanup → Restore original settings &amp; restart…</strong>. Save your work before confirming the restart.</p>
+    <p>If normal recovery fails, or Windows cannot load the NVIDIA driver after applying an override:</p>
+    <ol class="release-steps">
+      <li><strong>Start Windows in Safe Mode.</strong> Hold Shift while choosing Restart at the sign-in screen or in the Start menu. Select <strong>Troubleshoot → Advanced options → Startup Settings → Restart</strong>, then press <strong>4 or F4</strong>. If neither screen is usable, enter recovery through a Windows installation USB and choose <strong>Repair your computer</strong>. Have your BitLocker recovery key ready if Windows requests it.</li>
+      <li><strong>Remove the matching Play override with Vix Loader.</strong> In Safe Mode, open <strong>Windows PowerShell as administrator</strong> and follow <strong>RECOVERY.txt</strong> from the backup for the installed override. It contains the loader path, GPU identity, expected override hash and removal command. Check the card and hash before removal. If either differs, stop instead of removing another override.</li>
+      <li><strong>Restart Windows normally after removal succeeds.</strong> Safe Mode alone does not reset the settings. Keep <strong>original.rom</strong>, <strong>backup.json</strong> and <strong>RECOVERY.txt</strong>; the physical BIOS does not need to be flashed.</li>
+    </ol>
+    <p>Before changing settings, use <strong>Setup → Restore, recovery &amp; cleanup → Open backups</strong> and keep the recovery instructions accessible without Play. <a href="https://github.com/Panchovix/nvidia-windows-vbios-vix-loader#if-the-gpu-does-not-start" target="_blank" rel="noopener noreferrer">Official Vix recovery instructions ↗</a> · <a href="https://support.microsoft.com/en-us/windows/experience/startup-boot/windows-startup-settings" target="_blank" rel="noopener noreferrer">Microsoft: Windows Startup Settings ↗</a></p>
+  </section>
   <section id="fixes-214" class="release-feature-section" aria-labelledby="fixes-214-title">
     <h3 id="fixes-214-title">More accurate curve and game recognition</h3>
     <p>Curve verification now accounts for driver rounding and the current offset range, including increased ceilings. Correctly applied curves should no longer trigger a misleading warning. Missing or mismatched readbacks still report a problem. A confirmed curve is not a stability test.</p>
