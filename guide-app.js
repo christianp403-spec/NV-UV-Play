@@ -188,6 +188,12 @@
       s("diagnostics",null,[3, 88.5, 92, 7],"Export diagnostics")]}
   };
   Object.values(features).forEach(feature=>{feature[0]=t(feature[0]);feature[2]=t(feature[2]);});
+  // Public guide text is also searchable without duplicating these descriptions.
+  window.PLAY_SEARCH_FEATURES = Object.entries(features).map(([id, feature]) => ({
+    title: feature[0],
+    text: [feature[2], ...Object.values(copy[id]).flat(Infinity)].filter(value => typeof value === 'string').join(' '),
+    url: (english ? 'features.html' : 'funktionen.html') + '#feature-' + id
+  }));
   Object.values(categories).forEach(category=>{category.name=t(category.name);category.description=t(category.description);});
   screens.profiles = {"file": "play-profiles-v2.1.1.png", "width": 840, "height": 1170, "shape": "portrait", "alt": "Profileditor mit V-droop und Advanced-GPU-Tuning-Schiebereglern", "caption": "Play 2.1.1 · Originaloberfläche mit Beispieldaten. Die Werte sind keine Einstellungsempfehlung.",
       spots:[s("profiles",9,[23.5, 7.7, 72.5, 4.3],"Profile name"),
@@ -440,8 +446,18 @@
   });
   dialog.addEventListener('close',()=>{
     closeTooltip();currentFeature=null;trail=[];document.body.classList.remove('modal-open');
+    if (location.hash.startsWith('#feature-')) {
+      history.replaceState(null,'',location.pathname + location.search);
+      syncLanguageLink();
+    }
     if (originalFocus?.isConnected) originalFocus.focus({preventScroll:true});
   });
+  function openLinkedFeature() {
+    const id = location.hash.startsWith('#feature-') ? location.hash.slice(9) : null;
+    if (id && Object.hasOwn(features,id)) openFeature(id);
+  }
+  openLinkedFeature();
+  window.addEventListener('hashchange',openLinkedFeature);
   window.addEventListener('resize',positionTooltip);
   document.addEventListener('scroll',event=>{if (event.target !== tooltip) positionTooltip();},true);
 
