@@ -2,8 +2,8 @@
 (() => {
   const english = document.documentElement.lang === 'en';
   const labels = english ? {
-    open: 'Search', title: 'Search the website', close: 'Close search',
-    input: 'Search terms', placeholder: 'e.g. overlay or Vix',
+    title: 'Search results', close: 'Close search results',
+    input: 'Search the website', placeholder: 'Search…',
     hint: 'Search features, help and updates. Combine several words to narrow the results.',
     short: 'Enter at least two characters.', loading: 'Searching the website…',
     empty: 'No results. Try a different term or fewer words.',
@@ -13,8 +13,8 @@
     pages: [['en.html', 'Discover Play'], ['get-started.html', 'Get started & FAQ'],
       ['features.html', 'Features'], ['news.html', 'Play news'], ['success-stories.html', 'Success stories']]
   } : {
-    open: 'Suche', title: 'Website durchsuchen', close: 'Suche schließen',
-    input: 'Suchbegriffe', placeholder: 'z. B. Overlay oder Vix',
+    title: 'Suchergebnisse', close: 'Suchergebnisse schließen',
+    input: 'Website durchsuchen', placeholder: 'Suchen…',
     hint: 'Durchsuche Funktionen, Hilfe und Updates. Mehrere Wörter grenzen die Treffer ein.',
     short: 'Gib mindestens zwei Zeichen ein.', loading: 'Website wird durchsucht…',
     empty: 'Keine Treffer. Versuche einen anderen Begriff oder weniger Wörter.',
@@ -101,27 +101,19 @@
     if (text !== undefined) element.textContent = text;
     return element;
   };
-  const trigger = create('button', 'site-search-trigger', labels.open);
-  trigger.type = 'button';
-  trigger.setAttribute('aria-haspopup', 'dialog');
-  trigger.setAttribute('aria-controls', 'site-search-dialog');
   const actions = document.querySelector('.header-actions');
   if (!actions) return;
-  actions.prepend(trigger);
-  const dialog = create('dialog', 'site-search-dialog');
-  dialog.id = 'site-search-dialog';
-  dialog.setAttribute('aria-labelledby', 'site-search-title');
-  const chrome = create('div', 'dialog-chrome');
-  const title = create('h2', '', labels.title);
-  title.id = 'site-search-title';
-  const close = create('button', '', '×');
+  const searchBox = create('div', 'site-search');
+  const panel = create('section', 'site-search-panel');
+  panel.id = 'site-search-panel';
+  panel.hidden = true;
+  panel.setAttribute('aria-label', labels.title);
+  const close = create('button', 'site-search-close', '×');
   close.type = 'button';
   close.setAttribute('aria-label', labels.close);
-  chrome.append(title, close);
-  const body = create('div', 'site-search-body');
   const form = create('form', 'site-search-form');
   form.setAttribute('role', 'search');
-  const label = create('label', '', labels.input);
+  const label = create('label', 'site-search-label', labels.input);
   label.htmlFor = 'site-search-input';
   const input = create('input');
   input.id = 'site-search-input';
@@ -130,10 +122,12 @@
   input.maxLength = 160;
   input.autocomplete = 'off';
   input.spellcheck = false;
-  input.setAttribute('aria-describedby', 'site-search-hint');
+  input.setAttribute('aria-controls', panel.id);
+  input.setAttribute('aria-expanded', 'false');
+  input.setAttribute('enterkeyhint', 'search');
   const hint = create('p', 'site-search-hint', labels.hint);
   hint.id = 'site-search-hint';
-  form.append(label, input, hint);
+  form.append(label, input);
   const status = create('p', 'site-search-status');
   status.setAttribute('role', 'status');
   status.setAttribute('aria-live', 'polite');
@@ -145,16 +139,20 @@
   const more = create('button', 'button', labels.more);
   more.type = 'button';
   more.hidden = true;
-  body.append(form, status, warning, retry, results, more);
-  dialog.append(chrome, body);
-  document.body.append(dialog);
+  panel.append(close, hint, status, warning, retry, results, more);
+  searchBox.append(form, panel);
+  actions.prepend(searchBox);
 
   let entries = null;
   let loading = null;
   let incomplete = false;
   let limit = 15;
   let timer;
-  let followingResult = false;
+  function closeResults() {
+    clearTimeout(timer);
+    panel.hidden = true;
+    input.setAttribute('aria-expanded', 'false');
+  }
   async function loadIndex() {
     if (loading) return loading;
     loading = (async () => {
@@ -189,6 +187,7 @@
     return (start ? '…' : '') + text.slice(start, end) + (end < text.length ? '…' : '');
   }
   function render() {
+    if (panel.hidden) return;
     results.replaceChildren();
     more.hidden = true;
     warning.textContent = incomplete ? labels.partial : '';
@@ -215,29 +214,43 @@
     more.hidden = matches.length <= limit;
   }
   async function search() {
+    if (!clean(input.value)) { closeResults(); return; }
+    panel.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
     render();
     if (!entries) { await loadIndex(); render(); }
   }
-  trigger.addEventListener('click', () => {
-    followingResult = false;
-    dialog.showModal();
-    document.body.classList.add('search-open');
-    input.focus();
-    search();
+  input.addEventListener('focus', search);
+  input.addEventListener('click', () => { if (panel.hidden) search(); });
+  close.addEventListener('click', () => { input.focus({preventScroll: true}); closeResults(); });
+  searchBox.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !panel.hidden) {
+      event.preventDefault();
+      input.focus({preventScroll: true});
+      closeResults();
+    } else if (event.key === 'ArrowDown' && event.target === input && !panel.hidden) {
+      const first = results.querySelector('a');
+      if (first) { event.preventDefault(); first.focus(); }
+    }
   });
-  close.addEventListener('click', () => dialog.close());
-  dialog.addEventListener('close', () => {
-    document.body.classList.remove('search-open');
-    if (!followingResult) trigger.focus({preventScroll: true});
+  document.addEventListener('pointerdown', event => {
+    if (!searchBox.contains(event.target)) closeResults();
   });
-  dialog.addEventListener('click', event => {
-    if (event.target !== dialog) return;
-    const bounds = dialog.getBoundingClientRect();
-    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  searchBox.addEventListener('focusout', event => {
+    if (event.relatedTarget) {
+      if (!searchBox.contains(event.relatedTarget)) closeResults();
+      return;
+    }
+    // Hiding the exhausted "more" button briefly leaves focus on the body.
+    // Let rendering move focus to the newly added result before checking it.
+    setTimeout(() => {
+      if (!searchBox.contains(document.activeElement)) closeResults();
+    }, 0);
   });
   input.addEventListener('input', () => {
     clearTimeout(timer);
     limit = 15;
+    if (!clean(input.value)) { closeResults(); return; }
     timer = setTimeout(search, 120);
   });
   form.addEventListener('submit', event => { event.preventDefault(); clearTimeout(timer); search(); });
@@ -257,8 +270,7 @@
   results.addEventListener('click', event => {
     const link = event.target.closest('a');
     if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    followingResult = true;
-    dialog.close();
+    closeResults();
     // The same fragment can already be selected when a search is reopened.
     if (link.href === location.href) revealSearchTarget();
   });
