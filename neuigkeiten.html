@@ -8,11 +8,11 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.3 erklärt: editierbare Overlay-Messwerte, kompakte Statusanzeigen, das neue DEV!-Layout und Celsius oder Fahrenheit.">
-  <link rel="stylesheet" href="styles.css?v=20261018-features-213">
+  <meta name="description" content="Vorschau auf NV-UV Play 2.1.4: geführte Vix-Integration für Power- und Offset-Limits, BIOS-Lüfterkurven und Zero RPM sowie genauere Kurvenprüfung.">
+  <link rel="stylesheet" href="styles.css?v=20261021-features-214">
   <script src="guide.de.js?v=20261015-v2.1.2" defer></script>
   <script src="guide-app.js?v=20261015-v2.1.2" defer></script>
-  <script src="site-navigation.js?v=20261017-development-213" defer></script>
+  <script src="site-navigation.js?v=20261021-features-214" defer></script>
 </head>
 <body data-page="news">
 <a class="skip-link" href="#top">Zum Inhalt</a>
@@ -22,9 +22,67 @@
   <div class="header-actions"><div class="language-switch" aria-label="Sprache"><span lang="de" aria-current="page">DE</span><a href="news.html" lang="en" hreflang="en" aria-label="Switch to English" data-language-switch>EN</a></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-213">Neu in 2.1.3</a><a href="#updates-212">In Version 2.1.2</a><a href="#updates-211">In Version 2.1.1</a><a href="#updates-210">In Version 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-214">Geplant für 2.1.4</a><a href="#updates-213">In Version 2.1.3</a><a href="#updates-212">In Version 2.1.2</a><a href="#updates-211">In Version 2.1.1</a><a href="#updates-210">In Version 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES UND ENTWICKLUNG</p><h1 id="news-title">Play-Neuigkeiten</h1></div></div>
+<section class="update-preview" id="updates-214" aria-labelledby="update-214-title">
+  <p class="eyebrow">IN VORBEREITUNG: NV-UV PLAY v2.1.4</p>
+  <h2 id="update-214-title">Mehr Kontrolle über Limits und Lüfter mit Vix</h2>
+  <p class="release-intro">Power- und Offset-Limits, BIOS-Lüfterkurven und Zero RPM. Mit einer Anleitung von der BIOS-Sicherung bis zur Prüfung nach dem Windows-Neustart.</p>
+  <p class="release-availability">Vorschau auf das kommende Update. Der Download für 2.1.4 ist noch nicht verfügbar.</p>
+  <nav class="release-topics" aria-label="Funktionen in Version 2.1.4"><a href="#vix-214">Vix-Integration</a><a href="#setup-214">Einrichtung</a><a href="#fans-214">Lüfter &amp; Zero RPM</a><a href="#restore-214">Wiederherstellung</a><a href="#fixes-214">Kurven &amp; Profile</a></nav>
+  <section id="vix-214" class="release-feature-section" aria-labelledby="vix-214-title">
+    <h3 id="vix-214-title">Ausgewählte Vix-Funktionen, begleitet von Play</h3>
+    <p>Zuerst unter <strong>Settings → Experimental features → Advanced GPU Tuning</strong> freischalten, anschließend <strong>Curve editor → Advanced GPU Tuning</strong> öffnen. Der neue Bereich <strong>VBIOS limits &amp; fans</strong> ist aktuell für <strong>Blackwell</strong> mit NVIDIA-Treiber <strong>ab 616.56 innerhalb der Reihen 616.x und 617.x</strong> verfügbar. Andere GPU-Familien und Treiberreihen sind derzeit nicht freigegeben.</p>
+    <p>Play lädt die originalen, unveränderten Vix-Tools separat aus den offiziellen Projekt-Releases und spricht sie über ihre Kommandozeilenschnittstelle an. Die Integration enthält ausgewählte Einstellungen; die Werkzeuge zum Bearbeiten und Laden stammen von Vix.</p>
+    <p>Anpassbar sind das minimale und maximale Power-Limit sowie die Grenzen für GPU- und VRAM-Offsets. Diese Grenzen gelten für die ganze GPU. Eine Änderung setzt noch kein Power-Limit und keinen Offset in deinem UV-Profil.</p>
+    <div class="release-credit"><h3>Vielen Dank, Panchovix!</h3><p>Ein großes Dankeschön an <strong>Panchovix und die Mitwirkenden an Vix</strong> für diese Möglichkeiten, die eigene Grafikkarte individueller einzustellen. Schaut euch die Originalprojekte unbedingt an. Dort gibt es den vollständigen Funktionsumfang und weitere Einstellungen:</p><p><a class="text-link" href="https://github.com/Panchovix/nvidia-vbios-vix-editor" target="_blank" rel="noopener noreferrer">Vix Editor ↗</a> <a class="text-link" href="https://github.com/Panchovix/nvidia-windows-vbios-vix-loader" target="_blank" rel="noopener noreferrer">Windows VBIOS Vix Loader ↗</a></p></div>
+  </section>
+  <section id="setup-214" class="release-feature-section" aria-labelledby="setup-214-title">
+    <h3 id="setup-214-title">Eine Einrichtung für Limits und Lüfter</h3>
+    <ol class="release-steps">
+      <li><strong>Install or update tools.</strong> Vix und NVFlash für die BIOS-Sicherung herunterladen.</li>
+      <li><strong>Back up your BIOS.</strong> Play liest und prüft das BIOS deiner Karte. Die geprüfte Sicherung wird bei späteren Änderungen wiederverwendet.</li>
+      <li><strong>Prepare settings.</strong> Die gewünschten Werte auswählen. Die passenden Kategorien öffnen sich und leuchten kurz auf. Beim Vorbereiten wird auch eine Sicherung gespeichert.</li>
+      <li><strong>Apply override.</strong> Die vorbereiteten Einstellungen prüfen und bestätigen. Play meldet anschließend, was gespeichert wurde.</li>
+      <li><strong>Restart &amp; verify.</strong> Den Windows-Neustart bestätigen. Beim nächsten Start prüft Play den gespeicherten Zustand.</li>
+    </ol>
+    <figure class="release-wide-image"><a href="assets/play-vix-setup-v2.1.4.png" target="_blank" rel="noopener" aria-label="Vix-Einrichtung vergrößern"><img src="assets/play-vix-setup-v2.1.4.png" width="1972" height="1791" loading="lazy" alt="Advanced GPU Tuning mit Einrichtung in fünf Schritten, bestätigter Originalkonfiguration und Zero-RPM-Einstellungen"></a><figcaption>Einrichtung, Wiederherstellung und Einstellungen in getrennten aufklappbaren Kategorien. Bild anklicken zum Vergrößern.</figcaption></figure>
+    <p>Das physische VBIOS wird nicht geflasht. Vix richtet einen Windows-Treiber-Override ein. Eine eigene UV-Kurve lässt sich mit dieser Integration derzeit nicht als neue Stockkurve im BIOS speichern.</p>
+  </section>
+  <section id="fans-214" class="release-feature-section" aria-labelledby="fans-214-title">
+    <h3 id="fans-214-title">BIOS-Lüfterkurven und Zero RPM</h3>
+    <p>Für unterstützte Einträge im gesicherten ROM lässt sich die Kurve jedes Lüfters über <strong>Temperatur und Drehzahl in RPM</strong> einstellen. Bei Zero RPM stehen der Ein-/Aus-Schalter und die verfügbaren <strong>Temperaturen zum Stoppen und Anlaufen</strong> bereit. Nicht unterstützte Regler bleiben gesperrt.</p>
+    <p>Ein Lüfter kann beispielsweise unter 50 °C stoppen und über 55 °C wieder anlaufen, sofern sein ROM diese Werte unterstützt. Damit die BIOS-Kurven greifen, die automatische Lüftersteuerung verwenden. Auch diese Einstellungen werden über Prepare, Apply und Restart übernommen.</p>
+    <figure class="release-wide-image"><a href="assets/play-vix-fans-v2.1.4.png" target="_blank" rel="noopener" aria-label="Power-Limits und BIOS-Lüftereinstellungen vergrößern"><img src="assets/play-vix-fans-v2.1.4.png" width="1927" height="1198" loading="lazy" alt="Power- und Offset-Limits, drei BIOS-Lüfterkurven sowie Zero-RPM-Temperaturpaare für jeden Lüfter"></a><figcaption>Beispielwerte einer Karte, keine Tuning-Empfehlung. Die verfügbaren Regler hängen vom ROM ab.</figcaption></figure>
+  </section>
+  <div class="curve-workflow release-feature-section" id="restore-214">
+    <section><h3>Wiederherstellen und neu starten</h3><p><strong>Setup → Restore, recovery &amp; cleanup</strong> stellt die ursprünglichen Einstellungen wieder her und startet Windows nach Bestätigung neu. Danach prüft Play die Wiederherstellung. Nach einem abgeschlossenen Neustart bleibt kein veralteter Neustarthinweis mehr stehen.</p></section>
+    <section><h3>Tools entfernen, Sicherungen behalten</h3><p><strong>Remove downloaded tools</strong> entfernt die von Play verwalteten Tool-Downloads und behält BIOS-Sicherungen. Ein vorhandener Override muss zuvor zurückgesetzt und nach dem Neustart geprüft werden.</p></section>
+    <section><h3>Übersichtlicheres Tuning-Fenster</h3><p>Aufklappbare Kategorien merken sich ihren Zustand. Eingaben zeigen die aktuellen Treiberlimits, die originalen ROM-Werte bleiben zum Vergleich sichtbar. Profilgebundene Takt- und Spannungseinstellungen haben einen eigenen Tab, kürzere Hilfen und getrennte Speicheraktionen.</p></section>
+    <section><h3>UV-Kurve bei der Anmeldung anwenden</h3><p>Ein Startprofil unterstützt Play bereits. Bei ausgeschaltetem normalem Play-Autostart wendet die Startaufgabe die gespeicherte Kurve bei der Windows-Anmeldung an und beendet sich. Play muss für diese Kurve nicht weiterlaufen. Die Kurve wird dabei nicht ins BIOS geschrieben.</p></section>
+  </div>
+  <section id="fixes-214" class="release-feature-section" aria-labelledby="fixes-214-title">
+    <h3 id="fixes-214-title">Genauere Kurvenprüfung und Spielerkennung</h3>
+    <p>Die Kurvenprüfung berücksichtigt die Rundung des Treibers und den aktuellen Offset-Bereich, auch bei erhöhten Grenzen. Eine korrekt gesetzte Kurve soll dadurch keinen irreführenden Warnhinweis mehr auslösen. Fehlende oder abweichende Rücklesewerte werden weiterhin gemeldet. Eine bestätigte Kurve ersetzt keinen Stabilitätstest.</p>
+    <p>Die Spielerkennung korrigiert falsche <strong>ICARUS</strong>-Treffer. Wechselt die erkannte ausführbare Datei, wird auch die Profilzuordnung erneut geprüft. Eine zusätzliche Prozesserkennung verbessert außerdem die Fensterzuordnung des Overlays in <strong>Helldivers 2</strong>.</p>
+    <p>Auch das Über-Fenster wurde für kleinere Fenster und höhere Skalierung angepasst. Drittanbieterhinweise, Projektlinks und Danksagungen bleiben dort erreichbar.</p>
+    <p><strong>Play startet nach einem Update nicht?</strong> Unter <strong>Windows-Sicherheit → Viren- &amp; Bedrohungsschutz → Schutzverlauf</strong> prüfen, ob eine Datei in Quarantäne verschoben wurde. Ein solcher Eintrag ist für sich allein kein Beleg für einen Fehlalarm. <a href="https://support.microsoft.com/de-de/windows/security/windows-security/protection-history-in-the-windows-security-app" target="_blank" rel="noopener noreferrer">Microsoft-Hilfe zum Schutzverlauf ↗</a></p>
+  </section>
+  <section id="overlay-214" class="release-feature-section" aria-labelledby="overlay-214-title">
+    <h3 id="overlay-214-title">Mehr Spielraum für dein Overlay</h3>
+    <p>Die Höhe des Frametime-Graphen lässt sich unabhängig einstellen. Beschriftungen für GPU, CPU und Allgemein können eigene Farben erhalten. Ein optional farbiges Raster hilft, die Gruppen auseinanderzuhalten.</p>
+    <p>API, Auflösung, HDR und G-SYNC lassen sich zwischen Messwertzellen und Statuszeile verschieben. So können beispielsweise API und Auflösung über dem Graphen bleiben, während HDR neben den anderen Bildschirmwerten steht.</p>
+    <p>Der randlose Fenstermodus bleibt empfohlen, exklusives Vollbild wird nicht unterstützt. G-SYNC-Kompatibilitätsmeldungen werden weiter untersucht.</p>
+  </section>
+  <div class="curve-workflow release-feature-section">
+    <section><h3>MFG und gespeicherte DCC-Einstellungen</h3><p>Das MFG-Preset verwendet wieder ein Power-Limit von 100 %. DCC behält beim erneuten Öffnen die gespeicherten NVIDIA-Max-Frame-Rate-Einstellungen bei, auch wenn DCC ausgeschaltet ist.</p></section>
+    <section><h3>Stabilizer-Korrekturen</h3><p>Die Behandlung zusätzlicher Blackwell-Kurvenpunkte durch den Stabilizer wurde korrigiert. Die optionale VRAM-Korrektur reduziert positive Speicher-Offsets in Richtung Stock. Der Stabilizer reagiert auf erkannte Treiberabstürze; nicht jeder Spielabsturz lässt sich auf Undervolting zurückführen.</p></section>
+    <section><h3>Spieledatenbank 2.41</h3><p>737 Spiele, darunter <strong>Assetto Corsa</strong> und <strong>Transport Fever 3</strong>. Ein vorgeschlagenes Profil bleibt ein Ausgangspunkt für Tests mit der eigenen Karte.</p></section>
+  </div>
+</section>
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.3</summary>
 <section class="update-preview" id="updates-213" aria-labelledby="update-213-title">
   <p class="eyebrow">NEU IN VERSION 2.1.3</p>
   <h2 id="update-213-title">Bessere Overlay-Anpassung</h2>
@@ -73,6 +131,9 @@
     <section id="compatibility-213"><h3>Kompatibilität und Diagnose</h3><p><strong>Randloser Fenstermodus empfohlen, exklusives Vollbild nicht unterstützt.</strong> G-SYNC-Meldungen werden weiter untersucht; eine Behebung ist nicht bestätigt. Erweiterte Berichte erfassen Overlay und Bildschirmausgabe. Bitte Spiel, Anzeigemodus und Verhalten beim Umschalten mit <strong>Strg + Alt + O</strong> angeben.</p></section>
   </div>
 </section>
+</details>
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.2</summary>
 <section class="update-preview" id="updates-212" aria-labelledby="update-212-title">
   <p class="eyebrow">NV-UV PLAY v2.1.2</p>
   <h2 id="update-212-title">DCC-Profile behalten, Grafik-API im Blick</h2>
@@ -108,6 +169,7 @@
     <section><h3>Version 2.1.2 laden</h3><p>Das Update ist über <strong>Updates</strong> in Play und als Portable-ZIP verfügbar.</p><p><a class="text-link" href="https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.2" target="_blank" rel="noopener noreferrer">Download und vollständige Patchnotes ↗</a></p></section>
   </div>
 </section>
+</details>
 <details class="news-archive">
   <summary>NV-UV Play v2.1.1</summary>
 <section class="update-preview" id="updates-211" aria-labelledby="update-211-title">
