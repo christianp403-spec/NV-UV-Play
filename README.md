@@ -38,7 +38,6 @@ If your Play version already includes the updater, use **Updates â†’ Check now â
 
 - **Windows 11**, with current Windows updates and an up-to-date NVIDIA driver.
 - **NVIDIA desktop GeForce RTX 20-, 30-, 40- or 50-series GPU.** The current Kilby Alpha has been tested by the developer only on Blackwell / RTX 50-series. Other supported desktop families still need validation; Ampere and Turing remain experimental.
-- **Notebooks are not supported.**
 - **Multi-GPU in v2.0.2 Alpha:** profiles, readings and DCC Automatic use the selected NVIDIA GPU. Choose the card used by your game; Play does not change the game's or Lossless Scaling's GPU assignment. If the saved card is unavailable, Play requires a new selection instead of silently switching cards. The scanner and NVIDIA Experimental currently require a single NVIDIA GPU. Multi-GPU hardware validation is still pending.
 
 ## Using DCC
