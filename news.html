@@ -8,13 +8,13 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.5 hotfix: corrected curve checks, Scanner and Vix compatibility, plus consistent overlay spacing and gray settings panels.">
-  <link rel="stylesheet" href="styles.css?v=20261021-hotfix-215">
+  <meta name="description" content="NV-UV Play 2.1.6: GPU curve readback, improved profile switching and fan curves transferred through the reworked experimental Vix integration.">
+  <link rel="stylesheet" href="styles.css?v=20261023-news-216">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
   <script src="guide.en.js?v=20261015-v2.1.2" defer></script>
   <script src="guide.ui.en.js?v=20261015-v2.1.2" defer></script>
   <script src="guide-app.js?v=20261021-search" defer></script>
-  <script src="site-navigation.js?v=20261021-hotfix-215" defer></script>
+  <script src="site-navigation.js?v=20261023-news-216" defer></script>
   <script src="site-search.js?v=20261022-inline" defer></script>
 </head>
 <body data-page="news">
@@ -25,9 +25,48 @@
   <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="neuigkeiten.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-215">In version 2.1.5</a><a href="#updates-214">In version 2.1.4</a><a href="#updates-213">In version 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-216">In version 2.1.6</a><a href="#updates-215">In version 2.1.5</a><a href="#updates-214">In version 2.1.4</a><a href="#updates-213">In version 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES AND DEVELOPMENT</p><h1 id="news-title">Play News</h1></div></div>
+<section class="update-preview" id="updates-216" aria-labelledby="update-216-title">
+  <p class="eyebrow">NEW IN VERSION 2.1.6</p>
+  <h2 id="update-216-title">Check your GPU curve, shape your fan control</h2>
+  <p class="release-intro">Inspect the curve applied to the GPU and carry your own fan curve into the Vix BIOS settings. The editors bring related controls together, with simpler setup and clearer feedback.</p>
+  <nav class="release-topics" aria-label="Features in version 2.1.6"><a href="#curves-216">Curve readback</a><a href="#vix-216">Vix &amp; Advanced options</a><a href="#fans-216">Software curve to BIOS curve</a><a href="#details-216">More improvements</a></nav>
+  <section class="release-feature-section" id="curves-216">
+    <h3>See what is actually applied</h3>
+    <p><strong>Readback curve</strong> shows a snapshot of the curve currently applied to the GPU without changing your draft. Click in the editor or press Escape to return to editing.</p>
+    <p>Profile switching writes and checks the points that need to be reset as well. <strong>Flatline → Selected point</strong> no longer becomes unavailable because of duplicate voltage points. <strong>Start rise</strong> has clearer explanations, and the separate <strong>Curve Limits</strong> feature has been removed.</p>
+  </section>
+  <section class="release-feature-section" id="vix-216">
+    <h3>Advanced controls where you use them</h3>
+    <p>First enable <strong>Settings → Experimental features → Advanced GPU Tuning</strong>. <strong>Vix setup</strong> provides bundled installation, the original BIOS backup, status and recovery. Power and offset limits join clock and voltage tuning under <strong>Advanced options</strong> in the Curve Editor. Fan settings move to <strong>Fan Control → BIOS curve</strong>.</p>
+    <p>Without Vix installed, the BIOS area shows <strong>Please install Vix first.</strong> and links to setup. Progress indicators show when values are being prepared or stored; successful verification details stay collapsed until needed.</p>
+    <p class="release-availability">Advanced settings remain <strong>experimental</strong>, tested so far on an <strong>RTX 5090 and RTX 5080</strong>. The integration uses <a href="https://github.com/Panchovix/nvidia-vbios-vix-editor" target="_blank" rel="noopener noreferrer">Vix by Panchovix</a>. Vix applies a Windows driver override; it does not flash the physical BIOS.</p>
+  </section>
+  <section class="release-feature-section" id="fans-216">
+    <h3>Your software fan curve in the BIOS controls</h3>
+    <p>Build your curve in <strong>Software curve</strong>. Enable <strong>Sync curves</strong> to carry edits from Fan 1 to the other fans. <strong>Default curves</strong> brings back the Play defaults.</p>
+    <figure class="release-wide-image"><a href="assets/play-fan-control-v2.1.6.png" target="_blank" rel="noopener"><img src="assets/play-fan-control-v2.1.6.png" width="1669" height="1219" loading="lazy" alt="Fan Control with linked software curves, Allow Zero Fan and Save to BIOS curve"></a><figcaption>Software curves, linked editing and the BIOS transfer in one window. Click any image to enlarge.</figcaption></figure>
+    <ol class="release-steps">
+      <li><strong>Set up Vix first.</strong> Save to BIOS curve requires a configured Vix integration and the original BIOS backup.</li>
+      <li><strong>Choose Save to BIOS curve.</strong> Play approximates the software curve with three BIOS points. Review the preview and its estimated difference before confirming.</li>
+      <li><strong>Apply and restart Windows.</strong> The override takes effect after restart. Use GPU automatic cooling for the BIOS curve. Your original software points and settings remain saved for the next time you open Play.</li>
+    </ol>
+    <div class="release-examples">
+      <section><h3>Review the conversion</h3><figure><a href="assets/play-bios-preview-v2.1.6.png" target="_blank" rel="noopener"><img src="assets/play-bios-preview-v2.1.6.png" width="1770" height="1350" loading="lazy" alt="Three-point BIOS fan preview with the source estimate and the original curve"></a><figcaption>The preview compares the estimated source curve with three BIOS points. Software hysteresis and minimum hold time are not transferred.</figcaption></figure></section>
+      <section><h3>Keep Zero Fan and defaults accessible</h3><figure><a href="assets/play-bios-fans-v2.1.6.png" target="_blank" rel="noopener"><img src="assets/play-bios-fans-v2.1.6.png" width="1644" height="1192" loading="lazy" alt="BIOS curve tab with per-fan Zero RPM temperatures and Reset to defaults"></a><figcaption>Reset to defaults restores the original BIOS fan values as a draft. Apply and restart to activate them; power and offset limits stay unchanged.</figcaption></figure></section>
+    </div>
+    <p><strong>Allow Zero Fan</strong> uses the active BIOS fan-stop range, including verified Vix settings, and hands control back to the software curve above that range. The card decides whether the fans actually stop. <strong>Target range</strong> describes the allowed command range; measured fan speed can differ.</p>
+    <p>Images show example values, not a tuning recommendation.</p>
+  </section>
+  <section class="release-feature-section" id="details-216">
+    <h3>More improvements</h3>
+    <p>Notebook and dual-GPU support have been improved. The RTX 5090 MFG preset now uses the Eco curve with a 100% power limit. A <strong>Core/XBAR ratio</strong> control is also available.</p>
+    <p>G-SYNC/VRR is removed from the <strong>DEV!</strong> template and remains an optional item. Interface spacing, English tooltips, progress indicators and fan/Vix diagnostics have been improved.</p>
+  </section>
+</section>
+
 <section class="update-preview" id="updates-215" aria-labelledby="update-215-title">
   <p class="eyebrow">NEW IN VERSION 2.1.5</p>
   <h2 id="update-215-title">Hotfix for curve checks, Scanner and Vix</h2>
@@ -58,6 +97,8 @@
   </section>
 </section>
 
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.4</summary>
 <section class="update-preview" id="updates-214" aria-labelledby="update-214-title">
   <p class="eyebrow">NEW IN VERSION 2.1.4</p>
   <h2 id="update-214-title">More control over limits and fans with Vix</h2>
@@ -125,6 +166,7 @@
     <section><h3>Game database 2.41</h3><p>737 games, including <strong>Assetto Corsa</strong> and <strong>Transport Fever 3</strong>. A suggested profile remains a starting point to test on your own card.</p></section>
   </div>
 </section>
+</details>
 <details class="news-archive">
   <summary>NV-UV Play v2.1.3</summary>
 <section class="update-preview" id="updates-213" aria-labelledby="update-213-title">
