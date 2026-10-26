@@ -8,13 +8,13 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.6: GPU curve readback, improved profile switching and fan curves transferred through the reworked experimental Vix integration.">
-  <link rel="stylesheet" href="styles.css?v=20261023-news-216">
+  <meta name="description" content="NV-UV Play 2.1.7: Play, RTSS and NVIDIA overlay output, mixed readings, layout Undo and improved curve and fan profiles.">
+  <link rel="stylesheet" href="styles.css?v=20261026-news-217">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
   <script src="guide.en.js?v=20261015-v2.1.2" defer></script>
   <script src="guide.ui.en.js?v=20261015-v2.1.2" defer></script>
   <script src="guide-app.js?v=20261021-search" defer></script>
-  <script src="site-navigation.js?v=20261023-news-216" defer></script>
+  <script src="site-navigation.js?v=20261026-news-217" defer></script>
   <script src="site-search.js?v=20261022-inline" defer></script>
 </head>
 <body data-page="news">
@@ -25,9 +25,59 @@
   <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="neuigkeiten.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-216">In version 2.1.6</a><a href="#updates-215">In version 2.1.5</a><a href="#updates-214">In version 2.1.4</a><a href="#updates-213">In version 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-217">In version 2.1.7</a><a href="#updates-216">In version 2.1.6</a><a href="#updates-215">In version 2.1.5</a><a href="#updates-214">In version 2.1.4</a><a href="#updates-213">In version 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES AND DEVELOPMENT</p><h1 id="news-title">Play News</h1></div></div>
+<section class="update-preview" id="updates-217" aria-labelledby="update-217-title">
+  <p class="eyebrow">NEW IN VERSION 2.1.7</p>
+  <h2 id="update-217-title">Your overlay, your readings, your output</h2>
+  <p class="release-intro">Your Play layout can now be displayed through RTSS or NVIDIA. Readings from several sources, freely arranged tiles and separate frametime controls make the overlay more flexible. Curve displays are clearer, and fan profiles are easier to work with.</p>
+  <nav class="release-topics" aria-label="Features in version 2.1.7"><a href="#overlay-217">Three overlay outputs</a><a href="#layout-217">Layout &amp; frametime</a><a href="#curves-217">Curves &amp; profiles</a><a href="#fans-217">Fan curves &amp; Undo</a><a href="#details-217">Interface &amp; games</a></nav>
+  <section class="release-feature-section" id="overlay-217">
+    <h3>Display one layout through Play, RTSS or NVIDIA</h3>
+    <p>Keep designing your overlay in Play, then choose <strong>Play</strong>, <strong>RTSS</strong> or <strong>NVIDIA output</strong> to display it. <strong>Mixed integration</strong> combines NVIDIA, RTSS and Play readings in one layout. The selected <strong>Output renderer</strong> determines which output shows the finished overlay.</p>
+    <p><strong>Profiles</strong> offers four starting points: <strong>Play template</strong>, <strong>NVIDIA template</strong>, <strong>RTSS template</strong> and <strong>Mixed template</strong>. Applying a template does not replace your saved layouts or automatically switch the output renderer.</p>
+    <figure class="release-wide-image"><a href="assets/play-overlay-profiles-v2.1.7.png" target="_blank" rel="noopener"><img src="assets/play-overlay-profiles-v2.1.7.png" width="1080" height="850" loading="lazy" alt="Overlay window with saved layouts and the Play, NVIDIA, RTSS and Mixed templates"></a><figcaption>Templates and your own layouts share the Profiles page. These screenshots show the interface with example readings, not benchmark results. Click to enlarge.</figcaption></figure>
+    <ol class="release-steps">
+      <li><strong>Connect the integration you need.</strong> Mixed starts NVIDIA and RTSS together. Available readings depend on the connected sources and hardware.</li>
+      <li><strong>Choose a template.</strong> Mixed combines RTSS/Afterburner frametimes, NVIDIA GPU readings and Play CPU readings. CPU temperature and power use the available PawnIO sensors.</li>
+      <li><strong>Arrange your readings and save your own layout.</strong> The frametime source remains separately selectable. Missing source data is not replaced with an invented reading.</li>
+    </ol>
+    <p class="release-availability">NVIDIA integration is <strong>experimental and unofficial</strong>. Compatibility depends on the game, fullscreen mode and anti-cheat. RTSS output requires RTSS 7.3.7 or newer. NVIDIA or RTSS output is preferred for gaming; Play's own overlay can have higher latency and does not support exclusive fullscreen.</p>
+  </section>
+  <section class="release-feature-section" id="layout-217">
+    <h3>Move readings directly and undo your changes</h3>
+    <p>Drag readings from <strong>Readings</strong> straight into the preview. Dropping a reading activates it; the insertion marker shows its position above or below an existing value. Extra rows are added when needed. Status readings such as the graphics API can also occupy normal tiles.</p>
+    <p><strong>Undo</strong> reverses multiple steps in Readings and Layout. Labels and values have separate font sizes. Categories and readings are sorted alphabetically, and the preview fits the available space more reliably. Shortcut recording automatically distinguishes left and right modifier keys.</p>
+    <figure class="release-wide-image"><a href="assets/play-overlay-frametime-v2.1.7.png" target="_blank" rel="noopener"><img src="assets/play-overlay-frametime-v2.1.7.png" width="1080" height="850" loading="lazy" alt="Layout settings with RTSS frametime source, position, text size, graph height, width and color"></a><figcaption>Layout → Frametime graph controls the source, position, size and color independently of the reading tiles. These settings also apply to NVIDIA and RTSS output.</figcaption></figure>
+    <p>Frametime sources are <strong>Play ETW</strong> and <strong>RTSS</strong>. The unavailable NVIDIA Frametime option has been removed; existing selections switch to Play ETW. Play and RTSS graphs animate between data updates in NVIDIA output. The value layer stays in place during updates instead of being recreated for every reading.</p>
+    <p>You can also configure NVIDIA's native overlay from Play. The NVIDIA layout editor offers readings, text size, colors and position, with changes applied directly.</p>
+    <p>RTSS detection now accounts for the installed release when its executable still reports an older internal version. This removes the incorrect update warning for a suitable installation.</p>
+    <p><strong>G-SYNC/VRR</strong> reports the monitor status supplied by the driver. It does not prove that synchronization is active in a particular game. The optional native <strong>DLSS on-screen indicator</strong> is a global NVIDIA setting, independent of Play's overlay. Display HDR has been removed from templates because it describes display status rather than the game's HDR rendering.</p>
+  </section>
+  <section class="release-feature-section" id="curves-217">
+    <h3>Distinguish the GPU curve from the requested target</h3>
+    <p>With an unchanged draft and matching readback, the Curve Editor shows the captured GPU curve points. This is the curve read back from the driver, not a measurement of the current clock under load. Enable the optional yellow target comparison and additional details under <strong>Settings → Advanced Curve Options</strong>.</p>
+    <p>Loading a profile into a slot or saving parameter changes to a profile used by a slot applies those changes immediately when Play is ready. Unapplied point edits remain drafts. Profile shortcuts also work inside the Curve Editor.</p>
+    <p>Enable the optional <strong>algorithm selector</strong> under <strong>Settings → Advanced Curve Options</strong>, then choose and save the method per profile directly in the Curve Editor. <strong>Hard Lock</strong> no longer carries the experimental label. <strong>Voltage Lock</strong> checks readback and adjusts its generated curve during Apply. Remaining frequency differences stay diagnostic.</p>
+  </section>
+  <section class="release-feature-section" id="fans-217">
+    <h3>Try fan curve changes and keep your saved profiles</h3>
+    <p><strong>Reset curves</strong> now visibly selects <strong>Default</strong>. Selecting the saved profile again restores its saved curves. Saving after Reset creates a separate <strong>Custom</strong> profile. Running fan control changes only when you apply the draft.</p>
+    <figure class="release-wide-image"><a href="assets/play-fan-reset-v2.1.7.png" target="_blank" rel="noopener"><img src="assets/play-fan-reset-v2.1.7.png" width="1650" height="1200" loading="lazy" alt="Fan control after Reset curves with Default selected, synchronized fans and Undo on Fan 1"></a><figcaption>Default after a reset: with Sync curves enabled, edit Fan 1 and the other fans follow. Example values explain the interface and are not tuning recommendations.</figcaption></figure>
+    <p>Each fan curve has multi-step <strong>Undo</strong>. With <strong>Sync curves</strong> enabled, Undo on Fan 1 reverses the step for all linked fans. With Sync off, each fan works independently. Undo changes the draft; <strong>Apply &amp; save</strong> activates it.</p>
+    <p>Starting curves derived from BIOS values offer up to <strong>six editable points</strong>. Existing saved curves keep their points. Transfer to the available BIOS points has been improved; the three BIOS anchors and the transfer preview still determine the result. Software curves and BIOS curves remain separate.</p>
+    <p>The last saved fan profile can now be deleted. <strong>Profile actions</strong> uses a dark menu, and the main window stays usable while Fan control is open.</p>
+  </section>
+  <section class="release-feature-section" id="details-217">
+    <h3>Fewer detours through settings</h3>
+    <p><strong>Advanced options</strong> starts with collapsed categories and remembers whether each section is open or closed. General settings and notification links have been reorganized. <strong>Close</strong> stays visible at the bottom right of Settings. Stabilizer Settings remembers its window size and keeps Save and Cancel accessible.</p>
+    <p>A secondary GPU process startup failure has been fixed. Advanced tuning distinguishes card-specific ranges from technical format limits more clearly; these settings remain experimental. This does not add Vix support for Ada or Ampere in Play.</p>
+    <p>Diagnostic reports clearly label <strong>Description (required)</strong>. The helper asks for a brief explanation of what happened and how to reproduce the problem.</p>
+    <h3>742 entries in the game database</h3>
+    <p>Database <strong>2.44</strong> adds <strong>Total War: PHARAOH DYNASTIES</strong>, <strong>RoboCop: Rogue City - Unfinished Business</strong> and <strong>Unigine Heaven 4.0</strong>. Heaven uses the <strong>Performance</strong> profile. Detection accounts for the actual benchmark process. FPS and 1% low readings still require an available measurement source.</p>
+  </section>
+</section>
 <section class="update-preview" id="updates-216" aria-labelledby="update-216-title">
   <p class="eyebrow">NEW IN VERSION 2.1.6</p>
   <h2 id="update-216-title">Check your GPU curve, shape your fan control</h2>
@@ -67,6 +117,8 @@
   </section>
 </section>
 
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.5</summary>
 <section class="update-preview" id="updates-215" aria-labelledby="update-215-title">
   <p class="eyebrow">NEW IN VERSION 2.1.5</p>
   <h2 id="update-215-title">Hotfix for curve checks, Scanner and Vix</h2>
@@ -97,6 +149,7 @@
   </section>
 </section>
 
+</details>
 <details class="news-archive">
   <summary>NV-UV Play v2.1.4</summary>
 <section class="update-preview" id="updates-214" aria-labelledby="update-214-title">
