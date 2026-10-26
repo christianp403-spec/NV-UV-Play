@@ -4,9 +4,9 @@
 
 **Explore Play:** [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html) · [Webseite (Deutsch)](https://christianp403-spec.github.io/NV-UV-Play/)
 
-NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.5 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.5).** This is an Alpha prerelease.
+NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.7 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.7).** This is an Alpha prerelease.
 
-**Hotfix v2.1.5:** corrected curve checks and Scanner handling, loader-based Vix compatibility, consistent overlay spacing and gray settings panels. [Hotfix details and screenshots](https://christianp403-spec.github.io/NV-UV-Play/news.html#updates-215).
+**New in v2.1.7:** Play, RTSS and NVIDIA overlay output, easier layout editing and improved frametime graphs. Clearer curve readback, profile handling and fan controls with Undo and saved-profile reset fixes. [Feature guide and screenshots](https://christianp403-spec.github.io/NV-UV-Play/news.html#updates-217).
 
 **New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play. Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
 
@@ -19,7 +19,7 @@ NV⚡UV Play applies your chosen GPU profile when a game starts. Use the communi
 - **Fan control:** GPU automatic mode, fixed speed or custom curves with hysteresis per reported channel, with saved profiles and optional activation at startup. Open **Fan curve** in the main window. Compatible driver support is required; hardware write validation is pending.
 - **UV scanner:** configurable tests, saved results and history, NVIDIA Auto-UV starting points and UV Try community profiles.
 - **DCC:** Automatic clock regulation with per-game learning, plus an experimental NVIDIA Power Efficiency mode.
-- **Enhanced Overlay in v2.0.1:** one settings window for display, readings, layout, colors and saved overlay profiles, with a live preview. Select and move readings in the preview, or start from the existing defaults.
+- **Overlay:** choose Play, RTSS or NVIDIA output and matching templates. Mixed combines available readings from different sources. Edit readings with drag-and-drop and multi-step Undo, adjust label/value text sizes separately, and configure the frametime graph independently.
 - **Performance readings:** FPS, 1% lows, frame times, GPU usage, voltage, power, clocks and temperatures, plus available CPU and RAM readings. Sensor availability depends on the hardware; some readings require optional PawnIO setup.
 - **Stabilizer and Smart Hz:** profile corrections after detected driver crashes and automatic display refresh-rate switching. **Enhanced Stabilizer** is a separate option under Experimental features: it can adjust selected Advanced GPU Tuning settings using your own per-profile steps and stop values. These corrections are not sufficiently validated and can improve or worsen stability; no recommended values are supplied. It is separate from DCC NVIDIA Experimental (Power Efficiency Mode).
 - **Game library, diagnostics and updates:** game database updates, game requests, diagnostic exports and optional report uploads, plus a signed in-app updater. Play can restart after a repeatedly confirmed NVIDIA driver version change, waiting for open editors and running operations. A driver crash, brief reset or same-version reinstall does not trigger this restart.
@@ -32,7 +32,7 @@ For a new installation:
 2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
 3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
 
-If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.1.5 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
+If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.1.7 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
 ## Requirements and hardware support
 
@@ -48,7 +48,9 @@ The optional **NVIDIA Max Frame Rate** and **Global NVIDIA VSync** controls appl
 
 ## Overlay modes
 
-The regular overlay supports desktop and windowed/borderless game display, with configurable readings, layout and colors. **Exclusive fullscreen is no longer supported as of v2.0.8.** The experimental renderers and attach helpers have been removed.
+- **Play output:** supports desktop and windowed/borderless display. It can have higher latency and does not support exclusive fullscreen.
+- **RTSS output:** requires RivaTuner Statistics Server 7.3.7 or newer.
+- **NVIDIA output:** experimental and unofficial integration. Fullscreen and anti-cheat compatibility varies by game. NVIDIA's own overlay can also be configured from Play.
 
 ## Game library
 
