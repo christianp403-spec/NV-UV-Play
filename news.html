@@ -30,14 +30,13 @@
     <div class="section-heading"><div><p class="eyebrow">UPDATES AND DEVELOPMENT</p><h1 id="news-title">Play News</h1></div></div>
 <section class="update-preview" id="updates-217" aria-labelledby="update-217-title">
   <p class="eyebrow">NEW IN VERSION 2.1.7</p>
-  <h2 id="update-217-title">Your overlay, your readings, your output</h2>
+  <h2 id="update-217-title">The compatible overlay</h2>
   <p class="release-intro">Your Play layout can now be displayed through RTSS or NVIDIA. Readings from several sources, freely arranged tiles and separate frametime controls make the overlay more flexible. Curve displays are clearer, and fan profiles are easier to work with.</p>
-  <nav class="release-topics" aria-label="Features in version 2.1.7"><a href="#overlay-217">Three overlay outputs</a><a href="#layout-217">Layout &amp; frametime</a><a href="#curves-217">Curves &amp; profiles</a><a href="#fans-217">Fan curves &amp; Undo</a><a href="#details-217">Interface &amp; games</a></nav>
+  <nav class="release-topics" aria-label="Features in version 2.1.7"><a href="#overlay-217">Three overlay outputs</a><a href="#layout-217">Layout &amp; frametime</a><a href="#curves-217">Curves &amp; profiles</a><a href="#fans-217">Fan curves &amp; Undo</a><a href="#details-217">Games</a></nav>
   <section class="release-feature-section" id="overlay-217">
     <h3>Display one layout through Play, RTSS or NVIDIA</h3>
     <p>Keep designing your overlay in Play, then choose <strong>Play</strong>, <strong>RTSS</strong> or <strong>NVIDIA output</strong> to display it. <strong>Mixed integration</strong> combines NVIDIA, RTSS and Play readings in one layout. The selected <strong>Output renderer</strong> determines which output shows the finished overlay.</p>
-    <p><strong>Profiles</strong> offers four starting points: <strong>Play template</strong>, <strong>NVIDIA template</strong>, <strong>RTSS template</strong> and <strong>Mixed template</strong>. Applying a template does not replace your saved layouts or automatically switch the output renderer.</p>
-    <figure class="release-wide-image"><a href="assets/play-overlay-profiles-v2.1.7.png" target="_blank" rel="noopener"><img src="assets/play-overlay-profiles-v2.1.7.png" width="1080" height="850" loading="lazy" alt="Overlay window with saved layouts and the Play, NVIDIA, RTSS and Mixed templates"></a><figcaption>Templates and your own layouts share the Profiles page. These screenshots show the interface with example readings, not benchmark results. Click to enlarge.</figcaption></figure>
+    <p><strong>Profiles</strong> offers four starting points: <strong>Play template</strong>, <strong>NVIDIA template</strong>, <strong>RTSS template</strong> and <strong>Mixed template</strong>.</p>
     <ol class="release-steps">
       <li><strong>Connect the integration you need.</strong> Mixed starts NVIDIA and RTSS together. Available readings depend on the connected sources and hardware.</li>
       <li><strong>Choose a template.</strong> Mixed combines RTSS/Afterburner frametimes, NVIDIA GPU readings and Play CPU readings. CPU temperature and power use the available PawnIO sensors.</li>
@@ -52,7 +51,6 @@
     <figure class="release-wide-image"><a href="assets/play-overlay-frametime-v2.1.7.png" target="_blank" rel="noopener"><img src="assets/play-overlay-frametime-v2.1.7.png" width="1080" height="850" loading="lazy" alt="Layout settings with RTSS frametime source, position, text size, graph height, width and color"></a><figcaption>Layout → Frametime graph controls the source, position, size and color independently of the reading tiles. These settings also apply to NVIDIA and RTSS output.</figcaption></figure>
     <p>Frametime sources are <strong>Play ETW</strong> and <strong>RTSS</strong>. The unavailable NVIDIA Frametime option has been removed; existing selections switch to Play ETW. Play and RTSS graphs animate between data updates in NVIDIA output. The value layer stays in place during updates instead of being recreated for every reading.</p>
     <p>You can also configure NVIDIA's native overlay from Play. The NVIDIA layout editor offers readings, text size, colors and position, with changes applied directly.</p>
-    <p>RTSS detection now accounts for the installed release when its executable still reports an older internal version. This removes the incorrect update warning for a suitable installation.</p>
     <p><strong>G-SYNC/VRR</strong> reports the monitor status supplied by the driver. It does not prove that synchronization is active in a particular game. The optional native <strong>DLSS on-screen indicator</strong> is a global NVIDIA setting, independent of Play's overlay. Display HDR has been removed from templates because it describes display status rather than the game's HDR rendering.</p>
   </section>
   <section class="release-feature-section" id="curves-217">
@@ -66,14 +64,10 @@
     <p><strong>Reset curves</strong> now visibly selects <strong>Default</strong>. Selecting the saved profile again restores its saved curves. Saving after Reset creates a separate <strong>Custom</strong> profile. Running fan control changes only when you apply the draft.</p>
     <figure class="release-wide-image"><a href="assets/play-fan-reset-v2.1.7.png" target="_blank" rel="noopener"><img src="assets/play-fan-reset-v2.1.7.png" width="1650" height="1200" loading="lazy" alt="Fan control after Reset curves with Default selected, synchronized fans and Undo on Fan 1"></a><figcaption>Default after a reset: with Sync curves enabled, edit Fan 1 and the other fans follow. Example values explain the interface and are not tuning recommendations.</figcaption></figure>
     <p>Each fan curve has multi-step <strong>Undo</strong>. With <strong>Sync curves</strong> enabled, Undo on Fan 1 reverses the step for all linked fans. With Sync off, each fan works independently. Undo changes the draft; <strong>Apply &amp; save</strong> activates it.</p>
-    <p>Starting curves derived from BIOS values offer up to <strong>six editable points</strong>. Existing saved curves keep their points. Transfer to the available BIOS points has been improved; the three BIOS anchors and the transfer preview still determine the result. Software curves and BIOS curves remain separate.</p>
+    <p>Starting curves derived from BIOS values offer up to <strong>six editable points</strong>. Existing saved curves keep their points. Transferring the software curve to the BIOS fan curve through Vix is currently available only on Blackwell graphics cards. Transfer to the available BIOS points has been improved; the three BIOS anchors and the transfer preview still determine the result. Software curves and BIOS curves remain separate.</p>
     <p>The last saved fan profile can now be deleted. <strong>Profile actions</strong> uses a dark menu, and the main window stays usable while Fan control is open.</p>
   </section>
   <section class="release-feature-section" id="details-217">
-    <h3>Fewer detours through settings</h3>
-    <p><strong>Advanced options</strong> starts with collapsed categories and remembers whether each section is open or closed. General settings and notification links have been reorganized. <strong>Close</strong> stays visible at the bottom right of Settings. Stabilizer Settings remembers its window size and keeps Save and Cancel accessible.</p>
-    <p>A secondary GPU process startup failure has been fixed. Advanced tuning distinguishes card-specific ranges from technical format limits more clearly; these settings remain experimental. This does not add Vix support for Ada or Ampere in Play.</p>
-    <p>Diagnostic reports clearly label <strong>Description (required)</strong>. The helper asks for a brief explanation of what happened and how to reproduce the problem.</p>
     <h3>742 entries in the game database</h3>
     <p>Database <strong>2.44</strong> adds <strong>Total War: PHARAOH DYNASTIES</strong>, <strong>RoboCop: Rogue City - Unfinished Business</strong> and <strong>Unigine Heaven 4.0</strong>. Heaven uses the <strong>Performance</strong> profile. Detection accounts for the actual benchmark process. FPS and 1% low readings still require an available measurement source.</p>
   </section>
