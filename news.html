@@ -8,13 +8,13 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.7: Play, RTSS and NVIDIA overlay output, mixed readings, layout Undo and improved curve and fan profiles.">
-  <link rel="stylesheet" href="styles.css?v=20261026-news-217">
+  <meta name="description" content="NV-UV Play 2.1.8: clearer Mixed Setup connections, RTSS frametime and graphics API fixes, reading sources and better diagnostics.">
+  <link rel="stylesheet" href="styles.css?v=20261027-news-218">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
-  <script src="guide.en.js?v=20261015-v2.1.2" defer></script>
+  <script src="guide.en.js?v=20261027-overlay-218" defer></script>
   <script src="guide.ui.en.js?v=20261015-v2.1.2" defer></script>
   <script src="guide-app.js?v=20261021-search" defer></script>
-  <script src="site-navigation.js?v=20261026-news-217" defer></script>
+  <script src="site-navigation.js?v=20261027-news-218" defer></script>
   <script src="site-search.js?v=20261022-inline" defer></script>
 </head>
 <body data-page="news">
@@ -25,9 +25,40 @@
   <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="neuigkeiten.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-217">In version 2.1.7</a><a href="#updates-216">In version 2.1.6</a><a href="#updates-215">In version 2.1.5</a><a href="#updates-214">In version 2.1.4</a><a href="#updates-213">In version 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-218">In version 2.1.8</a><a href="#updates-217">In version 2.1.7</a><a href="#updates-216">In version 2.1.6</a><a href="#updates-215">In version 2.1.5</a><a href="#updates-214">In version 2.1.4</a><a href="#updates-213">In version 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES AND DEVELOPMENT</p><h1 id="news-title">Play News</h1></div></div>
+<section class="update-preview" id="updates-218" aria-labelledby="update-218-title">
+  <p class="eyebrow">NEW IN VERSION 2.1.8</p>
+  <h2 id="update-218-title">Clearer connections, steadier overlay values</h2>
+  <p class="release-intro">Mixed Setup makes NVIDIA and RTSS connections easier to control. Frametime and graphics API corrections reduce disappearing values, and a right-click in the preview shows where each reading comes from.</p>
+  <nav class="release-topics" aria-label="Changes in version 2.1.8"><a href="#mixed-218">Connections</a><a href="#sources-218">Reading sources</a><a href="#fixes-218">Overlay fixes</a><a href="#diagnostics-218">Diagnostics</a></nav>
+  <section class="release-feature-section" id="mixed-218">
+    <h3>Connect each source when you need it</h3>
+    <p><strong>Mixed Setup</strong> has one <strong>Connect / Disconnect</strong> button per source. NVIDIA and RTSS work independently. A green <strong>Connected</strong> label confirms the current connection. If it is lost, the button offers Connect again.</p>
+    <figure class="release-wide-image"><a href="assets/play-mixed-setup-v2.1.8.png" target="_blank" rel="noopener"><img src="assets/play-mixed-setup-v2.1.8.png" width="1080" height="850" loading="lazy" alt="Mixed Setup with separate NVIDIA and RTSS Connect buttons, connection status and the output renderer"></a><figcaption>Mixed Setup and the editable layout preview. Example readings illustrate the interface; they are not benchmark results.</figcaption></figure>
+    <p>Disconnecting a source removes it from new reading and graph choices while keeping your saved selections and layout. If that source is also the active output, Play becomes the output. RTSS itself stays open for other applications. A manual disconnect remains saved until you connect again.</p>
+    <p>The NVIDIA integration uses its existing switch to connect, disconnect or retry. The extra Connect / reconnect button has been removed. The short RTSS compatibility note is available as a tooltip on its connection status.</p>
+  </section>
+  <section class="release-feature-section" id="sources-218">
+    <h3>See where a reading comes from</h3>
+    <p>Right-click a reading value, status badge or graph in the live preview to see its original reading name and source. This also works after you give a reading your own label.</p>
+    <figure class="release-wide-image"><a href="assets/play-reading-source-v2.1.8.png" target="_blank" rel="noopener"><img src="assets/play-reading-source-v2.1.8.png" width="424" height="207" loading="lazy" alt="Preview context menu identifying CPU temperature and its PawnIO / LibreHardwareMonitor source"></a><figcaption>The original reading and source stay identifiable even with a custom label.</figcaption></figure>
+    <p><strong>The reading source and output renderer are independent.</strong> For example, select <strong>VRAM usage (%)</strong> under <strong>Readings → GPU</strong> and display it in your Play layout through NVIDIA output. Selecting NVIDIA as the output does not limit the layout to NVIDIA readings.</p>
+  </section>
+  <section class="release-feature-section" id="fixes-218">
+    <h3>Frametime, graphics API and DLSS readings</h3>
+    <p>RTSS output uses its native frametime value alongside its native graph. Brief gaps in RTSS data no longer blank the graphics API status; expired data or data from another process remains unavailable.</p>
+    <p>RTSS and Mixed templates use <strong>RTSS Graphics API</strong> in the status row. Choosing RTSS for the graph also selects the matching API field. Fresh DirectX measurements take priority over conflicting process hints.</p>
+    <p>NVIDIA DLSS readings use the corrected reading table. Old Mixed settings no longer start unused RTSS, and toggling the overlay keeps a manually closed RTSS closed.</p>
+  </section>
+  <section class="release-feature-section" id="diagnostics-218">
+    <h3>More useful reports when something is missing</h3>
+    <p>Diagnostic reports record more detail about overlay reading availability, DCC learning and matching Afterburner profiles, including relevant saved curve data. This helps distinguish missing source data from display and profile problems. The additional diagnostics do not reset learned profiles or change how DCC learns.</p>
+    <p>For an overlay issue, include the game, display mode, output renderer, reading source and steps to reproduce it.</p>
+  </section>
+</section>
+
 <section class="update-preview" id="updates-217" aria-labelledby="update-217-title">
   <p class="eyebrow">NEW IN VERSION 2.1.7</p>
   <h2 id="update-217-title">The compatible overlay</h2>
@@ -72,6 +103,8 @@
     <p>Database <strong>2.44</strong> adds <strong>Total War: PHARAOH DYNASTIES</strong>, <strong>RoboCop: Rogue City - Unfinished Business</strong> and <strong>Unigine Heaven 4.0</strong>. Heaven uses the <strong>Performance</strong> profile. Detection accounts for the actual benchmark process. FPS and 1% low readings still require an available measurement source.</p>
   </section>
 </section>
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.6</summary>
 <section class="update-preview" id="updates-216" aria-labelledby="update-216-title">
   <p class="eyebrow">NEW IN VERSION 2.1.6</p>
   <h2 id="update-216-title">Check your GPU curve, shape your fan control</h2>
@@ -111,6 +144,7 @@
   </section>
 </section>
 
+</details>
 <details class="news-archive">
   <summary>NV-UV Play v2.1.5</summary>
 <section class="update-preview" id="updates-215" aria-labelledby="update-215-title">

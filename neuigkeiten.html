@@ -8,12 +8,12 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.7: Overlay-Ausgabe über Play, RTSS und NVIDIA, Mixed-Messwerte, Layout-Undo und verbesserte Kurven- und Lüfterprofile.">
-  <link rel="stylesheet" href="styles.css?v=20261026-news-217">
+  <meta name="description" content="NV-UV Play 2.1.8: klare Mixed-Setup-Verbindungen, korrigierte RTSS-Frametime- und API-Werte, Messwertquellen und bessere Diagnose.">
+  <link rel="stylesheet" href="styles.css?v=20261027-news-218">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
-  <script src="guide.de.js?v=20261015-v2.1.2" defer></script>
+  <script src="guide.de.js?v=20261027-overlay-218" defer></script>
   <script src="guide-app.js?v=20261021-search" defer></script>
-  <script src="site-navigation.js?v=20261026-news-217" defer></script>
+  <script src="site-navigation.js?v=20261027-news-218" defer></script>
   <script src="site-search.js?v=20261022-inline" defer></script>
 </head>
 <body data-page="news">
@@ -24,9 +24,40 @@
   <div class="header-actions"><div class="language-switch" aria-label="Sprache"><span lang="de" aria-current="page">DE</span><a href="news.html" lang="en" hreflang="en" aria-label="Switch to English" data-language-switch>EN</a></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-217">In Version 2.1.7</a><a href="#updates-216">In Version 2.1.6</a><a href="#updates-215">In Version 2.1.5</a><a href="#updates-214">In Version 2.1.4</a><a href="#updates-213">In Version 2.1.3</a><a href="#updates-212">In Version 2.1.2</a><a href="#updates-211">In Version 2.1.1</a><a href="#updates-210">In Version 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-218">In Version 2.1.8</a><a href="#updates-217">In Version 2.1.7</a><a href="#updates-216">In Version 2.1.6</a><a href="#updates-215">In Version 2.1.5</a><a href="#updates-214">In Version 2.1.4</a><a href="#updates-213">In Version 2.1.3</a><a href="#updates-212">In Version 2.1.2</a><a href="#updates-211">In Version 2.1.1</a><a href="#updates-210">In Version 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES UND ENTWICKLUNG</p><h1 id="news-title">Play-Neuigkeiten</h1></div></div>
+<section class="update-preview" id="updates-218" aria-labelledby="update-218-title">
+  <p class="eyebrow">NEU IN VERSION 2.1.8</p>
+  <h2 id="update-218-title">Klare Verbindungen, ruhigere Overlay-Werte</h2>
+  <p class="release-intro">Mixed Setup macht die Verbindungen zu NVIDIA und RTSS einfacher bedienbar. Korrekturen für Frametime und Grafik-API verringern kurzzeitig verschwindende Werte. Ein Rechtsklick in der Vorschau zeigt, woher ein Messwert stammt.</p>
+  <nav class="release-topics" aria-label="Änderungen in Version 2.1.8"><a href="#mixed-218">Verbindungen</a><a href="#sources-218">Messwertquellen</a><a href="#fixes-218">Overlay-Korrekturen</a><a href="#diagnostics-218">Diagnose</a></nav>
+  <section class="release-feature-section" id="mixed-218">
+    <h3>Jede Quelle bei Bedarf verbinden</h3>
+    <p><strong>Mixed Setup</strong> bietet pro Quelle einen wechselnden <strong>Connect / Disconnect</strong>-Button. NVIDIA und RTSS lassen sich unabhängig verbinden. Ein grünes <strong>Connected</strong> bestätigt die aktuelle Verbindung. Geht sie verloren, bietet der Button wieder Connect an.</p>
+    <figure class="release-wide-image"><a href="assets/play-mixed-setup-v2.1.8.png" target="_blank" rel="noopener"><img src="assets/play-mixed-setup-v2.1.8.png" width="1080" height="850" loading="lazy" alt="Mixed Setup mit getrennten Connect-Buttons für NVIDIA und RTSS, Verbindungsstatus und Auswahl der Overlay-Ausgabe"></a><figcaption>Mixed Setup und die bearbeitbare Layout-Vorschau. Die Beispielwerte erklären die Oberfläche und sind keine Benchmark-Ergebnisse.</figcaption></figure>
+    <p>Nach dem Trennen steht die Quelle für neue Messwert- und Graphauswahlen nicht mehr bereit. Gespeicherte Auswahlen und das Layout bleiben erhalten. War die getrennte Quelle zugleich die aktive Ausgabe, übernimmt Play die Ausgabe. RTSS selbst bleibt für andere Anwendungen geöffnet. Eine manuell getrennte Verbindung bleibt bis zum erneuten Verbinden getrennt.</p>
+    <p>Die NVIDIA-Integration verwendet ihren vorhandenen Schalter zum Verbinden, Trennen und erneuten Versuch. Der zusätzliche Connect / reconnect-Button entfällt. Der kurze RTSS-Kompatibilitätshinweis steht als Tooltip am Verbindungsstatus.</p>
+  </section>
+  <section class="release-feature-section" id="sources-218">
+    <h3>Die Quelle hinter einem Messwert sehen</h3>
+    <p>Ein Rechtsklick auf einen Messwert, ein Statusfeld oder den Graphen in der Live-Vorschau zeigt den ursprünglichen Messwertnamen und seine Quelle. Das funktioniert auch mit einer selbst vergebenen Beschriftung.</p>
+    <figure class="release-wide-image"><a href="assets/play-reading-source-v2.1.8.png" target="_blank" rel="noopener"><img src="assets/play-reading-source-v2.1.8.png" width="424" height="207" loading="lazy" alt="Kontextmenü der Vorschau mit CPU temperature und der Quelle PawnIO / LibreHardwareMonitor"></a><figcaption>Ursprünglicher Messwert und Quelle bleiben auch bei einer eigenen Beschriftung erkennbar.</figcaption></figure>
+    <p><strong>Messwertquelle und Ausgabe sind unabhängig.</strong> Beispielsweise lässt sich <strong>VRAM usage (%)</strong> unter <strong>Readings → GPU</strong> auswählen und im Play-Layout über NVIDIA ausgeben. Die NVIDIA-Ausgabe beschränkt das Layout nicht auf NVIDIA-Messwerte.</p>
+  </section>
+  <section class="release-feature-section" id="fixes-218">
+    <h3>Frametime, Grafik-API und DLSS-Messwerte</h3>
+    <p>Die RTSS-Ausgabe verwendet den nativen Frametime-Zahlenwert zusammen mit dem nativen Graphen. Kurze Lücken in den RTSS-Daten lassen die Grafik-API-Anzeige nicht mehr verschwinden. Veraltete Daten oder Daten eines anderen Prozesses bleiben weiterhin nicht verfügbar.</p>
+    <p>Die RTSS- und Mixed-Vorlagen verwenden <strong>RTSS Graphics API</strong> in der Statuszeile. Wird RTSS als Graphquelle gewählt, wird auch das passende API-Feld ausgewählt. Frische DirectX-Messungen haben Vorrang vor widersprüchlichen Prozesshinweisen.</p>
+    <p>NVIDIA-DLSS-Messwerte nutzen die korrigierte Messwerttabelle. Alte Mixed-Einstellungen starten kein ungenutztes RTSS mehr. Auch beim Aus- und Einschalten des Overlays bleibt ein manuell geschlossenes RTSS geschlossen.</p>
+  </section>
+  <section class="release-feature-section" id="diagnostics-218">
+    <h3>Aussagekräftigere Berichte bei fehlenden Werten</h3>
+    <p>Diagnoseberichte enthalten mehr Angaben zur Verfügbarkeit von Overlay-Messwerten, zum DCC-Lernen und zu passenden Afterburner-Profilen, einschließlich relevanter gespeicherter Kurvendaten. Damit lassen sich fehlende Quelldaten besser von Anzeige- und Profilproblemen unterscheiden. Die zusätzliche Diagnose setzt keine gelernten Profile zurück und ändert nicht das Lernverhalten von DCC.</p>
+    <p>Bei Overlay-Problemen helfen Spiel, Anzeigemodus, Ausgabe, Messwertquelle und Schritte zum Nachstellen.</p>
+  </section>
+</section>
+
 <section class="update-preview" id="updates-217" aria-labelledby="update-217-title">
   <p class="eyebrow">NEU IN VERSION 2.1.7</p>
   <h2 id="update-217-title">Das kompatible Overlay</h2>
@@ -71,6 +102,8 @@
     <p>Datenbank <strong>2.44</strong> ergänzt <strong>Total War: PHARAOH DYNASTIES</strong>, <strong>RoboCop: Rogue City - Unfinished Business</strong> und <strong>Unigine Heaven 4.0</strong>. Heaven wird dem Profil <strong>Performance</strong> zugeordnet. Die Erkennung berücksichtigt den eigentlichen Benchmark-Prozess. FPS und 1%-Low-Anzeigen benötigen wie bisher eine verfügbare Messquelle.</p>
   </section>
 </section>
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.6</summary>
 <section class="update-preview" id="updates-216" aria-labelledby="update-216-title">
   <p class="eyebrow">NEU IN VERSION 2.1.6</p>
   <h2 id="update-216-title">GPU-Kurve kontrollieren, Lüfterkurve übernehmen</h2>
@@ -110,6 +143,7 @@
   </section>
 </section>
 
+</details>
 <details class="news-archive">
   <summary>NV-UV Play v2.1.5</summary>
 <section class="update-preview" id="updates-215" aria-labelledby="update-215-title">

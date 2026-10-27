@@ -393,8 +393,8 @@ window.PLAY_GUIDE_EN = {
   "overlay": {
     "purpose": "The overlay shows selected performance and sensor readings on the desktop or over detected games.",
     "benefit": "See how a profile affects frame rate, power consumption and temperature while playing, without constantly switching windows.",
-    "how": "Enable the overlay and choose Desktop, Game or Desktop + Game under Display on. Since v2.0.13, it can switch automatically between the desktop and a detected game. Enable the desired values in Readings and adjust the presentation with Layout and Colors.",
-    "limit": "Desktop, windowed and borderless modes are supported. Exclusive fullscreen has not been supported since v2.0.8. Some readings need compatible sensors or the optional PawnIO setup.",
+    "how": "Enable the overlay and choose Desktop, Game or Desktop + Game under Display on. Select your readings, then arrange them with Layout and Colors. In v2.1.8, Mixed Setup connects NVIDIA and RTSS independently and lets you choose the output renderer.",
+    "limit": "Play output supports desktop, windowed and borderless modes, but not exclusive fullscreen. RTSS and NVIDIA output compatibility depends on the game. Some readings need compatible sensors or the optional PawnIO setup.",
     "scenarioTitle": "How can I tell whether my UV profile is working?",
     "scenario": "Watch GPU clock, voltage and power draw together with FPS. Compare the same game scene with identical settings and FPS cap, once at stock and once with the UV profile. Lower voltage at a comparable clock shows the effect of undervolting. Lower watts at similar FPS shows the efficiency gain. Low power draw alone can simply mean less load. HWiNFO or GPU-Z are alternatives to Play telemetry.",
     "controls": [
@@ -411,12 +411,20 @@ window.PLAY_GUIDE_EN = {
         "Display controls position and appearance. Readings selects values, Layout arranges them, and Colors sets their colors. Profiles manages saved overlay layouts."
       ],
       [
+        "Mixed Setup (v2.1.8)",
+        "Connect or disconnect NVIDIA and RTSS separately. Connected lights up green when the source is connected. Disconnecting keeps saved selections and layouts, but makes that source unavailable for new reading and graph selections. RTSS itself stays open."
+      ],
+      [
+        "Output renderer",
+        "Choose Play, RTSS or NVIDIA to display your layout. Connected sources supply readings independently of the output. Disconnecting the active output switches it to Play. NVIDIA output uses the Play layout for readings from different sources."
+      ],
+      [
         "Position and appearance",
         "Position, Horizontal and Vertical set the location. Font size controls text size; Opacity controls background opacity. Keep the overlay readable without getting in the way."
       ],
       [
         "Live preview",
-        "Shows the arrangement while you edit. Select readings and move them in the actual designer. The original screenshot uses simulated test values."
+        "Shows the arrangement while you edit. Move readings in the designer. In v2.1.8, right-click a reading value, status badge or graph to see its original reading name and source, even after renaming it. The original screenshot uses simulated test values."
       ],
       [
         "FPS / 1% Low / Frame time",
@@ -432,7 +440,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "CPU / RAM / VRAM",
-        "Additional utilization and memory data helps identify bottlenecks. Availability depends on sensors and the system."
+        "Additional utilization and memory data helps identify bottlenecks. Select VRAM usage (%) under Readings → GPU to show the percentage. You can also display this reading through NVIDIA output using the Play layout. Availability depends on sensors and the system."
       ],
       [
         "Show / hide shortcut",

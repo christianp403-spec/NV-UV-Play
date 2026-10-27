@@ -393,8 +393,8 @@ window.PLAY_GUIDE_DE = {
   "overlay": {
     "purpose": "Das Overlay zeigt ausgewählte Leistungs- und Sensorwerte auf dem Desktop oder über erkannten Spielen.",
     "benefit": "Du kannst während des Spielens sehen, wie sich ein Profil auf Bildrate, Verbrauch und Temperatur auswirkt, ohne ständig zu einem anderen Fenster zu wechseln.",
-    "how": "Overlay einschalten und unter Display on zwischen Desktop, Game und Desktop + Game wählen. Seit v2.0.13 kann es automatisch zwischen Desktop und erkanntem Spiel wechseln. In Readings aktivierst du die gewünschten Werte; Layout und Colors passen die Darstellung an.",
-    "limit": "Unterstützt werden Desktop, Fenster und randlose Fenster. Exklusives Vollbild wird seit v2.0.8 nicht unterstützt. Einige Werte brauchen kompatible Sensoren oder optionales PawnIO-Setup.",
+    "how": "Overlay einschalten und unter Display on zwischen Desktop, Game und Desktop + Game wählen. Messwerte auswählen und mit Layout und Colors anordnen. In v2.1.8 verbindet Mixed Setup NVIDIA und RTSS unabhängig voneinander und lässt dich die Ausgabe wählen.",
+    "limit": "Die Play-Ausgabe unterstützt Desktop, Fenster und randlose Fenster, aber kein exklusives Vollbild. Die Kompatibilität der RTSS- und NVIDIA-Ausgabe hängt vom Spiel ab. Einige Werte brauchen kompatible Sensoren oder das optionale PawnIO-Setup.",
     "scenarioTitle": "Woran erkenne ich, dass mein UV-Profil wirkt?",
     "scenario": "Beobachte GPU-Takt, Spannung und Leistungsaufnahme zusammen mit deinen FPS. Vergleiche dieselbe Spielszene mit gleichen Einstellungen und gleichem FPS-Limit, einmal mit Standardeinstellungen und einmal mit UV-Profil. Weniger Spannung bei vergleichbarem Takt zeigt die Wirkung des Undervoltings. Weniger Watt bei ähnlicher Bildrate zeigt den Effizienzgewinn. Ein niedriger Verbrauch allein kann auch an geringerer Last liegen. Alternativ zur Play-Telemetrie kannst du HWiNFO oder GPU-Z nutzen.",
     "controls": [
@@ -411,12 +411,20 @@ window.PLAY_GUIDE_DE = {
         "Display legt Position und Aussehen fest. Readings wählt Messwerte, Layout ordnet sie an, Colors steuert Farben. Profiles verwaltet gespeicherte Overlay-Layouts."
       ],
       [
+        "Mixed Setup (v2.1.8)",
+        "NVIDIA und RTSS getrennt verbinden oder trennen. Connected leuchtet bei bestehender Verbindung grün. Beim Trennen bleiben gespeicherte Auswahlen und Layouts erhalten. Die Quelle steht dann für neue Messwert- und Graphauswahlen nicht bereit. RTSS selbst bleibt geöffnet."
+      ],
+      [
+        "Output renderer",
+        "Play, RTSS oder NVIDIA als Ausgabe für dein Layout wählen. Verbundene Quellen liefern unabhängig von der Ausgabe Messwerte. Beim Trennen der aktiven Ausgabe übernimmt Play. Für Messwerte aus verschiedenen Quellen verwendet die NVIDIA-Ausgabe das Play-Layout."
+      ],
+      [
         "Position und Darstellung",
         "Position, Horizontal und Vertical legen den Ort fest. Font size bestimmt die Textgröße, Opacity die Deckkraft des Hintergrunds. Damit bleibt das Overlay gut lesbar und stört möglichst wenig."
       ],
       [
         "Live preview",
-        "Zeigt die Anordnung direkt während der Bearbeitung. Du kannst Werte auswählen und im echten Designer verschieben. Die Originalaufnahme verwendet simulierte Testwerte."
+        "Zeigt die Anordnung während der Bearbeitung. Messwerte lassen sich im Designer verschieben. In v2.1.8 zeigt ein Rechtsklick auf einen Messwert, ein Statusfeld oder den Graphen den ursprünglichen Messwertnamen und seine Quelle, auch nach dem Umbenennen. Die Originalaufnahme verwendet simulierte Testwerte."
       ],
       [
         "FPS / 1% Low / Frame time",
@@ -432,7 +440,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "CPU / RAM / VRAM",
-        "Zusätzliche Auslastungs- und Speicherdaten helfen bei der Einordnung von Engpässen. Verfügbarkeit hängt vom Sensor und vom System ab."
+        "Zusätzliche Auslastungs- und Speicherdaten helfen bei der Einordnung von Engpässen. VRAM usage (%) unter Readings → GPU zeigt die prozentuale Belegung. Dieser Messwert lässt sich im Play-Layout auch über NVIDIA ausgeben. Die Verfügbarkeit hängt von Sensoren und System ab."
       ],
       [
         "Show / hide shortcut",
