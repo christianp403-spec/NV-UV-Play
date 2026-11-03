@@ -8,8 +8,8 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.9: fixed compact cell widths, desktop and game overlay modes, Zero Fan at 0%, and clearer Stabilizer startup errors.">
-  <link rel="stylesheet" href="styles.css?v=20261103-update-key-219">
+  <meta name="description" content="NV-UV Play 2.1.9.1: hotfix for NVIDIA overlay connections after NVIDIA App updates.">
+  <link rel="stylesheet" href="styles.css?v=20261103-hotfix-2191">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
   <script src="guide.en.js?v=20261102-overlay-219" defer></script>
   <script src="guide.ui.en.js?v=20261015-v2.1.2" defer></script>
@@ -29,13 +29,21 @@
     <h2 id="update-key-title">Important: one-time manual update required</h2>
     <p>A problem with automatic update signing has been resolved. This required replacing the update-signing key.</p>
     <p>Please download NV-UV Play v2.1.9 manually from the official GitHub release. After this one-time update, automatic updates will work as usual.</p>
-    <p><strong>Automatic updates from older versions cannot install this release.</strong></p>
+    <p><strong>Versions before 2.1.9 require this one-time manual update.</strong></p>
     <p><strong>Close Play, extract the new portable ZIP into your existing Play folder and replace the existing program files.</strong></p>
     <div class="update-key-actions"><a class="button primary" href="https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.9" target="_blank" rel="noopener noreferrer">Download NV-UV Play v2.1.9 on GitHub</a><a class="text-link" href="news.html#updates-219">See what changes in 2.1.9</a></div>
   </section>
-  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-219">In version 2.1.9</a><a href="#updates-218">In version 2.1.8</a><a href="#updates-217">In version 2.1.7</a><a href="#updates-216">In version 2.1.6</a><a href="#updates-215">In version 2.1.5</a><a href="#updates-214">In version 2.1.4</a><a href="#updates-213">In version 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
+  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-2191">Hotfix 2.1.9.1</a><a href="#updates-219">In version 2.1.9</a><a href="#updates-218">In version 2.1.8</a><a href="#updates-217">In version 2.1.7</a><a href="#updates-216">In version 2.1.6</a><a href="#updates-215">In version 2.1.5</a><a href="#updates-214">In version 2.1.4</a><a href="#updates-213">In version 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES AND DEVELOPMENT</p><h1 id="news-title">Play News</h1></div></div>
+<section class="update-preview" id="updates-2191" aria-labelledby="update-2191-title">
+  <p class="eyebrow">NEW IN VERSION 2.1.9.1</p>
+  <h2 id="update-2191-title">Hotfix for NVIDIA overlay connections</h2>
+  <p class="release-intro">Fixes NVIDIA overlay connections after NVIDIA App updates. Play waits for an update to finish before reconnecting to a compatible installation. A manual Disconnect stays saved.</p>
+  <p>Keep NVIDIA overlay enabled in the NVIDIA app, then use <strong>Connect</strong> in Play. NVIDIA's own statistics display can stay hidden.</p>
+  <figure class="release-wide-image"><img src="assets/play-mixed-setup-v2.1.8.png" width="1080" height="850" loading="lazy" alt="Mixed Setup showing the NVIDIA Connect button and separate reading sources"><figcaption>The connection controls in Mixed Setup. Illustration from version 2.1.8 with example readings.</figcaption></figure>
+</section>
+
 <section class="update-preview" id="updates-219" aria-labelledby="update-219-title">
   <p class="eyebrow">NEW IN VERSION 2.1.9</p>
   <h2 id="update-219-title">Compact overlays, Zero Fan at 0%</h2>
@@ -88,6 +96,8 @@
   </section>
 </section>
 
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.8</summary>
 <section class="update-preview" id="updates-218" aria-labelledby="update-218-title">
   <p class="eyebrow">NEW IN VERSION 2.1.8</p>
   <h2 id="update-218-title">Clearer connections, steadier overlay values</h2>
@@ -118,6 +128,8 @@
     <p>For an overlay issue, include the game, display mode, output renderer, reading source and steps to reproduce it.</p>
   </section>
 </section>
+
+</details>
 
 <details class="news-archive">
   <summary>NV-UV Play v2.1.7</summary>
