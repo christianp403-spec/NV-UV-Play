@@ -8,12 +8,12 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.8: klare Mixed-Setup-Verbindungen, korrigierte RTSS-Frametime- und API-Werte, Messwertquellen und bessere Diagnose.">
-  <link rel="stylesheet" href="styles.css?v=20261027-news-218">
+  <meta name="description" content="NV-UV Play 2.1.9: feste kompakte Zellenbreiten, Overlay für Desktop und Spiel, Zero Fan bei 0% und klare Stabilizer-Startfehler.">
+  <link rel="stylesheet" href="styles.css?v=20261103-update-key-219">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
-  <script src="guide.de.js?v=20261027-overlay-218" defer></script>
+  <script src="guide.de.js?v=20261102-overlay-219" defer></script>
   <script src="guide-app.js?v=20261021-search" defer></script>
-  <script src="site-navigation.js?v=20261027-news-218" defer></script>
+  <script src="site-navigation.js?v=20261102-news-219" defer></script>
   <script src="site-search.js?v=20261022-inline" defer></script>
 </head>
 <body data-page="news">
@@ -24,9 +24,67 @@
   <div class="header-actions"><div class="language-switch" aria-label="Sprache"><span lang="de" aria-current="page">DE</span><a href="news.html" lang="en" hreflang="en" aria-label="Switch to English" data-language-switch>EN</a></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-218">In Version 2.1.8</a><a href="#updates-217">In Version 2.1.7</a><a href="#updates-216">In Version 2.1.6</a><a href="#updates-215">In Version 2.1.5</a><a href="#updates-214">In Version 2.1.4</a><a href="#updates-213">In Version 2.1.3</a><a href="#updates-212">In Version 2.1.2</a><a href="#updates-211">In Version 2.1.1</a><a href="#updates-210">In Version 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
+  <section class="update-key-notice wrap" aria-labelledby="update-key-title">
+    <h2 id="update-key-title">Wichtig: Einmaliges manuelles Update erforderlich</h2>
+    <p>Automatische Updates funktionieren in älteren Versionen von NV-UV Play nicht mehr, weil der Update-Signierschlüssel ausgetauscht werden muss.</p>
+    <p>NV-UV Play v2.1.9 wird mit dem neuen Schlüssel vorbereitet. Lade diese Version nach der Veröffentlichung einmal manuell aus dem offiziellen GitHub-Release herunter. Danach funktionieren automatische Updates wieder wie gewohnt.</p>
+    <div class="update-key-actions"><a class="button primary" href="https://github.com/christianp403-spec/NV-UV-Play/releases" target="_blank" rel="noopener noreferrer">Offizielle GitHub-Releases prüfen</a><a class="text-link" href="neuigkeiten.html#updates-219">Die Neuerungen in 2.1.9 ansehen</a></div>
+  </section>
+  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-219">In Version 2.1.9</a><a href="#updates-218">In Version 2.1.8</a><a href="#updates-217">In Version 2.1.7</a><a href="#updates-216">In Version 2.1.6</a><a href="#updates-215">In Version 2.1.5</a><a href="#updates-214">In Version 2.1.4</a><a href="#updates-213">In Version 2.1.3</a><a href="#updates-212">In Version 2.1.2</a><a href="#updates-211">In Version 2.1.1</a><a href="#updates-210">In Version 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES UND ENTWICKLUNG</p><h1 id="news-title">Play-Neuigkeiten</h1></div></div>
+<section class="update-preview" id="updates-219" aria-labelledby="update-219-title">
+  <p class="eyebrow">NEU IN VERSION 2.1.9</p>
+  <h2 id="update-219-title">Kompakte Overlays, Zero Fan bei 0%</h2>
+  <p class="release-intro">Eigene Zellen bleiben jetzt so schmal wie eingestellt. Bestimme, wann das Overlay erscheint, behalte positive Lüfterkurvenwerte bei und erkenne sofort, wenn der Stabilizer nicht starten kann.</p>
+  <nav class="release-topics" aria-label="Änderungen in Version 2.1.9"><a href="#width-219">Zellenbreite</a><a href="#visibility-219">Desktop oder Spiel</a><a href="#connections-219">NVIDIA &amp; RTSS</a><a href="#fans-219">Zero Fan</a><a href="#stabilizer-219">Stabilizer</a><a href="#notices-219">Projekthinweise</a><a href="#details-219">Weitere Korrekturen &amp; Spiele</a></nav>
+  <section class="release-feature-section" id="width-219">
+    <h3>Schmale Zellen halten ihre Breite ein</h3>
+    <p>Unter <strong>Layout → Grid → Custom grid</strong> beginnt <strong>Cell width</strong> jetzt bei <strong>60</strong> statt 120. Die gewählte Breite bleibt verbindlich, auch bei einem langen Datum oder vergrößerter Wertschrift. Namen werden mit Auslassungspunkten gekürzt und bei zu wenig Platz ausgeblendet. Lange Werte und Einheiten werden nur bei Bedarf kleiner dargestellt, damit sie vollständig bleiben. Die gespeicherten Schriftgrößen ändern sich nicht.</p>
+    <div class="release-width-comparison">
+      <figure><a href="assets/play-cell-width-120-v2.1.9.png" target="_blank" rel="noopener"><img src="assets/play-cell-width-120-v2.1.9.png" width="352" height="309" loading="lazy" alt="Zweispaltige Overlay-Vorschau mit Zellenbreite 120, vollständigen Werten und gekürzten Namen"></a><figcaption><strong>Cell width 120.</strong> Mehr Platz für Namen und größere Werte.</figcaption></figure>
+      <figure><a href="assets/play-cell-width-60-v2.1.9.png" target="_blank" rel="noopener"><img src="assets/play-cell-width-60-v2.1.9.png" width="191" height="309" loading="lazy" alt="Dieselbe Vorschau mit Zellenbreite 60, gekürzten Namen und passend verkleinerten Zahlen und Einheiten"></a><figcaption><strong>Cell width 60.</strong> Dieselben Messwerte in einem schmaleren Layout.</figcaption></figure>
+    </div>
+    <p class="release-example-note">Originale Editor-Vorschauen mit simulierten Messwerten, mit denselben Schrifteinstellungen. Kachelrahmen und Reset-Symbole gehören zum Editor. Das fertige Overlay verwendet dieselben Breitenregeln über Play, NVIDIA und RTSS.</p>
+    <p>Ist ein Name ausgeblendet, lässt sich der Messwert per Rechtsklick auf seine Kachel über <strong>Rename</strong> weiterhin umbenennen. <strong>Use default name</strong> stellt den ursprünglichen Namen wieder her.</p>
+  </section>
+  <section class="release-feature-section" id="visibility-219">
+    <h3>Immer, nur im Spiel oder nur auf dem Desktop</h3>
+    <p>Unter <strong>Display → Show overlay</strong> stehen <strong>Always</strong>, <strong>Only in game</strong> und <strong>Desktop only</strong> zur Wahl. Play richtet sich nach dem erkannten Spiel im Vordergrund. Ein im Hintergrund weiterlaufendes Spiel hält die Spielansicht nicht aktiv.</p>
+    <p>Für RTSS lässt sich wählen, ob <strong>Play oder RTSS die Sichtbarkeit verwaltet</strong>. Play wendet den gewählten Modus an. Verwaltet RTSS die Ausgabe, gelten dessen eigene Anwendungs- und Sichtbarkeitseinstellungen. Sind mehrere Anwendungen für RTSS freigegeben, kann derselbe Play-Inhalt in mehr als einer Anwendung erscheinen.</p>
+  </section>
+  <section class="release-feature-section" id="connections-219">
+    <h3>Vor Connect das NVIDIA-Overlay aktivieren</h3>
+    <p>Für die NVIDIA-Ausgabe oder NVIDIA als Quelle in <strong>Mixed Setup</strong> zuerst das <strong>NVIDIA-Overlay in der NVIDIA-App aktivieren</strong>, danach in Play auf <strong>Connect</strong> klicken. Die native Statistikanzeige von NVIDIA kann ausgeblendet bleiben. Beide Setup-Seiten erklären diese Voraussetzung jetzt direkt.</p>
+    <p>Zweispaltige RTSS-Layouts behalten die Messwerte jetzt in den vorgesehenen Spalten.</p>
+    <p>Play sichert die von ihm geänderten RTSS-Einstellungen und stellt sie beim Deaktivieren oder Trennen der Integration wieder her. Eine nicht erreichbare Installation blockiert die Wiederherstellung anderer Sicherungen nicht mehr.</p>
+    <p>Die Play-Ausgabe unterstützt Fenster und randlose Fenster. Exklusives Vollbild benötigt eine passende RTSS- oder NVIDIA-Ausgabe; die Kompatibilität hängt weiterhin vom Spiel ab.</p>
+  </section>
+  <section class="release-feature-section" id="fans-219">
+    <h3>Zero Fan folgt deinen 0%-Vorgaben</h3>
+    <p><strong>Allow Zero Fan</strong> übergibt die Kühlung nur dort an die GPU-Automatik, wo die Kurve <strong>0%</strong> vorgibt. Positive Ziele folgen der Kurve im unterstützten Bereich. Ob die Lüfter tatsächlich anhalten, entscheidet die Karte.</p>
+    <figure class="release-wide-image"><a href="assets/play-zero-fan-v2.1.9.png" target="_blank" rel="noopener"><img src="assets/play-zero-fan-v2.1.9.png" width="1650" height="1200" loading="lazy" alt="Lüfterkurven-Editor mit aktiviertem Allow Zero Fan und einem Kurvenbereich bei null Prozent für niedrige Temperaturen"></a><figcaption>Beispielkurve mit einem 0%-Bereich. Temperaturen und Drehzahlen passend zur eigenen Karte wählen; die Aufnahme ist keine Empfehlung für ein Lüfterprofil.</figcaption></figure>
+    <p>Eine bestehende positive Kurve kann bleiben, wenn durchgehend manuelle Lüfterziele gewünscht sind. Für GPU-Automatik bei niedrigen Temperaturen den entsprechenden Kurvenbereich selbst auf 0% setzen und Allow Zero Fan einschalten. Das Aktivieren der Option allein macht aus positiven Punkten keinen Lüfterstopp-Bereich.</p>
+  </section>
+  <section class="release-feature-section" id="stabilizer-219">
+    <h3>Bei fehlgeschlagenem Start bleibt der Stabilizer aus</h3>
+    <p>Kann der Stabilizer nicht starten, schaltet Play ihn aus und speichert diese Einstellung. Pro fehlgeschlagenem Versuch erscheint eine Fehlermeldung mit dem Grund. Nach Beheben der Ursache lässt sich der Schalter für einen neuen Versuch wieder einschalten. Ein scheinbar aktiver Schalter suggeriert damit keine laufende Überwachung mehr, wenn der Start fehlgeschlagen ist.</p>
+    <p>Neue, gültige Windows-GPU-Fehlerberichte lösen weiterhin die normale Wiederherstellung nach der bisherigen Wartezeit aus. Alte, doppelte oder nicht verifizierte Berichte führen zu keiner Profilkorrektur.</p>
+  </section>
+  <section class="release-feature-section" id="notices-219">
+    <h3>Projekthinweise und ein direkter Weg zu GitHub</h3>
+    <p>Wichtige Projektmeldungen können jetzt direkt in Play erscheinen. Der grüne Link <strong>Project notice · Open Updates</strong> unten im Hauptfenster öffnet die vollständige Meldung unter <strong>Updates</strong>.</p>
+    <p>Play prüft Projekthinweise beim Prüfen auf Updates. Automatische Prüfungen richten sich nach deiner Update-Einstellung. Meldungen können auch dann ankommen, wenn sich ein Update nicht verifizieren lässt. Der feste Button <strong>Visit project on GitHub</strong> öffnet das offizielle Projekt mit seinen Releases.</p>
+    <p>Diesen Hinweiskanal gibt es ab Version 2.1.9. Ältere Versionen benötigen weiterhin den oben beschriebenen einmaligen manuellen Download.</p>
+  </section>
+  <section class="release-feature-section" id="details-219">
+    <h3>Tastatureingaben, Berichte und drei Spieleinträge</h3>
+    <p>Der Standard-Shortcut für das Overlay lautet <strong>Ctrl + Left Alt + O</strong>. Damit bleibt <strong>AltGr + O</strong> für Texteingaben frei. Bei einer Kollision zwischen Play-Shortcuts bleibt die bisherige Aktion erhalten.</p>
+    <p>Zum Senden eines Diagnoseberichts reicht eine Beschreibung, ohne zusätzliche Bestätigungs-Checkbox. Die Berichtsaktionen bleiben auch in kleineren Fenstern erreichbar.</p>
+    <p>Die <strong>Spieledatenbank 2.46</strong> enthält <strong>745 Einträge</strong>, darunter <strong>Warface (Eco)</strong>, <strong>World of Warcraft Retail (Balanced)</strong> und <strong>Deadlock (Balanced)</strong>. Die Einstufungen dienen als Ausgangspunkt; die Stabilität auf der eigenen Karte prüfen.</p>
+  </section>
+</section>
+
 <section class="update-preview" id="updates-218" aria-labelledby="update-218-title">
   <p class="eyebrow">NEU IN VERSION 2.1.8</p>
   <h2 id="update-218-title">Klare Verbindungen, ruhigere Overlay-Werte</h2>
@@ -58,6 +116,8 @@
   </section>
 </section>
 
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.7</summary>
 <section class="update-preview" id="updates-217" aria-labelledby="update-217-title">
   <p class="eyebrow">NEU IN VERSION 2.1.7</p>
   <h2 id="update-217-title">Das kompatible Overlay</h2>
@@ -102,6 +162,8 @@
     <p>Datenbank <strong>2.44</strong> ergänzt <strong>Total War: PHARAOH DYNASTIES</strong>, <strong>RoboCop: Rogue City - Unfinished Business</strong> und <strong>Unigine Heaven 4.0</strong>. Heaven wird dem Profil <strong>Performance</strong> zugeordnet. Die Erkennung berücksichtigt den eigentlichen Benchmark-Prozess. FPS und 1%-Low-Anzeigen benötigen wie bisher eine verfügbare Messquelle.</p>
   </section>
 </section>
+</details>
+
 <details class="news-archive">
   <summary>NV-UV Play v2.1.6</summary>
 <section class="update-preview" id="updates-216" aria-labelledby="update-216-title">

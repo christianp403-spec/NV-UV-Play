@@ -393,7 +393,7 @@ window.PLAY_GUIDE_EN = {
   "overlay": {
     "purpose": "The overlay shows selected performance and sensor readings on the desktop or over detected games.",
     "benefit": "See how a profile affects frame rate, power consumption and temperature while playing, without constantly switching windows.",
-    "how": "Enable the overlay and choose Desktop, Game or Desktop + Game under Display on. Select your readings, then arrange them with Layout and Colors. In v2.1.8, Mixed Setup connects NVIDIA and RTSS independently and lets you choose the output renderer.",
+    "how": "Enable the overlay and choose Always, Only in game or Desktop only under Display → Show overlay. Select your readings, then arrange them with Layout and Colors. Mixed Setup connects NVIDIA and RTSS independently and lets you choose the output renderer.",
     "limit": "Play output supports desktop, windowed and borderless modes, but not exclusive fullscreen. RTSS and NVIDIA output compatibility depends on the game. Some readings need compatible sensors or the optional PawnIO setup.",
     "scenarioTitle": "How can I tell whether my UV profile is working?",
     "scenario": "Watch GPU clock, voltage and power draw together with FPS. Compare the same game scene with identical settings and FPS cap, once at stock and once with the UV profile. Lower voltage at a comparable clock shows the effect of undervolting. Lower watts at similar FPS shows the efficiency gain. Low power draw alone can simply mean less load. HWiNFO or GPU-Z are alternatives to Play telemetry.",
@@ -403,16 +403,16 @@ window.PLAY_GUIDE_EN = {
         "Turns the display on or off. Opening its settings or preview is not the same as enabling the overlay."
       ],
       [
-        "Display on",
-        "Desktop shows the overlay outside detected games. Game shows readings for a recognized foreground game. Desktop + Game switches automatically. Select its screen separately under Display → Monitor."
+        "Show overlay (v2.1.9)",
+        "Always shows the enabled overlay on desktop and in games. Only in game requires a recognized foreground game; Desktop only shows it outside that game view. RTSS can use Play visibility or its own controls. Select the Play screen separately under Display → Monitor."
       ],
       [
         "Display, Readings, Layout, Colors, Profiles",
         "Display controls position and appearance. Readings selects values, Layout arranges them, and Colors sets their colors. Profiles manages saved overlay layouts."
       ],
       [
-        "Mixed Setup (v2.1.8)",
-        "Connect or disconnect NVIDIA and RTSS separately. Connected lights up green when the source is connected. Disconnecting keeps saved selections and layouts, but makes that source unavailable for new reading and graph selections. RTSS itself stays open."
+        "Mixed Setup",
+        "Connect or disconnect NVIDIA and RTSS separately. Enable NVIDIA overlay in the NVIDIA app before Connect; its native statistics display may stay hidden. Connected lights up green for a working connection. Disconnecting keeps saved selections and layouts. Play restores the RTSS settings it changed while RTSS stays available to other applications."
       ],
       [
         "Output renderer",
@@ -444,7 +444,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Show / hide shortcut",
-        "Shows or hides an enabled overlay with a keyboard shortcut. Useful when you briefly want an unobstructed view."
+        "Shows or hides an enabled overlay. The default is Ctrl + Left Alt + O, leaving AltGr available for typing. A conflicting Play shortcut does not replace the existing action."
       ],
       [
         "Sensor support",
@@ -460,7 +460,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Layout",
-        "Arranges selected readings. Keep the overlay compact and related values together."
+        "Arranges selected readings. Under Grid → Custom grid, Cell width starts at 60 and stays fixed. Long names shorten or hide. Values and units shrink only when needed to fit completely, without changing saved font sizes."
       ],
       [
         "Colors",
@@ -468,7 +468,7 @@ window.PLAY_GUIDE_EN = {
       ],
       [
         "Profiles",
-        "Manages saved overlay layouts. These display profiles are separate from your GPU’s undervolting profiles. If you have not created your own overlay, the DEV layout provides a starting point. Customize it and save it under a name of your choice. Existing layouts and assignments are preserved."
+        "Manages saved overlay layouts, separate from GPU undervolting profiles. Start with a Play, NVIDIA, RTSS or Mixed template, customize it and save it under your own name. Existing layouts and assignments are preserved."
       ],
       [
         "Font size",
@@ -593,7 +593,7 @@ window.PLAY_GUIDE_EN = {
   "stabilizer": {
     "purpose": "Stabilizer responds to detected driver crashes by adjusting the GPU curve or clock and voltage targets.",
     "benefit": "You do not have to make every correction manually after a detected driver crash. Play handles both game profiles and the global profile, saving adjustments in the appropriate context.",
-    "how": "The Stabilizer is enabled by default when you first start Play. Please keep it enabled while getting familiar with your card’s stability. Stabilizer and DCC are alternative modes. Choose a strategy, step sizes and limits if needed. Review corrections in My profiles → Stabilizer or Stabilizer Adjustments in the Game Library.",
+    "how": "Play attempts to enable Stabilizer on first start. If startup fails, its switch turns off, that setting is saved, and one error explains each failed attempt. Resolve the cause and turn it on again to retry. Stabilizer and DCC are alternative modes. Choose a strategy, step sizes and limits if needed. Review corrections in My profiles → Stabilizer or Stabilizer Adjustments in the Game Library.",
     "limit": "Not every crash is detected. Stabilizer cannot prevent all instability and does not guarantee protection against damage or data loss.",
     "controls": [
       [

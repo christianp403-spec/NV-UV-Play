@@ -239,8 +239,8 @@ body.story-image-open{overflow:hidden}#story-image-dialog{padding:0;width:min(15
 @media(max-width:600px){.news-archive>summary,.news-archive>.update-preview{padding:18px}}
 
 /* Version-specific feature descriptions and original product captures. */
-:is(#updates-213,#updates-214,#updates-216,#updates-217,#updates-218){background:#101510;overflow-wrap:break-word}
-:is(#updates-213,#updates-214,#updates-216,#updates-217,#updates-218) .release-intro{font-size:18px;max-width:820px;line-height:1.7}
+:is(#updates-213,#updates-214,#updates-216,#updates-217,#updates-218,#updates-219){background:#101510;overflow-wrap:break-word}
+:is(#updates-213,#updates-214,#updates-216,#updates-217,#updates-218,#updates-219) .release-intro{font-size:18px;max-width:820px;line-height:1.7}
 .release-availability{padding:12px 16px;border-left:3px solid var(--accent);background:#a2df3908}
 .release-availability a{text-decoration:underline;text-underline-offset:3px}
 .release-topics{display:flex;flex-wrap:wrap;gap:8px 24px;border-bottom:1px solid var(--line);padding:6px 0 18px;margin:24px 0 30px;font-size:13px}
@@ -252,13 +252,13 @@ body.story-image-open{overflow:hidden}#story-image-dialog{padding:0;width:min(15
 .release-steps{padding-left:22px;color:var(--muted)}
 .release-steps li{padding-left:4px;margin-bottom:10px}
 .release-feature-section{padding-top:30px;margin-top:30px;border-top:1px solid var(--line)}
-:is(#updates-213,#updates-214,#updates-215,#updates-216,#updates-217,#updates-218) figure{margin:0}
-:is(#updates-213,#updates-214,#updates-215,#updates-216,#updates-217,#updates-218) figure a{display:block;width:fit-content;max-width:100%}
-:is(#updates-213,#updates-214,#updates-215,#updates-216,#updates-217,#updates-218) figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
-:is(#updates-213,#updates-214,#updates-215,#updates-216,#updates-217,#updates-218) figcaption{font-size:12px;line-height:1.65;color:var(--muted);margin-top:10px}
-:is(#updates-213,#updates-214,#updates-215,#updates-216,#updates-217,#updates-218) .release-wide-image{max-width:1000px;margin:24px auto}
+:is(#updates-213,#updates-214,#updates-215,#updates-216,#updates-217,#updates-218,#updates-219) figure{margin:0}
+:is(#updates-213,#updates-214,#updates-215,#updates-216,#updates-217,#updates-218,#updates-219) figure a{display:block;width:fit-content;max-width:100%}
+:is(#updates-213,#updates-214,#updates-215,#updates-216,#updates-217,#updates-218,#updates-219) figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+:is(#updates-213,#updates-214,#updates-215,#updates-216,#updates-217,#updates-218,#updates-219) figcaption{font-size:12px;line-height:1.65;color:var(--muted);margin-top:10px}
+:is(#updates-213,#updates-214,#updates-215,#updates-216,#updates-217,#updates-218,#updates-219) .release-wide-image{max-width:1000px;margin:24px auto}
 .release-credit{padding:22px;margin-top:24px;border:1px solid #40502f;border-radius:8px;background:#151d11}
-:is(#updates-214,#updates-216,#updates-217,#updates-218)>.release-topics+.release-feature-section{border-top:0;margin-top:0;padding-top:0}
+:is(#updates-214,#updates-216,#updates-217,#updates-218,#updates-219)>.release-topics+.release-feature-section{border-top:0;margin-top:0;padding-top:0}
 .release-credit p:last-child{display:flex;gap:10px 24px;flex-wrap:wrap;margin-bottom:0}
 .home-update-link{margin:18px 0 0;font-size:14px;color:var(--muted)}
 .release-dev-image{width:344px;max-width:100%}
@@ -269,4 +269,20 @@ body.story-image-open{overflow:hidden}#story-image-dialog{padding:0;width:min(15
 .release-temperature-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:32px;align-items:start}
 .release-temperature-grid figure{max-width:500px}
 @media(max-width:800px){.release-feature-lead,.release-temperature-grid{grid-template-columns:minmax(0,1fr);gap:20px}.release-dev-image{justify-self:center}.release-temperature-grid figure{justify-self:center}.release-status-grid{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:480px){:is(#updates-213,#updates-214,#updates-216,#updates-217,#updates-218) .release-intro{font-size:16px}.release-feature-lead h3,.release-feature-section h3{font-size:20px}.release-feature-lead p,.release-feature-section p,.release-steps{font-size:14px}.release-topics{gap:4px 20px}.release-feature-section{padding-top:24px;margin-top:24px}.release-credit{padding:16px}}
+@media(max-width:480px){:is(#updates-213,#updates-214,#updates-216,#updates-217,#updates-218,#updates-219) .release-intro{font-size:16px}.release-feature-lead h3,.release-feature-section h3{font-size:20px}.release-feature-lead p,.release-feature-section p,.release-steps{font-size:14px}.release-topics{gap:4px 20px}.release-feature-section{padding-top:24px;margin-top:24px}.release-credit{padding:16px}}
+
+/* Compare original 2.1.9 captures without enlarging the narrow example. */
+#updates-219 .release-width-comparison{display:flex;flex-wrap:wrap;align-items:flex-start;gap:24px 36px;margin:24px 0}
+#updates-219 .release-width-comparison figure{max-width:352px;min-width:0}
+#updates-219 .release-width-comparison figure img{width:auto;max-width:100%;height:auto}
+#updates-219 .release-width-comparison figcaption{max-width:352px}
+#updates-219 .release-example-note{font-size:12px;color:var(--muted);line-height:1.65}
+
+/* One-time update migration notice. Keep visible before downloads and news. */
+.update-key-notice{margin-top:24px;margin-bottom:24px;padding:26px 30px;border:2px solid #e9ac32;border-radius:12px;background:#241d10;color:#fff7e5;overflow-wrap:break-word}
+.update-key-notice h2{font-size:clamp(23px,3vw,32px);font-weight:750;line-height:1.25;letter-spacing:-.025em;margin:0 0 16px;color:#ffcc64}
+.update-key-notice p{max-width:1000px;margin:10px 0;font-size:16px;line-height:1.65;color:#fff7e5}
+.update-key-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:20px}
+.update-key-actions .button{white-space:normal;text-align:center;max-width:100%;min-height:44px}
+.update-key-actions .text-link{color:#ffdf9d;text-underline-offset:4px}
+@media(max-width:680px){.update-key-notice{padding:20px 18px}.update-key-notice p{font-size:15px}.update-key-actions{align-items:stretch;flex-direction:column;gap:18px}}

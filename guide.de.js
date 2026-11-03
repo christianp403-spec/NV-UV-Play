@@ -393,7 +393,7 @@ window.PLAY_GUIDE_DE = {
   "overlay": {
     "purpose": "Das Overlay zeigt ausgewählte Leistungs- und Sensorwerte auf dem Desktop oder über erkannten Spielen.",
     "benefit": "Du kannst während des Spielens sehen, wie sich ein Profil auf Bildrate, Verbrauch und Temperatur auswirkt, ohne ständig zu einem anderen Fenster zu wechseln.",
-    "how": "Overlay einschalten und unter Display on zwischen Desktop, Game und Desktop + Game wählen. Messwerte auswählen und mit Layout und Colors anordnen. In v2.1.8 verbindet Mixed Setup NVIDIA und RTSS unabhängig voneinander und lässt dich die Ausgabe wählen.",
+    "how": "Overlay einschalten und unter Display → Show overlay zwischen Always, Only in game und Desktop only wählen. Messwerte auswählen und mit Layout und Colors anordnen. Mixed Setup verbindet NVIDIA und RTSS unabhängig voneinander und lässt dich die Ausgabe wählen.",
     "limit": "Die Play-Ausgabe unterstützt Desktop, Fenster und randlose Fenster, aber kein exklusives Vollbild. Die Kompatibilität der RTSS- und NVIDIA-Ausgabe hängt vom Spiel ab. Einige Werte brauchen kompatible Sensoren oder das optionale PawnIO-Setup.",
     "scenarioTitle": "Woran erkenne ich, dass mein UV-Profil wirkt?",
     "scenario": "Beobachte GPU-Takt, Spannung und Leistungsaufnahme zusammen mit deinen FPS. Vergleiche dieselbe Spielszene mit gleichen Einstellungen und gleichem FPS-Limit, einmal mit Standardeinstellungen und einmal mit UV-Profil. Weniger Spannung bei vergleichbarem Takt zeigt die Wirkung des Undervoltings. Weniger Watt bei ähnlicher Bildrate zeigt den Effizienzgewinn. Ein niedriger Verbrauch allein kann auch an geringerer Last liegen. Alternativ zur Play-Telemetrie kannst du HWiNFO oder GPU-Z nutzen.",
@@ -403,16 +403,16 @@ window.PLAY_GUIDE_DE = {
         "Schaltet die Anzeige ein oder aus. Das Einstellungsfenster oder seine Vorschau zu öffnen ist nicht dasselbe wie das Overlay zu aktivieren."
       ],
       [
-        "Display on",
-        "Desktop zeigt das Overlay außerhalb erkannter Spiele. Game zeigt Werte eines erkannten Vordergrundspiels. Desktop + Game wechselt automatisch. Den Bildschirm wählst du separat unter Display → Monitor."
+        "Show overlay (v2.1.9)",
+        "Always zeigt das eingeschaltete Overlay auf dem Desktop und in Spielen. Only in game benötigt ein erkanntes Vordergrundspiel; Desktop only zeigt es außerhalb dieser Spielansicht. RTSS kann die Play-Sichtbarkeit oder seine eigenen Einstellungen verwenden. Den Play-Bildschirm separat unter Display → Monitor wählen."
       ],
       [
         "Anzeige, Werte, Layout, Farben, Profile",
         "Display legt Position und Aussehen fest. Readings wählt Messwerte, Layout ordnet sie an, Colors steuert Farben. Profiles verwaltet gespeicherte Overlay-Layouts."
       ],
       [
-        "Mixed Setup (v2.1.8)",
-        "NVIDIA und RTSS getrennt verbinden oder trennen. Connected leuchtet bei bestehender Verbindung grün. Beim Trennen bleiben gespeicherte Auswahlen und Layouts erhalten. Die Quelle steht dann für neue Messwert- und Graphauswahlen nicht bereit. RTSS selbst bleibt geöffnet."
+        "Mixed Setup",
+        "NVIDIA und RTSS getrennt verbinden oder trennen. Vor Connect das NVIDIA-Overlay in der NVIDIA-App einschalten; die native Statistikanzeige kann ausgeblendet bleiben. Connected leuchtet bei bestehender Verbindung grün. Gespeicherte Auswahlen und Layouts bleiben beim Trennen erhalten. Play stellt seine Änderungen an RTSS-Einstellungen wieder her, während RTSS für andere Anwendungen verfügbar bleibt."
       ],
       [
         "Output renderer",
@@ -444,7 +444,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Show / hide shortcut",
-        "Blendet ein eingeschaltetes Overlay per Tastenkombination ein oder aus. Praktisch, wenn es kurzzeitig freie Sicht lassen soll."
+        "Blendet ein eingeschaltetes Overlay ein oder aus. Standard ist Ctrl + Left Alt + O, damit AltGr für Texteingaben frei bleibt. Ein kollidierender Play-Shortcut ersetzt die bisherige Aktion nicht."
       ],
       [
         "Sensor support",
@@ -460,7 +460,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Layout",
-        "Ordnet die gewählten Werte an. Damit kannst du das Overlay kompakt halten und zusammengehörige Werte nebeneinander setzen."
+        "Ordnet die gewählten Werte an. Unter Grid → Custom grid beginnt Cell width bei 60 und bleibt verbindlich. Lange Namen werden gekürzt oder ausgeblendet. Werte und Einheiten werden nur bei Platzmangel passend verkleinert, ohne die gespeicherten Schriftgrößen zu ändern."
       ],
       [
         "Colors",
@@ -468,7 +468,7 @@ window.PLAY_GUIDE_DE = {
       ],
       [
         "Profiles",
-        "Verwaltet gespeicherte Overlay-Layouts. Diese Anzeigeprofile sind von den Undervolting-Profilen deiner GPU getrennt. Ohne eigenes Overlay dient das DEV-Layout als Ausgangspunkt. Es lässt sich anpassen und unter einem eigenen Namen speichern. Vorhandene Layouts und Zuordnungen bleiben erhalten."
+        "Verwaltet gespeicherte Overlay-Layouts, getrennt von GPU-Undervolting-Profilen. Mit einer Play-, NVIDIA-, RTSS- oder Mixed-Vorlage beginnen, sie anpassen und unter eigenem Namen speichern. Vorhandene Layouts und Zuordnungen bleiben erhalten."
       ],
       [
         "Font size",
@@ -593,7 +593,7 @@ window.PLAY_GUIDE_DE = {
   "stabilizer": {
     "purpose": "Stabilizer reagiert auf erkannte Treiberabstürze und korrigiert GPU-Kurve beziehungsweise Takt- und Spannungsziel.",
     "benefit": "Du musst nach einem erkannten Treiberabsturz nicht jede Korrektur selbst vornehmen. Play berücksichtigt sowohl Spielprofile als auch das globale Profil und speichert die Anpassungen im passenden Kontext.",
-    "how": "Beim ersten Start ist der Stabilizer bereits eingeschaltet. Lass ihn gerade in der Anfangszeit aktiviert. Stabilizer und DCC werden alternativ genutzt. Wähle bei Bedarf Strategie, Schrittweiten und Grenzen. Korrekturen findest du in My profiles → Stabilizer sowie unter Stabilizer Adjustments in der Game Library.",
+    "how": "Beim ersten Start versucht Play, den Stabilizer einzuschalten. Schlägt der Start fehl, wird der Schalter ausgeschaltet, diese Einstellung gespeichert und pro Versuch eine Fehlermeldung mit dem Grund angezeigt. Nach Beheben der Ursache erneut einschalten. Stabilizer und DCC werden alternativ genutzt. Bei Bedarf Strategie, Schrittweiten und Grenzen wählen. Korrekturen stehen in My profiles → Stabilizer sowie unter Stabilizer Adjustments in der Game Library.",
     "limit": "Nicht jeder Absturz wird erkannt. Stabilizer verhindert nicht alle Instabilitäten und ist kein Schutzversprechen gegen Schäden oder Datenverlust.",
     "controls": [
       [

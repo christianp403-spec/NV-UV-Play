@@ -8,13 +8,13 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.8: clearer Mixed Setup connections, RTSS frametime and graphics API fixes, reading sources and better diagnostics.">
-  <link rel="stylesheet" href="styles.css?v=20261027-news-218">
+  <meta name="description" content="NV-UV Play 2.1.9: fixed compact cell widths, desktop and game overlay modes, Zero Fan at 0%, and clearer Stabilizer startup errors.">
+  <link rel="stylesheet" href="styles.css?v=20261103-update-key-219">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
-  <script src="guide.en.js?v=20261027-overlay-218" defer></script>
+  <script src="guide.en.js?v=20261102-overlay-219" defer></script>
   <script src="guide.ui.en.js?v=20261015-v2.1.2" defer></script>
   <script src="guide-app.js?v=20261021-search" defer></script>
-  <script src="site-navigation.js?v=20261027-news-218" defer></script>
+  <script src="site-navigation.js?v=20261102-news-219" defer></script>
   <script src="site-search.js?v=20261022-inline" defer></script>
 </head>
 <body data-page="news">
@@ -25,9 +25,67 @@
   <div class="header-actions"><div class="language-switch" aria-label="Language"><a href="neuigkeiten.html" lang="de" hreflang="de" aria-label="Zu Deutsch wechseln" data-language-switch>DE</a><span lang="en" aria-current="page">EN</span></div></div>
 </header>
 <main id="top">
-  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-218">In version 2.1.8</a><a href="#updates-217">In version 2.1.7</a><a href="#updates-216">In version 2.1.6</a><a href="#updates-215">In version 2.1.5</a><a href="#updates-214">In version 2.1.4</a><a href="#updates-213">In version 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
+  <section class="update-key-notice wrap" aria-labelledby="update-key-title">
+    <h2 id="update-key-title">Important: one-time manual update required</h2>
+    <p>Automatic updates no longer work in older versions of NV-UV Play because the update-signing key must be replaced.</p>
+    <p>NV-UV Play v2.1.9 is being prepared with the replacement key. Once it is published, download it manually from the official GitHub release. After this one-time update, automatic updates will work as usual.</p>
+    <div class="update-key-actions"><a class="button primary" href="https://github.com/christianp403-spec/NV-UV-Play/releases" target="_blank" rel="noopener noreferrer">Check official GitHub releases</a><a class="text-link" href="news.html#updates-219">See what changes in 2.1.9</a></div>
+  </section>
+  <nav class="section-nav wrap" aria-label="On this page"><a href="#updates-219">In version 2.1.9</a><a href="#updates-218">In version 2.1.8</a><a href="#updates-217">In version 2.1.7</a><a href="#updates-216">In version 2.1.6</a><a href="#updates-215">In version 2.1.5</a><a href="#updates-214">In version 2.1.4</a><a href="#updates-213">In version 2.1.3</a><a href="#updates-212">In version 2.1.2</a><a href="#updates-211">In version 2.1.1</a><a href="#updates-210">In version 2.1.0</a><a href="#updates-2016">In version 2.0.16</a><a href="#updates-2015">In version 2.0.15</a></nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES AND DEVELOPMENT</p><h1 id="news-title">Play News</h1></div></div>
+<section class="update-preview" id="updates-219" aria-labelledby="update-219-title">
+  <p class="eyebrow">NEW IN VERSION 2.1.9</p>
+  <h2 id="update-219-title">Compact overlays, Zero Fan at 0%</h2>
+  <p class="release-intro">Custom cells can now stay as narrow as you set them. Choose when the overlay appears, keep positive fan-curve targets intact, and see immediately when Stabilizer cannot start.</p>
+  <nav class="release-topics" aria-label="Changes in version 2.1.9"><a href="#width-219">Cell width</a><a href="#visibility-219">Desktop or game</a><a href="#connections-219">NVIDIA &amp; RTSS</a><a href="#fans-219">Zero Fan</a><a href="#stabilizer-219">Stabilizer</a><a href="#notices-219">Project notices</a><a href="#details-219">Other fixes &amp; games</a></nav>
+  <section class="release-feature-section" id="width-219">
+    <h3>Small cells keep their width</h3>
+    <p>Under <strong>Layout → Grid → Custom grid</strong>, <strong>Cell width</strong> now starts at <strong>60</strong> instead of 120. The chosen width stays fixed, even with a long date or a larger value font. Labels shorten with an ellipsis and can disappear when space runs out. Long values and units become smaller only when needed to remain complete. Your saved font sizes stay unchanged.</p>
+    <div class="release-width-comparison">
+      <figure><a href="assets/play-cell-width-120-v2.1.9.png" target="_blank" rel="noopener"><img src="assets/play-cell-width-120-v2.1.9.png" width="352" height="309" loading="lazy" alt="Two-column overlay preview at cell width 120 with full values and shortened labels"></a><figcaption><strong>Cell width 120.</strong> More room for names and larger values.</figcaption></figure>
+      <figure><a href="assets/play-cell-width-60-v2.1.9.png" target="_blank" rel="noopener"><img src="assets/play-cell-width-60-v2.1.9.png" width="191" height="309" loading="lazy" alt="The same preview at cell width 60, with labels reduced and long numbers and units scaled to fit"></a><figcaption><strong>Cell width 60.</strong> The same readings in a narrower layout.</figcaption></figure>
+    </div>
+    <p class="release-example-note">Original editor previews with simulated readings, using the same font settings. Tile outlines and reset controls belong to the editor. The finished overlay uses the same width rules through Play, NVIDIA and RTSS.</p>
+    <p>To rename a reading whose label has disappeared, right-click its tile and choose <strong>Rename</strong>. <strong>Use default name</strong> restores the original label.</p>
+  </section>
+  <section class="release-feature-section" id="visibility-219">
+    <h3>Always, only in game, or desktop only</h3>
+    <p>Under <strong>Display → Show overlay</strong>, choose <strong>Always</strong>, <strong>Only in game</strong> or <strong>Desktop only</strong>. Play uses the recognized game in the foreground. A game left running in the background does not keep the game view active.</p>
+    <p>For RTSS, choose whether <strong>Play or RTSS manages visibility</strong>. Play applies the selected mode; RTSS keeps its own application and visibility controls when it manages the output. With several RTSS-enabled applications, the same Play content can appear in more than one application.</p>
+  </section>
+  <section class="release-feature-section" id="connections-219">
+    <h3>Enable NVIDIA overlay before connecting</h3>
+    <p>For NVIDIA output or an NVIDIA source in <strong>Mixed Setup</strong>, first enable <strong>NVIDIA overlay in the NVIDIA app</strong>, then press <strong>Connect</strong> in Play. NVIDIA's native statistics display can stay hidden. Both setup pages now explain this prerequisite.</p>
+    <p>Two-column RTSS layouts now keep readings in their intended columns.</p>
+    <p>Play backs up the RTSS settings it changes and restores them when the integration is disabled or disconnected. An unavailable installation no longer prevents other backups from being restored.</p>
+    <p>Play output supports windowed and borderless games. Exclusive fullscreen requires a compatible RTSS or NVIDIA output; compatibility still depends on the game.</p>
+  </section>
+  <section class="release-feature-section" id="fans-219">
+    <h3>Zero Fan follows your 0% targets</h3>
+    <p><strong>Allow Zero Fan</strong> hands cooling back to the GPU's automatic control only where the curve requests <strong>0%</strong>. Positive targets continue to follow the curve within the supported range. The card decides whether its fans can actually stop.</p>
+    <figure class="release-wide-image"><a href="assets/play-zero-fan-v2.1.9.png" target="_blank" rel="noopener"><img src="assets/play-zero-fan-v2.1.9.png" width="1650" height="1200" loading="lazy" alt="Fan-curve editor with Allow Zero Fan enabled and the low-temperature curve at zero percent"></a><figcaption>Example curve with a 0% range. Choose temperatures and speeds for your own card; this image is not a recommended fan profile.</figcaption></figure>
+    <p>Keep your existing positive curve if you want manual fan targets throughout. To allow automatic cooling at low temperatures, set that part of the curve to 0% and enable Allow Zero Fan. Turning the option on alone does not turn positive curve points into a fan-stop range.</p>
+  </section>
+  <section class="release-feature-section" id="stabilizer-219">
+    <h3>A failed Stabilizer start leaves the switch off</h3>
+    <p>If Stabilizer cannot start, its switch turns off and Play saves that setting. One error message explains the reason for each failed attempt. After resolving the cause, turn it on again to retry. An enabled-looking switch no longer suggests that monitoring is running when startup failed.</p>
+    <p>New, valid Windows GPU error reports still trigger normal recovery after the existing delay. Old, duplicate or unverified reports do not cause a profile correction.</p>
+  </section>
+  <section class="release-feature-section" id="notices-219">
+    <h3>Project notices and a direct link to GitHub</h3>
+    <p>Important project messages can now appear in Play. A green <strong>Project notice · Open Updates</strong> link at the bottom of the main window opens the full message in <strong>Updates</strong>.</p>
+    <p>Project notices are checked when you check for updates. Automatic checks follow your update preference. Messages can still arrive when an update cannot be verified. The permanent <strong>Visit project on GitHub</strong> button opens the official project, including its releases.</p>
+    <p>This notice channel starts with version 2.1.9. Older versions still need the one-time manual download described above.</p>
+  </section>
+  <section class="release-feature-section" id="details-219">
+    <h3>Typing, reports and three game entries</h3>
+    <p>The default overlay shortcut is <strong>Ctrl + Left Alt + O</strong>, so <strong>AltGr + O</strong> remains available for typing. A conflicting Play shortcut keeps the existing action instead of replacing it.</p>
+    <p>Sending a diagnostic report requires a description, with no additional confirmation checkbox. The report actions also stay accessible in smaller windows.</p>
+    <p><strong>Game database 2.46</strong> contains <strong>745 entries</strong>, including <strong>Warface (Eco)</strong>, <strong>World of Warcraft Retail (Balanced)</strong> and <strong>Deadlock (Balanced)</strong>. These tiers are starting points; check stability on your own card.</p>
+  </section>
+</section>
+
 <section class="update-preview" id="updates-218" aria-labelledby="update-218-title">
   <p class="eyebrow">NEW IN VERSION 2.1.8</p>
   <h2 id="update-218-title">Clearer connections, steadier overlay values</h2>
@@ -59,6 +117,8 @@
   </section>
 </section>
 
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.7</summary>
 <section class="update-preview" id="updates-217" aria-labelledby="update-217-title">
   <p class="eyebrow">NEW IN VERSION 2.1.7</p>
   <h2 id="update-217-title">The compatible overlay</h2>
@@ -103,6 +163,8 @@
     <p>Database <strong>2.44</strong> adds <strong>Total War: PHARAOH DYNASTIES</strong>, <strong>RoboCop: Rogue City - Unfinished Business</strong> and <strong>Unigine Heaven 4.0</strong>. Heaven uses the <strong>Performance</strong> profile. Detection accounts for the actual benchmark process. FPS and 1% low readings still require an available measurement source.</p>
   </section>
 </section>
+</details>
+
 <details class="news-archive">
   <summary>NV-UV Play v2.1.6</summary>
 <section class="update-preview" id="updates-216" aria-labelledby="update-216-title">
