@@ -1,12 +1,23 @@
 # NV⚡UV Play V2
 
+> [!WARNING]
+> ## IMPORTANT: ONE-TIME MANUAL UPDATE REQUIRED
+>
+> **Automatic updates no longer work in earlier versions of NV-UV Play.** A problem with automatic update signing required replacing the update-signing key.
+>
+> **[Download NV-UV Play v2.1.9 manually from the official GitHub release](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.9).**
+>
+> **Close Play, extract the entire new portable ZIP into your existing Play folder and replace the existing program files.**
+>
+> After this one-time update, automatic updates will work as usual.
+
 **Kilby Alpha: NVIDIA GPU undervolting, game profiles, DCC and a customizable overlay.**
 
 **Explore Play:** [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html) · [Webseite (Deutsch)](https://christianp403-spec.github.io/NV-UV-Play/)
 
-NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.8 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.8).** This is an Alpha prerelease.
+NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.9 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.9).** This is an Alpha prerelease.
 
-**New in v2.1.8:** clearer Mixed Setup connections, steadier RTSS frametime and graphics API readings, corrected NVIDIA DLSS readings and more useful diagnostics. Right-click a preview reading, status badge or graph to see its original name and source. [Feature guide and screenshots](https://christianp403-spec.github.io/NV-UV-Play/news.html#updates-218). Also see the [2.1.7 patchnotes](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.7).
+**New in v2.1.9:** compact overlay cells down to 60 px, Only in game and Desktop only modes, RTSS settings backup and restore, corrected Zero Fan handling, Stabilizer fixes, AltGr-safe shortcuts, clearer NVIDIA setup, project notices and game database 2.46. [Feature guide and screenshots](https://christianp403-spec.github.io/NV-UV-Play/news.html#updates-219).
 
 **New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play. Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
 
@@ -32,7 +43,7 @@ For a new installation:
 2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
 3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
 
-If your Play version already includes the updater, use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. Please report whether updating to v2.1.8 in place, restarting and preserving your profiles/settings worked. A manual download of the full portable ZIP remains available. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
+**Updating from an older version:** close Play, extract the entire v2.1.9 portable ZIP into your existing Play folder and replace the existing program files. **This one-time manual update is required because older versions cannot verify the replacement update-signing key.** After installing v2.1.9, future updates can again use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
 ## Requirements and hardware support
 
