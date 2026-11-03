@@ -3,9 +3,9 @@
 > [!WARNING]
 > ## IMPORTANT: ONE-TIME MANUAL UPDATE REQUIRED
 >
-> **Automatic updates no longer work in earlier versions of NV-UV Play.** A problem with automatic update signing required replacing the update-signing key.
+> **Versions before NV-UV Play 2.1.9 require a one-time manual update.** A problem with automatic update signing required replacing the update-signing key.
 >
-> **[Download NV-UV Play v2.1.9 manually from the official GitHub release](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.9).**
+> **[Download NV-UV Play v2.1.9.1 manually from the official GitHub release](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.9.1).**
 >
 > **Close Play, extract the entire new portable ZIP into your existing Play folder and replace the existing program files.**
 >
@@ -15,7 +15,9 @@
 
 **Explore Play:** [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html) · [Webseite (Deutsch)](https://christianp403-spec.github.io/NV-UV-Play/)
 
-NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.9 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.9).** This is an Alpha prerelease.
+NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.9.1 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.9.1).** This is an Alpha prerelease.
+
+**Hotfix v2.1.9.1:** fixed NVIDIA overlay connections after NVIDIA App updates. [Hotfix details](https://christianp403-spec.github.io/NV-UV-Play/news.html#updates-2191).
 
 **New in v2.1.9:** compact overlay cells down to 60 px, Only in game and Desktop only modes, RTSS settings backup and restore, corrected Zero Fan handling, Stabilizer fixes, AltGr-safe shortcuts, clearer NVIDIA setup, project notices and game database 2.46. [Feature guide and screenshots](https://christianp403-spec.github.io/NV-UV-Play/news.html#updates-219).
 
@@ -43,7 +45,9 @@ For a new installation:
 2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
 3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
 
-**Updating from an older version:** close Play, extract the entire v2.1.9 portable ZIP into your existing Play folder and replace the existing program files. **This one-time manual update is required because older versions cannot verify the replacement update-signing key.** After installing v2.1.9, future updates can again use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
+**Updating from 2.1.9 or newer:** use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation.
+
+**Updating from a version before 2.1.9:** close Play, extract the entire v2.1.9.1 portable ZIP into your existing Play folder and replace the existing program files. This one-time manual update is required because those versions cannot verify the replacement update-signing key. Afterwards, automatic updates work as usual. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
 ## Requirements and hardware support
 
