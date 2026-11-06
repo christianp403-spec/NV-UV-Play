@@ -17,12 +17,6 @@
 
 NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.9.1 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.9.1).** This is an Alpha prerelease.
 
-**Hotfix v2.1.9.1:** fixed NVIDIA overlay connections after NVIDIA App updates. [Hotfix details](https://christianp403-spec.github.io/NV-UV-Play/news.html#updates-2191).
-
-**New in v2.1.9:** compact overlay cells down to 60 px, Only in game and Desktop only modes, RTSS settings backup and restore, corrected Zero Fan handling, Stabilizer fixes, AltGr-safe shortcuts, clearer NVIDIA setup, project notices and game database 2.46. [Feature guide and screenshots](https://christianp403-spec.github.io/NV-UV-Play/news.html#updates-219).
-
-**New in v2.0.2 Alpha: NVIDIA GPU selection.** On systems with multiple NVIDIA GPUs, choose the card Play should control in **Settings → NVIDIA GPU for Play**. The startup picker asks for a choice when needed, and Play remembers the selected card. Changes take effect after restarting Play. Play is the standalone sibling of [NV-UV](https://github.com/christianp403-spec/NV-UV).
-
 ## What's in version 2
 
 - **Profiles and UV Pilot:** six existing profile slots, shared global and per-game profiles, automatic game detection and per-game exceptions. My profiles keeps saved and downloaded profiles, history and right-click actions together.
