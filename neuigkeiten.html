@@ -8,12 +8,12 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.9.1: Hotfix für NVIDIA-Overlay-Verbindungen nach NVIDIA-App-Updates.">
-  <link rel="stylesheet" href="styles.css?v=20261103-hotfix-2191">
+  <meta name="description" content="NV-UV Play 2.1.10: deutsche Oberfläche, teilbare Overlay-Layouts, feine Überschriften und aufgeräumte Anwendungsdaten.">
+  <link rel="stylesheet" href="styles.css?v=20261108-2110-nav">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
   <script src="guide.de.js?v=20261102-overlay-219" defer></script>
   <script src="guide-app.js?v=20261021-search" defer></script>
-  <script src="site-navigation.js?v=20261102-news-219" defer></script>
+  <script src="site-navigation.js?v=20261108-news-2110-nav" defer></script>
   <script src="site-search.js?v=20261022-inline" defer></script>
 </head>
 <body data-page="news">
@@ -24,17 +24,71 @@
   <div class="header-actions"><div class="language-switch" aria-label="Sprache"><span lang="de" aria-current="page">DE</span><a href="news.html" lang="en" hreflang="en" aria-label="Switch to English" data-language-switch>EN</a></div></div>
 </header>
 <main id="top">
-  <section class="update-key-notice wrap" aria-labelledby="update-key-title">
-    <h2 id="update-key-title">Wichtig: Einmaliges manuelles Update erforderlich</h2>
-    <p>Ein Problem mit der Signierung automatischer Updates wurde behoben. Dafür musste der Update-Signierschlüssel ausgetauscht werden.</p>
-    <p>Bitte lade NV-UV Play v2.1.9.1 einmal manuell aus dem offiziellen GitHub-Release herunter. Danach funktionieren automatische Updates wieder wie gewohnt.</p>
-    <p><strong>Versionen vor 2.1.9 benötigen dieses einmalige manuelle Update.</strong></p>
-    <p><strong>Play schließen, das neue portable ZIP in den bisherigen Play-Ordner entpacken und die vorhandenen Programmdateien ersetzen.</strong></p>
-    <div class="update-key-actions"><a class="button primary" href="https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.9.1" target="_blank" rel="noopener noreferrer">NV-UV Play v2.1.9.1 auf GitHub herunterladen</a><a class="text-link" href="neuigkeiten.html#updates-2191">Die Neuerungen in 2.1.9.1 ansehen</a></div>
-  </section>
-  <nav class="section-nav wrap" aria-label="Auf dieser Seite"><a href="#updates-2191">Hotfix 2.1.9.1</a><a href="#updates-219">In Version 2.1.9</a><a href="#updates-218">In Version 2.1.8</a><a href="#updates-217">In Version 2.1.7</a><a href="#updates-216">In Version 2.1.6</a><a href="#updates-215">In Version 2.1.5</a><a href="#updates-214">In Version 2.1.4</a><a href="#updates-213">In Version 2.1.3</a><a href="#updates-212">In Version 2.1.2</a><a href="#updates-211">In Version 2.1.1</a><a href="#updates-210">In Version 2.1.0</a><a href="#updates-2016">In Version 2.0.16</a><a href="#updates-2015">In Version 2.0.15</a></nav>
+  <nav class="section-nav news-version-nav wrap" aria-label="Versionen">
+    <a href="#updates-2110">2.1.10</a>
+    <a href="#updates-2191">2.1.9.1</a>
+    <details class="news-version-menu" data-news-version-menu>
+      <summary>Ältere Versionen</summary>
+      <ul class="news-version-list">
+        <li><a href="#updates-219">2.1.9</a></li>
+        <li><a href="#updates-218">2.1.8</a></li>
+        <li><a href="#updates-217">2.1.7</a></li>
+        <li><a href="#updates-216">2.1.6</a></li>
+        <li><a href="#updates-215">2.1.5</a></li>
+        <li><a href="#updates-214">2.1.4</a></li>
+        <li><a href="#updates-213">2.1.3</a></li>
+        <li><a href="#updates-212">2.1.2</a></li>
+        <li><a href="#updates-211">2.1.1</a></li>
+        <li><a href="#updates-210">2.1.0</a></li>
+        <li><a href="#updates-2016">2.0.16</a></li>
+        <li><a href="#updates-2015">2.0.15</a></li>
+      </ul>
+    </details>
+  </nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES UND ENTWICKLUNG</p><h1 id="news-title">Play-Neuigkeiten</h1></div></div>
+<section class="update-preview" id="updates-2110" aria-labelledby="update-2110-title">
+  <p class="eyebrow">NEU IN VERSION 2.1.10</p>
+  <h2 id="update-2110-title">Play auf Deutsch, dein Overlay zum Teilen</h2>
+  <p class="release-intro">Deutsche Texte und Tooltips, eigene Overlay-Überschriften und ein aufgeräumter Datenordner. Dazu kommen kleinere Korrekturen bei Messwerten, Lüfterkurven und Startprofilen.</p>
+  <p class="release-example-note">Version 2.1.10 wird für die Veröffentlichung vorbereitet. Der aktuelle Download bleibt bis dahin bei 2.1.9.1.</p>
+  <nav class="release-topics" aria-label="Änderungen in Version 2.1.10"><a href="#language-2110">Sprache und Hinweise</a><a href="#overlay-2110">Overlay teilen</a><a href="#fps-2110">Globales FPS-Limit</a><a href="#data-2110">Datenordner</a><a href="#fixes-2110">Fehlerkorrekturen</a></nav>
+  <section class="release-feature-section" id="language-2110">
+    <h3>Play jetzt auch auf Deutsch</h3>
+    <p>Viele aus der Community haben sich eine deutsche Übersetzung gewünscht. Mit Version 2.1.10 ist sie da, einschließlich Tooltips und Versionshinweisen.</p>
+    <p>Bei einem deutschen Windows startet Play zunächst auf Deutsch, ansonsten auf Englisch. Deine Auswahl unter <strong>Einstellungen → Allgemein → Sprache</strong> hat Vorrang. Ein Sprachwechsel speichert die Auswahl und startet Play neu. Auch die eingebauten Versionshinweise erscheinen in der gewählten Sprache. Über die Versionsliste und Suche findest du ältere Änderungen.</p>
+    <p>Unter <strong>Benachrichtigungen</strong> lässt sich die Anzeigedauer von <strong>1 bis 30 Sekunden</strong> einstellen. Vorgabe sind vier Sekunden. Die Vorschau zeigt Position und Dauer; ein Klick schließt eine Meldung früher.</p>
+    <figure class="release-wide-image"><a href="assets/play-general-de-v2.1.10.png" target="_blank" rel="noopener"><img src="assets/play-general-de-v2.1.10.png" width="1200" height="1500" loading="lazy" alt="Allgemeine Einstellungen auf Deutsch mit Sprache und Benachrichtigungen"></a><figcaption>Sprache und Benachrichtigungen in den allgemeinen Einstellungen. Aufnahme mit isolierten Beispieldaten.</figcaption></figure>
+    <p>Weitere Sprachen sind geplant.</p>
+  </section>
+  <section class="release-feature-section" id="overlay-2110">
+    <h3>Weniger Beschriftungen, eigene Überschriften</h3>
+    <p>Wähle eine Zelle in der Vorschau. Unter <strong>Layout → Messwerte</strong> kannst du ihren Messwertnamen ausblenden und beispielsweise <strong>GPU</strong> als Überschrift eintragen. Das Textfeld speichert beim Verlassen. Leer lassen entfernt die Überschrift.</p>
+    <p><strong>Überschrift verschieben</strong> bewegt nur die Überschrift in kleinen Schritten nach links oder rechts innerhalb der Zelle. Messwert und Einheit bleiben an ihrem Platz. Zum Verschieben einer ganzen Zelle ziehst du sie weiterhin in der Vorschau. Namen- und Wertgröße lassen sich bis auf <strong>10%</strong> reduzieren.</p>
+    <figure class="release-wide-image"><a href="assets/play-headings-de-v2.1.10.png" target="_blank" rel="noopener"><img src="assets/play-headings-de-v2.1.10.png" width="1620" height="1275" loading="lazy" alt="Overlay-Editor mit ausgeblendetem Messwertnamen, GPU-Überschrift und zwei Pfeilen zum feinen Verschieben"></a><figcaption>Der GPU-Takt behält seinen Wert und seine Einheit. Nur die Überschrift wird innerhalb der Zelle verschoben. Simulierte Messwerte.</figcaption></figure>
+    <p>Unter <strong>Anzeige</strong>, unterhalb der Tastenkürzel, speichert <strong>Overlay-Einstellungen exportieren</strong> eine JSON-Datei zum Teilen. Sie enthält die Overlay-Konfiguration einschließlich Überschriften und Farben. Ein Importknopf gehört nicht zu dieser Version.</p>
+    <p>RTSS-FPS-Werte verschwinden bei kurzen Aktualisierungslücken nicht mehr sofort. Veraltete Daten werden weiterhin ausgeblendet. Die NVIDIA-Wiederverbindung wurde verbessert; ein bewusstes Trennen bleibt gespeichert. NVIDIA-Overlay muss in der NVIDIA-App aktiviert sein.</p>
+    <p class="release-availability">Die NVIDIA-Integration bleibt experimentell. Der Rücktest der Wiederverbindung auf betroffenen Systemen ist noch offen. Die gemeldete Farbabweichung bei HDR in STALKER 2 ist noch nicht behoben.</p>
+  </section>
+  <section class="release-feature-section" id="fps-2110">
+    <h3>Ein gemeinsamer globaler NVIDIA-FPS-Wert</h3>
+    <p><strong>NVIDIA Max Frame Rate</strong> bearbeitet die globale Treibereinstellung. Eingabefeld und Schieberegler arbeiten in <strong>1-FPS-Schritten</strong>, sodass beispielsweise 117 FPS möglich sind. Der Wert wird mit dem globalen Treiberwert abgeglichen; es gibt keinen getrennten DCC-Wert, der ihn später wieder überschreibt. Der DCC-Regelalgorithmus bleibt unverändert.</p>
+    <p>Profil-Tooltips zeigen die eingestellten Tastenkürzel. Die Profilbuttons behalten beim Darüberfahren ihre Größe. Tastenkürzel werden unter <strong>Einstellungen → Allgemein</strong> geändert.</p>
+  </section>
+  <section class="release-feature-section" id="data-2110">
+    <h3>Ein Datenordner mit nachvollziehbaren Unterordnern</h3>
+    <p>Play verwendet künftig <code>%LOCALAPPDATA%\NV-UV Play</code>. Einstellungen, Profile, Overlay-Dateien, Protokolle und Cache liegen unter anderem in <code>Settings</code>, <code>Profiles</code>, <code>Overlay</code>, <code>Logs</code> und <code>Cache</code>. Über <strong>Datenordner öffnen</strong> in den Einstellungen gelangst du direkt dorthin.</p>
+    <p>Vorhandene Daten aus <code>NV-UV Play-Kilby</code>, <code>NV-UV-Play-CurveLab</code> und <code>NV-UV-Play</code> werden geprüft übernommen, auch wenn der Zielordner schon existiert. Erst nach erfolgreichem Start werden bestätigte doppelte Migrationskopien bereinigt. Unbekannte Dateien, Konflikte und benötigte Wiederherstellungsdaten bleiben erhalten. Alte Laufzeiten und überholte Updatepakete werden ebenfalls bereinigt.</p>
+  </section>
+  <section class="release-feature-section" id="fixes-2110">
+    <h3>Weitere Fehlerbehebungen</h3>
+    <p>BIOS-Lüftertransfer und Wiederherstellung der originalen Lüfterwerte berücksichtigen ältere und neuere Vix-Formate. <strong>Reset curves</strong> in der Softwareansicht lädt weiterhin eine aus dem aktiven BIOS abgeleitete Prozentkurve. Originale BIOS-Werte werden separat im BIOS-Bereich geladen. Vix verwendet einen Treiber-Override; das physische BIOS wird dabei nicht geflasht.</p>
+    <p>Beim Hinzufügen einer Spiele-EXE entfallen unnötige Dateiöffnungsprüfungen. Für blockierte Startprofil-Steuerelemente gibt es eine geprüfte Default-Wiederherstellung. Gespeicherte Profile bleiben erhalten.</p>
+    <p>Autostartfehler liefern eine sichtbare Erklärung und mehr Berechtigungsdaten in der Diagnose. Scanner-Meldungen unterscheiden einen NVIDIA-Treiberfehler, die Profilwiederherstellung und einen noch nicht verifizierten Scan. Ein Schutzabbruch wird dadurch verständlicher; er wird nicht als erfolgreich abgeschlossener Scan ausgegeben.</p>
+    <p>Enthalten ist <strong>Spieledatenbank 2.47</strong>.</p>
+  </section>
+</section>
+
 <section class="update-preview" id="updates-2191" aria-labelledby="update-2191-title">
   <p class="eyebrow">NEU IN VERSION 2.1.9.1</p>
   <h2 id="update-2191-title">Hotfix für die NVIDIA-Overlay-Verbindung</h2>
@@ -43,6 +97,8 @@
   <figure class="release-wide-image"><img src="assets/play-mixed-setup-v2.1.8.png" width="1080" height="850" loading="lazy" alt="Mixed Setup mit NVIDIA-Connect-Schaltfläche und getrennten Messwertquellen"><figcaption>Die Verbindungsschalter in Mixed Setup. Abbildung aus Version 2.1.8 mit Beispielwerten.</figcaption></figure>
 </section>
 
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.9</summary>
 <section class="update-preview" id="updates-219" aria-labelledby="update-219-title">
   <p class="eyebrow">NEU IN VERSION 2.1.9</p>
   <h2 id="update-219-title">Kompakte Overlays, Zero Fan bei 0%</h2>
@@ -94,6 +150,8 @@
     <p>Die <strong>Spieledatenbank 2.46</strong> enthält <strong>745 Einträge</strong>, darunter <strong>Warface (Eco)</strong>, <strong>World of Warcraft Retail (Balanced)</strong> und <strong>Deadlock (Balanced)</strong>. Die Einstufungen dienen als Ausgangspunkt; die Stabilität auf der eigenen Karte prüfen.</p>
   </section>
 </section>
+
+</details>
 
 <details class="news-archive">
   <summary>NV-UV Play v2.1.8</summary>
