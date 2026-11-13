@@ -5,7 +5,7 @@
 >
 > **Versions before NV-UV Play 2.1.9 require a one-time manual update.** A problem with automatic update signing required replacing the update-signing key.
 >
-> **[Download NV-UV Play v2.1.10 manually from the official GitHub release](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.10).**
+> **[Download NV-UV Play v2.1.11 manually from the official GitHub release](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.11).**
 >
 > **Close Play, extract the entire new portable ZIP into your existing Play folder and replace the existing program files.**
 >
@@ -15,7 +15,7 @@
 
 **Explore Play:** [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html) · [Webseite (Deutsch)](https://christianp403-spec.github.io/NV-UV-Play/)
 
-NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.10 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.10).** This is an Alpha prerelease.
+NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.11 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.11).** This is an Alpha prerelease.
 
 ## What's in version 2
 
@@ -41,7 +41,7 @@ For a new installation:
 
 **Updating from 2.1.9 or newer:** use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation.
 
-**Updating from a version before 2.1.9:** close Play, extract the entire v2.1.10 portable ZIP into your existing Play folder and replace the existing program files. This one-time manual update is required because those versions cannot verify the replacement update-signing key. Afterwards, automatic updates work as usual. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
+**Updating from a version before 2.1.9:** close Play, extract the entire v2.1.11 portable ZIP into your existing Play folder and replace the existing program files. This one-time manual update is required because those versions cannot verify the replacement update-signing key. Afterwards, automatic updates work as usual. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
 
 ## Requirements and hardware support
 
