@@ -8,8 +8,8 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.10: deutsche Oberfläche, teilbare Overlay-Layouts, feine Überschriften und aufgeräumte Anwendungsdaten.">
-  <link rel="stylesheet" href="styles.css?v=20261108-2110-nav">
+  <meta name="description" content="NV-UV Play 2.1.11: individuelle Overlay-Kacheln, UV Try für Laptops und Korrekturen bei NVIDIA-Ausgabe, Scanner und Autostart.">
+  <link rel="stylesheet" href="styles.css?v=20261113-2111">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
   <script src="guide.de.js?v=20261102-overlay-219" defer></script>
   <script src="guide-app.js?v=20261021-search" defer></script>
@@ -25,11 +25,12 @@
 </header>
 <main id="top">
   <nav class="section-nav news-version-nav wrap" aria-label="Versionen">
+    <a href="#updates-2111">2.1.11</a>
     <a href="#updates-2110">2.1.10</a>
-    <a href="#updates-2191">2.1.9.1</a>
     <details class="news-version-menu" data-news-version-menu>
       <summary>Ältere Versionen</summary>
       <ul class="news-version-list">
+        <li><a href="#updates-2191">2.1.9.1</a></li>
         <li><a href="#updates-219">2.1.9</a></li>
         <li><a href="#updates-218">2.1.8</a></li>
         <li><a href="#updates-217">2.1.7</a></li>
@@ -47,6 +48,37 @@
   </nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES UND ENTWICKLUNG</p><h1 id="news-title">Play-Neuigkeiten</h1></div></div>
+<section class="update-preview" id="updates-2111" aria-labelledby="update-2111-title">
+  <p class="eyebrow">NEU IN VERSION 2.1.11</p>
+  <h2 id="update-2111-title">Kompaktere Overlays, Notebook-Werte teilen und zuverlässiger starten</h2>
+  <p class="release-intro">Einzelne Overlay-Kacheln lassen sich unabhängig anpassen. UV Try bekommt einen gemeinsamen Laptops-Bereich. Dazu kommen Korrekturen bei NVIDIA-Ausgabe, Scanner und Autostart.</p>
+  <nav class="release-topics" aria-label="Änderungen in Version 2.1.11"><a href="#overlay-2111">Overlay</a><a href="#laptops-2111">UV Try Laptops</a><a href="#startup-2111">Fenster und Autostart</a><a href="#scanner-2111">Scanner und Spiele</a></nav>
+  <section class="release-feature-section" id="overlay-2111">
+    <h3>Jede Kachel bekommt ihren Platz</h3>
+    <p>Im Overlay unter <strong>Layout</strong> eine Kachel auswählen und ihre Breite und Mindesthöhe einzeln einstellen. So kann etwa der FPS-Wert schmal bleiben, während Takt und Einheit mehr Platz bekommen. Beim Verschieben bleiben die Maße am Messwert. Gespeicherte Layouts und JSON-Exporte enthalten die Einstellungen.</p>
+    <figure class="release-wide-image"><a href="assets/play-cells-de-v2.1.11.png" target="_blank" rel="noopener"><img src="assets/play-cells-de-v2.1.11.png" width="1620" height="1275" loading="lazy" alt="Overlay-Editor mit unterschiedlich breiten Kacheln und Größenreglern für den ausgewählten Messwert"></a><figcaption>Breite und Mindesthöhe gelten für die ausgewählte Kachel. Beispiel mit simulierten Messwerten.</figcaption></figure>
+    <p>Gespeicherte Overlay-Layouts werden direkt bei der Auswahl geladen. Die NVIDIA-Ausgabe vermeidet wiederholte Zeichenarbeit, ohne häufiger Messwerte abzufragen. Verzögert übertragene vorhandene Messpunkte verursachen keine künstlichen Lücken mehr im Frametime-Graphen.</p>
+    <p><strong>Overlay aktivieren</strong> schaltet die Anzeige aus, hält aber die NVIDIA-Verbindung zum erneuten Einschalten bereit. Ein bewusstes Trennen der Verbindung bleibt davon unabhängig.</p>
+    <p class="release-availability">Die NVIDIA-Integration bleibt experimentell. HDR-Farbabweichungen und fehlende Messwerte auf einzelnen Systemen werden weiter untersucht.</p>
+  </section>
+  <section class="release-feature-section" id="laptops-2111">
+    <h3>Ein gemeinsamer Bereich für Notebook-Einstellungen</h3>
+    <p>In <strong>UV Try → Laptops</strong> stehen Ampere, Ada und Blackwell gemeinsam zur Auswahl. Nach GPU oder Notebook suchen, Quelle und Testhinweise ansehen und passende Werte in den Kurveneditor laden. Dort entsteht zunächst ein Entwurf; erst <strong>Kurve anwenden</strong> aktiviert ihn. Eigene Einstellungen lassen sich zur Prüfung einreichen.</p>
+    <figure class="release-wide-image"><a href="assets/play-laptops-de-v2.1.11.png" target="_blank" rel="noopener"><img src="assets/play-laptops-de-v2.1.11.png" width="1800" height="750" loading="lazy" alt="UV Try im gemeinsamen Laptops-Bereich mit Suche nach der RTX 5080 Laptop GPU und Quellenhinweisen"></a><figcaption>Beispielansicht mit Einträgen aus dem vorbereiteten Grundstock. Gleiche GPU-Namen bedeuten nicht automatisch gleiche Leistung oder Stabilität.</figcaption></figure>
+    <p>Der Grundstock umfasst <strong>36 Community-Einstellungen für 18 GPU-Modelle</strong> sowie fünf ausdrücklich gekennzeichnete Blackwell-Desktop-Performance-Referenzen. Diese Referenzen sind auf Notebooks ungeprüft. Feste Notebook-Vorgaben werden damit nicht wieder eingeführt. Modell, Leistungsmodus, Kühlung und Testhinweise bleiben bei der Auswahl entscheidend.</p>
+  </section>
+  <section class="release-feature-section" id="startup-2111">
+    <h3>Fenster bleiben dort, wo sie gebraucht werden</h3>
+    <p>Skalierbare Play-Fenster merken sich Position und Größe. Der Kurveneditor öffnet sich auf Deutsch standardmäßig breiter.</p>
+    <p>Die Autostart-Prüfung berücksichtigt jetzt auch deaktivierte Aufgaben und veraltete Programmpfade. Nach einem Umzug des portablen Ordners die neue Kopie einmal starten: Eine aktivierte Aufgabe mit fehlender alter EXE kann dann auf den neuen Pfad korrigiert werden. Eine deaktivierte Aufgabe bleibt aus, bis Autostart bewusst wieder eingeschaltet wird. Auch die Registrierung von Aufgaben wurde verbessert.</p>
+  </section>
+  <section class="release-feature-section" id="scanner-2111">
+    <h3>Kurven korrekt übernehmen, Spiele besser erkennen</h3>
+    <p>Der Kurvenaufbau des Scanners wurde für Profile mit einzelnen Kurvenpunkten korrigiert. Die getestete Kurve bleibt beim Speichern, Anwenden und im Stabilizer erhalten. Ein unter Last nicht eindeutig erreichter Zieltakt ist damit nicht automatisch behoben.</p>
+    <p>Der Spielwunsch-Dialog erkennt bereits vorhandene EXEs und Aliase auch über verschiedene Launcher hinweg. Enthalten ist <strong>Spieledatenbank 2.50 mit 753 Einträgen</strong>, neu mit Warhammer 40,000: Dawn of War IV und einem zusätzlichen EXE-Alias für Where Winds Meet.</p>
+  </section>
+</section>
+
 <section class="update-preview" id="updates-2110" aria-labelledby="update-2110-title">
   <p class="eyebrow">NEU IN VERSION 2.1.10</p>
   <h2 id="update-2110-title">Play auf Deutsch, dein Overlay zum Teilen</h2>
@@ -88,6 +120,8 @@
   </section>
 </section>
 
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.9.1</summary>
 <section class="update-preview" id="updates-2191" aria-labelledby="update-2191-title">
   <p class="eyebrow">NEU IN VERSION 2.1.9.1</p>
   <h2 id="update-2191-title">Hotfix für die NVIDIA-Overlay-Verbindung</h2>
@@ -95,6 +129,8 @@
   <p>NVIDIA overlay in der NVIDIA-App eingeschaltet lassen und anschließend in Play <strong>Connect</strong> verwenden. Die NVIDIA-eigene Statistikanzeige kann ausgeblendet bleiben.</p>
   <figure class="release-wide-image"><img src="assets/play-mixed-setup-v2.1.8.png" width="1080" height="850" loading="lazy" alt="Mixed Setup mit NVIDIA-Connect-Schaltfläche und getrennten Messwertquellen"><figcaption>Die Verbindungsschalter in Mixed Setup. Abbildung aus Version 2.1.8 mit Beispielwerten.</figcaption></figure>
 </section>
+
+</details>
 
 <details class="news-archive">
   <summary>NV-UV Play v2.1.9</summary>
