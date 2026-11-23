@@ -1,104 +1,104 @@
-# NV⚡UV Play V2
-
-> [!WARNING]
-> ## IMPORTANT: ONE-TIME MANUAL UPDATE REQUIRED
->
-> **Versions before NV-UV Play 2.1.9 require a one-time manual update.** A problem with automatic update signing required replacing the update-signing key.
->
-> **[Download NV-UV Play v2.1.12 manually from the official GitHub release](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.12).**
->
-> **Close Play, extract the entire new portable ZIP into your existing Play folder and replace the existing program files.**
->
-> After this one-time update, automatic updates will work as usual.
-
-**Kilby Alpha: NVIDIA GPU undervolting, game profiles, DCC and a customizable overlay.**
-
-**Explore Play:** [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html) · [Webseite (Deutsch)](https://christianp403-spec.github.io/NV-UV-Play/)
-
-NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.12 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.12).** This is an Alpha prerelease.
-
-## What's in version 2
-
-- **Profiles and UV Pilot:** six existing profile slots, shared global and per-game profiles, automatic game detection and per-game exceptions. My profiles keeps saved and downloaded profiles, history and right-click actions together.
-- **Curve editor:** edit individual voltage/frequency points, use Undo/Redo, and adjust power limits and VRAM offsets.
-- **Advanced GPU Tuning, Clock & voltage tuning:** XBAR/SYS clock and voltage-demand offsets, video clock, Core/Fabric voltage limits and Voltage Boost, with live telemetry. Enable them under **Settings → Experimental features → Advanced GPU Tuning**, then open **Curve editor → Advanced GPU Tuning**. Values are saved with the profile and affect the selected GPU while that profile is active. A profile without Advanced GPU Tuning settings restores the values Play replaced. Previous global values are kept for explicit copying into a profile; they are not applied as a global fallback. Compatible GPU/driver support and explicit risk acknowledgment are required. Voltage demand is not a fixed rail voltage; new controls still need hardware validation.
-- **VBIOS limits & fans, powered by Vix:** optional GPU-wide power and offset limits, supported BIOS fan curves and Zero RPM controls. Currently Blackwell only. Driver compatibility follows the installed Vix loader's support check. Use the same unlock path above, then the **VBIOS limits & fans** tab. Guided setup covers tool updates, a reusable BIOS backup, preparing settings, applying the override and restart verification, plus restore and tool cleanup. The original Vix tools are downloaded separately and unchanged, then used through their command-line interface. Unlike profile tuning, VBIOS overrides require a Windows restart. The physical BIOS is not flashed; storing a custom UV curve as the BIOS stock curve is not supported.
-- **Fan control:** GPU automatic mode, fixed speed or custom curves with hysteresis per reported channel, with saved profiles and optional activation at startup. Open **Fan curve** in the main window. Compatible driver support is required; hardware write validation is pending.
-- **UV scanner:** configurable tests, saved results and history, NVIDIA Auto-UV starting points and UV Try community profiles.
-- **DCC:** Automatic clock regulation with per-game learning, plus an experimental NVIDIA Power Efficiency mode.
-- **Overlay:** choose Play, RTSS or NVIDIA output and matching templates. Mixed Setup connects NVIDIA and RTSS independently and combines their readings with Play readings. Right-click a reading value, status badge or graph in the preview to see its original name and source. Edit readings with drag-and-drop and multi-step Undo, adjust label/value text sizes separately, and configure the frametime graph independently.
-- **Performance readings:** FPS, 1% lows, frame times, GPU usage, voltage, power, clocks and temperatures, plus available CPU and RAM readings. Sensor availability depends on the hardware; some readings require optional PawnIO setup.
-- **Stabilizer and Smart Hz:** profile corrections after detected driver crashes and automatic display refresh-rate switching. **Enhanced Stabilizer** is a separate option under Experimental features: it can adjust selected Advanced GPU Tuning settings using your own per-profile steps and stop values. These corrections are not sufficiently validated and can improve or worsen stability; no recommended values are supplied. It is separate from DCC NVIDIA Experimental (Power Efficiency Mode).
-- **Game library, diagnostics and updates:** game database updates, game requests, diagnostic exports and optional report uploads, plus a signed in-app updater. Play can restart after a repeatedly confirmed NVIDIA driver version change, waiting for open editors and running operations. A driver crash, brief reset or same-version reinstall does not trigger this restart.
-
-## Install or update
-
-For a new installation:
-
-1. Download the **portable ZIP** from [Releases](https://github.com/christianp403-spec/NV-UV-Play/releases).
-2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
-3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
-
-**Updating from 2.1.9 or newer:** use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation.
-
-**Updating from a version before 2.1.9:** close Play, extract the entire v2.1.12 portable ZIP into your existing Play folder and replace the existing program files. This one-time manual update is required because those versions cannot verify the replacement update-signing key. Afterwards, automatic updates work as usual. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
-
-## Requirements and hardware support
-
-- **Windows 10 22H2 or Windows 11 (64-bit)**, with current Windows updates and an up-to-date NVIDIA driver.
-- **NVIDIA desktop GeForce RTX 20-, 30-, 40- or 50-series GPU.** The current Kilby Alpha has been tested by the developer only on Blackwell / RTX 50-series. Other supported desktop families still need validation; Ampere and Turing remain experimental.
-- **Multi-GPU in v2.0.2 Alpha:** profiles, readings and DCC Automatic use the selected NVIDIA GPU. Choose the card used by your game; Play does not change the game's or Lossless Scaling's GPU assignment. If the saved card is unavailable, Play requires a new selection instead of silently switching cards. The scanner and NVIDIA Experimental currently require a single NVIDIA GPU. Multi-GPU hardware validation is still pending.
-
-## Using DCC
-
-**DCC Automatic** adjusts GPU clocks for a detected game and saves its learning per game. Its status shows the current learning or regulation stage. **NVIDIA Experimental** requests the driver's Power Efficiency mode. Its efficiency target is separate from an FPS limiter and is not a guaranteed frame rate. Configure this mode before launching a game; restart the game after changing it.
-
-The optional **NVIDIA Max Frame Rate** and **Global NVIDIA VSync** controls apply driver settings. If you already manage frame limiting or V-Sync through the game or NVIDIA App, you do not need to enable those controls again in Play.
-
-## Overlay modes
-
-- **Play output:** supports desktop and windowed/borderless display. It can have higher latency and does not support exclusive fullscreen.
-- **RTSS output:** requires RivaTuner Statistics Server 7.3.7 or newer.
-- **NVIDIA output:** experimental and unofficial integration. Fullscreen and anti-cheat compatibility varies by game. NVIDIA's own overlay can also be configured from Play.
-
-## Game library
-
-The shared game library for NV-UV and Play lives in [`nv-uv-docs/games/GameDatabase.json`](https://github.com/christianp403-spec/nv-uv-docs/blob/main/games/GameDatabase.json). Play includes a bundled copy for offline use and checks that shared source for game-library updates.
-
-Add a missing game inside Play by browsing for its executable, use **Game Library → Request a game**, or open a [GitHub issue](https://github.com/christianp403-spec/NV-UV-Play/issues) with the executable name and a Steam/store link. For games with a launcher, include the actual game executable as well.
-
-## Feedback and diagnostics
-
-Use **Settings → Report a problem** to export diagnostics or submit a report. Include your Play version, GPU, driver version, affected game and steps to reproduce the issue. Review the report before sending it. For a DCC issue, enable **performance logging before launching the game** and include the generated logs and approximate test time. If no performance log is created, mention that too.
-
-Game-library and application update checks access GitHub. Game requests and diagnostic uploads are separate, user-initiated actions.
-
-## Credits
-
-Thank you to the projects and developers whose work helps make Play possible:
-
-- **Greencurve by [aufkrawall](https://github.com/aufkrawall)** (MIT License), the foundation for the native NVAPI bridge and the flat-tail technique used by Voltage Lock.
-- **[PawnIO](https://github.com/namazso/PawnIO) by namazso and the PawnIO.Modules contributors**, for the hardware access used by Play's sensor readings.
-- **[LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) and its contributors**, for CPU temperature monitoring.
-- **Panchovix and the Vix contributors**, for making these GPU customization options accessible. [Vix Editor](https://github.com/Panchovix/nvidia-vbios-vix-editor) and [Vix Windows Loader](https://github.com/Panchovix/nvidia-windows-vbios-vix-loader) are independent GPL-3.0-or-later tools, downloaded separately and unchanged. Play uses their command-line interface. Take a look at the original projects for their full range of features.
-
-Special thanks to Unwinder for his longstanding work on MSI Afterburner and GPU tuning tools. Required third-party notices are included with the portable release.
-
-Special thanks to b00nz for his work on mVolt+ and for demonstrating what advanced GPU tuning can achieve. [mVolt+ project](https://github.com/b00nz/mVolt).
-
-## Community
-
-- [Forum thread](https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/)
-- [Bug reports and feature requests](https://github.com/christianp403-spec/NV-UV-Play/issues)
-
-## Before use
-
-Play lets you adjust GPU settings to suit your system. Stability varies between GPUs, so test your own settings, presets and scanner results on your hardware. Unstable settings may cause application or driver crashes.
-
-**Experimental Advanced GPU Tuning requires extra care.** These advanced controls are not fully validated across GPU and driver combinations. Incorrect settings may cause instability, data loss or hardware damage. Use them only if you understand the settings and associated risks.
-
-The [Play license](LICENSE.txt) sets out the risk notices and liability exclusions and limitations, including the mandatory legal exceptions. Kilby is in Alpha. Bugs and changes between versions are expected. Thank you for your feedback, bug reports and diagnostic data!
-
-## Support the project
-
-NV-UV Play is free. If you find it useful, you can [support development](https://www.paypal.com/paypalme/christianpapaioannou).
+# NV⚡UV Play V2
+
+> [!WARNING]
+> ## IMPORTANT: ONE-TIME MANUAL UPDATE REQUIRED
+>
+> **Versions before NV-UV Play 2.1.9 require a one-time manual update.** A problem with automatic update signing required replacing the update-signing key.
+>
+> **[Download NV-UV Play v2.1.12 manually from the official GitHub release](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.12).**
+>
+> **Close Play, extract the entire new portable ZIP into your existing Play folder and replace the existing program files.**
+>
+> After this one-time update, automatic updates will work as usual.
+
+**Kilby Alpha: NVIDIA GPU undervolting, game profiles, DCC and a customizable overlay.**
+
+**Explore Play:** [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html) · [Webseite (Deutsch)](https://christianp403-spec.github.io/NV-UV-Play/)
+
+NV⚡UV Play applies your chosen GPU profile when a game starts. Use the community presets, create your own voltage/frequency curve, or enable DCC to adjust GPU clocks during gameplay. Version 2 brings these features together with a UV scanner, shared profiles and an integrated monitoring overlay. **Current release: [v2.1.12 · Alpha](https://github.com/christianp403-spec/NV-UV-Play/releases/tag/v2.1.12).** This is an Alpha prerelease.
+
+## What's in version 2
+
+- **Profiles and UV Pilot:** six existing profile slots, shared global and per-game profiles, automatic game detection and per-game exceptions. My profiles keeps saved and downloaded profiles, history and right-click actions together.
+- **Curve editor:** edit individual voltage/frequency points, use Undo/Redo, and adjust power limits and VRAM offsets.
+- **Advanced GPU Tuning, Clock & voltage tuning:** XBAR/SYS clock and voltage-demand offsets, video clock, Core/Fabric voltage limits and Voltage Boost, with live telemetry. Enable them under **Settings → Experimental features → Advanced GPU Tuning**, then open **Curve editor → Advanced GPU Tuning**. Values are saved with the profile and affect the selected GPU while that profile is active. A profile without Advanced GPU Tuning settings restores the values Play replaced. Previous global values are kept for explicit copying into a profile; they are not applied as a global fallback. Compatible GPU/driver support and explicit risk acknowledgment are required. Voltage demand is not a fixed rail voltage; new controls still need hardware validation.
+- **VBIOS limits & fans, powered by Vix:** optional GPU-wide power and offset limits, supported BIOS fan curves and Zero RPM controls. Currently Blackwell only. Driver compatibility follows the installed Vix loader's support check. Use the same unlock path above, then the **VBIOS limits & fans** tab. Guided setup covers tool updates, a reusable BIOS backup, preparing settings, applying the override and restart verification, plus restore and tool cleanup. The original Vix tools are downloaded separately and unchanged, then used through their command-line interface. Unlike profile tuning, VBIOS overrides require a Windows restart. The physical BIOS is not flashed; storing a custom UV curve as the BIOS stock curve is not supported.
+- **Fan control:** GPU automatic mode, fixed speed or custom curves with hysteresis per reported channel, with saved profiles and optional activation at startup. Open **Fan curve** in the main window. Compatible driver support is required; hardware write validation is pending.
+- **UV scanner:** configurable tests, saved results and history, NVIDIA Auto-UV starting points and UV Try community profiles.
+- **DCC:** Automatic clock regulation with per-game learning, plus an experimental NVIDIA Power Efficiency mode.
+- **Overlay:** choose Play, RTSS or NVIDIA output and matching templates. Mixed Setup connects NVIDIA and RTSS independently and combines their readings with Play readings. Right-click a reading value, status badge or graph in the preview to see its original name and source. Edit readings with drag-and-drop and multi-step Undo, adjust label/value text sizes separately, and configure the frametime graph independently.
+- **Performance readings:** FPS, 1% lows, frame times, GPU usage, voltage, power, clocks and temperatures, plus available CPU and RAM readings. Sensor availability depends on the hardware; some readings require optional PawnIO setup.
+- **Stabilizer and Smart Hz:** profile corrections after detected driver crashes and automatic display refresh-rate switching. **Enhanced Stabilizer** is a separate option under Experimental features: it can adjust selected Advanced GPU Tuning settings using your own per-profile steps and stop values. These corrections are not sufficiently validated and can improve or worsen stability; no recommended values are supplied. It is separate from DCC NVIDIA Experimental (Power Efficiency Mode).
+- **Game library, diagnostics and updates:** game database updates, game requests, diagnostic exports and optional report uploads, plus a signed in-app updater. Play can restart after a repeatedly confirmed NVIDIA driver version change, waiting for open editors and running operations. A driver crash, brief reset or same-version reinstall does not trigger this restart.
+
+## Install or update
+
+For a new installation:
+
+1. Download the **portable ZIP** from [Releases](https://github.com/christianp403-spec/NV-UV-Play/releases).
+2. Extract the **entire ZIP** into its own folder, separate from an NV-UV installation. Keep the supplied files and subfolders together.
+3. Run `NV-UV-Play.exe`. The .NET runtime is bundled; no separate runtime installation is needed.
+
+**Updating from 2.1.9 or newer:** use **Updates → Check now → Download → Install & restart**. Installation asks for confirmation.
+
+**Updating from a version before 2.1.9:** close Play, extract the entire v2.1.12 portable ZIP into your existing Play folder and replace the existing program files. This one-time manual update is required because those versions cannot verify the replacement update-signing key. Afterwards, automatic updates work as usual. **Please do not use MSI Afterburner together with Play.** Running both at the same time may cause conflicts in GPU voltage settings.
+
+## Requirements and hardware support
+
+- **Windows 10 22H2 or Windows 11 (64-bit)**, with current Windows updates and an up-to-date NVIDIA driver.
+- **NVIDIA desktop GeForce RTX 20-, 30-, 40- or 50-series GPU.** The current Kilby Alpha has been tested by the developer only on Blackwell / RTX 50-series. Other supported desktop families still need validation; Ampere and Turing remain experimental.
+- **Multi-GPU in v2.0.2 Alpha:** profiles, readings and DCC Automatic use the selected NVIDIA GPU. Choose the card used by your game; Play does not change the game's or Lossless Scaling's GPU assignment. If the saved card is unavailable, Play requires a new selection instead of silently switching cards. The scanner and NVIDIA Experimental currently require a single NVIDIA GPU. Multi-GPU hardware validation is still pending.
+
+## Using DCC
+
+**DCC Automatic** adjusts GPU clocks for a detected game and saves its learning per game. Its status shows the current learning or regulation stage. **NVIDIA Experimental** requests the driver's Power Efficiency mode. Its efficiency target is separate from an FPS limiter and is not a guaranteed frame rate. Configure this mode before launching a game; restart the game after changing it.
+
+The optional **NVIDIA Max Frame Rate** and **Global NVIDIA VSync** controls apply driver settings. If you already manage frame limiting or V-Sync through the game or NVIDIA App, you do not need to enable those controls again in Play.
+
+## Overlay modes
+
+- **Play output:** supports desktop and windowed/borderless display. It can have higher latency and does not support exclusive fullscreen.
+- **RTSS output:** requires RivaTuner Statistics Server 7.3.7 or newer.
+- **NVIDIA output:** experimental and unofficial integration. Fullscreen and anti-cheat compatibility varies by game. NVIDIA's own overlay can also be configured from Play.
+
+## Game library
+
+The shared game library for NV-UV and Play lives in [`nv-uv-docs/games/GameDatabase.json`](https://github.com/christianp403-spec/nv-uv-docs/blob/main/games/GameDatabase.json). Play includes a bundled copy for offline use and checks that shared source for game-library updates.
+
+Add a missing game inside Play by browsing for its executable, use **Game Library → Request a game**, or open a [GitHub issue](https://github.com/christianp403-spec/NV-UV-Play/issues) with the executable name and a Steam/store link. For games with a launcher, include the actual game executable as well.
+
+## Feedback and diagnostics
+
+Use **Settings → Report a problem** to export diagnostics or submit a report. Include your Play version, GPU, driver version, affected game and steps to reproduce the issue. Review the report before sending it. For a DCC issue, enable **performance logging before launching the game** and include the generated logs and approximate test time. If no performance log is created, mention that too.
+
+Game-library and application update checks access GitHub. Game requests and diagnostic uploads are separate, user-initiated actions.
+
+## Credits
+
+Thank you to the projects and developers whose work helps make Play possible:
+
+- **Greencurve by [aufkrawall](https://github.com/aufkrawall)** (MIT License), the foundation for the native NVAPI bridge and the flat-tail technique used by Voltage Lock.
+- **[PawnIO](https://github.com/namazso/PawnIO) by namazso and the PawnIO.Modules contributors**, for the hardware access used by Play's sensor readings.
+- **[LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) and its contributors**, for CPU temperature monitoring.
+- **Panchovix and the Vix contributors**, for making these GPU customization options accessible. [Vix Editor](https://github.com/Panchovix/nvidia-vbios-vix-editor) and [Vix Windows Loader](https://github.com/Panchovix/nvidia-windows-vbios-vix-loader) are independent GPL-3.0-or-later tools, downloaded separately and unchanged. Play uses their command-line interface. Take a look at the original projects for their full range of features.
+
+Special thanks to Unwinder for his longstanding work on MSI Afterburner and GPU tuning tools. Required third-party notices are included with the portable release.
+
+Special thanks to b00nz for his work on mVolt+ and for demonstrating what advanced GPU tuning can achieve. [mVolt+ project](https://github.com/b00nz/mVolt).
+
+## Community
+
+- [Forum thread](https://extreme.pcgameshardware.de/threads/nv-uv-play.674754/)
+- [Bug reports and feature requests](https://github.com/christianp403-spec/NV-UV-Play/issues)
+
+## Before use
+
+Play lets you adjust GPU settings to suit your system. Stability varies between GPUs, so test your own settings, presets and scanner results on your hardware. Unstable settings may cause application or driver crashes.
+
+**Experimental Advanced GPU Tuning requires extra care.** These advanced controls are not fully validated across GPU and driver combinations. Incorrect settings may cause instability, data loss or hardware damage. Use them only if you understand the settings and associated risks.
+
+The [Play license](LICENSE.txt) sets out the risk notices and liability exclusions and limitations, including the mandatory legal exceptions. Kilby is in Alpha. Bugs and changes between versions are expected. Thank you for your feedback, bug reports and diagnostic data!
+
+## Support the project
+
+NV-UV Play is free. If you find it useful, you can [support development](https://www.paypal.com/paypalme/christianpapaioannou).
