@@ -8,8 +8,8 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.11.1: Hotfix: Autostart and Scanner">
-  <link rel="stylesheet" href="styles.css?v=20261114-21111">
+  <meta name="description" content="NV-UV Play 2.1.12: See both NVIDIA cards and your AMD iGPU in the overlay">
+  <link rel="stylesheet" href="styles.css?v=20261123-2112">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
   <script src="guide.en.js?v=20261102-overlay-219" defer></script>
   <script src="guide.ui.en.js?v=20261015-v2.1.2" defer></script>
@@ -26,11 +26,12 @@
 </header>
 <main id="top">
   <nav class="section-nav news-version-nav wrap" aria-label="Versions">
+    <a href="#updates-2112">2.1.12</a>
     <a href="#updates-21111">2.1.11.1</a>
-    <a href="#updates-2111">2.1.11</a>
     <details class="news-version-menu" data-news-version-menu>
       <summary>Older versions</summary>
       <ul class="news-version-list">
+        <li><a href="#updates-2111">2.1.11</a></li>
         <li><a href="#updates-2110">2.1.10</a></li>
         <li><a href="#updates-2191">2.1.9.1</a></li>
         <li><a href="#updates-219">2.1.9</a></li>
@@ -50,6 +51,36 @@
   </nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES AND DEVELOPMENT</p><h1 id="news-title">Play News</h1></div></div>
+<section class="update-preview" id="updates-2112" aria-labelledby="update-2112-title">
+  <p class="eyebrow">NEW IN VERSION 2.1.12</p>
+  <h2 id="update-2112-title">See both NVIDIA cards and your AMD iGPU in the overlay</h2>
+  <p class="release-intro">Choose which graphics card to monitor, compare game FPS with the displayed frame rate and browse community settings for your laptop GPU.</p>
+  <section class="release-feature-section" id="overlay-2112">
+    <h3>Two NVIDIA cards, one overlay</h3>
+    <p>On a system with two NVIDIA graphics cards, including an SLI setup, open Overlay &gt; Readings and select GPU 1, GPU 2 or both. With both selected, GPU 1 appears first. A system with one NVIDIA card and an AMD iGPU uses the separate iGPU category.</p>
+    <figure class="release-wide-image"><a href="assets/play-dual-gpu-en-v2.1.12.png" target="_blank" rel="noopener"><img src="assets/play-dual-gpu-en-v2.1.12.png" width="996" height="361" loading="lazy" alt="The same layout with GPU 1, GPU 2 and both cards selected. Simulated readings."></a><figcaption>The same layout with GPU 1, GPU 2 and both cards selected. Simulated readings.</figcaption></figure>
+  </section>
+  <section class="release-feature-section" id="igpu-2112">
+    <h3>Integrated AMD graphics</h3>
+    <p>The iGPU category currently supports AMD integrated graphics only. Pick the readings your hardware provides, such as clock speed, load, temperature, memory or power. Package, graphics and SoC power have separate labels. The category shows the detected iGPU name.</p>
+    <figure class="release-wide-image"><a href="assets/play-amd-igpu-en-v2.1.12.png" target="_blank" rel="noopener"><img src="assets/play-amd-igpu-en-v2.1.12.png" width="1160" height="850" loading="lazy" alt="The iGPU category and its available sensors in the overlay settings. Simulated readings."></a><figcaption>The iGPU category and its available sensors in the overlay settings. Simulated readings.</figcaption></figure>
+  </section>
+  <section class="release-feature-section" id="fps-2112">
+    <h3>Game FPS (Reflex) is experimental</h3>
+    <p>Under General, Game FPS (Reflex) counts original frames when the game supplies Reflex markers. Render / Present FPS counts submissions for display. Both work with the NVIDIA overlay off. The base frame rate can drop depending on the frame generation multiplier and FPS cap. For example, at 3×, an output capped at 120 FPS can correspond to 40 game FPS.</p>
+    <p>Readings are grouped by source and the categories are sorted alphabetically. The NVIDIA App and RTSS have separate connection indicators under additional readings. Play remembers an explicit NVIDIA connection after restarting, even with the HUD off.</p>
+  </section>
+  <section class="release-feature-section" id="uvtry-2112">
+    <h3>UV Try for RTX laptops</h3>
+    <p>UV Try now has a separate table for RTX 50, RTX 40 and RTX 30 Series laptops. Each row shows the GPU model. If you play on a laptop, browse settings for your GPU and share a profile that works for you.</p>
+    <figure class="release-wide-image"><a href="assets/play-uv-try-en-v2.1.12.png" target="_blank" rel="noopener"><img src="assets/play-uv-try-en-v2.1.12.png" width="1650" height="1080" loading="lazy" alt="The RTX 40 Series laptop table in UV Try. Each entry shows its GPU model."></a><figcaption>The RTX 40 Series laptop table in UV Try. Each entry shows its GPU model.</figcaption></figure>
+  </section>
+  <section class="release-feature-section" id="games-2112">
+    <h3>Game database</h3>
+    <p>Version 2.52 contains 758 games. The five additions since 2.50 are KovaaK’s, Hell is Us, Star Citizen, Dawn of War: Definitive Edition and RetroSpace.</p>
+  </section>
+</section>
+
 <section class="update-preview" id="updates-21111" aria-labelledby="update-21111-title">
   <p class="eyebrow">NV-UV Play v2.1.11.1</p>
   <h2 id="update-21111-title">Hotfix: Autostart and Scanner</h2>
@@ -69,6 +100,8 @@
 </ul>
 </section>
 
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.11</summary>
 <section class="update-preview" id="updates-2111" aria-labelledby="update-2111-title">
   <p class="eyebrow">NEW IN VERSION 2.1.11</p>
   <h2 id="update-2111-title">Compact overlays, shared laptop settings and more reliable startup</h2>
@@ -99,6 +132,7 @@
     <p>The game request dialog detects existing executables and aliases across launchers. Includes <strong>game database 2.50 with 753 entries</strong>, adding Warhammer 40,000: Dawn of War IV and an additional executable alias for Where Winds Meet.</p>
   </section>
 </section>
+</details>
 
 <details class="news-archive">
   <summary>NV-UV Play v2.1.10</summary>

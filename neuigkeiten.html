@@ -8,8 +8,8 @@
   <link rel="alternate" hreflang="de" href="neuigkeiten.html">
   <link rel="alternate" hreflang="en" href="news.html">
   <link rel="icon" type="image/png" href="assets/wordmark.png">
-  <meta name="description" content="NV-UV Play 2.1.11.1: Hotfix: Autostart und Scanner">
-  <link rel="stylesheet" href="styles.css?v=20261114-21111">
+  <meta name="description" content="NV-UV Play 2.1.12: Beide NVIDIA-Karten und die AMD-iGPU im Overlay anzeigen">
+  <link rel="stylesheet" href="styles.css?v=20261123-2112">
   <link rel="stylesheet" href="site-search.css?v=20261022-inline">
   <script src="guide.de.js?v=20261102-overlay-219" defer></script>
   <script src="guide-app.js?v=20261021-search" defer></script>
@@ -25,11 +25,12 @@
 </header>
 <main id="top">
   <nav class="section-nav news-version-nav wrap" aria-label="Versionen">
+    <a href="#updates-2112">2.1.12</a>
     <a href="#updates-21111">2.1.11.1</a>
-    <a href="#updates-2111">2.1.11</a>
     <details class="news-version-menu" data-news-version-menu>
       <summary>Ältere Versionen</summary>
       <ul class="news-version-list">
+        <li><a href="#updates-2111">2.1.11</a></li>
         <li><a href="#updates-2110">2.1.10</a></li>
         <li><a href="#updates-2191">2.1.9.1</a></li>
         <li><a href="#updates-219">2.1.9</a></li>
@@ -49,6 +50,36 @@
   </nav>
   <section class="guide-section wrap" aria-labelledby="news-title">
     <div class="section-heading"><div><p class="eyebrow">UPDATES UND ENTWICKLUNG</p><h1 id="news-title">Play-Neuigkeiten</h1></div></div>
+<section class="update-preview" id="updates-2112" aria-labelledby="update-2112-title">
+  <p class="eyebrow">NEU IN VERSION 2.1.12</p>
+  <h2 id="update-2112-title">Beide NVIDIA-Karten und die AMD-iGPU im Overlay anzeigen</h2>
+  <p class="release-intro">Wähle aus, welche Grafikkarte du beobachten möchtest, vergleiche Spiel-FPS mit der ausgegebenen Bildrate und finde Community-Einstellungen für deine Notebook-GPU.</p>
+  <section class="release-feature-section" id="overlay-2112">
+    <h3>Zwei NVIDIA-Karten in einem Overlay</h3>
+    <p>Bei zwei NVIDIA-Grafikkarten, auch in einem SLI-System, kannst du unter Overlay &gt; Messwerte GPU 1, GPU 2 oder beide auswählen. Bei Wertepaaren steht GPU 1 links. Bei einer NVIDIA-Karte und einer AMD-iGPU findest du die integrierte Grafik unter iGPU.</p>
+    <figure class="release-wide-image"><a href="assets/play-dual-gpu-de-v2.1.12.png" target="_blank" rel="noopener"><img src="assets/play-dual-gpu-de-v2.1.12.png" width="996" height="361" loading="lazy" alt="Dasselbe Layout mit GPU 1, GPU 2 und beiden Karten. Die Messwerte sind simuliert."></a><figcaption>Dasselbe Layout mit GPU 1, GPU 2 und beiden Karten. Die Messwerte sind simuliert.</figcaption></figure>
+  </section>
+  <section class="release-feature-section" id="igpu-2112">
+    <h3>Integrierte AMD-Grafik</h3>
+    <p>Die Kategorie iGPU unterstützt derzeit ausschließlich integrierte AMD-Grafik. Wähle je nach Hardware Takt, Auslastung, Temperatur, Speicher oder Leistung aus. Package-, Grafik- und SoC-Leistung haben eigene Bezeichnungen. Unter dem Kategorienamen steht das erkannte iGPU-Modell.</p>
+    <figure class="release-wide-image"><a href="assets/play-amd-igpu-de-v2.1.12.png" target="_blank" rel="noopener"><img src="assets/play-amd-igpu-de-v2.1.12.png" width="1160" height="850" loading="lazy" alt="Die Kategorie iGPU und ihre verfügbaren Sensoren in den Overlay-Einstellungen. Die Messwerte sind simuliert."></a><figcaption>Die Kategorie iGPU und ihre verfügbaren Sensoren in den Overlay-Einstellungen. Die Messwerte sind simuliert.</figcaption></figure>
+  </section>
+  <section class="release-feature-section" id="fps-2112">
+    <h3>Spiel-FPS (Reflex) sind experimentell</h3>
+    <p>Unter Allgemein zählen die Spiel-FPS (Reflex) Originalbilder, wenn das Spiel Reflex-Marker liefert. Die Render-/Present-FPS zählen die Bildübergaben zur Anzeige. Beide funktionieren ohne NVIDIA-Overlay. Je nach FG-Stufe und FPS-Limit können die Basis-FPS sinken. Bei 3× und einem Ausgabelimit von 120 FPS können beispielsweise 40 Spiel-FPS anliegen.</p>
+    <p>Die Messwerte sind nach Quelle gruppiert, die Kategorien alphabetisch sortiert. NVIDIA App und RTSS zeigen unter den zusätzlichen Messwerten jeweils ihren Verbindungsstatus. Nach einem Neustart merkt sich Play die gewählte NVIDIA-Verbindung auch bei ausgeschaltetem HUD.</p>
+  </section>
+  <section class="release-feature-section" id="uvtry-2112">
+    <h3>UV Try auf dem RTX-Notebook ausprobieren</h3>
+    <p>UV Try hat jetzt eigene Tabellen für RTX-50-, RTX-40- und RTX-30-Notebooks. Jede Zeile zeigt das GPU-Modell. Wenn du auf einem Notebook spielst, schau bei deiner GPU vorbei und teile gern ein Profil, das bei dir gut läuft.</p>
+    <figure class="release-wide-image"><a href="assets/play-uv-try-de-v2.1.12.png" target="_blank" rel="noopener"><img src="assets/play-uv-try-de-v2.1.12.png" width="1650" height="1080" loading="lazy" alt="Die Tabelle für RTX-40-Notebooks in UV Try. Jede Zeile zeigt das GPU-Modell."></a><figcaption>Die Tabelle für RTX-40-Notebooks in UV Try. Jede Zeile zeigt das GPU-Modell.</figcaption></figure>
+  </section>
+  <section class="release-feature-section" id="games-2112">
+    <h3>Spieledatenbank</h3>
+    <p>Version 2.52 enthält 758 Spiele. Seit 2.50 sind KovaaK’s, Hell is Us, Star Citizen, Dawn of War: Definitive Edition und RetroSpace hinzugekommen.</p>
+  </section>
+</section>
+
 <section class="update-preview" id="updates-21111" aria-labelledby="update-21111-title">
   <p class="eyebrow">NV-UV Play v2.1.11.1</p>
   <h2 id="update-21111-title">Hotfix: Autostart und Scanner</h2>
@@ -68,6 +99,8 @@
 </ul>
 </section>
 
+<details class="news-archive">
+  <summary>NV-UV Play v2.1.11</summary>
 <section class="update-preview" id="updates-2111" aria-labelledby="update-2111-title">
   <p class="eyebrow">NEU IN VERSION 2.1.11</p>
   <h2 id="update-2111-title">Kompaktere Overlays, Notebook-Werte teilen und zuverlässiger starten</h2>
@@ -98,6 +131,7 @@
     <p>Der Spielwunsch-Dialog erkennt bereits vorhandene EXEs und Aliase auch über verschiedene Launcher hinweg. Enthalten ist <strong>Spieledatenbank 2.50 mit 753 Einträgen</strong>, neu mit Warhammer 40,000: Dawn of War IV und einem zusätzlichen EXE-Alias für Where Winds Meet.</p>
   </section>
 </section>
+</details>
 
 <details class="news-archive">
   <summary>NV-UV Play v2.1.10</summary>
