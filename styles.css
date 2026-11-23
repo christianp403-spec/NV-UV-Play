@@ -276,6 +276,7 @@ body.story-image-open{overflow:hidden}#story-image-dialog{padding:0;width:min(15
 .home-update-link{margin:18px 0 0;font-size:14px;color:var(--muted)}
 .release-dev-image{width:344px;max-width:100%}
 #readings-2112 figure{width:min(100%,220px,22vh)}
+#fps-2112 figure{width:min(100%,240px)}
 .release-status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 30px;margin:22px 0 0}
 .release-status-grid div{border-left:2px solid #435438;padding-left:18px;min-width:0}
 .release-status-grid dt{font-size:16px;color:var(--accent);font-weight:600;margin-bottom:7px}
